@@ -10,10 +10,10 @@ They are intended to demonstrate the usage of the [Clever Internet Suite](https:
 
 See also:  
 
-[Clever Internet Suite Demos for C++Builder](DemosCBuilder.md)
-[Clever Internet Suite Demos for C# .NET](DemosCS.md)
-[Clever Internet Suite Demos for VB.NET](DemosVBNET.md)
-[Clever Internet Suite Demos for ASP.NET](./ASP.NET)
+[Demos for C++Builder](DemosCBuilder.md)   
+[Demos for C# .NET](DemosCS.md)   
+[Demos for VB.NET](DemosVBNET.md)   
+[Demos for ASP.NET](./ASP.NET)   
 
 | Program Name | Description |
 |---|---|
