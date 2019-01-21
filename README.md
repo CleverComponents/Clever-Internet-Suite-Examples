@@ -6,15 +6,14 @@ These example projects are simple demos, and by no means complete applications.
 
 They are intended to demonstrate the usage of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) components in your code.
 
-[Clever Internet Suite Demos for C++Builder](DemosCBuilder.md)
-
-[Clever Internet Suite Demos for C# .NET](#clever-internet-suite-demos-for-c-net)
-
-[Clever Internet Suite Demos for VB.NET](#clever-internet-suite-demos-for-vbnet)
-
-[Clever Internet Suite Demos for ASP.NET](#clever-internet-suite-demos-for-aspnet)
-
 ## Clever Internet Suite Demos for Delphi
+
+See also:  
+
+[Clever Internet Suite Demos for C++Builder](DemosCBuilder.md)
+[Clever Internet Suite Demos for C# .NET](DemosCS.md)
+[Clever Internet Suite Demos for VB.NET](DemosVBNET.md)
+[Clever Internet Suite Demos for ASP.NET](./ASP.NET)
 
 | Program Name | Description |
 |---|---|
@@ -73,11 +72,3 @@ They are intended to demonstrate the usage of the [Clever Internet Suite](https:
 |[Web DAV](./Delphi/WebDAV)|Shows how to use the WebDAV component to manage remote files on a web server.|
 |[Web Update App](./Delphi/WebUpdateApp)|Retrieves version information from the website, downloads the update files and installs the update.|
 |[Web Update Editor](./Delphi/WebUpdateEditor)|Modifies the webupdate.xml XML document, which is used by the WebUpdate component.|
-
-## Clever Internet Suite Demos for C# .NET
-
-## Clever Internet Suite Demos for VB.NET
-
-## Clever Internet Suite Demos for ASP.NET
-
-
