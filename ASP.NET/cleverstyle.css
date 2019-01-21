@@ -1,0 +1,60 @@
+p, body
+{
+	font-family:Arial;
+	font-size:x-small;
+}
+ul
+{
+	font-family:Arial;
+	font-size:x-small;
+}
+h1
+{
+	font-family:Times new Roman;
+	font-weight:bold;
+	font-size:large;
+	color:#CC0000;
+}
+h2
+{
+	font-family:Times new Roman;
+	font-weight:bold;
+	font-size:medium;
+	color:#CC0000;
+}
+a
+{
+	color:#CC0000;
+	font-size:x-small;
+	cursor:hand;
+}
+a:visited
+{
+	color:#990000;
+	font-size:x-small;
+	cursor:hand;
+}
+a:hover
+{
+	color:#ff3333;
+	font-size:x-small;
+	cursor:hand;
+}
+.copyHrefStyle
+{
+	font-weight:normal;
+}
+.clsTableTh
+{
+	font-weight:bold;
+	color:#666666;
+	background-color:#CCCCCC;
+}
+table, td
+{
+	font-family:Arial;
+	font-size:x-small;
+	border-width:1;
+	border-style:solid;
+	border-color:#AAAAAA;
+}

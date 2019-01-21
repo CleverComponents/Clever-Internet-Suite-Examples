@@ -1,0 +1,1 @@
+start WebUpdateApp.exe

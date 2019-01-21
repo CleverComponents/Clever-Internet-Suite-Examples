@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CertMgr", "CertMgr.vbproj", "{88D342BB-C751-422C-81F5-AF5A91C2ED5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88D342BB-C751-422C-81F5-AF5A91C2ED5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D342BB-C751-422C-81F5-AF5A91C2ED5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D342BB-C751-422C-81F5-AF5A91C2ED5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D342BB-C751-422C-81F5-AF5A91C2ED5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
