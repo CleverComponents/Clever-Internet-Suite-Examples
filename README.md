@@ -8,12 +8,7 @@ They are intended to demonstrate the usage of the [Clever Internet Suite](https:
 
 ## Clever Internet Suite Demos for Delphi
 
-See also:  
-
-[Demos for C++Builder](DemosCBuilder.md)   
-[Demos for C# .NET](DemosCS.md)   
-[Demos for VB.NET](DemosVBNET.md)   
-[Demos for ASP.NET](./ASP.NET)   
+See also:  [Demos for C++Builder](DemosCBuilder.md), [Demos for C# .NET](DemosCS.md), [Demos for VB.NET](DemosVBNET.md), [Demos for ASP.NET](./ASP.NET)   
 
 | Program Name | Description |
 |---|---|
