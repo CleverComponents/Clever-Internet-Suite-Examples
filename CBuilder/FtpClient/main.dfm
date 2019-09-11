@@ -2,10 +2,10 @@ inherited MainForm: TMainForm
   Top = 122
   Caption = 'Ftp Client - Sample'
   ClientHeight = 512
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
-  ExplicitHeight = 550
+  ExplicitHeight = 551
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -106,6 +106,7 @@ inherited MainForm: TMainForm
       Top = 37
       Width = 137
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end

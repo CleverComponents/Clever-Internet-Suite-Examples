@@ -48,22 +48,24 @@ Public Class Form1
     Friend WithEvents Pop31 As CleverComponents.InetSuite.Pop3
     Friend WithEvents MailMessage1 As CleverComponents.InetSuite.MailMessage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.lbMessages = New System.Windows.Forms.ListBox
-        Me.openFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.btnCheckMail = New System.Windows.Forms.Button
-        Me.btnComposeMail = New System.Windows.Forms.Button
-        Me.edtSmtpServer = New System.Windows.Forms.TextBox
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.edtUser = New System.Windows.Forms.TextBox
-        Me.edtPop3Server = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Smtp1 = New CleverComponents.InetSuite.Smtp
-        Me.Pop31 = New CleverComponents.InetSuite.Pop3
-        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage
+        Me.lbMessages = New System.Windows.Forms.ListBox()
+        Me.openFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.btnCheckMail = New System.Windows.Forms.Button()
+        Me.btnComposeMail = New System.Windows.Forms.Button()
+        Me.edtSmtpServer = New System.Windows.Forms.TextBox()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.edtUser = New System.Windows.Forms.TextBox()
+        Me.edtPop3Server = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Smtp1 = New CleverComponents.InetSuite.Smtp()
+        Me.Pop31 = New CleverComponents.InetSuite.Pop3()
+        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage()
+        CType(Me.Smtp1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Pop31, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -102,6 +104,7 @@ Public Class Form1
         '
         Me.edtPassword.Location = New System.Drawing.Point(104, 88)
         Me.edtPassword.Name = "edtPassword"
+        Me.edtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.edtPassword.Size = New System.Drawing.Size(272, 20)
         Me.edtPassword.TabIndex = 15
         Me.edtPassword.Text = "password"
@@ -162,17 +165,11 @@ Public Class Form1
         Me.label1.TabIndex = 8
         Me.label1.Text = "POP server"
         '
-        'Smtp1
-        '
-        Me.Smtp1.Port = 25
-        '
-        'Pop31
-        '
-        Me.Pop31.Port = 110
-        '
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2006, 5, 8, 15, 43, 5, 952)
+        Me.MailMessage1.From.Email = ""
+        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -193,8 +190,11 @@ Public Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
         Me.Text = "SMTP / POP3 client demo"
+        CType(Me.Smtp1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Pop31, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

@@ -11,8 +11,11 @@ Public Class Form1
         oAuth.AuthUrl = "https://accounts.google.com/o/oauth2/auth"
         oAuth.TokenUrl = "https://accounts.google.com/o/oauth2/token"
         oAuth.RedirectUrl = "http://localhost"
+
+        'You need to specify both Client ID and Client Secret of your Google API Project.
         oAuth.ClientID = "421475025220-6khpgoldbdsi60fegvjdqk2bk4v19ss2.apps.googleusercontent.com"
         oAuth.ClientSecret = "_4HJyAVUmH_iVrPB8pOJXjR1"
+
         oAuth.Scope = "https://mail.google.com/"
 
         imap.Server = "imap.gmail.com"

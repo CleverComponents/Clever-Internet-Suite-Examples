@@ -1,8 +1,8 @@
 inherited Form1: TForm1
   Left = 319
   Top = 74
-  Height = 658
   Caption = 'Send E-mail with DKIM signature - Sample'
+  ClientHeight = 619
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -128,6 +128,7 @@ inherited Form1: TForm1
       Top = 40
       Width = 180
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end
@@ -242,7 +243,7 @@ inherited Form1: TForm1
   end
   object clSmtp1: TclSmtp
     CharSet = 'us-ascii'
-    MailAgent = 'Clever Internet Suite v 7.0'
+    MailAgent = 'Clever Internet Suite'
     Left = 104
     Top = 516
   end

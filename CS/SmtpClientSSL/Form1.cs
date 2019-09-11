@@ -71,6 +71,7 @@ namespace SmtpClientSSL
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.cbUseTLS = new System.Windows.Forms.CheckBox();
 			this.edtPort = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -124,6 +125,7 @@ namespace SmtpClientSSL
 			// 
 			this.edtPassword.Location = new System.Drawing.Point(296, 64);
 			this.edtPassword.Name = "edtPassword";
+			this.edtPassword.PasswordChar = '*';
 			this.edtPassword.Size = new System.Drawing.Size(120, 20);
 			this.edtPassword.TabIndex = 5;
 			this.edtPassword.Text = "clevertester";
@@ -176,7 +178,7 @@ namespace SmtpClientSSL
 			this.memBody.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.memBody.Size = new System.Drawing.Size(400, 112);
 			this.memBody.TabIndex = 9;
-			this.memBody.Text = "This is a sample email";
+			this.memBody.Text = resources.GetString("memBody.Text");
 			// 
 			// edtSubject
 			// 
@@ -184,7 +186,7 @@ namespace SmtpClientSSL
 			this.edtSubject.Name = "edtSubject";
 			this.edtSubject.Size = new System.Drawing.Size(346, 20);
 			this.edtSubject.TabIndex = 8;
-			this.edtSubject.Text = "Sample message";
+			this.edtSubject.Text = "ABC Company: New Catalog";
 			// 
 			// label8
 			// 

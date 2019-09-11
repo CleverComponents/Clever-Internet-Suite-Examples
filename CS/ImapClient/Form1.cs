@@ -115,10 +115,10 @@ namespace ImapClient
 			this.edtSubscribed = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.lvMessages = new System.Windows.Forms.ListView();
-			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.tvFolders = new System.Windows.Forms.ListBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.memLog = new System.Windows.Forms.TextBox();
@@ -136,6 +136,7 @@ namespace ImapClient
 			this.imap41 = new CleverComponents.InetSuite.Imap4();
 			this.mailMessage1 = new CleverComponents.InetSuite.MailMessage();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.imap41)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -183,6 +184,7 @@ namespace ImapClient
 			// 
 			this.edtPassword.Location = new System.Drawing.Point(80, 64);
 			this.edtPassword.Name = "edtPassword";
+			this.edtPassword.PasswordChar = '*';
 			this.edtPassword.Size = new System.Drawing.Size(216, 20);
 			this.edtPassword.TabIndex = 5;
 			this.edtPassword.Text = "clevertester";
@@ -250,7 +252,6 @@ namespace ImapClient
 			this.edtFirstUnseen.Name = "edtFirstUnseen";
 			this.edtFirstUnseen.Size = new System.Drawing.Size(64, 20);
 			this.edtFirstUnseen.TabIndex = 7;
-			this.edtFirstUnseen.Text = "";
 			// 
 			// label9
 			// 
@@ -266,7 +267,6 @@ namespace ImapClient
 			this.edtRecent.Name = "edtRecent";
 			this.edtRecent.Size = new System.Drawing.Size(64, 20);
 			this.edtRecent.TabIndex = 5;
-			this.edtRecent.Text = "";
 			// 
 			// label8
 			// 
@@ -282,7 +282,6 @@ namespace ImapClient
 			this.edtAll.Name = "edtAll";
 			this.edtAll.Size = new System.Drawing.Size(64, 20);
 			this.edtAll.TabIndex = 3;
-			this.edtAll.Text = "";
 			// 
 			// label7
 			// 
@@ -298,7 +297,6 @@ namespace ImapClient
 			this.edtSubscribed.Name = "edtSubscribed";
 			this.edtSubscribed.Size = new System.Drawing.Size(64, 20);
 			this.edtSubscribed.TabIndex = 1;
-			this.edtSubscribed.Text = "";
 			// 
 			// label6
 			// 
@@ -311,16 +309,17 @@ namespace ImapClient
 			// lvMessages
 			// 
 			this.lvMessages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-																						 this.columnHeader1,
-																						 this.columnHeader2,
-																						 this.columnHeader3,
-																						 this.columnHeader4});
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
 			this.lvMessages.FullRowSelect = true;
 			this.lvMessages.HideSelection = false;
 			this.lvMessages.Location = new System.Drawing.Point(184, 184);
 			this.lvMessages.Name = "lvMessages";
 			this.lvMessages.Size = new System.Drawing.Size(336, 104);
 			this.lvMessages.TabIndex = 14;
+			this.lvMessages.UseCompatibleStateImageBehavior = false;
 			this.lvMessages.View = System.Windows.Forms.View.Details;
 			this.lvMessages.DoubleClick += new System.EventHandler(this.lvMessages_DoubleClick);
 			// 
@@ -369,7 +368,6 @@ namespace ImapClient
 			this.memLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
 			this.memLog.Size = new System.Drawing.Size(504, 72);
 			this.memLog.TabIndex = 16;
-			this.memLog.Text = "";
 			// 
 			// btnLogin
 			// 
@@ -472,13 +470,14 @@ namespace ImapClient
 			// 
 			// imap41
 			// 
-			this.imap41.Port = 143;
 			this.imap41.CommandSent += new CleverComponents.InetSuite.TcpTextEventHandler(this.imap41_CommandSent);
 			this.imap41.ResponseReceived += new CleverComponents.InetSuite.TcpListEventHandler(this.imap41_ResponseReceived);
 			// 
 			// mailMessage1
 			// 
 			this.mailMessage1.Date = new System.DateTime(2006, 5, 4, 21, 9, 17, 733);
+			this.mailMessage1.From.Email = "";
+			this.mailMessage1.From.Name = "";
 			// 
 			// Form1
 			// 
@@ -514,8 +513,11 @@ namespace ImapClient
 			this.Name = "Form1";
 			this.Text = "IMAP Client";
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.imap41)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

@@ -2,11 +2,10 @@ inherited Form1: TForm1
   Left = 269
   Top = 167
   Caption = 'HTTP GET with Proxy - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Panel1: TPanel
       Left = 0
       Top = 0
@@ -123,6 +122,7 @@ inherited Form1: TForm1
         Top = 59
         Width = 201
         Height = 21
+        PasswordChar = '*'
         TabOrder = 3
       end
       object edtProxyServer: TEdit
@@ -153,6 +153,7 @@ inherited Form1: TForm1
         Top = 131
         Width = 201
         Height = 21
+        PasswordChar = '*'
         TabOrder = 8
       end
       object cbProxyType: TComboBox
@@ -161,7 +162,6 @@ inherited Form1: TForm1
         Width = 145
         Height = 21
         Style = csDropDownList
-        ItemHeight = 13
         ItemIndex = 0
         TabOrder = 4
         Text = 'HTTP Proxy'
@@ -176,7 +176,7 @@ inherited Form1: TForm1
       Left = 0
       Top = 185
       Width = 623
-      Height = 179
+      Height = 178
       Align = alClient
       ReadOnly = True
       ScrollBars = ssBoth
@@ -185,7 +185,7 @@ inherited Form1: TForm1
     end
   end
   object clHttp1: TclHttp
-    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite 6.0)'
+    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
     KeepConnection = False
     Left = 144
     Top = 248

@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 241
   Top = 120
   Caption = 'SOAP Digital Signature - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel

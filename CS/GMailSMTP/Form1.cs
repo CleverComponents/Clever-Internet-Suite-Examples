@@ -221,8 +221,11 @@ namespace GMailSMTP
 			oAuth1.AuthUrl = "https://accounts.google.com/o/oauth2/auth";
 			oAuth1.TokenUrl = "https://accounts.google.com/o/oauth2/token";
 			oAuth1.RedirectUrl = "http://localhost";
+
+			//You need to specify both Client ID and Client Secret of your Google API Project.
 			oAuth1.ClientID = "421475025220-6khpgoldbdsi60fegvjdqk2bk4v19ss2.apps.googleusercontent.com";
 			oAuth1.ClientSecret = "_4HJyAVUmH_iVrPB8pOJXjR1";
+
 			oAuth1.Scope = "https://mail.google.com/";
 
 			smtp1.Server = "smtp.gmail.com";

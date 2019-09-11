@@ -77,17 +77,26 @@ inherited Form1: TForm1
       TabOrder = 3
     end
     object btnSend: TButton
-      Left = 488
-      Top = 329
+      Left = 363
+      Top = 330
       Width = 121
       Height = 25
       Caption = 'Send'
       TabOrder = 4
       OnClick = btnSendClick
     end
+    object btnCancel: TButton
+      Left = 488
+      Top = 330
+      Width = 121
+      Height = 25
+      Caption = 'Cancel'
+      TabOrder = 5
+      OnClick = btnCancelClick
+    end
   end
   object clSmtp1: TclSmtp
-    MailAgent = 'Clever Internet Suite v 7.0'
+    MailAgent = 'Clever Internet Suite'
     Left = 64
     Top = 232
   end

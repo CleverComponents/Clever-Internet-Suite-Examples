@@ -6,7 +6,7 @@ inherited UploaderTest: TUploaderTest
   Caption = 'MultiUpLoader - Sample'
   ClientHeight = 452
   ClientWidth = 633
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy

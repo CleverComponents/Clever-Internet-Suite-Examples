@@ -74,48 +74,49 @@ Public Class Form1
     Friend WithEvents Imap41 As CleverComponents.InetSuite.Imap4
     Friend WithEvents MailMessage1 As CleverComponents.InetSuite.MailMessage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnPurge = New System.Windows.Forms.Button
-        Me.btnDelete = New System.Windows.Forms.Button
-        Me.btnCopy = New System.Windows.Forms.Button
-        Me.btnAppend = New System.Windows.Forms.Button
-        Me.columnHeader2 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader1 = New System.Windows.Forms.ColumnHeader
-        Me.btnUnsubscribe = New System.Windows.Forms.Button
-        Me.btnSubscribe = New System.Windows.Forms.Button
-        Me.btnFind = New System.Windows.Forms.Button
-        Me.btnDeleteFolder = New System.Windows.Forms.Button
-        Me.btnNewFolder = New System.Windows.Forms.Button
-        Me.btnLogout = New System.Windows.Forms.Button
-        Me.btnLogin = New System.Windows.Forms.Button
-        Me.memLog = New System.Windows.Forms.TextBox
-        Me.label10 = New System.Windows.Forms.Label
-        Me.tvFolders = New System.Windows.Forms.ListBox
-        Me.lvMessages = New System.Windows.Forms.ListView
-        Me.columnHeader3 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader4 = New System.Windows.Forms.ColumnHeader
-        Me.groupBox1 = New System.Windows.Forms.GroupBox
-        Me.edtFirstUnseen = New System.Windows.Forms.TextBox
-        Me.label9 = New System.Windows.Forms.Label
-        Me.edtRecent = New System.Windows.Forms.TextBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.edtAll = New System.Windows.Forms.TextBox
-        Me.label7 = New System.Windows.Forms.Label
-        Me.edtSubscribed = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.edtTimeOut = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.cbUseSPA = New System.Windows.Forms.CheckBox
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.edtUser = New System.Windows.Forms.TextBox
-        Me.edtServer = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Imap41 = New CleverComponents.InetSuite.Imap4
-        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage
+        Me.btnPurge = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnCopy = New System.Windows.Forms.Button()
+        Me.btnAppend = New System.Windows.Forms.Button()
+        Me.columnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnUnsubscribe = New System.Windows.Forms.Button()
+        Me.btnSubscribe = New System.Windows.Forms.Button()
+        Me.btnFind = New System.Windows.Forms.Button()
+        Me.btnDeleteFolder = New System.Windows.Forms.Button()
+        Me.btnNewFolder = New System.Windows.Forms.Button()
+        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.memLog = New System.Windows.Forms.TextBox()
+        Me.label10 = New System.Windows.Forms.Label()
+        Me.tvFolders = New System.Windows.Forms.ListBox()
+        Me.lvMessages = New System.Windows.Forms.ListView()
+        Me.columnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.edtFirstUnseen = New System.Windows.Forms.TextBox()
+        Me.label9 = New System.Windows.Forms.Label()
+        Me.edtRecent = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.edtAll = New System.Windows.Forms.TextBox()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.edtSubscribed = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.edtTimeOut = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.cbUseSPA = New System.Windows.Forms.CheckBox()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.edtUser = New System.Windows.Forms.TextBox()
+        Me.edtServer = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Imap41 = New CleverComponents.InetSuite.Imap4()
+        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage()
         Me.groupBox1.SuspendLayout()
+        CType(Me.Imap41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -226,7 +227,6 @@ Public Class Form1
         Me.memLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.memLog.Size = New System.Drawing.Size(504, 72)
         Me.memLog.TabIndex = 44
-        Me.memLog.Text = ""
         '
         'label10
         '
@@ -252,6 +252,7 @@ Public Class Form1
         Me.lvMessages.Name = "lvMessages"
         Me.lvMessages.Size = New System.Drawing.Size(336, 104)
         Me.lvMessages.TabIndex = 42
+        Me.lvMessages.UseCompatibleStateImageBehavior = False
         Me.lvMessages.View = System.Windows.Forms.View.Details
         '
         'columnHeader3
@@ -287,7 +288,6 @@ Public Class Form1
         Me.edtFirstUnseen.Name = "edtFirstUnseen"
         Me.edtFirstUnseen.Size = New System.Drawing.Size(64, 20)
         Me.edtFirstUnseen.TabIndex = 7
-        Me.edtFirstUnseen.Text = ""
         '
         'label9
         '
@@ -303,7 +303,6 @@ Public Class Form1
         Me.edtRecent.Name = "edtRecent"
         Me.edtRecent.Size = New System.Drawing.Size(64, 20)
         Me.edtRecent.TabIndex = 5
-        Me.edtRecent.Text = ""
         '
         'label8
         '
@@ -319,7 +318,6 @@ Public Class Form1
         Me.edtAll.Name = "edtAll"
         Me.edtAll.Size = New System.Drawing.Size(64, 20)
         Me.edtAll.TabIndex = 3
-        Me.edtAll.Text = ""
         '
         'label7
         '
@@ -335,7 +333,6 @@ Public Class Form1
         Me.edtSubscribed.Name = "edtSubscribed"
         Me.edtSubscribed.Size = New System.Drawing.Size(64, 20)
         Me.edtSubscribed.TabIndex = 1
-        Me.edtSubscribed.Text = ""
         '
         'label6
         '
@@ -389,6 +386,7 @@ Public Class Form1
         '
         Me.edtPassword.Location = New System.Drawing.Point(80, 64)
         Me.edtPassword.Name = "edtPassword"
+        Me.edtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.edtPassword.Size = New System.Drawing.Size(216, 20)
         Me.edtPassword.TabIndex = 33
         Me.edtPassword.Text = "clevertester"
@@ -433,13 +431,11 @@ Public Class Form1
         Me.label1.TabIndex = 28
         Me.label1.Text = "Server"
         '
-        'Imap41
-        '
-        Me.Imap41.Port = 143
-        '
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2006, 5, 8, 14, 47, 52, 62)
+        Me.MailMessage1.From.Email = ""
+        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -476,8 +472,11 @@ Public Class Form1
         Me.Name = "Form1"
         Me.Text = "IMAP Client"
         Me.groupBox1.ResumeLayout(False)
+        Me.groupBox1.PerformLayout()
+        CType(Me.Imap41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

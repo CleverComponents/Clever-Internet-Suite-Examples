@@ -2,7 +2,7 @@ inherited MainForm: TMainForm
   Left = 286
   Top = 55
   Caption = 'Upload a file using POST request - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13

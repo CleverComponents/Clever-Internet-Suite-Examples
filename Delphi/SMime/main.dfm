@@ -3,7 +3,7 @@ inherited MainForm: TMainForm
   Top = 62
   Height = 552
   Caption = 'SMIME Message - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -62,7 +62,7 @@ inherited MainForm: TMainForm
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
@@ -79,7 +79,7 @@ inherited MainForm: TMainForm
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True

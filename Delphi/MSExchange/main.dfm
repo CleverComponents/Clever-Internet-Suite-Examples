@@ -2,7 +2,7 @@ inherited MainForm: TMainForm
   Left = 261
   Top = 62
   Caption = 'MS SMTP Mail Sender - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -17,7 +17,7 @@ inherited MainForm: TMainForm
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = [fsBold]
       ParentFont = False
     end

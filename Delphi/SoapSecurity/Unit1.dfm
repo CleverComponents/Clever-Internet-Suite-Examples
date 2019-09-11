@@ -3,7 +3,7 @@ inherited Form1: TForm1
   Top = 71
   Height = 608
   Caption = 'SOAP Security - Encrypt / Decrypt, Sign / Verify  - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13

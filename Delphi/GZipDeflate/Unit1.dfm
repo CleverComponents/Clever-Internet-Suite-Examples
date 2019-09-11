@@ -3,7 +3,7 @@ inherited Form1: TForm1
   Top = 114
   Height = 293
   Caption = 'GZip / Deflate - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -21,7 +21,7 @@ inherited Form1: TForm1
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True
@@ -52,7 +52,7 @@ inherited Form1: TForm1
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True

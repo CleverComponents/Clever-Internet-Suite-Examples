@@ -69,6 +69,7 @@ inherited Form1: TForm1
       Top = 50
       Width = 137
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end

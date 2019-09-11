@@ -51,25 +51,27 @@ Public Class Form1
     Friend WithEvents Smtp1 As CleverComponents.InetSuite.Smtp
     Friend WithEvents MailMessage1 As CleverComponents.InetSuite.MailMessage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnSend = New System.Windows.Forms.Button
-        Me.label5 = New System.Windows.Forms.Label
-        Me.edtTo = New System.Windows.Forms.TextBox
-        Me.memBody = New System.Windows.Forms.TextBox
-        Me.edtSubject = New System.Windows.Forms.TextBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.edtFrom = New System.Windows.Forms.TextBox
-        Me.label7 = New System.Windows.Forms.Label
-        Me.cbUseTLS = New System.Windows.Forms.CheckBox
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.edtUser = New System.Windows.Forms.TextBox
-        Me.edtServer = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Smtp1 = New CleverComponents.InetSuite.Smtp
-        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Me.btnSend = New System.Windows.Forms.Button()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.edtTo = New System.Windows.Forms.TextBox()
+        Me.memBody = New System.Windows.Forms.TextBox()
+        Me.edtSubject = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.edtFrom = New System.Windows.Forms.TextBox()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.cbUseTLS = New System.Windows.Forms.CheckBox()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.edtUser = New System.Windows.Forms.TextBox()
+        Me.edtServer = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Smtp1 = New CleverComponents.InetSuite.Smtp()
+        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage()
+        CType(Me.Smtp1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -105,7 +107,7 @@ Public Class Form1
         Me.memBody.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memBody.Size = New System.Drawing.Size(400, 112)
         Me.memBody.TabIndex = 50
-        Me.memBody.Text = "This is a sample email"
+        Me.memBody.Text = resources.GetString("memBody.Text")
         '
         'edtSubject
         '
@@ -113,7 +115,7 @@ Public Class Form1
         Me.edtSubject.Name = "edtSubject"
         Me.edtSubject.Size = New System.Drawing.Size(336, 20)
         Me.edtSubject.TabIndex = 49
-        Me.edtSubject.Text = "Sample message"
+        Me.edtSubject.Text = "ABC Company: New Catalog"
         '
         'label8
         '
@@ -145,6 +147,7 @@ Public Class Form1
         Me.cbUseTLS.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbUseTLS.Location = New System.Drawing.Point(313, 33)
         Me.cbUseTLS.Name = "cbUseTLS"
+        Me.cbUseTLS.Size = New System.Drawing.Size(104, 24)
         Me.cbUseTLS.TabIndex = 44
         Me.cbUseTLS.Text = "Use SSL / TLS"
         '
@@ -168,6 +171,7 @@ Public Class Form1
         '
         Me.edtPassword.Location = New System.Drawing.Point(297, 65)
         Me.edtPassword.Name = "edtPassword"
+        Me.edtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.edtPassword.Size = New System.Drawing.Size(120, 20)
         Me.edtPassword.TabIndex = 46
         Me.edtPassword.Text = "clevertester"
@@ -214,11 +218,12 @@ Public Class Form1
         '
         'Smtp1
         '
-        Me.Smtp1.Port = 25
         '
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2007, 1, 13, 17, 21, 46, 952)
+        Me.MailMessage1.From.Email = ""
+        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -244,8 +249,10 @@ Public Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
         Me.Text = "SMTP Client with SSL / TLS support"
+        CType(Me.Smtp1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

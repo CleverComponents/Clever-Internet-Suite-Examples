@@ -2,7 +2,7 @@ inherited UploaderTest: TUploaderTest
   Left = 258
   Top = 189
   Caption = 'Single Uploader - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
@@ -95,7 +95,7 @@ inherited UploaderTest: TUploaderTest
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
@@ -110,7 +110,7 @@ inherited UploaderTest: TUploaderTest
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
@@ -127,7 +127,7 @@ inherited UploaderTest: TUploaderTest
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True

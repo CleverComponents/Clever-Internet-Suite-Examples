@@ -1,8 +1,7 @@
 inherited MainForm: TMainForm
   Left = 234
   Top = 115
-  Caption = 'Ftp Client Proxy - Sample'
-  Font.Name = 'MS Sans Serif'
+  Caption = 'FTP Client over Proxy'
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
@@ -11,7 +10,7 @@ inherited MainForm: TMainForm
     object Label1: TLabel
       Left = 11
       Top = 14
-      Width = 37
+      Width = 36
       Height = 13
       Caption = 'IP/Host'
     end
@@ -32,14 +31,14 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 11
       Top = 68
-      Width = 38
+      Width = 40
       Height = 13
       Caption = 'Start Dir'
     end
     object Label6: TLabel
       Left = 439
       Top = 13
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -59,35 +58,35 @@ inherited MainForm: TMainForm
     object Label3: TLabel
       Left = 13
       Top = 110
-      Width = 60
+      Width = 63
       Height = 13
       Caption = 'Proxy Server'
     end
     object Label8: TLabel
       Left = 311
       Top = 136
-      Width = 75
+      Width = 77
       Height = 13
       Caption = 'Proxy Password'
     end
     object Label9: TLabel
       Left = 409
       Top = 109
-      Width = 48
+      Width = 51
       Height = 13
       Caption = 'Proxy Port'
     end
     object Label10: TLabel
       Left = 23
       Top = 135
-      Width = 51
+      Width = 53
       Height = 13
       Caption = 'Proxy User'
     end
     object Label11: TLabel
       Left = 22
       Top = 162
-      Width = 53
+      Width = 55
       Height = 13
       Caption = 'Proxy Type'
     end
@@ -128,6 +127,7 @@ inherited MainForm: TMainForm
       Top = 37
       Width = 137
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end
@@ -144,6 +144,8 @@ inherited MainForm: TMainForm
       Width = 90
       Height = 17
       Caption = 'Passive Mode'
+      Checked = True
+      State = cbChecked
       TabOrder = 5
     end
     object cbAsciiMode: TCheckBox
@@ -233,7 +235,7 @@ inherited MainForm: TMainForm
       Width = 281
       Height = 21
       TabOrder = 7
-      Text = 'localhost'
+      Text = 'proxy'
     end
     object edtProxyUser: TEdit
       Left = 80
@@ -241,15 +243,14 @@ inherited MainForm: TMainForm
       Width = 150
       Height = 21
       TabOrder = 9
-      Text = 'CleverTester'
     end
     object edtProxyPassword: TEdit
       Left = 390
       Top = 133
       Width = 139
       Height = 21
+      PasswordChar = '*'
       TabOrder = 10
-      Text = 'clevertester'
     end
     object edtProxyPort: TEdit
       Left = 462
@@ -257,7 +258,7 @@ inherited MainForm: TMainForm
       Width = 67
       Height = 21
       TabOrder = 8
-      Text = '21'
+      Text = '8080'
     end
     object cbProxyType: TComboBox
       Left = 80
@@ -265,17 +266,19 @@ inherited MainForm: TMainForm
       Width = 283
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
-      ItemIndex = 4
+      ItemIndex = 8
       TabOrder = 20
-      Text = 'UserPass'
+      Text = 'HTTP Connect'
       Items.Strings = (
         'None'
         'UserSite'
         'Site'
         'Open'
         'UserPass'
-        'Transparent')
+        'Transparent'
+        'Custom (OnCustomFtpProxy event handler required)'
+        'Account'
+        'HTTP Connect')
     end
   end
   object clFTP: TclFtp

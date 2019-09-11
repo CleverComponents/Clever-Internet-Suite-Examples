@@ -6,7 +6,7 @@ inherited DownLoaderTest: TDownLoaderTest
   Caption = 'MultiDownLoader - Sample'
   ClientHeight = 509
   ClientWidth = 756
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy

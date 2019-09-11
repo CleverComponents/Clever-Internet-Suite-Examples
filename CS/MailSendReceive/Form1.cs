@@ -149,6 +149,7 @@ namespace MailSendReceive
 			// 
 			this.edtPassword.Location = new System.Drawing.Point(94, 88);
 			this.edtPassword.Name = "edtPassword";
+			this.edtPassword.PasswordChar = '*';
 			this.edtPassword.Size = new System.Drawing.Size(282, 20);
 			this.edtPassword.TabIndex = 4;
 			this.edtPassword.Text = "password";

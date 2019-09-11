@@ -5,7 +5,7 @@ inherited MainForm: TMainForm
   BorderStyle = bsDialog
   Caption = 'Update Manager - Sample'
   ClientHeight = 181
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13

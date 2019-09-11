@@ -1,6 +1,6 @@
 # Clever Internet Suite Examples
 
-<img align="left" src="https://www.clevercomponents.com/images/suite93-splash.jpg"/>
+<img align="left" src="https://www.clevercomponents.com/images/suite94-splash.jpg"/>
 
 These example projects are simple demos, and by no means complete applications.
 
@@ -55,6 +55,7 @@ See also:  [Demos for C++Builder](DemosCBuilder.md), [Demos for C# .NET](DemosCS
 |[Single Downloader](./Delphi/SingleDownloader)|Downloads single URL to the local file or into the memory via HTTP, HTTPS or FTP protocols.|
 |[Single Uploader](./Delphi/SingleUploader)|Uploads a single local file onto the web server via HTTP, HTTPS or FTP protocols.|
 |[SMIME](./Delphi/SMime)|Builds, signs and encrypts email messages.|
+|[SMTP Client (Proxy)](./Delphi/SmtpClientProxy)|Demonstrates how to send e-mail via an HTTP Connect proxy.|
 |[SMTP Client (SSL)](./Delphi/SmtpClientSSL)|Represents SMTP client with full SSL / TLS data encryption support.|
 |[SMTP Relay](./Delphi/SmtpRelay)|Creates e-mail and sends it directly to the recipient's server.|
 |[SMTP Server](./Delphi/SmtpServer)|Implements a fully functional SMTP server with keeping messages on the disk like MDaemon.|

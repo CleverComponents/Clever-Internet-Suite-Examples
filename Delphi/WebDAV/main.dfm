@@ -3,7 +3,7 @@ inherited Form1: TForm1
   Top = 118
   Height = 530
   Caption = 'Web DAV client - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -221,7 +221,7 @@ inherited Form1: TForm1
     end
   end
   object clWebDav1: TclWebDav
-    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite 6.0)'
+    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
     LockTimeOut = 'Infinite, Second-86400'
     NameSpaces = <
       item

@@ -5,7 +5,6 @@ inherited Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 16
       Top = 16
@@ -84,6 +83,7 @@ inherited Form1: TForm1
       Top = 40
       Width = 120
       Height = 21
+      PasswordChar = '*'
       TabOrder = 4
       Text = 'clevertester'
     end
@@ -109,7 +109,7 @@ inherited Form1: TForm1
       Width = 558
       Height = 21
       TabOrder = 7
-      Text = 'Sample message'
+      Text = 'ABC Company: New Catalog'
     end
     object memBody: TMemo
       Left = 16
@@ -117,7 +117,24 @@ inherited Form1: TForm1
       Width = 598
       Height = 162
       Lines.Strings = (
-        'This is a sample email')
+        'Dear Sir/Madam,'
+        ''
+        
+          'Our company is glad to hear about your interest in our catalog. ' +
+          'We will send updated versions of our catalogs'
+        
+          'each month. The first section should be especially interesting t' +
+          'o you since it has parts you were looking for.'
+        
+          'This is our most completed and updated version, so do not hesita' +
+          'te to contact us if you need new merchandise.'
+        ''
+        'Thank you for your interest in our catalogs.'
+        ''
+        'Best,'
+        'Timmy Warner'
+        'ABC Company, Ltd'
+        '+1 2223334455')
       TabOrder = 8
     end
     object cbUseTLS: TCheckBox
@@ -142,7 +159,7 @@ inherited Form1: TForm1
   end
   object clSmtp1: TclSmtp
     OnVerifyServer = clSmtp1VerifyServer
-    MailAgent = 'Clever Internet Suite v 7.0'
+    MailAgent = 'Clever Internet Suite'
     Left = 48
     Top = 272
   end

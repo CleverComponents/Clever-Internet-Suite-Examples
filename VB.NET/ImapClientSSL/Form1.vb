@@ -58,32 +58,33 @@ Public Class Form1
     Friend WithEvents Imap41 As CleverComponents.InetSuite.Imap4
     Friend WithEvents MailMessage1 As CleverComponents.InetSuite.MailMessage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.memBody = New System.Windows.Forms.TextBox
-        Me.edtSubject = New System.Windows.Forms.TextBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.edtFrom = New System.Windows.Forms.TextBox
-        Me.label7 = New System.Windows.Forms.Label
-        Me.lvMessages = New System.Windows.Forms.ListView
-        Me.columnHeader2 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader3 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader4 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader5 = New System.Windows.Forms.ColumnHeader
-        Me.label6 = New System.Windows.Forms.Label
-        Me.label5 = New System.Windows.Forms.Label
-        Me.tvFolders = New System.Windows.Forms.ListBox
-        Me.btnLogout = New System.Windows.Forms.Button
-        Me.btnLogin = New System.Windows.Forms.Button
-        Me.cbUseTLS = New System.Windows.Forms.CheckBox
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.edtUser = New System.Windows.Forms.TextBox
-        Me.edtServer = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Imap41 = New CleverComponents.InetSuite.Imap4
-        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage
+        Me.memBody = New System.Windows.Forms.TextBox()
+        Me.edtSubject = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.edtFrom = New System.Windows.Forms.TextBox()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.lvMessages = New System.Windows.Forms.ListView()
+        Me.columnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.tvFolders = New System.Windows.Forms.ListBox()
+        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.cbUseTLS = New System.Windows.Forms.CheckBox()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.edtUser = New System.Windows.Forms.TextBox()
+        Me.edtServer = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Imap41 = New CleverComponents.InetSuite.Imap4()
+        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage()
+        CType(Me.Imap41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -96,7 +97,6 @@ Public Class Form1
         Me.memBody.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memBody.Size = New System.Drawing.Size(344, 96)
         Me.memBody.TabIndex = 42
-        Me.memBody.Text = ""
         '
         'edtSubject
         '
@@ -105,7 +105,6 @@ Public Class Form1
         Me.edtSubject.ReadOnly = True
         Me.edtSubject.Size = New System.Drawing.Size(296, 20)
         Me.edtSubject.TabIndex = 41
-        Me.edtSubject.Text = ""
         '
         'label8
         '
@@ -122,7 +121,6 @@ Public Class Form1
         Me.edtFrom.ReadOnly = True
         Me.edtFrom.Size = New System.Drawing.Size(296, 20)
         Me.edtFrom.TabIndex = 40
-        Me.edtFrom.Text = ""
         '
         'label7
         '
@@ -141,6 +139,7 @@ Public Class Form1
         Me.lvMessages.Name = "lvMessages"
         Me.lvMessages.Size = New System.Drawing.Size(352, 104)
         Me.lvMessages.TabIndex = 39
+        Me.lvMessages.UseCompatibleStateImageBehavior = False
         Me.lvMessages.View = System.Windows.Forms.View.Details
         '
         'columnHeader2
@@ -207,6 +206,7 @@ Public Class Form1
         Me.cbUseTLS.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbUseTLS.Location = New System.Drawing.Point(313, 40)
         Me.cbUseTLS.Name = "cbUseTLS"
+        Me.cbUseTLS.Size = New System.Drawing.Size(104, 24)
         Me.cbUseTLS.TabIndex = 30
         Me.cbUseTLS.Text = "Use SSL / TLS"
         '
@@ -230,6 +230,7 @@ Public Class Form1
         '
         Me.edtPassword.Location = New System.Drawing.Point(313, 72)
         Me.edtPassword.Name = "edtPassword"
+        Me.edtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.edtPassword.Size = New System.Drawing.Size(104, 20)
         Me.edtPassword.TabIndex = 32
         Me.edtPassword.Text = "clevertester"
@@ -274,13 +275,11 @@ Public Class Form1
         Me.label1.TabIndex = 34
         Me.label1.Text = "Server"
         '
-        'Imap41
-        '
-        Me.Imap41.Port = 143
-        '
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2007, 1, 13, 2, 57, 53, 124)
+        Me.MailMessage1.From.Email = ""
+        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -309,8 +308,10 @@ Public Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
         Me.Text = "IMAP4 Client with SSL / TLS support"
+        CType(Me.Imap41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

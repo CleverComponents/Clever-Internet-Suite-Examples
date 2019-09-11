@@ -3,7 +3,7 @@ inherited MainForm: TMainForm
   Top = 265
   Caption = 'Update Manager - Sample'
   ClientHeight = 182
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   ExplicitHeight = 220
   PixelsPerInch = 96
   TextHeight = 13

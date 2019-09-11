@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 275
   Top = 145
   Caption = 'SMTP Relay - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -17,7 +17,7 @@ inherited Form1: TForm1
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
@@ -33,7 +33,7 @@ inherited Form1: TForm1
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True
@@ -51,7 +51,7 @@ inherited Form1: TForm1
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True
@@ -158,7 +158,7 @@ inherited Form1: TForm1
     end
   end
   object clSmtpRelay1: TclSmtpRelay
-    MailAgent = 'Clever Internet Suite v 7.0'
+    MailAgent = 'Clever Internet Suite'
     Left = 216
     Top = 280
   end

@@ -5,7 +5,6 @@ inherited Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 16
       Top = 20
@@ -70,6 +69,7 @@ inherited Form1: TForm1
       Top = 50
       Width = 137
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end

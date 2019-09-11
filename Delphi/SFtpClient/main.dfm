@@ -2,7 +2,7 @@ inherited MainForm: TMainForm
   Left = 367
   Top = 127
   Caption = 'SFTP Client'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
@@ -103,6 +103,7 @@ inherited MainForm: TMainForm
       Top = 37
       Width = 137
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end

@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 247
   Top = 114
   Caption = 'DNS Query - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel

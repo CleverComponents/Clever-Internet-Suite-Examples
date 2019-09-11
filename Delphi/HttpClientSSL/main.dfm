@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 269
   Top = 167
   Caption = 'HTTPS GET with SSL - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -32,7 +32,7 @@ inherited Form1: TForm1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clNavy
         Font.Height = -11
-        Font.Name = 'MS Sans Serif'
+        Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
       end
@@ -87,6 +87,7 @@ inherited Form1: TForm1
         Top = 59
         Width = 113
         Height = 21
+        PasswordChar = '*'
         TabOrder = 3
       end
     end
@@ -104,7 +105,7 @@ inherited Form1: TForm1
   end
   object clHttp1: TclHttp
     OnVerifyServer = clHttp1VerifyServer
-    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite 6.0)'
+    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
     Left = 144
     Top = 176
   end

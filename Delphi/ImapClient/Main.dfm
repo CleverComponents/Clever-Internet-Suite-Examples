@@ -1,10 +1,10 @@
 inherited Form1: TForm1
   Left = 200
   Top = 137
-  Width = 694
-  Height = 547
   Caption = 'IMAP4 Client - Sample'
-  Font.Name = 'MS Sans Serif'
+  ClientHeight = 508
+  ClientWidth = 678
+  Font.Name = 'Tahoma'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -92,6 +92,7 @@ inherited Form1: TForm1
       Top = 74
       Width = 205
       Height = 21
+      PasswordChar = '*'
       TabOrder = 2
       Text = 'clevertester'
     end
@@ -333,7 +334,7 @@ inherited Form1: TForm1
     Left = 64
     Top = 248
     Bitmap = {
-      494C010101000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

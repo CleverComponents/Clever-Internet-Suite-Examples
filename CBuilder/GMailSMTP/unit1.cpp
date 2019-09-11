@@ -24,13 +24,16 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnSendClick(TObject *Sender)
 {
-  if (clSmtp1->Active) return;
+  if (clSmtp1->Active || clOAuth1->Active) return;
 
   clOAuth1->AuthUrl = "https://accounts.google.com/o/oauth2/auth";
   clOAuth1->TokenUrl = "https://accounts.google.com/o/oauth2/token";
   clOAuth1->RedirectUrl = "http://localhost";
+
+  //You need to specify both Client ID and Client Secret of your Google API Project.
   clOAuth1->ClientID = "421475025220-6khpgoldbdsi60fegvjdqk2bk4v19ss2.apps.googleusercontent.com";
   clOAuth1->ClientSecret = "_4HJyAVUmH_iVrPB8pOJXjR1";
+
   clOAuth1->Scope = "https://mail.google.com/";
 
   clSmtp1->Server = "smtp.gmail.com";
@@ -57,3 +60,19 @@ void __fastcall TForm1::btnSendClick(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::btnCancelClick(TObject *Sender)
+{
+  try {
+	clOAuth1->Close();
+  }
+  catch (EclSocketError&) {
+  }
+
+  try {
+	clSmtp1->Close();
+  }
+  catch (EclSocketError&) {
+  }
+}
+//---------------------------------------------------------------------------
+

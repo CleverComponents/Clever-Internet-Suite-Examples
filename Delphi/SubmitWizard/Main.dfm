@@ -2,7 +2,7 @@ inherited MainForm: TMainForm
   Left = 286
   Top = 55
   Caption = 'Simulate Web Form POST requests from multiple web forms - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13

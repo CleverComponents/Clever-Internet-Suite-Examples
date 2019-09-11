@@ -1,8 +1,7 @@
 inherited MainForm: TMainForm
   Top = 122
-  Height = 550
   Caption = 'Ftp Client - Sample'
-  Font.Name = 'MS Sans Serif'
+  ClientHeight = 511
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
@@ -12,14 +11,14 @@ inherited MainForm: TMainForm
     object Label3: TLabel
       Left = 15
       Top = 294
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
     object Label1: TLabel
       Left = 11
       Top = 14
-      Width = 37
+      Width = 36
       Height = 13
       Caption = 'IP/Host'
     end
@@ -40,14 +39,14 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 11
       Top = 68
-      Width = 38
+      Width = 40
       Height = 13
       Caption = 'Start Dir'
     end
     object Label6: TLabel
       Left = 430
       Top = 12
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -104,6 +103,7 @@ inherited MainForm: TMainForm
       Top = 37
       Width = 137
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end

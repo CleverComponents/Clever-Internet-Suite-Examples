@@ -189,6 +189,7 @@ namespace MailProgress
 			// 
 			this.edtPassword.Location = new System.Drawing.Point(80, 64);
 			this.edtPassword.Name = "edtPassword";
+			this.edtPassword.PasswordChar = '*';
 			this.edtPassword.Size = new System.Drawing.Size(120, 20);
 			this.edtPassword.TabIndex = 10;
 			this.edtPassword.Text = "clevertester";

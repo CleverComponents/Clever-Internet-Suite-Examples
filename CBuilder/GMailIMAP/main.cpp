@@ -24,32 +24,51 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::btnLoginClick(TObject *Sender)
 {
-  if (clImap->Active) return;
+  if (clImap->Active || clOAuth1->Active) return;
 
-  clOAuth1->AuthUrl = "https://accounts.google.com/o/oauth2/auth";
-  clOAuth1->TokenUrl = "https://accounts.google.com/o/oauth2/token";
-  clOAuth1->RedirectUrl = "http://localhost";
-  clOAuth1->ClientID = "421475025220-6khpgoldbdsi60fegvjdqk2bk4v19ss2.apps.googleusercontent.com";
-  clOAuth1->ClientSecret = "_4HJyAVUmH_iVrPB8pOJXjR1";
-  clOAuth1->Scope = "https://mail.google.com/";
+  EnableControls(false);
+  __try {
+	clOAuth1->AuthUrl = "https://accounts.google.com/o/oauth2/auth";
+	clOAuth1->TokenUrl = "https://accounts.google.com/o/oauth2/token";
+	clOAuth1->RedirectUrl = "http://localhost";
 
-  clImap->Server = "imap.gmail.com";
-  clImap->Port = 993;
-  clImap->UseTLS = ctImplicit;
+	//You need to specify both Client ID and Client Secret of your Google API Project.
+	clOAuth1->ClientID = "421475025220-6khpgoldbdsi60fegvjdqk2bk4v19ss2.apps.googleusercontent.com";
+	clOAuth1->ClientSecret = "_4HJyAVUmH_iVrPB8pOJXjR1";
 
-  clImap->UserName = edtUser->Text;
+	clOAuth1->Scope = "https://mail.google.com/";
 
-  clImap->Authorization = clOAuth1->GetAuthorization();
+	clImap->Server = "imap.gmail.com";
+	clImap->Port = 993;
+	clImap->UseTLS = ctImplicit;
 
-  clImap->Open();
+	clImap->UserName = edtUser->Text;
 
-  FillFolderList();
+	clImap->Authorization = clOAuth1->GetAuthorization();
+
+	clImap->Open();
+
+	FillFolderList();
+  }
+  __finally {
+	EnableControls(true);
+  }
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::btnLogoutClick(TObject *Sender)
 {
-  clImap->Close();
+  try {
+	clOAuth1->Close();
+  }
+  catch (EclSocketError&) {
+  }
+
+  try {
+	clImap->Close();
+  } catch (EclSocketError&) {
+  }
+
   tvFolders->Items->Clear();
   lvMessages->Clear();
   ClearMessage();
@@ -211,7 +230,6 @@ void __fastcall TForm1::ClearMessage(void)
 void __fastcall TForm1::EnableControls(bool AEnabled)
 {
   btnLogin->Enabled = AEnabled;
-  btnLogout->Enabled = AEnabled;
   tvFolders->Enabled = AEnabled;
   lvMessages->Enabled = AEnabled;
   edtFrom->Enabled = AEnabled;
@@ -222,6 +240,15 @@ void __fastcall TForm1::EnableControls(bool AEnabled)
     Cursor = crArrow;
   else
     Cursor = crHourGlass;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormCloseQuery(TObject *Sender, bool &CanClose)
+{
+  CanClose = (!clImap->Active) && (!clOAuth1->Active);
+  if (!CanClose) {
+	ShowMessage("Cannot close the application, please log out first.");
+  }
 }
 //---------------------------------------------------------------------------
 

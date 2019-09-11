@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 269
   Top = 167
   Caption = 'HTTP GET - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -32,7 +32,7 @@ inherited Form1: TForm1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clNavy
         Font.Height = -11
-        Font.Name = 'MS Sans Serif'
+        Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
       end
@@ -75,7 +75,7 @@ inherited Form1: TForm1
     end
   end
   object clHttp1: TclHttp
-    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite 6.0)'
+    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
     Left = 152
     Top = 120
   end

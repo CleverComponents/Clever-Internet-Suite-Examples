@@ -2,7 +2,7 @@ inherited DownLoaderTest: TDownLoaderTest
   Left = 258
   Top = 189
   Caption = 'Single DownLoader - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
@@ -122,7 +122,7 @@ inherited DownLoaderTest: TDownLoaderTest
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end
@@ -137,7 +137,7 @@ inherited DownLoaderTest: TDownLoaderTest
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
     end

@@ -2,13 +2,12 @@ inherited MainForm: TMainForm
   Left = 247
   Top = 62
   Caption = 'Ftp Client Throttling - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 12
       Top = 77
@@ -69,7 +68,7 @@ inherited MainForm: TMainForm
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True
@@ -87,14 +86,14 @@ inherited MainForm: TMainForm
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True
     end
     object ProgressBar: TProgressBar
       Left = 0
-      Top = 347
+      Top = 346
       Width = 623
       Height = 17
       Align = alBottom
@@ -129,6 +128,7 @@ inherited MainForm: TMainForm
       Top = 101
       Width = 137
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end

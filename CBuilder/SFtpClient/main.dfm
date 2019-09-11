@@ -2,13 +2,12 @@ inherited MainForm: TMainForm
   Left = 367
   Top = 127
   Caption = 'SFTP Client'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label3: TLabel
       Left = 15
       Top = 230
@@ -69,7 +68,7 @@ inherited MainForm: TMainForm
     end
     object ProgressBar: TProgressBar
       Left = 0
-      Top = 347
+      Top = 346
       Width = 623
       Height = 17
       Align = alBottom
@@ -104,6 +103,7 @@ inherited MainForm: TMainForm
       Top = 37
       Width = 137
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end

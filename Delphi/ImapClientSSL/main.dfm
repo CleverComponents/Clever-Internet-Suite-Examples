@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 260
   Top = 114
   Caption = 'IMAP4 Client with SSL / TLS support - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -91,6 +91,7 @@ inherited Form1: TForm1
       Top = 64
       Width = 145
       Height = 21
+      PasswordChar = '*'
       TabOrder = 4
       Text = 'clevertester'
     end
@@ -198,7 +199,7 @@ inherited Form1: TForm1
     Left = 64
     Top = 248
     Bitmap = {
-      494C010101000400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101010004000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

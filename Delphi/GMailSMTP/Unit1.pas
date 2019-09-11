@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, clMailMessage, clTcpClient, clTcpClientTls, clMC, clSmtp, clCertificate,
-  clTcpCommandClient, clOAuth, DemoBaseFormUnit, ExtCtrls;
+  clTcpCommandClient, clOAuth, DemoBaseFormUnit, ExtCtrls, clSocketUtils;
 
 type
   TForm1 = class(TclDemoBaseForm)
@@ -20,7 +20,9 @@ type
     clSmtp1: TclSmtp;
     clMailMessage1: TclMailMessage;
     clOAuth1: TclOAuth;
+    btnCancel: TButton;
     procedure btnSendClick(Sender: TObject);
+    procedure btnCancelClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,15 +36,33 @@ implementation
 
 {$R *.dfm}
 
+procedure TForm1.btnCancelClick(Sender: TObject);
+begin
+  try
+    clOAuth1.Close();
+  except
+    on EclSocketError do;
+  end;
+
+  try
+    clSmtp1.Close();
+  except
+    on EclSocketError do;
+  end;
+end;
+
 procedure TForm1.btnSendClick(Sender: TObject);
 begin
-  if (clSmtp1.Active) then Exit;
+  if (clSmtp1.Active or clOAuth1.Active) then Exit;
 
   clOAuth1.AuthUrl := 'https://accounts.google.com/o/oauth2/auth';
   clOAuth1.TokenUrl := 'https://accounts.google.com/o/oauth2/token';
   clOAuth1.RedirectUrl := 'http://localhost';
+
+  //You need to specify both Client ID and Client Secret of your Google API Project.
   clOAuth1.ClientID := '421475025220-6khpgoldbdsi60fegvjdqk2bk4v19ss2.apps.googleusercontent.com';
   clOAuth1.ClientSecret := '_4HJyAVUmH_iVrPB8pOJXjR1';
+
   clOAuth1.Scope := 'https://mail.google.com/';
 
   clSmtp1.Server := 'smtp.gmail.com';

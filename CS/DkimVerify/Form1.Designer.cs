@@ -96,6 +96,7 @@
 			// 
 			this.edtPassword.Location = new System.Drawing.Point(481, 35);
 			this.edtPassword.Name = "edtPassword";
+			this.edtPassword.PasswordChar = '*';
 			this.edtPassword.Size = new System.Drawing.Size(111, 20);
 			this.edtPassword.TabIndex = 7;
 			this.edtPassword.Text = "clevertester";

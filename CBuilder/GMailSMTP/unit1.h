@@ -33,7 +33,9 @@ __published:	// IDE-managed Components
     TclSmtp *clSmtp1;
     TclMailMessage *clMailMessage1;
     TclOAuth *clOAuth1;
+	TButton *btnCancel;
   void __fastcall btnSendClick(TObject *Sender);
+	void __fastcall btnCancelClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
   __fastcall TForm1(TComponent* Owner);

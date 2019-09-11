@@ -1,9 +1,9 @@
 inherited MainForm: TMainForm
   Left = 390
   Top = 112
-  Height = 550
   Caption = 'Ftp Client SSL / TLS - Sample'
-  Font.Name = 'MS Sans Serif'
+  ClientHeight = 511
+  Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
@@ -105,6 +105,7 @@ inherited MainForm: TMainForm
       Top = 37
       Width = 136
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'clevertester'
     end

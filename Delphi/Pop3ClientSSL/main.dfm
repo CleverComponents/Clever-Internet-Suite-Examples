@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 234
   Top = 210
   Caption = 'POP3 Client with SSL / TLS support - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -84,6 +84,7 @@ inherited Form1: TForm1
       Top = 64
       Width = 145
       Height = 21
+      PasswordChar = '*'
       TabOrder = 4
       Text = 'clevertester'
     end

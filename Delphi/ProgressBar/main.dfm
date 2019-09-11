@@ -3,7 +3,7 @@ inherited Form1: TForm1
   Top = 95
   Height = 596
   Caption = 'TclProgressBar - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -164,7 +164,7 @@ inherited Form1: TForm1
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True

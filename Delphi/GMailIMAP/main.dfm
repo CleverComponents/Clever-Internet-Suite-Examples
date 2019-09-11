@@ -2,9 +2,7 @@ inherited Form1: TForm1
   Left = 260
   Top = 114
   Caption = 'GMAIL IMAP client with OAuth - Sample'
-  Font.Name = 'MS Sans Serif'
-  ExplicitWidth = 320
-  ExplicitHeight = 240
+  OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -18,21 +16,21 @@ inherited Form1: TForm1
     object Label6: TLabel
       Left = 16
       Top = 56
-      Width = 60
+      Width = 62
       Height = 13
       Caption = 'Imap Folders'
     end
     object Label7: TLabel
       Left = 192
       Top = 56
-      Width = 48
+      Width = 47
       Height = 13
       Caption = 'Messages'
     end
     object Label8: TLabel
       Left = 192
       Top = 179
-      Width = 23
+      Width = 24
       Height = 13
       Caption = 'From'
     end
@@ -77,7 +75,7 @@ inherited Form1: TForm1
       Font.Charset = OEM_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       Images = Images
       Indent = 19
@@ -150,7 +148,7 @@ inherited Form1: TForm1
     Left = 64
     Top = 208
     Bitmap = {
-      494C010101000400100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

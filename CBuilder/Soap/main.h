@@ -20,20 +20,21 @@
 class TForm1 : public TclDemoBaseForm
 {
 __published:	// IDE-managed Components
-  TLabel *Label1;
-  TLabel *Label3;
-  TButton *btnStart;
-  TLabel *Label4;
-  TEdit *edtLatitude;
-  TclSoapMessage *clSoapMessage;
-  TLabel *Label5;
   TclHttp *clHttp1;
-  TEdit *edtAddress;
+  TclSoapMessage *clSoapMessage1;
+  TButton *btnC2F;
+  TEdit *edtCelsius;
+  TEdit *edtFahrenheit;
+  TLabel *Label1;
   TLabel *Label2;
-  TEdit *edtLongitude;
-  void __fastcall btnStartClick(TObject *Sender);
+  TButton *btnF2C;
+  TLabel *Label3;
+  TRadioButton *rbUseSoapWsdl;
+  TRadioButton *rbUseSoapXml;
+	void __fastcall btnC2FClick(TObject *Sender);
+	void __fastcall btnF2CClick(TObject *Sender);
 private:	// User declarations
-  void __fastcall ExtractCoordinates(const UnicodeString AResponse);
+  String __fastcall ExtractResponse(const String AResponse, const String AXPath);
 public:		// User declarations
   __fastcall TForm1(TComponent* Owner);
 };

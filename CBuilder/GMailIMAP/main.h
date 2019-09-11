@@ -44,6 +44,7 @@ __published:	// IDE-managed Components
   void __fastcall btnLogoutClick(TObject *Sender);
   void __fastcall tvFoldersChange(TObject *Sender, TTreeNode *Node);
   void __fastcall lvMessagesClick(TObject *Sender);
+	void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
 private:	// User declarations
   bool FChanging;
   void __fastcall FillFolderList(void);

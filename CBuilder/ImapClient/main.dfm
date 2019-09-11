@@ -4,11 +4,11 @@ inherited Form1: TForm1
   Caption = 'IMAP4 Client - Sample'
   ClientHeight = 509
   ClientWidth = 678
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   ExplicitWidth = 694
-  ExplicitHeight = 547
+  ExplicitHeight = 548
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlLogo: TPanel
@@ -99,6 +99,7 @@ inherited Form1: TForm1
       Top = 74
       Width = 205
       Height = 21
+      PasswordChar = '*'
       TabOrder = 2
       Text = 'clevertester'
     end
@@ -340,7 +341,7 @@ inherited Form1: TForm1
     Left = 64
     Top = 248
     Bitmap = {
-      494C010101000400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101010004000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

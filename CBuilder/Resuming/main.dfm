@@ -3,7 +3,7 @@ inherited Form1: TForm1
   Top = 55
   Caption = 'Resuming of the downloading - Sample'
   ClientHeight = 260
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
@@ -47,7 +47,7 @@ inherited Form1: TForm1
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True

@@ -2,7 +2,7 @@ inherited MainForm: TMainForm
   Left = 298
   Top = 51
   Caption = 'Html Parser - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -273,7 +273,7 @@ inherited MainForm: TMainForm
           Font.Charset = RUSSIAN_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
-          Font.Name = 'MS Sans Serif'
+          Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
           PlainText = True

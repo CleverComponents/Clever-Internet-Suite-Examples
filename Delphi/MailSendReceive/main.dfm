@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 192
   Top = 114
   Caption = 'SMTP / POP3 client - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -62,6 +62,7 @@ inherited Form1: TForm1
       Top = 88
       Width = 533
       Height = 21
+      PasswordChar = '*'
       TabOrder = 3
       Text = 'password'
     end
@@ -102,7 +103,7 @@ inherited Form1: TForm1
     end
   end
   object clSMTP1: TclSmtp
-    MailAgent = 'Clever Internet Suite v 6.0'
+    MailAgent = 'Clever Internet Suite'
     Left = 80
     Top = 256
   end

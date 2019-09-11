@@ -2,11 +2,10 @@ inherited Form1: TForm1
   Left = 247
   Top = 114
   Caption = 'Mail Progress - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 9
       Top = 14
@@ -84,6 +83,7 @@ inherited Form1: TForm1
       Top = 68
       Width = 540
       Height = 21
+      PasswordChar = '*'
       TabOrder = 2
       Text = 'clevertester'
     end
@@ -175,7 +175,7 @@ inherited Form1: TForm1
   object clSMTP1: TclSmtp
     TimeOut = 10000
     OnProgress = clMailProgress
-    MailAgent = 'Clever Internet Suite v 6.0'
+    MailAgent = 'Clever Internet Suite'
     Left = 216
     Top = 304
   end

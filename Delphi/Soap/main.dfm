@@ -1,105 +1,117 @@
 inherited Form1: TForm1
-  Left = 248
-  Top = 114
-  Height = 297
-  Caption = 'SOAP Message - Sample'
-  Font.Name = 'MS Sans Serif'
+  Left = 468
+  Top = 255
+  BorderStyle = bsDialog
+  Caption = 'SOAP Temperature Converter Service'
+  ClientHeight = 265
+  ClientWidth = 619
+  OldCreateOrder = True
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
+  inherited pnlLogo: TPanel
+    Width = 619
+    inherited imLogoMiggle: TImage
+      Width = 4
+    end
+    inherited imLogoRight: TImage
+      Left = 410
+    end
+  end
   inherited pnlMain: TPanel
-    Height = 180
+    Width = 619
+    Height = 187
     object Label1: TLabel
-      Left = 40
-      Top = 16
-      Width = 540
+      Left = 20
+      Top = 80
+      Width = 76
+      Height = 13
+      Caption = 'Temperature, C'
+    end
+    object Label2: TLabel
+      Left = 21
+      Top = 115
+      Width = 75
+      Height = 13
+      Caption = 'Temperature, F'
+    end
+    object Label3: TLabel
+      Left = 16
+      Top = 20
+      Width = 550
       Height = 26
       Caption = 
-        'This demo demonstrates how to  use the  SOAPMessage component wi' +
-        'th a freely available web service to get the latitude/longitude ' +
-        'coordinates of an address. '
+        'The example shows how to use the TclSoapMessage component togeth' +
+        'er with TclHttp, with a freely available web service, to do temp' +
+        'erature conversion.'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clNavy
       Font.Height = -11
-      Font.Name = 'MS Sans Serif'
+      Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
       WordWrap = True
     end
-    object Label3: TLabel
-      Left = 16
-      Top = 85
-      Width = 38
-      Height = 13
-      Caption = 'Address'
-    end
-    object Label4: TLabel
-      Left = 16
-      Top = 150
-      Width = 38
-      Height = 13
-      Caption = 'Latitude'
-    end
-    object Label5: TLabel
-      Left = 16
-      Top = 54
-      Width = 332
-      Height = 13
-      Caption = 'This demo uses a free service available from geocoder.us.'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clBlack
-      Font.Height = -11
-      Font.Name = 'MS Sans Serif'
-      Font.Style = [fsBold]
-      ParentFont = False
-      WordWrap = True
-    end
-    object Label2: TLabel
-      Left = 235
-      Top = 150
-      Width = 47
-      Height = 13
-      Caption = 'Longitude'
-    end
-    object btnStart: TButton
-      Left = 72
-      Top = 110
-      Width = 105
+    object btnC2F: TButton
+      Left = 259
+      Top = 75
+      Width = 147
       Height = 25
-      Caption = 'Get coordinates'
-      TabOrder = 1
-      OnClick = btnStartClick
-    end
-    object edtLatitude: TEdit
-      Left = 72
-      Top = 147
-      Width = 137
-      Height = 21
-      ReadOnly = True
+      Caption = 'Celsius -> Fahrenheit'
       TabOrder = 2
+      OnClick = btnC2FClick
     end
-    object edtAddress: TEdit
-      Left = 72
-      Top = 83
-      Width = 540
+    object edtCelsius: TEdit
+      Left = 125
+      Top = 77
+      Width = 111
       Height = 21
       TabOrder = 0
-      Text = '1600 Pennsylvania Ave, Washington DC'
     end
-    object edtLongitude: TEdit
-      Left = 288
-      Top = 147
-      Width = 137
+    object edtFahrenheit: TEdit
+      Left = 125
+      Top = 112
+      Width = 111
       Height = 21
-      ReadOnly = True
+      TabOrder = 1
+    end
+    object btnF2C: TButton
+      Left = 259
+      Top = 110
+      Width = 147
+      Height = 25
+      Caption = 'Fahrenheit -> Celsius'
       TabOrder = 3
+      OnClick = btnF2CClick
+    end
+    object rbUseSoapWsdl: TRadioButton
+      Left = 456
+      Top = 79
+      Width = 145
+      Height = 17
+      Caption = 'Use SOAP WSDL Builder'
+      Checked = True
+      TabOrder = 4
+      TabStop = True
+    end
+    object rbUseSoapXml: TRadioButton
+      Left = 456
+      Top = 102
+      Width = 145
+      Height = 17
+      Caption = 'Use SOAP XML String'
+      TabOrder = 5
     end
   end
-  object clSoapMessage: TclSoapMessage
+  object clHttp1: TclHttp
+    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
+    KeepConnection = False
+    Left = 544
+    Top = 216
+  end
+  object clSoapMessage1: TclSoapMessage
     Header.CharSet = 'utf-8'
-    Header.Connection = 'Keep-Alive'
-    Header.Accept = 'text/html, */*'
-    Header.AcceptLanguage = 'en-us'
+    Header.Accept = '*/*'
     Addressing = <>
     Signatures = <>
     EncryptedKey.KeyClassName = 'TclXmlSKIKeyInfo'
@@ -107,7 +119,7 @@ inherited Form1: TForm1
     EncryptedKey.References = <>
     Namespaces = <>
     EncodingStyle = 'http://schemas.xmlsoap.org/soap/encoding/'
-    SecurityConfig.IdName = 'id'
+    SecurityConfig.IdName = 'Id'
     SecurityConfig.HashAlgorithms = <
       item
         Name = 'md2'
@@ -176,14 +188,7 @@ inherited Form1: TForm1
           'http://docs.oasis-open.org/wss/oasis-wss-wssecurity-secext-1.1.x' +
           'sd'
       end>
-    Left = 328
-    Top = 184
-  end
-  object clHttp1: TclHttp
-    Request = clSoapMessage
-    UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite 8.0)'
-    KeepConnection = False
-    Left = 368
-    Top = 184
+    Left = 472
+    Top = 216
   end
 end

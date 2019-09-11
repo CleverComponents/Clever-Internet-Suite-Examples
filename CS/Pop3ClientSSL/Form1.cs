@@ -136,6 +136,7 @@ namespace Pop3ClientSSL
 			// 
 			this.edtPassword.Location = new System.Drawing.Point(312, 72);
 			this.edtPassword.Name = "edtPassword";
+			this.edtPassword.PasswordChar = '*';
 			this.edtPassword.Size = new System.Drawing.Size(104, 20);
 			this.edtPassword.TabIndex = 5;
 			this.edtPassword.Text = "clevertester";

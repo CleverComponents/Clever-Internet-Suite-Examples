@@ -47,6 +47,7 @@
 |[Single Downloader](./CBuilder/SingleDownloader)|Downloads single URL to the local file or into the memory via HTTP, HTTPS or FTP protocols.|
 |[Single Uploader](./CBuilder/SingleUploader)|Uploads a single local file onto the web server via HTTP, HTTPS or FTP protocols.|
 |[SMIME](./CBuilder/SMime)|Builds, signs and encrypts email messages.|
+|[SMTP Client (Proxy)](./CBuilder/SmtpClientProxy)|Demonstrates how to send e-mail via an HTTP Connect proxy.|
 |[SMTP Client (SSL)](./CBuilder/SmtpClientSSL)|Represents SMTP client with full SSL / TLS data encryption support.|
 |[SMTP Relay](./CBuilder/SmtpRelay)|Creates e-mail and sends it directly to the recipient's server.|
 |[SMTP Server](./CBuilder/SmtpServer)|Implements a fully functional SMTP server with keeping messages on the disk like MDaemon.|

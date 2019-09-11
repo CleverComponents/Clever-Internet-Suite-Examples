@@ -53,6 +53,7 @@ Partial Class Form1
         '
         Me.edtPassword.Location = New System.Drawing.Point(483, 37)
         Me.edtPassword.Name = "edtPassword"
+        Me.edtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.edtPassword.Size = New System.Drawing.Size(111, 20)
         Me.edtPassword.TabIndex = 39
         Me.edtPassword.Text = "clevertester"

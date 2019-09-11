@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, clTcpClient, clTcpClientTls, clMC, clImap4, ImgList, clCertificate,
-  clMailMessage, clTcpCommandClient, clOAuth, DemoBaseFormUnit, ExtCtrls;
+  clMailMessage, clTcpCommandClient, clOAuth, DemoBaseFormUnit, ExtCtrls, clSocketUtils;
 
 type
   TForm1 = class(TclDemoBaseForm)
@@ -30,6 +30,7 @@ type
     procedure btnLogoutClick(Sender: TObject);
     procedure tvFoldersChange(Sender: TObject; Node: TTreeNode);
     procedure lvMessagesClick(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     FChanging: Boolean;
     procedure FillFolderList;
@@ -50,26 +51,34 @@ implementation
 
 procedure TForm1.btnLoginClick(Sender: TObject);
 begin
-  if clImap.Active then Exit;
+  if clImap.Active or clOAuth1.Active then Exit;
 
-  clOAuth1.AuthUrl := 'https://accounts.google.com/o/oauth2/auth';
-  clOAuth1.TokenUrl := 'https://accounts.google.com/o/oauth2/token';
-  clOAuth1.RedirectUrl := 'http://localhost';
-  clOAuth1.ClientID := '421475025220-6khpgoldbdsi60fegvjdqk2bk4v19ss2.apps.googleusercontent.com';
-  clOAuth1.ClientSecret := '_4HJyAVUmH_iVrPB8pOJXjR1';
-  clOAuth1.Scope := 'https://mail.google.com/';
+  EnableControls(False);
+  try
+    clOAuth1.AuthUrl := 'https://accounts.google.com/o/oauth2/auth';
+    clOAuth1.TokenUrl := 'https://accounts.google.com/o/oauth2/token';
+    clOAuth1.RedirectUrl := 'http://localhost';
 
-  clImap.Server := 'imap.gmail.com';
-  clImap.Port := 993;
-  clImap.UseTLS := ctImplicit;
+    //You need to specify both Client ID and Client Secret of your Google API Project.
+    clOAuth1.ClientID := '421475025220-6khpgoldbdsi60fegvjdqk2bk4v19ss2.apps.googleusercontent.com';
+    clOAuth1.ClientSecret := '_4HJyAVUmH_iVrPB8pOJXjR1';
 
-  clImap.UserName := edtUser.Text;
+    clOAuth1.Scope := 'https://mail.google.com/';
 
-  clImap.Authorization := clOAuth1.GetAuthorization();
+    clImap.Server := 'imap.gmail.com';
+    clImap.Port := 993;
+    clImap.UseTLS := ctImplicit;
 
-  clImap.Open();
+    clImap.UserName := edtUser.Text;
 
-  FillFolderList();
+    clImap.Authorization := clOAuth1.GetAuthorization();
+
+    clImap.Open();
+
+    FillFolderList();
+  finally
+    EnableControls(True);
+  end;
 end;
 
 procedure TForm1.FillFolderList;
@@ -138,7 +147,18 @@ end;
 
 procedure TForm1.btnLogoutClick(Sender: TObject);
 begin
-  clImap.Close();
+  try
+    clOAuth1.Close();
+  except
+    on EclSocketError do;
+  end;
+
+  try
+    clImap.Close();
+  except
+    on EclSocketError do;
+  end;
+
   tvFolders.Items.Clear();
   lvMessages.Clear();
   ClearMessage();
@@ -156,6 +176,31 @@ begin
       clImap.SelectMailBox(GetFolderName(tvFolders.Selected));
     end;
     FillMessages();
+  finally
+    FChanging := False;
+    EnableControls(True);
+  end;
+end;
+
+procedure TForm1.lvMessagesClick(Sender: TObject);
+begin
+  if (FChanging) then Exit;
+
+  FChanging := True;
+  try
+    EnableControls(False);
+
+    if clImap.Active and (lvMessages.Selected <> nil) then
+    begin
+      clImap.RetrieveMessage(Integer(lvMessages.Selected.Data), clMailMessage);
+
+      edtFrom.Text := clMailMessage.From.FullAddress;
+      edtSubject.Text := clMailMessage.Subject;
+      memBody.Lines := clMailMessage.MessageText;
+    end else
+    begin
+      ClearMessage();
+    end;
   finally
     FChanging := False;
     EnableControls(True);
@@ -196,6 +241,15 @@ begin
   end;
 end;
 
+procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  CanClose := (not clImap.Active) and (not clOAuth1.Active);
+  if (not CanClose) then
+  begin
+    ShowMessage('Cannot close the application, please log out first.');
+  end;
+end;
+
 procedure TForm1.FillMessage(AItem: TListItem);
 var
   Index: Integer;
@@ -219,35 +273,9 @@ begin
   memBody.Lines.Clear();
 end;
 
-procedure TForm1.lvMessagesClick(Sender: TObject);
-begin
-  if (FChanging) then Exit;
-
-  FChanging := True;
-  try
-    EnableControls(False);
-
-    if clImap.Active and (lvMessages.Selected <> nil) then
-    begin
-      clImap.RetrieveMessage(Integer(lvMessages.Selected.Data), clMailMessage);
-
-      edtFrom.Text := clMailMessage.From.FullAddress;
-      edtSubject.Text := clMailMessage.Subject;
-      memBody.Lines := clMailMessage.MessageText;
-    end else
-    begin
-      ClearMessage();
-    end;
-  finally
-    FChanging := False;
-    EnableControls(True);
-  end;
-end;
-
 procedure TForm1.EnableControls(AEnabled: Boolean);
 begin
   btnLogin.Enabled := AEnabled;
-  btnLogout.Enabled := AEnabled;
   tvFolders.Enabled := AEnabled;
   lvMessages.Enabled := AEnabled;
   edtFrom.Enabled := AEnabled;

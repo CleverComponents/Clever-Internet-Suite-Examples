@@ -2,7 +2,7 @@ inherited Form1: TForm1
   Left = 284
   Top = 202
   Caption = 'Certificates Manager - Sample'
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Tahoma'
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13

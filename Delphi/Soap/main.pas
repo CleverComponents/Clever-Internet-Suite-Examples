@@ -5,27 +5,28 @@ interface
 {$I ..\Common\Defines.inc}
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, clHttpRequest, clSoapMessage, clTcpClient, clHttp, clTranslator, msxml, clXmlUtils,
-  clTcpClientTls, DemoBaseFormUnit, ExtCtrls;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, clHttpRequest,
+  DemoBaseFormUnit, clSoapMessage, clTcpClient, clTcpClientTls, clHttp, msxml,
+  ExtCtrls;
 
 type
   TForm1 = class(TclDemoBaseForm)
-    Label1: TLabel;
-    Label3: TLabel;
-    btnStart: TButton;
-    Label4: TLabel;
-    edtLatitude: TEdit;
-    clSoapMessage: TclSoapMessage;
-    Label5: TLabel;
     clHttp1: TclHttp;
-    edtAddress: TEdit;
+    clSoapMessage1: TclSoapMessage;
+    btnC2F: TButton;
+    edtCelsius: TEdit;
+    edtFahrenheit: TEdit;
+    Label1: TLabel;
     Label2: TLabel;
-    edtLongitude: TEdit;
-    procedure btnStartClick(Sender: TObject);
+    btnF2C: TButton;
+    Label3: TLabel;
+    rbUseSoapWsdl: TRadioButton;
+    rbUseSoapXml: TRadioButton;
+    procedure btnC2FClick(Sender: TObject);
+    procedure btnF2CClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
-    procedure ExtractCoordinates(const AResponse: string);
     { Private declarations }
   public
     { Public declarations }
@@ -38,58 +39,92 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.ExtractCoordinates(const AResponse: string);
+procedure TForm1.btnC2FClick(Sender: TObject);
 var
+  request, response: string;
   dom: IXMLDomDocument;
   node: IXMLDOMNode;
 begin
-  dom := CoDOMDocument.Create();
-  dom.loadXML(WideString(AResponse));
+  edtFahrenheit.Text := '';
 
-  node := dom.selectSingleNode('//geo:lat');
-  if (node <> nil) then
+  if (rbUseSoapWsdl.Checked) then
   begin
-    edtLatitude.Text := GetNodeText(node);
+    clSoapMessage1.BuildSoapWSDL(
+      'https://www.w3schools.com/xml/',
+      'CelsiusToFahrenheit',
+      ['Celsius'], [edtCelsius.Text]);
+  end else
+  begin
+    request :=
+      '<?xml version="1.0" encoding="utf-8"?>' +
+      '<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">' +
+      '  <soap12:Body>' +
+      '    <CelsiusToFahrenheit xmlns="https://www.w3schools.com/xml/">' +
+      '      <Celsius>' + edtCelsius.Text + '</Celsius>' +
+      '    </CelsiusToFahrenheit>' +
+      '  </soap12:Body>' +
+      '</soap12:Envelope>';
+
+    clSoapMessage1.BuildSoapMessage(request);
   end;
 
-  node := dom.selectSingleNode('//geo:long');
+  response := clHttp1.Post('https://www.w3schools.com/xml/tempconvert.asmx', clSoapMessage1);
+
+  dom := CoDOMDocument.Create();
+  dom.loadXML(WideString(response));
+
+  node := dom.selectSingleNode('//CelsiusToFahrenheitResult');
   if (node <> nil) then
   begin
-    edtLongitude.Text := GetNodeText(node);
+    edtFahrenheit.Text := string(node.text);
   end;
 end;
 
-procedure TForm1.btnStartClick(Sender: TObject);
+procedure TForm1.btnF2CClick(Sender: TObject);
 var
-  msg, response: TStrings;
+  request, response: string;
+  dom: IXMLDomDocument;
+  node: IXMLDOMNode;
 begin
-  edtLatitude.Text := '';
-  edtLongitude.Text := '';
+  edtCelsius.Text := '';
 
-  msg := TStringList.Create();
-  response := TStringList.Create();
-  try
-    msg.Add('<?xml version="1.0" encoding="utf-8"?>');
-    msg.Add('<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">');
-    msg.Add('<SOAP-ENV:Body><ns1:geocode xmlns:ns1="http://rpc.geocoder.us/Geo/Coder/US">');
-    msg.Add('<location>' + TclTranslator.TranslateToUtf8(edtAddress.Text) + '</location>');
-    msg.Add('</ns1:geocode></SOAP-ENV:Body></SOAP-ENV:Envelope>');
+  if (rbUseSoapWsdl.Checked) then
+  begin
+    clSoapMessage1.BuildSoapWSDL(
+      'https://www.w3schools.com/xml/',
+      'FahrenheitToCelsius',
+      ['Fahrenheit'], [edtFahrenheit.Text]);
+  end else
+  begin
+    request :=
+      '<?xml version="1.0" encoding="utf-8"?>' +
+      '<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">' +
+      '  <soap12:Body>' +
+      '    <FahrenheitToCelsius xmlns="https://www.w3schools.com/xml/">' +
+      '      <Fahrenheit>' + edtFahrenheit.Text + '</Fahrenheit>' +
+      '    </FahrenheitToCelsius>' +
+      '  </soap12:Body>' +
+      '</soap12:Envelope>';
 
-    clSoapMessage.BuildSoapMessage(msg, 'http://rpc.geocoder.us/Geo/Coder/US#geocode');
+    clSoapMessage1.BuildSoapMessage(request);
+  end;
 
-    clHttp1.Post('http://geocoder.us/service/soap', response);
+  response := clHttp1.Post('https://www.w3schools.com/xml/tempconvert.asmx', clSoapMessage1);
 
-    ExtractCoordinates(response.Text);
-  finally
-    response.Free();
-    msg.Free();
+  dom := CoDOMDocument.Create();
+  dom.loadXML(WideString(response));
+
+  node := dom.selectSingleNode('//FahrenheitToCelsiusResult');
+  if (node <> nil) then
+  begin
+    edtCelsius.Text := string(node.text);
   end;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
  {$IFDEF DELPHIX101}
-  Height := 297;
+  Height := 294;
  {$ENDIF}
 end;
 
