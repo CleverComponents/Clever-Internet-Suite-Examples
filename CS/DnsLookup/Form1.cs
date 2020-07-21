@@ -39,7 +39,7 @@ namespace DnsLookup
 			//
 			InitializeComponent();
 
-			cbNameType.SelectedIndex = 0;
+			cbNameType.SelectedIndex = 1;
 			//
 			// TODO: Add any constructor code after InitializeComponent call
 			//

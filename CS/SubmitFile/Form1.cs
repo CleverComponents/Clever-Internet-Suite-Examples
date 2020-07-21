@@ -212,7 +212,7 @@ namespace SubmitFile
 			httpRequest1.AddSubmitFile("FileName", edtName.Text);
 
 			try {
-				memResult.Lines = http1.Post(edtHost.Text);
+				memResult.Text = http1.Post(edtHost.Text);
 				http1.Close();
 				MessageBox.Show("Process completed successfully.");
 			}

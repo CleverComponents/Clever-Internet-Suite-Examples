@@ -78,6 +78,7 @@ void __fastcall TForm1::btnExportClick(TObject *)
 
     if (dlg->ShowModal() == mrOk) {
       clCertificateStore1->ExportToPFX(cert, dlg->edtFileName->Text, dlg->edtPassword->Text, dlg->cbIncludeAll->Checked);
+      ShowMessage("Done");
     }
   }
   __finally {

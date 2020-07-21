@@ -23,8 +23,8 @@ int main(int argc, char* argv[])
 {
   if(argc < 4)
   {
-    MessageBox(0, "This is console app which encodes / decodes an amount of data from the file specified.\n"
-      "Usage: Encoder.exe srcfile destfile operation[E][D] method[QP][BASE64][UUE]", "Information", 0);
+	printf("This console app encodes / decodes files in Base64, Quoted-Printable, and UUEncode formats.\n");
+	printf("Usage: Encoder.exe srcfile destfile operation[E][D] method[QP][BASE64][UUE]\n");
     return 0;
   }
   TclEncoder *Encoder = NULL;

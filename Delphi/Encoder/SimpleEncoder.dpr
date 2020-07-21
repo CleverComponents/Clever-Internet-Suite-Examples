@@ -30,8 +30,8 @@ var
 begin
   if ParamCount < 4 then
   begin
-    MessageBox(0, 'This is console app which encodes / decodes an amount of data from the file specified.'#13#10
-      + 'Usage: Encoder.exe srcfile destfile operation[E][D] method[QP][BASE64][UUE]', 'Information', 0);
+    WriteLn('This console app encodes / decodes files in Base64, Quoted-Printable, and UUEncode formats.');
+    WriteLn('Usage: Encoder.exe srcfile destfile operation[E][D] method[QP][BASE64][UUE]');
     Exit;
   end;
   Encoder := nil;

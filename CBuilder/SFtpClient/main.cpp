@@ -188,13 +188,14 @@ void __fastcall TMainForm::btnDownloadClick(TObject *Sender)
         ProgressBar->Max = size;
         ProgressBar->Position = position;
         clSFtp1->GetFile(lbList->Items->Strings[lbList->ItemIndex], stream, position, size);
-        ShowMessage("Done");
-      }
-      __finally
-      {
-        delete stream;
-      }
-    }
+	  }
+	  __finally
+	  {
+		delete stream;
+	  }
+
+      ShowMessage("Done");
+	}
   }
 }
 //---------------------------------------------------------------------------
@@ -226,13 +227,14 @@ void __fastcall TMainForm::btnUploadClick(TObject *Sender)
       ProgressBar->Max = stream->Size;
       ProgressBar->Position = position;
       clSFtp1->PutFile(stream, fileName, position, stream->Size - position);
-      ShowMessage("Done");
-    }
-    __finally
-    {
-      delete stream;
-    }
-    FillDirList();
+	}
+	__finally
+	{
+	  delete stream;
+	}
+
+	FillDirList();
+	ShowMessage("Done");
   }
 }
 //---------------------------------------------------------------------------

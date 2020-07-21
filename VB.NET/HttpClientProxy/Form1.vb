@@ -319,7 +319,7 @@ Public Class Form1
             If cbShowText.Checked Then
                 HtmlParser1.Parse(Http1.Get(edtUrl.Text))
             Else
-                memResult.Lines = Http1.Get(edtUrl.Text)
+                memResult.Text = Http1.Get(edtUrl.Text)
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)

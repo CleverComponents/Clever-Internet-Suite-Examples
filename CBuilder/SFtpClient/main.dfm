@@ -2,7 +2,6 @@ inherited MainForm: TMainForm
   Left = 367
   Top = 127
   Caption = 'SFTP Client'
-  Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
@@ -11,14 +10,14 @@ inherited MainForm: TMainForm
     object Label3: TLabel
       Left = 15
       Top = 230
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
     object Label1: TLabel
       Left = 11
       Top = 13
-      Width = 37
+      Width = 36
       Height = 13
       Caption = 'IP/Host'
     end
@@ -39,14 +38,14 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 11
       Top = 68
-      Width = 38
+      Width = 40
       Height = 13
       Caption = 'Start Dir'
     end
     object Label6: TLabel
       Left = 440
       Top = 13
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end

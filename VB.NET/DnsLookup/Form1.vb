@@ -11,7 +11,7 @@ Public Class Form1
         'This call is required by the Windows Form Designer.
         InitializeComponent()
 
-        cbNameType.SelectedIndex = 0
+        cbNameType.SelectedIndex = 1
         'Add any initialization after the InitializeComponent() call
 
     End Sub
@@ -47,21 +47,27 @@ Public Class Form1
     Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.DnsQuery1 = New CleverComponents.InetSuite.DnsQuery
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.memResult = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.btnResolve = New System.Windows.Forms.Button
-        Me.cbNameType = New System.Windows.Forms.ComboBox
-        Me.edtName = New System.Windows.Forms.TextBox
-        Me.edtTimeOut = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtDnsServer = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Me.DnsQuery1 = New CleverComponents.InetSuite.DnsQuery()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.memResult = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.btnResolve = New System.Windows.Forms.Button()
+        Me.cbNameType = New System.Windows.Forms.ComboBox()
+        Me.edtName = New System.Windows.Forms.TextBox()
+        Me.edtTimeOut = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtDnsServer = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
+        '
+        'DnsQuery1
+        '
+        Me.DnsQuery1.RootNameServers = Nothing
+        Me.DnsQuery1.Server = Nothing
+        Me.DnsQuery1.UseIpV6 = False
         '
         'edtPort
         '
@@ -88,7 +94,6 @@ Public Class Form1
         Me.memResult.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memResult.Size = New System.Drawing.Size(400, 160)
         Me.memResult.TabIndex = 23
-        Me.memResult.Text = ""
         '
         'label5
         '
@@ -145,7 +150,6 @@ Public Class Form1
         Me.edtDnsServer.Name = "edtDnsServer"
         Me.edtDnsServer.Size = New System.Drawing.Size(72, 20)
         Me.edtDnsServer.TabIndex = 15
-        Me.edtDnsServer.Text = "192.168.0.1"
         '
         'label3
         '
@@ -192,6 +196,7 @@ Public Class Form1
         Me.Name = "Form1"
         Me.Text = "DNS Query demo"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -273,6 +278,10 @@ Public Class Form1
             FillHostResult()
             FillNameServerResult()
             FillAliasResult()
+
+            If (StringUtils.IsEmpty(edtDnsServer.Text)) Then
+                edtDnsServer.Text = DnsQuery1.Server
+            End If
 
             MessageBox.Show("Done")
         Catch ex As Exception

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.IO;
 using CleverComponents.InetSuite;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SMime
 {
@@ -373,7 +374,7 @@ namespace SMime
 
 		private void cbDetachedSignature_CheckedChanged(object sender, System.EventArgs e) {
 			sMimeMessage1.IsDetachedSignature = cbDetachedSignature.Checked;
-			sMimeMessage1.IsIncludeCertificate = cbIncludeCertificate.Checked;
+			sMimeMessage1.IncludeCertificateOption = cbIncludeCertificate.Checked ? X509IncludeOption.WholeChain : X509IncludeOption.None;
 		}
 
 		private void btnNewMessage_Click(object sender, System.EventArgs e) {

@@ -11,11 +11,8 @@ uses
 
 type
   TMainForm = class(TclDemoBaseForm)
-    btnStart: TButton;
-    btnStop: TButton;
     memLog: TMemo;
     edtPort: TEdit;
-    Label1: TLabel;
     Label2: TLabel;
     clFtpServer1: TclFtpServer;
     Label3: TLabel;
@@ -32,6 +29,9 @@ type
     memBlackList: TMemo;
     memWhiteList: TMemo;
     cbWhiteListOnly: TCheckBox;
+    btnStop: TButton;
+    btnStart: TButton;
+    Label1: TLabel;
     procedure clFtpServer1Stop(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);

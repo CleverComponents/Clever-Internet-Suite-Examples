@@ -221,9 +221,7 @@ Public Class Form1
         HttpRequest1.Items.FormFieldByName("Account").FieldValue = edtAccount.Text
 
         Try
-            Dim response As String()
-            response = Http1.Post(edtHost.Text)
-            memResult.Lines = response
+            memResult.Text = Http1.Post(edtHost.Text)
             Http1.Close()
             MessageBox.Show("Process completed successfully.")
         Catch ex As Exception

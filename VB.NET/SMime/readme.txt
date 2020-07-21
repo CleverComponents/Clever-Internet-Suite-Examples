@@ -13,13 +13,12 @@ From field value the same as in your certificate.
 Here is a list of the certifying authorities from which you can get
 digital ID / certificate:
 
-Verisign - http://www.verisign.com/
-GlobalSign - http://www.globalsign.net/
-BT - http://www.btplc.com/index.cfm
-Thawte Certification - http://www.thawte.com/
+Verisign - https://www.verisign.com/
+Comodo - https://www.comodo.com/
+Thawte Certification - https://www.thawte.com/
 
-Please feel free to write us at support@clevercomponents.com if you
-have any questions or concerns.
+Please feel free to visit our Customer Portal
+https://www.clevercomponents.com/portal
 
 Clever Components Team
 www.CleverComponents.com

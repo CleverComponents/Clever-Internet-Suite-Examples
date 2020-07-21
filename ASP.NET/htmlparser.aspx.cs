@@ -48,7 +48,7 @@ namespace inetsuitedemocs
 		#endregion
 
 		protected void Button1_Click(object sender, System.EventArgs e) {
-			string[] html = http1.Get(edtUrl.Text);
+			string html = http1.Get(edtUrl.Text);
 			htmlparser1.Parse(html);
 
 			DataTable links = new DataTable();

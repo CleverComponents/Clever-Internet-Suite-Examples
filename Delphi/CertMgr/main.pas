@@ -108,7 +108,7 @@ begin
       PrepareStore(dlg);
 
       issuer := TclCertificate(lvCertificates.Items[lvCertificates.ItemIndex].Data);
-      cert := clCertificateStore1.CreateSigned(issuer, dlg.BuildSubjectString(), StrToInt(dlg.edtSerial.Text));
+      cert := clCertificateStore1.CreateSigned(issuer, dlg.BuildSubjectString(), dlg.edtSerial.Text);
       clCertificateStore1.Items.Add(cert);
       cert.FriendlyName := dlg.edtFriendlyName.Text;
 
@@ -169,6 +169,7 @@ begin
     if dlg.ShowModal() = mrOk then
     begin
       clCertificateStore1.ExportToPFX(cert, dlg.edtFileName.Text, dlg.edtPassword.Text, dlg.cbIncludeAll.Checked);
+      ShowMessage('Done');
     end;
   finally
     dlg.Free();
@@ -227,7 +228,7 @@ begin
     begin
       PrepareStore(dlg);
 
-      cert := clCertificateStore1.CreateSelfSigned(dlg.BuildSubjectString(), StrToInt(dlg.edtSerial.Text));
+      cert := clCertificateStore1.CreateSelfSigned(dlg.BuildSubjectString(), dlg.edtSerial.Text);
       clCertificateStore1.Items.Add(cert);
       cert.FriendlyName := dlg.edtFriendlyName.Text;
 

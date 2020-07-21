@@ -354,7 +354,7 @@ namespace HttpClientProxy
 				if(cbShowText.Checked)
 					htmlParser1.Parse(http1.Get(edtUrl.Text));
 				else
-					memResult.Lines = http1.Get(edtUrl.Text);
+					memResult.Text = http1.Get(edtUrl.Text);
 			}
 			catch (Exception ex) {
 				MessageBox.Show(ex.Message);

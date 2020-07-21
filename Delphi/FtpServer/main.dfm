@@ -1,27 +1,20 @@
 inherited MainForm: TMainForm
   Left = 305
   Top = 153
-  Height = 513
+  Height = 456
   Caption = 'Clever FTP Server - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 396
-    object Label1: TLabel
-      Left = 9
-      Top = 256
-      Width = 18
-      Height = 13
-      Caption = 'Log'
-    end
+    Height = 340
     object Label2: TLabel
       Left = 10
       Top = 58
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -35,8 +28,8 @@ inherited MainForm: TMainForm
     object Label4: TLabel
       Left = 8
       Top = 8
-      Width = 387
-      Height = 13
+      Width = 545
+      Height = 17
       Caption = 
         'This is a sample FTP server. You can use any FTP client to conne' +
         'ct to this server.'
@@ -51,7 +44,7 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 8
       Top = 32
-      Width = 454
+      Width = 452
       Height = 13
       Caption = 
         'Please use the "CleverTester" user name and "clevertester" passw' +
@@ -64,33 +57,22 @@ inherited MainForm: TMainForm
       ParentFont = False
       WordWrap = True
     end
-    object btnStart: TButton
-      Left = 165
-      Top = 235
-      Width = 75
-      Height = 25
-      Caption = 'Start'
-      TabOrder = 3
-      OnClick = btnStartClick
-    end
-    object btnStop: TButton
-      Left = 253
-      Top = 235
-      Width = 75
-      Height = 25
-      Caption = 'Stop'
-      TabOrder = 4
-      OnClick = btnStopClick
+    object Label1: TLabel
+      Left = 9
+      Top = 240
+      Width = 17
+      Height = 13
+      Caption = 'Log'
     end
     object memLog: TMemo
       Left = 0
-      Top = 274
+      Top = 240
       Width = 623
-      Height = 122
+      Height = 100
       Align = alBottom
       ReadOnly = True
       ScrollBars = ssVertical
-      TabOrder = 5
+      TabOrder = 3
     end
     object edtPort: TEdit
       Left = 36
@@ -103,7 +85,7 @@ inherited MainForm: TMainForm
     object edtRootDir: TEdit
       Left = 148
       Top = 56
-      Width = 461
+      Width = 365
       Height = 21
       TabOrder = 1
       Text = 'C:\CleverFtpServer\'
@@ -111,21 +93,21 @@ inherited MainForm: TMainForm
     object GroupBox1: TGroupBox
       Left = 8
       Top = 82
-      Width = 601
-      Height = 147
+      Width = 505
+      Height = 151
       Caption = 'Server Guard settings'
       TabOrder = 2
       object Label6: TLabel
         Left = 11
         Top = 16
-        Width = 243
+        Width = 249
         Height = 13
         Caption = 'Allowed Connections from the same host per minute'
       end
       object Label7: TLabel
         Left = 11
         Top = 35
-        Width = 59
+        Width = 56
         Height = 13
         Caption = 'Black IP List'
       end
@@ -147,7 +129,7 @@ inherited MainForm: TMainForm
       object memBlackList: TMemo
         Left = 11
         Top = 54
-        Width = 310
+        Width = 222
         Height = 67
         Lines.Strings = (
           '192.168.0.*'
@@ -156,21 +138,39 @@ inherited MainForm: TMainForm
         TabOrder = 1
       end
       object memWhiteList: TMemo
-        Left = 336
+        Left = 267
         Top = 54
-        Width = 249
+        Width = 222
         Height = 67
         ScrollBars = ssVertical
         TabOrder = 2
       end
       object cbWhiteListOnly: TCheckBox
-        Left = 336
+        Left = 266
         Top = 124
         Width = 159
         Height = 17
         Caption = 'Allow Whitelist only'
         TabOrder = 3
       end
+    end
+    object btnStop: TButton
+      Left = 533
+      Top = 87
+      Width = 75
+      Height = 25
+      Caption = 'Stop'
+      TabOrder = 4
+      OnClick = btnStopClick
+    end
+    object btnStart: TButton
+      Left = 533
+      Top = 53
+      Width = 75
+      Height = 25
+      Caption = 'Start'
+      TabOrder = 5
+      OnClick = btnStartClick
     end
   end
   object clFtpServer1: TclFtpServer

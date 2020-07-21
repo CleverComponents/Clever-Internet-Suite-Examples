@@ -2,7 +2,6 @@ inherited Form1: TForm1
   Left = 284
   Top = 202
   Caption = 'Certificates Manager - Sample'
-  Font.Name = 'Tahoma'
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -10,21 +9,21 @@ inherited Form1: TForm1
     object Label1: TLabel
       Left = 16
       Top = 8
-      Width = 106
+      Width = 107
       Height = 13
       Caption = 'System Store Location'
     end
     object Label2: TLabel
       Left = 16
       Top = 40
-      Width = 93
+      Width = 94
       Height = 13
       Caption = 'System Store Name'
     end
     object Label3: TLabel
       Left = 16
       Top = 64
-      Width = 52
+      Width = 55
       Height = 13
       Caption = 'Certificates'
     end
@@ -34,7 +33,6 @@ inherited Form1: TForm1
       Width = 145
       Height = 21
       Style = csDropDownList
-      ItemHeight = 13
       ItemIndex = 0
       TabOrder = 0
       Text = 'Current User'
@@ -47,7 +45,6 @@ inherited Form1: TForm1
       Top = 40
       Width = 145
       Height = 21
-      ItemHeight = 13
       ItemIndex = 0
       TabOrder = 1
       Text = 'MY'

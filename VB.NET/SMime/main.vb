@@ -345,7 +345,11 @@ Public Class MainForm
 
     Private Sub btnSign_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSign.Click
         SMimeMessage1.IsDetachedSignature = cbDetachedSignature.Checked
-        SMimeMessage1.IsIncludeCertificate = cbIncludeCertificate.Checked
+        If cbIncludeCertificate.Checked Then
+            SMimeMessage1.IncludeCertificateOption = Security.Cryptography.X509Certificates.X509IncludeOption.WholeChain
+        Else
+            SMimeMessage1.IncludeCertificateOption = Security.Cryptography.X509Certificates.X509IncludeOption.None
+        End If
 
         If saveFileDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
             BuildMessage()
@@ -376,7 +380,11 @@ Public Class MainForm
 
     Private Sub btnEncrypt_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEncrypt.Click
         SMimeMessage1.IsDetachedSignature = cbDetachedSignature.Checked
-        SMimeMessage1.IsIncludeCertificate = cbIncludeCertificate.Checked
+        If cbIncludeCertificate.Checked Then
+            SMimeMessage1.IncludeCertificateOption = Security.Cryptography.X509Certificates.X509IncludeOption.WholeChain
+        Else
+            SMimeMessage1.IncludeCertificateOption = Security.Cryptography.X509Certificates.X509IncludeOption.None
+        End If
 
         If saveFileDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
             BuildMessage()
@@ -407,7 +415,11 @@ Public Class MainForm
 
     Private Sub btnSignEncrypt_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSignEncrypt.Click
         SMimeMessage1.IsDetachedSignature = cbDetachedSignature.Checked
-        SMimeMessage1.IsIncludeCertificate = cbIncludeCertificate.Checked
+        If cbIncludeCertificate.Checked Then
+            SMimeMessage1.IncludeCertificateOption = Security.Cryptography.X509Certificates.X509IncludeOption.WholeChain
+        Else
+            SMimeMessage1.IncludeCertificateOption = Security.Cryptography.X509Certificates.X509IncludeOption.None
+        End If
 
         If saveFileDialog.ShowDialog() = Windows.Forms.DialogResult.OK Then
             BuildMessage()

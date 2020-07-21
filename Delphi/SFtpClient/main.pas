@@ -273,11 +273,11 @@ begin
         ProgressBar.Position := position;
 
         clSFtp1.GetFile(lbList.Items[lbList.ItemIndex], stream, position, size);
-
-        ShowMessage('Done');
       finally
         stream.Free();
       end;
+
+      ShowMessage('Done');
     end;
   end;
 end;
@@ -313,12 +313,13 @@ begin
       ProgressBar.Position := position;
 
       clSFtp1.PutFile(stream, fileName, position, stream.Size - position);
-
-      ShowMessage('Done');
     finally
       stream.Free();
     end;
+
     FillDirList();
+
+    ShowMessage('Done');
   end;
 end;
 
