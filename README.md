@@ -1,6 +1,6 @@
 # Clever Internet Suite Examples
 
-<img align="left" src="https://www.clevercomponents.com/images/suite95-splash.jpg"/>
+<img align="left" src="https://www.clevercomponents.com/images/suite96-splash.jpg"/>
 
 These example projects are simple demos, and by no means complete applications.
 
