@@ -1,10 +1,14 @@
 # Clever Internet Suite Examples
 
-<img align="left" src="https://www.clevercomponents.com/images/suite96-splash.jpg"/>
+<img align="left" src="https://www.clevercomponents.com/images/suite10-splash.jpg"/>
 
 These example projects are simple demos, and by no means complete applications.
 
 They are intended to demonstrate the usage of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) components in your code.
+
+## What's new
+
+[SFTP server (FTP+SSH)](./Delphi/SFtpServer) - The example implements a fully functional SFTP server with multi-session support, which works via the SSH File Transfer Protocol.
 
 ## Clever Internet Suite Demos for Delphi
 
@@ -52,6 +56,7 @@ See also:  [Demos for C++Builder](DemosCBuilder.md), [Demos for C# .NET](DemosCS
 |[Resume Downloading](./Delphi/Resuming)|Resumes broken or stopped downloads from where they left off on both HTTP and HTTPS servers.|
 |[RSS Feed client](./Delphi/RssFeed)|Allows editing of RSS feed XML, load and save it to the disk.|
 |[SFTP client (FTP+SSH)](./Delphi/SFtpClient)|Uploads and downloads files, as well as manages files and directories via the SSH File Transfer Protocol.|
+|[SFTP server (FTP+SSH)](./Delphi/SFtpServer)|Implements a fully functional SFTP server with multi-session support, which works via the SSH File Transfer Protocol.|
 |[Single Downloader](./Delphi/SingleDownloader)|Downloads single URL to the local file or into the memory via HTTP, HTTPS or FTP protocols.|
 |[Single Uploader](./Delphi/SingleUploader)|Uploads a single local file onto the web server via HTTP, HTTPS or FTP protocols.|
 |[SMIME](./Delphi/SMime)|Builds, signs and encrypts email messages.|
