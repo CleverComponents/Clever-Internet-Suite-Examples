@@ -225,12 +225,13 @@ inherited MainForm: TMainForm
   end
   object clSFtp1: TclSFtp
     SshAgent = 'Clever_Internet_Suite'
+    OnVerifyServer = clSFtp1VerifyServer
+    OnShowBanner = clSFtp1ShowBanner
+    CharSet = 'utf-8'
     OnSendCommand = clSFtp1SendCommand
     OnReceiveResponse = clSFtp1ReceiveResponse
     OnProgress = clSFtp1Progress
-    OnVerifyServer = clSFtp1VerifyServer
     OnDirectoryListing = clSFtp1DirectoryListing
-    OnShowBanner = clSFtp1ShowBanner
     Left = 224
     Top = 176
   end

@@ -11,6 +11,7 @@
 #pragma link "clTcpClient"
 #pragma link "DemoBaseFormUnit"
 #pragma link "clSFtp"
+#pragma link "clTcpClientSsh"
 #pragma resource "*.dfm"
 TMainForm *MainForm;
 //---------------------------------------------------------------------------
@@ -317,21 +318,27 @@ void __fastcall TMainForm::clSFtp1Progress(TObject *Sender,
 void __fastcall TMainForm::clSFtp1ReceiveResponse(TObject *Sender,
       int AFxpCommand, TStream *ABuffer)
 {
-  memLog->Lines->Add(Format("S: %s (%d bytes)", ARRAYOFCONST((GetCommandName(AFxpCommand), (int)ABuffer->Size))));
+  if ((AFxpCommand != SSH_FXP_READ) && (AFxpCommand != SSH_FXP_WRITE) && (AFxpCommand != SSH_FXP_READDIR))
+  {
+	memLog->Lines->Add(Format("S: %s (%d bytes)", ARRAYOFCONST((GetCommandName(AFxpCommand), (int)ABuffer->Size))));
+  }
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TMainForm::clSFtp1SendCommand(TObject *Sender, int AFxpCommand,
       TStream *ABuffer)
 {
-  memLog->Lines->Add(Format("C: %s (%d bytes)", ARRAYOFCONST((GetCommandName(AFxpCommand), (int)ABuffer->Size))));
+  if ((AFxpCommand != SSH_FXP_READ) && (AFxpCommand != SSH_FXP_WRITE) && (AFxpCommand != SSH_FXP_READDIR))
+  {
+	memLog->Lines->Add(Format("C: %s (%d bytes)", ARRAYOFCONST((GetCommandName(AFxpCommand), (int)ABuffer->Size))));
+  }
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TMainForm::clSFtp1ShowBanner(TObject *Sender,
       const UnicodeString AMessage, const UnicodeString ALanguage)
 {
-  memLog->Lines->Add("S: " + Trim(AMessage));
+  memLog->Lines->Add("Server Banner: " + Trim(AMessage));
 }
 //---------------------------------------------------------------------------
 

@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, clUtils, newDlg, fileDlg, clTcpClient, clSFtp,
-  clSFtpUtils, DemoBaseFormUnit, ExtCtrls;
+  clSFtpUtils, DemoBaseFormUnit, ExtCtrls, clTcpClientSsh;
 
 type
   TMainForm = class(TclDemoBaseForm)
@@ -339,17 +339,23 @@ end;
 
 procedure TMainForm.clSFtp1ReceiveResponse(Sender: TObject; AFxpCommand: Integer; ABuffer: TStream);
 begin
-  memLog.Lines.Add(Format('S: %s (%d bytes)', [GetCommandName(AFxpCommand), ABuffer.Size]));
+  if not (AFxpCommand in [SSH_FXP_READ, SSH_FXP_WRITE, SSH_FXP_READDIR]) then
+  begin
+    memLog.Lines.Add(Format('S: %s (%d bytes)', [GetCommandName(AFxpCommand), ABuffer.Size]));
+  end;
 end;
 
 procedure TMainForm.clSFtp1SendCommand(Sender: TObject; AFxpCommand: Integer; ABuffer: TStream);
 begin
-  memLog.Lines.Add(Format('C: %s (%d bytes)', [GetCommandName(AFxpCommand), ABuffer.Size]));
+  if not (AFxpCommand in [SSH_FXP_READ, SSH_FXP_WRITE, SSH_FXP_READDIR]) then
+  begin
+    memLog.Lines.Add(Format('C: %s (%d bytes)', [GetCommandName(AFxpCommand), ABuffer.Size]));
+  end;
 end;
 
 procedure TMainForm.clSFtp1ShowBanner(Sender: TObject; const AMessage, ALanguage: string);
 begin
-  memLog.Lines.Add('S: ' + Trim(AMessage));
+  memLog.Lines.Add('Server Banner: ' + Trim(AMessage));
 end;
 
 procedure TMainForm.clSFtp1VerifyServer(Sender: TObject; const AHost,

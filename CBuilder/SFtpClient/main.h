@@ -14,6 +14,7 @@
 #include <ExtCtrls.hpp>
 #include <Graphics.hpp>
 #include <clSFtp.hpp>
+#include "clTcpClientSsh.hpp"
 //---------------------------------------------------------------------------
 class TMainForm : public TclDemoBaseForm
 {

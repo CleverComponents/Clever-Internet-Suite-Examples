@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, clFTP, clFTPUtils, clUtils, clTcpClient,
-  ExtCtrls, clTcpClientTls, clTcpCommandClient, DemoBaseFormUnit;
+  ExtCtrls, clTcpClientTls, clTcpCommandClient, DemoBaseFormUnit, clFtpFileInfo;
 
 type
   TMainForm = class(TclDemoBaseForm)

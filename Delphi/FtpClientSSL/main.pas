@@ -8,7 +8,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, clFTP, clFTPUtils, clUtils, newDlg, fileDlg,
   clTcpClient, clTcpClientTls, clCertificateStore, clCertificate,
-  clTcpCommandClient, DemoBaseFormUnit, ExtCtrls;
+  clTcpCommandClient, DemoBaseFormUnit, ExtCtrls, clFtpFileInfo;
 
 type
   TMainForm = class(TclDemoBaseForm)
