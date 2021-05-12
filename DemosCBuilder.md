@@ -44,6 +44,7 @@
 |[Resume Downloading](./CBuilder/Resuming)|Resumes broken or stopped downloads from where they left off on both HTTP and HTTPS servers.|
 |[RSS Feed client](./CBuilder/RssFeed)|Allows editing of RSS feed XML, load and save it to the disk.|
 |[SFTP client (FTP+SSH)](./CBuilder/SFtpClient)|Uploads and downloads files, as well as manages files and directories via the SSH File Transfer Protocol.|
+|[SFTP server (FTP+SSH)](./CBuilder/SFtpServer)|Implements a fully functional SFTP server with multi-session support, which works via the SSH File Transfer Protocol.|
 |[Single Downloader](./CBuilder/SingleDownloader)|Downloads single URL to the local file or into the memory via HTTP, HTTPS or FTP protocols.|
 |[Single Uploader](./CBuilder/SingleUploader)|Uploads a single local file onto the web server via HTTP, HTTPS or FTP protocols.|
 |[SMIME](./CBuilder/SMime)|Builds, signs and encrypts email messages.|
