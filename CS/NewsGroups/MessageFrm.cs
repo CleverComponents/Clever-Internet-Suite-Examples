@@ -124,6 +124,7 @@ namespace NewsGroups
 			this.btnPost.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnPost.Location = new System.Drawing.Point(304, 272);
 			this.btnPost.Name = "btnPost";
+			this.btnPost.Size = new System.Drawing.Size(75, 23);
 			this.btnPost.TabIndex = 8;
 			this.btnPost.Text = "Post";
 			// 
@@ -132,6 +133,7 @@ namespace NewsGroups
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Location = new System.Drawing.Point(400, 272);
 			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 9;
 			this.btnCancel.Text = "Cancel";
 			// 
@@ -150,8 +152,10 @@ namespace NewsGroups
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "MessageFrm";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Message Details";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

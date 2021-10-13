@@ -55,34 +55,31 @@ Public Class Form1
     Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem
-        Me.SmtpServer1 = New CleverComponents.InetSuite.SmtpServer
-        Me.SmtpFileHandler1 = New CleverComponents.InetSuite.SmtpFileHandler
-        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore
-        Me.cbUseTls = New System.Windows.Forms.ComboBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.label7 = New System.Windows.Forms.Label
-        Me.edtRelayDir = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.cbUseLogin = New System.Windows.Forms.CheckBox
-        Me.memLog = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.btnStop = New System.Windows.Forms.Button
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtMailboxDir = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem()
+        Me.SmtpServer1 = New CleverComponents.InetSuite.SmtpServer()
+        Me.SmtpFileHandler1 = New CleverComponents.InetSuite.SmtpFileHandler()
+        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore()
+        Me.cbUseTls = New System.Windows.Forms.ComboBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.edtRelayDir = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.cbUseLogin = New System.Windows.Forms.CheckBox()
+        Me.memLog = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.btnStop = New System.Windows.Forms.Button()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtMailboxDir = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'SmtpServer1
         '
-        Me.SmtpServer1.CaseInsensitive = True
         Me.SmtpServer1.HelpText = New String() {"Commands Supported:", "HELO EHLO AUTH HELP QUIT MAIL NOOP RSET RCPT DATA STARTTLS"}
-        Me.SmtpServer1.Port = 25
-        Me.SmtpServer1.ServerName = "Clever Internet Suite SMTP service"
         MailUserAccountItem1.DisplayName = "Clever Tester"
         MailUserAccountItem1.Email = "CleverTester@company.mail"
         MailUserAccountItem1.Password = "clevertester"
@@ -94,6 +91,11 @@ Public Class Form1
         Me.SmtpFileHandler1.MailBoxDir = Nothing
         Me.SmtpFileHandler1.RelayDir = Nothing
         Me.SmtpFileHandler1.Server = Me.SmtpServer1
+        '
+        'CertificateStore1
+        '
+        Me.CertificateStore1.ValidFrom = New Date(2021, 10, 6, 20, 1, 54, 324)
+        Me.CertificateStore1.ValidTo = New Date(2022, 10, 6, 20, 1, 54, 324)
         '
         'cbUseTls
         '
@@ -108,6 +110,7 @@ Public Class Form1
         '
         Me.label8.Location = New System.Drawing.Point(200, 136)
         Me.label8.Name = "label8"
+        Me.label8.Size = New System.Drawing.Size(100, 23)
         Me.label8.TabIndex = 51
         Me.label8.Text = "SSL / TLS Mode"
         '
@@ -117,9 +120,9 @@ Public Class Form1
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(400, 40)
         Me.label7.TabIndex = 49
-        Me.label7.Text = "This server uses self-signed server certificate to establish the SSL connection. " & _
-        "In real application you will need to request a certificate from trusted issuer o" & _
-        "r use your own self-signed certificate."
+        Me.label7.Text = "This server uses self-signed server certificate to establish the SSL connection. " &
+    "In real application you will need to request a certificate from trusted issuer o" &
+    "r use your own self-signed certificate."
         '
         'edtRelayDir
         '
@@ -156,7 +159,6 @@ Public Class Form1
         Me.memLog.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memLog.Size = New System.Drawing.Size(440, 112)
         Me.memLog.TabIndex = 45
-        Me.memLog.Text = ""
         '
         'label5
         '
@@ -170,6 +172,7 @@ Public Class Form1
         '
         Me.btnStop.Location = New System.Drawing.Point(232, 256)
         Me.btnStop.Name = "btnStop"
+        Me.btnStop.Size = New System.Drawing.Size(75, 23)
         Me.btnStop.TabIndex = 43
         Me.btnStop.Text = "Stop"
         '
@@ -177,6 +180,7 @@ Public Class Form1
         '
         Me.btnStart.Location = New System.Drawing.Point(104, 256)
         Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 42
         Me.btnStart.Text = "Start"
         '
@@ -218,8 +222,8 @@ Public Class Form1
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(408, 32)
         Me.label2.TabIndex = 37
-        Me.label2.Text = "Please use the ""CleverTester"" user name and ""clevertester"" password to log-in. Th" & _
-        "e user e-mail: CleverTester@company.mail"
+        Me.label2.Text = "Please use the ""CleverTester"" user name and ""clevertester"" password to log-in. Th" &
+    "e user e-mail: CleverTester@company.mail"
         '
         'label1
         '
@@ -227,8 +231,8 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(416, 29)
         Me.label1.TabIndex = 36
-        Me.label1.Text = "This is a sample SMTP SSL / TLS server. You can use any SSL-enabled SMTP client (" & _
-        "such as TclSmtp or MS Outlook client to connect to this server."
+        Me.label1.Text = "This is a sample SMTP SSL / TLS server. You can use any SSL-enabled SMTP client (" &
+    "such as TclSmtp or MS Outlook client to connect to this server."
         '
         'Form1
         '
@@ -252,8 +256,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clever SMTP Server"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

@@ -163,7 +163,7 @@ namespace Pop3Server
 			this.label1.Size = new System.Drawing.Size(416, 29);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "This is a sample POP3 server. You can use any mail client with POP3 support to co" +
-				"nnect to this server.";
+    "nnect to this server.";
 			// 
 			// pop3Server1
 			// 
@@ -183,7 +183,6 @@ namespace Pop3Server
         "LIST",
         "UIDL",
         "STLS"};
-			this.pop3Server1.ServerName = "Clever Internet Suite POP3 service";
 			mailUserAccountItem1.DisplayName = "Clever Tester";
 			mailUserAccountItem1.Password = "clevertester";
 			mailUserAccountItem1.UserName = "CleverTester";
@@ -218,6 +217,7 @@ namespace Pop3Server
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Clever POP3 Server";
 			this.ResumeLayout(false);
 			this.PerformLayout();

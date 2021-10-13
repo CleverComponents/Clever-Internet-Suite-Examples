@@ -105,6 +105,7 @@ namespace SMime
 			this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnOk.Location = new System.Drawing.Point(104, 64);
 			this.btnOk.Name = "btnOk";
+			this.btnOk.Size = new System.Drawing.Size(75, 23);
 			this.btnOk.TabIndex = 4;
 			this.btnOk.Text = "OK";
 			// 
@@ -122,19 +123,20 @@ namespace SMime
 			this.AcceptButton = this.btnOk;
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.ClientSize = new System.Drawing.Size(314, 96);
-			this.Controls.AddRange(new System.Windows.Forms.Control[] {
-																		  this.btnMessage,
-																		  this.btnOk,
-																		  this.edtStore,
-																		  this.edtEmail,
-																		  this.label2,
-																		  this.label1});
+			this.Controls.Add(this.btnMessage);
+			this.Controls.Add(this.btnOk);
+			this.Controls.Add(this.edtStore);
+			this.Controls.Add(this.edtEmail);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "GetCertDialog";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Get Certificate Form";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

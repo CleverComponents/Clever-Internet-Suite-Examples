@@ -65,32 +65,32 @@ Public Class Form1
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnUpload = New System.Windows.Forms.Button
-        Me.btnDownload = New System.Windows.Forms.Button
-        Me.btnCopyMove = New System.Windows.Forms.Button
-        Me.btnUnlock = New System.Windows.Forms.Button
-        Me.btnLock = New System.Windows.Forms.Button
-        Me.btnDelete = New System.Windows.Forms.Button
-        Me.btnMakeDir = New System.Windows.Forms.Button
-        Me.btnModifyProp = New System.Windows.Forms.Button
-        Me.btnGetAllProps = New System.Windows.Forms.Button
-        Me.btnCapabilities = New System.Windows.Forms.Button
-        Me.btnGoUp = New System.Windows.Forms.Button
-        Me.btnOpen = New System.Windows.Forms.Button
-        Me.lvResources = New System.Windows.Forms.ListView
-        Me.columnHeader1 = New System.Windows.Forms.ColumnHeader
-        Me.label5 = New System.Windows.Forms.Label
-        Me.cbDepth = New System.Windows.Forms.ComboBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.edtUser = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.edtHost = New System.Windows.Forms.TextBox
-        Me.label1 = New System.Windows.Forms.Label
-        Me.WebDav1 = New CleverComponents.InetSuite.WebDav
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
+        Me.btnUpload = New System.Windows.Forms.Button()
+        Me.btnDownload = New System.Windows.Forms.Button()
+        Me.btnCopyMove = New System.Windows.Forms.Button()
+        Me.btnUnlock = New System.Windows.Forms.Button()
+        Me.btnLock = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnMakeDir = New System.Windows.Forms.Button()
+        Me.btnModifyProp = New System.Windows.Forms.Button()
+        Me.btnGetAllProps = New System.Windows.Forms.Button()
+        Me.btnCapabilities = New System.Windows.Forms.Button()
+        Me.btnGoUp = New System.Windows.Forms.Button()
+        Me.btnOpen = New System.Windows.Forms.Button()
+        Me.lvResources = New System.Windows.Forms.ListView()
+        Me.columnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.cbDepth = New System.Windows.Forms.ComboBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.edtUser = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.edtHost = New System.Windows.Forms.TextBox()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.WebDav1 = New CleverComponents.InetSuite.WebDav()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.SuspendLayout()
         '
         'btnUpload
@@ -198,6 +198,7 @@ Public Class Form1
         Me.lvResources.Name = "lvResources"
         Me.lvResources.Size = New System.Drawing.Size(376, 264)
         Me.lvResources.TabIndex = 31
+        Me.lvResources.UseCompatibleStateImageBehavior = False
         Me.lvResources.View = System.Windows.Forms.View.Details
         '
         'columnHeader1
@@ -234,10 +235,9 @@ Public Class Form1
         '
         Me.edtPassword.Location = New System.Drawing.Point(272, 47)
         Me.edtPassword.Name = "edtPassword"
-        Me.edtPassword.PasswordChar = Microsoft.VisualBasic.ChrW(42)
+        Me.edtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.edtPassword.Size = New System.Drawing.Size(120, 20)
         Me.edtPassword.TabIndex = 27
-        Me.edtPassword.Text = ""
         '
         'label3
         '
@@ -253,7 +253,6 @@ Public Class Form1
         Me.edtUser.Name = "edtUser"
         Me.edtUser.Size = New System.Drawing.Size(112, 20)
         Me.edtUser.TabIndex = 25
-        Me.edtUser.Text = ""
         '
         'label2
         '
@@ -278,14 +277,6 @@ Public Class Form1
         Me.label1.Size = New System.Drawing.Size(32, 23)
         Me.label1.TabIndex = 22
         Me.label1.Text = "Host"
-        '
-        'WebDav1
-        '
-        Me.WebDav1.CharSet = Nothing
-        Me.WebDav1.LockOwner = Nothing
-        Me.WebDav1.LockTimeOut = "Infinite, Second-86400"
-        Me.WebDav1.Port = 80
-        Me.WebDav1.TlsFlags = CType((CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL2 Or CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL3), CleverComponents.InetSuite.Sspi.TlsFlags)
         '
         'Form1
         '
@@ -315,8 +306,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Web DAV client"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

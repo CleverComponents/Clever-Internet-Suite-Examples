@@ -33,9 +33,9 @@ Public Class SelectCertificateForm
     Friend WithEvents button1 As System.Windows.Forms.Button
     Public WithEvents listBox1 As System.Windows.Forms.ListBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.button2 = New System.Windows.Forms.Button
-        Me.button1 = New System.Windows.Forms.Button
-        Me.listBox1 = New System.Windows.Forms.ListBox
+        Me.button2 = New System.Windows.Forms.Button()
+        Me.button1 = New System.Windows.Forms.Button()
+        Me.listBox1 = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'button2
@@ -43,6 +43,7 @@ Public Class SelectCertificateForm
         Me.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.button2.Location = New System.Drawing.Point(200, 176)
         Me.button2.Name = "button2"
+        Me.button2.Size = New System.Drawing.Size(75, 23)
         Me.button2.TabIndex = 5
         Me.button2.Text = "Cancel"
         '
@@ -51,6 +52,7 @@ Public Class SelectCertificateForm
         Me.button1.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.button1.Location = New System.Drawing.Point(96, 176)
         Me.button1.Name = "button1"
+        Me.button1.Size = New System.Drawing.Size(75, 23)
         Me.button1.TabIndex = 4
         Me.button1.Text = "OK"
         '
@@ -70,6 +72,7 @@ Public Class SelectCertificateForm
         Me.Controls.Add(Me.listBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "SelectCertificateForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Select Certificate"
         Me.ResumeLayout(False)
 

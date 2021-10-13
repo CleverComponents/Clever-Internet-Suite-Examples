@@ -54,38 +54,37 @@ Public Class Form1
     Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim FtpUserAccountItem1 As CleverComponents.InetSuite.FtpUserAccountItem = New CleverComponents.InetSuite.FtpUserAccountItem
-        Me.FtpServer1 = New CleverComponents.InetSuite.FtpServer
-        Me.ServerGuard1 = New CleverComponents.InetSuite.ServerGuard
-        Me.FtpFileHandler1 = New CleverComponents.InetSuite.FtpFileHandler
-        Me.groupBox1 = New System.Windows.Forms.GroupBox
-        Me.edtAllowedConnections = New System.Windows.Forms.TextBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.cbWhiteListOnly = New System.Windows.Forms.CheckBox
-        Me.edtWhiteList = New System.Windows.Forms.TextBox
-        Me.label7 = New System.Windows.Forms.Label
-        Me.edtBlackList = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.memLog = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.btnStop = New System.Windows.Forms.Button
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtRootDir = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Dim FtpUserAccountItem1 As CleverComponents.InetSuite.FtpUserAccountItem = New CleverComponents.InetSuite.FtpUserAccountItem()
+        Me.FtpServer1 = New CleverComponents.InetSuite.FtpServer()
+        Me.ServerGuard1 = New CleverComponents.InetSuite.ServerGuard()
+        Me.FtpFileHandler1 = New CleverComponents.InetSuite.FtpFileHandler()
+        Me.groupBox1 = New System.Windows.Forms.GroupBox()
+        Me.edtAllowedConnections = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.cbWhiteListOnly = New System.Windows.Forms.CheckBox()
+        Me.edtWhiteList = New System.Windows.Forms.TextBox()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.edtBlackList = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.memLog = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.btnStop = New System.Windows.Forms.Button()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtRootDir = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.groupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'FtpServer1
         '
         Me.FtpServer1.CaseInsensitive = True
+        Me.FtpServer1.Extensions = New String() {"SIZE", "REST STREAM", "MDTM"}
         Me.FtpServer1.Guard = Me.ServerGuard1
         Me.FtpServer1.PassiveHost = Nothing
-        Me.FtpServer1.Port = 21
-        Me.FtpServer1.ServerName = "Clever Internet Suite FTP service"
         FtpUserAccountItem1.DisplayName = "Clever Tester"
         FtpUserAccountItem1.Password = "clevertester"
         FtpUserAccountItem1.UserName = "CleverTester"
@@ -143,7 +142,6 @@ Public Class Form1
         Me.edtWhiteList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.edtWhiteList.Size = New System.Drawing.Size(184, 64)
         Me.edtWhiteList.TabIndex = 8
-        Me.edtWhiteList.Text = ""
         '
         'label7
         '
@@ -161,7 +159,7 @@ Public Class Form1
         Me.edtBlackList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.edtBlackList.Size = New System.Drawing.Size(184, 64)
         Me.edtBlackList.TabIndex = 7
-        Me.edtBlackList.Text = "192.168.0.*" & Microsoft.VisualBasic.ChrW(13) & Microsoft.VisualBasic.ChrW(10) & "212.121.0.1"
+        Me.edtBlackList.Text = "192.168.0.*" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "212.121.0.1"
         '
         'label6
         '
@@ -180,7 +178,6 @@ Public Class Form1
         Me.memLog.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memLog.Size = New System.Drawing.Size(416, 88)
         Me.memLog.TabIndex = 23
-        Me.memLog.Text = ""
         '
         'label5
         '
@@ -194,6 +191,7 @@ Public Class Form1
         '
         Me.btnStop.Location = New System.Drawing.Point(233, 288)
         Me.btnStop.Name = "btnStop"
+        Me.btnStop.Size = New System.Drawing.Size(75, 23)
         Me.btnStop.TabIndex = 22
         Me.btnStop.Text = "Stop"
         '
@@ -201,6 +199,7 @@ Public Class Form1
         '
         Me.btnStart.Location = New System.Drawing.Point(129, 288)
         Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 21
         Me.btnStart.Text = "Start"
         '
@@ -250,8 +249,8 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(416, 23)
         Me.label1.TabIndex = 13
-        Me.label1.Text = "This is a sample FTP server. You can use any FTP client to connect to this server" & _
-        "."
+        Me.label1.Text = "This is a sample FTP server. You can use any FTP client to connect to this server" &
+    "."
         '
         'Form1
         '
@@ -270,9 +269,12 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clever FTP Server"
         Me.groupBox1.ResumeLayout(False)
+        Me.groupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

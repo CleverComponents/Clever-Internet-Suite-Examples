@@ -301,8 +301,6 @@ namespace Pop3ClientSSL
 			// mailMessage1
 			// 
 			this.mailMessage1.Date = new System.DateTime(2007, 1, 10, 21, 6, 40, 109);
-			this.mailMessage1.From.Email = "";
-			this.mailMessage1.From.Name = "";
 			// 
 			// Form1
 			// 
@@ -329,6 +327,7 @@ namespace Pop3ClientSSL
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "POP3 Client with SSL / TLS support";
 			((System.ComponentModel.ISupportInitialize)(this.pop31)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).EndInit();

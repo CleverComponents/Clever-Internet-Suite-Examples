@@ -34,10 +34,10 @@ Public Class FileExistsDialog
     Friend WithEvents btnReplace As System.Windows.Forms.Button
     Friend WithEvents lblCaption As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnResume = New System.Windows.Forms.Button
-        Me.btnReplace = New System.Windows.Forms.Button
-        Me.lblCaption = New System.Windows.Forms.Label
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnResume = New System.Windows.Forms.Button()
+        Me.btnReplace = New System.Windows.Forms.Button()
+        Me.lblCaption = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnCancel
@@ -45,6 +45,7 @@ Public Class FileExistsDialog
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(267, 72)
         Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 7
         Me.btnCancel.Text = "Cancel"
         '
@@ -53,6 +54,7 @@ Public Class FileExistsDialog
         Me.btnResume.DialogResult = System.Windows.Forms.DialogResult.No
         Me.btnResume.Location = New System.Drawing.Point(107, 72)
         Me.btnResume.Name = "btnResume"
+        Me.btnResume.Size = New System.Drawing.Size(75, 23)
         Me.btnResume.TabIndex = 6
         Me.btnResume.Text = "Resume"
         '
@@ -61,6 +63,7 @@ Public Class FileExistsDialog
         Me.btnReplace.DialogResult = System.Windows.Forms.DialogResult.Yes
         Me.btnReplace.Location = New System.Drawing.Point(19, 72)
         Me.btnReplace.Name = "btnReplace"
+        Me.btnReplace.Size = New System.Drawing.Size(75, 23)
         Me.btnReplace.TabIndex = 5
         Me.btnReplace.Text = "Replace"
         '
@@ -83,6 +86,7 @@ Public Class FileExistsDialog
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FileExistsDialog"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "File Exists Dialog"
         Me.ResumeLayout(False)
 

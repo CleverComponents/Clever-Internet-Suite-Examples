@@ -38,14 +38,14 @@ Public Class ImportForm
     Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnOk = New System.Windows.Forms.Button
-        Me.label3 = New System.Windows.Forms.Label
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.edtStoreName = New System.Windows.Forms.TextBox
-        Me.edtFileName = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.edtStoreName = New System.Windows.Forms.TextBox()
+        Me.edtFileName = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnCancel
@@ -53,6 +53,7 @@ Public Class ImportForm
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(204, 144)
         Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 18
         Me.btnCancel.Text = "Cancel"
         '
@@ -61,6 +62,7 @@ Public Class ImportForm
         Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnOk.Location = New System.Drawing.Point(84, 144)
         Me.btnOk.Name = "btnOk"
+        Me.btnOk.Size = New System.Drawing.Size(75, 23)
         Me.btnOk.TabIndex = 17
         Me.btnOk.Text = "OK"
         '
@@ -70,8 +72,8 @@ Public Class ImportForm
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(304, 32)
         Me.label3.TabIndex = 16
-        Me.label3.Text = "The certificate will be imported and installed in to the currently loaded System " & _
-        "Store:"
+        Me.label3.Text = "The certificate will be imported and installed in to the currently loaded System " &
+    "Store:"
         '
         'edtPassword
         '
@@ -88,7 +90,6 @@ Public Class ImportForm
         Me.edtStoreName.ReadOnly = True
         Me.edtStoreName.Size = New System.Drawing.Size(304, 20)
         Me.edtStoreName.TabIndex = 14
-        Me.edtStoreName.Text = ""
         '
         'edtFileName
         '
@@ -129,8 +130,10 @@ Public Class ImportForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "ImportForm"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Certificate Import Dialog"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

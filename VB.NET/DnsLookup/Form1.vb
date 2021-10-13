@@ -65,9 +65,7 @@ Public Class Form1
         '
         'DnsQuery1
         '
-        Me.DnsQuery1.RootNameServers = Nothing
         Me.DnsQuery1.Server = Nothing
-        Me.DnsQuery1.UseIpV6 = False
         '
         'edtPort
         '
@@ -194,6 +192,7 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DNS Query demo"
         Me.ResumeLayout(False)
         Me.PerformLayout()

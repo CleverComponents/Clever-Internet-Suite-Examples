@@ -91,6 +91,9 @@
     <DebugType>none</DebugType>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>DemoBase.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CleverComponents.InetSuite">
       <Name>CleverComponents.InetSuite</Name>

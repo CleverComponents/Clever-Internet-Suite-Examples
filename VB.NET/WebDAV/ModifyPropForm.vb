@@ -38,14 +38,14 @@ Public Class ModifyPropForm
     Friend WithEvents label1 As System.Windows.Forms.Label
     Public WithEvents lblResource As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.button3 = New System.Windows.Forms.Button
-        Me.button2 = New System.Windows.Forms.Button
-        Me.button1 = New System.Windows.Forms.Button
-        Me.edtValue = New System.Windows.Forms.TextBox
-        Me.edtName = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.lblResource = New System.Windows.Forms.Label
+        Me.button3 = New System.Windows.Forms.Button()
+        Me.button2 = New System.Windows.Forms.Button()
+        Me.button1 = New System.Windows.Forms.Button()
+        Me.edtValue = New System.Windows.Forms.TextBox()
+        Me.edtName = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.lblResource = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'button3
@@ -53,6 +53,7 @@ Public Class ModifyPropForm
         Me.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.button3.Location = New System.Drawing.Point(224, 96)
         Me.button3.Name = "button3"
+        Me.button3.Size = New System.Drawing.Size(75, 23)
         Me.button3.TabIndex = 15
         Me.button3.Text = "Cancel"
         '
@@ -61,6 +62,7 @@ Public Class ModifyPropForm
         Me.button2.DialogResult = System.Windows.Forms.DialogResult.No
         Me.button2.Location = New System.Drawing.Point(128, 96)
         Me.button2.Name = "button2"
+        Me.button2.Size = New System.Drawing.Size(75, 23)
         Me.button2.TabIndex = 14
         Me.button2.Text = "Remove"
         '
@@ -69,6 +71,7 @@ Public Class ModifyPropForm
         Me.button1.DialogResult = System.Windows.Forms.DialogResult.Yes
         Me.button1.Location = New System.Drawing.Point(32, 96)
         Me.button1.Name = "button1"
+        Me.button1.Size = New System.Drawing.Size(75, 23)
         Me.button1.TabIndex = 13
         Me.button1.Text = "Set"
         '
@@ -126,8 +129,10 @@ Public Class ModifyPropForm
         Me.Controls.Add(Me.lblResource)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "ModifyPropForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Change / Remove Property"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

@@ -38,12 +38,12 @@ Public Class GetCertDialog
     Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnMessage = New System.Windows.Forms.Button
-        Me.btnOk = New System.Windows.Forms.Button
-        Me.edtStore = New System.Windows.Forms.TextBox
-        Me.edtEmail = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Me.btnMessage = New System.Windows.Forms.Button()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.edtStore = New System.Windows.Forms.TextBox()
+        Me.edtEmail = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnMessage
@@ -60,6 +60,7 @@ Public Class GetCertDialog
         Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnOk.Location = New System.Drawing.Point(105, 65)
         Me.btnOk.Name = "btnOk"
+        Me.btnOk.Size = New System.Drawing.Size(75, 23)
         Me.btnOk.TabIndex = 10
         Me.btnOk.Text = "OK"
         '
@@ -109,8 +110,10 @@ Public Class GetCertDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "GetCertDialog"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Get Certificate Form"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

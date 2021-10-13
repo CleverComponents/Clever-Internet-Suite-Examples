@@ -246,11 +246,15 @@ Public Class Form1
         Me.label1.TabIndex = 20
         Me.label1.Text = "Server"
         '
+        'Smtp1
+        '
+        '
+        'Pop31
+        '
+        '
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2006, 5, 8, 15, 25, 22, 640)
-        Me.MailMessage1.From.Email = ""
-        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -278,7 +282,8 @@ Public Class Form1
         Me.Controls.Add(Me.progressBar1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Mail Send / Receive Progress"
         CType(Me.Smtp1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Pop31, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -27,11 +27,14 @@ end;
 var
   Encoder: TclEncoder;
   Src, Dst: TStream;
+  ch: Char;
 begin
   if ParamCount < 4 then
   begin
     WriteLn('This console app encodes / decodes files in Base64, Quoted-Printable, and UUEncode formats.');
     WriteLn('Usage: Encoder.exe srcfile destfile operation[E][D] method[QP][BASE64][UUE]');
+    WriteLn('Press Enter to continue...');
+    Read(ch);
     Exit;
   end;
   Encoder := nil;

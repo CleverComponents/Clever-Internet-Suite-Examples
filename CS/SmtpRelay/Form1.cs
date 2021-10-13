@@ -107,7 +107,7 @@ namespace SmtpRelay
 			this.label2.Size = new System.Drawing.Size(400, 32);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Please specify the DNS server IP which will be used for resolving the SMTP server" +
-				" address of the recipient";
+    " address of the recipient";
 			// 
 			// label3
 			// 
@@ -116,7 +116,7 @@ namespace SmtpRelay
 			this.label3.Size = new System.Drawing.Size(392, 32);
 			this.label3.TabIndex = 2;
 			this.label3.Text = "Please note ! Most SMTP servers require that the sender PC must be registered in " +
-				"DNS. Otherwise, relaying will be denied to such SMTP servers.";
+    "DNS. Otherwise, relaying will be denied to such SMTP servers.";
 			// 
 			// label4
 			// 
@@ -227,6 +227,7 @@ namespace SmtpRelay
 			// 
 			// smtpRelay1
 			// 
+			this.smtpRelay1.ConnectTimeOut = 0;
 			this.smtpRelay1.DnsServer = null;
 			// 
 			// mailMessage1
@@ -257,6 +258,7 @@ namespace SmtpRelay
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SMTP Relay demo";
 			((System.ComponentModel.ISupportInitialize)(this.smtpRelay1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).EndInit();

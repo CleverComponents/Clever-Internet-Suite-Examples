@@ -3,11 +3,10 @@ inherited Form1: TForm1
   Top = 55
   Caption = 'Resuming of the downloading - Sample'
   ClientHeight = 260
-  Font.Name = 'Tahoma'
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  ExplicitHeight = 298
+  ExplicitHeight = 299
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -23,14 +22,14 @@ inherited Form1: TForm1
     object Label1: TLabel
       Left = 12
       Top = 59
-      Width = 22
+      Width = 19
       Height = 13
       Caption = 'URL'
     end
     object Label2: TLabel
       Left = 11
       Top = 84
-      Width = 47
+      Width = 46
       Height = 13
       Caption = 'File Name'
     end
@@ -90,7 +89,7 @@ inherited Form1: TForm1
   object DownLoader: TclDownLoader
     InternetAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
     URL = 'https://www.clevercomponents.com/images/testimage.jpg'
-    LocalFile = 'C:\testimage.jpg'
+    LocalFile = 'C:\downloads\testimage.jpg'
     OnStatusChanged = DownLoaderStatusChanged
     OnChanged = DownLoaderChanged
     LocalFolder = 'C:\'

@@ -319,16 +319,10 @@
 			this.btnSend.UseVisualStyleBackColor = true;
 			this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
 			// 
-			// openFileDialog1
-			// 
-			this.openFileDialog1.FileName = "openFileDialog1";
-			// 
 			// mailMessage1
 			// 
 			this.mailMessage1.Date = new System.DateTime(2017, 9, 3, 21, 13, 40, 837);
 			this.mailMessage1.Dkim = this.dkim1;
-			this.mailMessage1.From.Email = "";
-			this.mailMessage1.From.Name = "";
 			// 
 			// dkim1
 			// 

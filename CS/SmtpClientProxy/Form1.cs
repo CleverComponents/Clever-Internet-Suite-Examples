@@ -236,6 +236,10 @@ namespace SmtpClientProxy
 			this.btnSend.Text = "Send";
 			this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
 			// 
+			// smtp1
+			// 
+			this.smtp1.ConnectTimeOut = 0;
+			// 
 			// mailMessage1
 			// 
 			this.mailMessage1.Date = new System.DateTime(2007, 1, 10, 23, 13, 23, 984);
@@ -274,6 +278,10 @@ namespace SmtpClientProxy
 			this.label9.TabIndex = 44;
 			this.label9.Text = "Proxy Host";
 			// 
+			// httpProxy1
+			// 
+			this.httpProxy1.ConnectTimeOut = 0;
+			// 
 			// Form1
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -300,6 +308,7 @@ namespace SmtpClientProxy
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SMTP Client over HTTP Connect Proxy";
 			((System.ComponentModel.ISupportInitialize)(this.smtp1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).EndInit();

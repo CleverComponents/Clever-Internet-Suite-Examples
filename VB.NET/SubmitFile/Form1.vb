@@ -45,24 +45,23 @@ Public Class Form1
     Friend WithEvents linkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.Http1 = New CleverComponents.InetSuite.Http
-        Me.HttpRequest1 = New CleverComponents.InetSuite.HttpRequest
-        Me.progressBar1 = New System.Windows.Forms.ProgressBar
-        Me.memResult = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtHost = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.edtName = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.linkLabel1 = New System.Windows.Forms.LinkLabel
-        Me.label1 = New System.Windows.Forms.Label
+        Me.Http1 = New CleverComponents.InetSuite.Http()
+        Me.HttpRequest1 = New CleverComponents.InetSuite.HttpRequest()
+        Me.progressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.memResult = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtHost = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.edtName = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.linkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.label1 = New System.Windows.Forms.Label()
         CType(Me.HttpRequest1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Http1
         '
-        Me.Http1.Port = 80
         '
         'progressBar1
         '
@@ -79,7 +78,6 @@ Public Class Form1
         Me.memResult.ReadOnly = True
         Me.memResult.Size = New System.Drawing.Size(392, 120)
         Me.memResult.TabIndex = 22
-        Me.memResult.Text = ""
         '
         'label6
         '
@@ -93,6 +91,7 @@ Public Class Form1
         '
         Me.btnStart.Location = New System.Drawing.Point(12, 123)
         Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 20
         Me.btnStart.Text = "&Submit"
         '
@@ -118,7 +117,7 @@ Public Class Form1
         Me.edtName.Name = "edtName"
         Me.edtName.Size = New System.Drawing.Size(328, 20)
         Me.edtName.TabIndex = 17
-        Me.edtName.Text = "c:\uploads\file.txt"
+        Me.edtName.Text = "..\SubmitFile.vbproj"
         '
         'label2
         '
@@ -161,9 +160,11 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Simulate Web Submit File request"
         CType(Me.HttpRequest1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

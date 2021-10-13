@@ -78,9 +78,9 @@ namespace AsyncClientDemo {
 			// 
 			// memTerminal
 			// 
-			this.memTerminal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.memTerminal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.memTerminal.Location = new System.Drawing.Point(4, 85);
 			this.memTerminal.Multiline = true;
 			this.memTerminal.Name = "memTerminal";
@@ -92,7 +92,6 @@ namespace AsyncClientDemo {
 			// asyncClient1
 			// 
 			this.asyncClient1.LocalBinding = null;
-			this.asyncClient1.Port = 0;
 			this.asyncClient1.Server = null;
 			this.asyncClient1.TlsFlags = CleverComponents.InetSuite.Sspi.TlsFlags.None;
 			this.asyncClient1.Connected += new System.EventHandler(this.asyncClient1_Connected);
@@ -112,6 +111,7 @@ namespace AsyncClientDemo {
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Asynchronous client sample - TELNET";
 			this.ResumeLayout(false);
 			this.PerformLayout();

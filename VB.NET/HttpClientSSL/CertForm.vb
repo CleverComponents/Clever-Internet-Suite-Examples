@@ -43,19 +43,19 @@ Public Class CertForm
     Public WithEvents edtName As System.Windows.Forms.TextBox
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.button3 = New System.Windows.Forms.Button
-        Me.button2 = New System.Windows.Forms.Button
-        Me.button1 = New System.Windows.Forms.Button
-        Me.edtValidTo = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.edtValidFrom = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtIssuedBy = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.edtIssuedTo = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.edtName = New System.Windows.Forms.TextBox
-        Me.label1 = New System.Windows.Forms.Label
+        Me.button3 = New System.Windows.Forms.Button()
+        Me.button2 = New System.Windows.Forms.Button()
+        Me.button1 = New System.Windows.Forms.Button()
+        Me.edtValidTo = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.edtValidFrom = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtIssuedBy = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.edtIssuedTo = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.edtName = New System.Windows.Forms.TextBox()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'button3
@@ -63,6 +63,7 @@ Public Class CertForm
         Me.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.button3.Location = New System.Drawing.Point(276, 188)
         Me.button3.Name = "button3"
+        Me.button3.Size = New System.Drawing.Size(75, 23)
         Me.button3.TabIndex = 25
         Me.button3.Text = "Cancel"
         '
@@ -71,6 +72,7 @@ Public Class CertForm
         Me.button2.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.button2.Location = New System.Drawing.Point(180, 188)
         Me.button2.Name = "button2"
+        Me.button2.Size = New System.Drawing.Size(75, 23)
         Me.button2.TabIndex = 24
         Me.button2.Text = "Continue"
         '
@@ -90,7 +92,6 @@ Public Class CertForm
         Me.edtValidTo.ReadOnly = True
         Me.edtValidTo.Size = New System.Drawing.Size(256, 20)
         Me.edtValidTo.TabIndex = 22
-        Me.edtValidTo.Text = ""
         '
         'label5
         '
@@ -107,7 +108,6 @@ Public Class CertForm
         Me.edtValidFrom.ReadOnly = True
         Me.edtValidFrom.Size = New System.Drawing.Size(256, 20)
         Me.edtValidFrom.TabIndex = 20
-        Me.edtValidFrom.Text = ""
         '
         'label4
         '
@@ -124,7 +124,6 @@ Public Class CertForm
         Me.edtIssuedBy.ReadOnly = True
         Me.edtIssuedBy.Size = New System.Drawing.Size(256, 20)
         Me.edtIssuedBy.TabIndex = 18
-        Me.edtIssuedBy.Text = ""
         '
         'label3
         '
@@ -141,7 +140,6 @@ Public Class CertForm
         Me.edtIssuedTo.ReadOnly = True
         Me.edtIssuedTo.Size = New System.Drawing.Size(256, 20)
         Me.edtIssuedTo.TabIndex = 16
-        Me.edtIssuedTo.Text = ""
         '
         'label2
         '
@@ -158,7 +156,6 @@ Public Class CertForm
         Me.edtName.ReadOnly = True
         Me.edtName.Size = New System.Drawing.Size(256, 20)
         Me.edtName.TabIndex = 14
-        Me.edtName.Text = ""
         '
         'label1
         '
@@ -187,8 +184,10 @@ Public Class CertForm
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "CertForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "View / Install certificate"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

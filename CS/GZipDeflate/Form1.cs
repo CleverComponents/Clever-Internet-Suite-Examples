@@ -89,7 +89,7 @@ namespace GZipDeflate
 			this.label1.Size = new System.Drawing.Size(360, 40);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "This sample demonstrates using the TclGZip component for deflating / inflating da" +
-				"ta stream.";
+    "ta stream.";
 			// 
 			// label2
 			// 
@@ -98,7 +98,7 @@ namespace GZipDeflate
 			this.label2.Size = new System.Drawing.Size(360, 40);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "The deflated file is not compatible with WinZip file format since it does not con" +
-				"tain the description header.";
+    "tain the description header.";
 			// 
 			// label3
 			// 
@@ -195,6 +195,7 @@ namespace GZipDeflate
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "GZip / Deflate";
 			this.ResumeLayout(false);
 			this.PerformLayout();

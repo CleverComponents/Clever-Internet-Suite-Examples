@@ -97,6 +97,7 @@ type
     edtMaxWindowSize: TEdit;
     Label32: TLabel;
     lblStatus: TLabel;
+    OpenDialog1: TOpenDialog;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnStartClick(Sender: TObject);
@@ -152,7 +153,7 @@ procedure TMainForm.clSFtpServer1ReceiveRequest(Sender: TObject; AConnection: Tc
 begin
   if not (ACommand in [SSH_FXP_READ, SSH_FXP_WRITE, SSH_FXP_READDIR]) then
   begin
-    memLog.Lines.Add(Format('Command[%d]: %s (%d bytes)', [ARequestId, GetCommandName(ACommand), APacket.GetLength()]));
+    PutLogMessage(Format('Command[%d]: %s (%d bytes)', [ARequestId, GetCommandName(ACommand), APacket.GetLength()]));
   end;
 end;
 
@@ -161,7 +162,7 @@ procedure TMainForm.clSFtpServer1SendResponse(Sender: TObject; AConnection: TclS
 begin
   if not (ACommand in [SSH_FXP_READ, SSH_FXP_WRITE, SSH_FXP_READDIR]) then
   begin
-    memLog.Lines.Add(Format('Reply[%d]: %s (%d bytes)', [ARequestId, GetCommandName(ACommand), APacket.GetLength()]));
+    PutLogMessage(Format('Reply[%d]: %s (%d bytes)', [ARequestId, GetCommandName(ACommand), APacket.GetLength()]));
   end;
 end;
 
@@ -210,6 +211,12 @@ end;
 
 procedure TMainForm.btnLoadHostKeyClick(Sender: TObject);
 begin
+  if (clSFtpServer1.Active) then Exit;
+
+  if not OpenDialog1.Execute() then Exit;
+
+  edtHostKeyFile.Text := OpenDialog1.FileName;
+
   LoadHostKey();
 end;
 
@@ -219,7 +226,7 @@ begin
 
   LoadHostKey();
 
-  if (clSFtpServer1.HostKey.FingerPrint = '') then
+  if (not clSFtpServer1.HostKey.HasKey) then
   begin
     GenerateHostKey();
   end;
@@ -296,9 +303,11 @@ begin
   if (edtHostKeyFile.Text <> '') and FileExists(edtHostKeyFile.Text) then
   begin
     clSFtpServer1.HostKey.Load();
+    edtFingerPrint.Text := clSFtpServer1.HostKey.FingerPrint;
+  end else
+  begin
+    edtFingerPrint.Text := '';
   end;
-
-  edtFingerPrint.Text := clSFtpServer1.HostKey.FingerPrint;
 end;
 
 procedure TMainForm.GenerateHostKey;

@@ -134,7 +134,7 @@ inherited MainForm: TMainForm
       Width = 440
       Height = 21
       TabOrder = 6
-      Text = 'SubmitWizard.dpr'
+      Text = '..\SubmitWizard.cpp'
     end
     object btnStop: TButton
       Left = 91

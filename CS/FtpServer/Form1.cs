@@ -73,7 +73,7 @@ namespace FtpServer
 		/// </summary>
 		private void InitializeComponent()
 		{
-			CleverComponents.InetSuite.FtpUserAccountItem ftpUserAccountItem2 = new CleverComponents.InetSuite.FtpUserAccountItem();
+			CleverComponents.InetSuite.FtpUserAccountItem ftpUserAccountItem1 = new CleverComponents.InetSuite.FtpUserAccountItem();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
@@ -105,7 +105,7 @@ namespace FtpServer
 			this.label1.Size = new System.Drawing.Size(416, 23);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "This is a sample FTP server. You can use any FTP client to connect to this server" +
-				".";
+    ".";
 			// 
 			// label2
 			// 
@@ -186,21 +186,23 @@ namespace FtpServer
 			// ftpServer1
 			// 
 			this.ftpServer1.CaseInsensitive = true;
+			this.ftpServer1.Extensions = new string[] {
+        "SIZE",
+        "REST STREAM",
+        "MDTM"};
 			this.ftpServer1.Guard = this.serverGuard1;
-			this.ftpServer1.Port = 21;
-			this.ftpServer1.ServerName = "Clever Internet Suite FTP service";
-			ftpUserAccountItem2.DisplayName = "Clever Tester";
-			ftpUserAccountItem2.Password = "clevertester";
-			ftpUserAccountItem2.UserName = "CleverTester";
+			ftpUserAccountItem1.DisplayName = "Clever Tester";
+			ftpUserAccountItem1.Password = "clevertester";
+			ftpUserAccountItem1.UserName = "CleverTester";
 			this.ftpServer1.UserAccounts.AddRange(new CleverComponents.InetSuite.UserAccountItem[] {
-            ftpUserAccountItem2});
+            ftpUserAccountItem1});
 			this.ftpServer1.Authenticate += new CleverComponents.InetSuite.FtpAuthenticateEventHandler(this.ftpServer1_Authenticate);
-			this.ftpServer1.Started += new System.EventHandler(this.ftpServer1_Started);
-			this.ftpServer1.ConnectionAccepted += new CleverComponents.InetSuite.ConnectionAcceptedEventHandler(this.ftpServer1_ConnectionAccepted);
 			this.ftpServer1.CommandReceived += new CleverComponents.InetSuite.TcpCommandEventHandler(this.ftpServer1_CommandReceived);
-			this.ftpServer1.Stopped += new System.EventHandler(this.ftpServer1_Stopped);
-			this.ftpServer1.ConnectionClosed += new CleverComponents.InetSuite.ConnectionEventHandler(this.ftpServer1_ConnectionClosed);
 			this.ftpServer1.ResponseSent += new CleverComponents.InetSuite.TcpResponseEventHandler(this.ftpServer1_ResponseSent);
+			this.ftpServer1.Started += new System.EventHandler(this.ftpServer1_Started);
+			this.ftpServer1.Stopped += new System.EventHandler(this.ftpServer1_Stopped);
+			this.ftpServer1.ConnectionAccepted += new CleverComponents.InetSuite.ConnectionAcceptedEventHandler(this.ftpServer1_ConnectionAccepted);
+			this.ftpServer1.ConnectionClosed += new CleverComponents.InetSuite.ConnectionEventHandler(this.ftpServer1_ConnectionClosed);
 			// 
 			// ftpFileHandler1
 			// 
@@ -298,6 +300,7 @@ namespace FtpServer
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Clever FTP Server";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();

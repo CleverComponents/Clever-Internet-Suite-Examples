@@ -46,19 +46,19 @@ Public Class Form1
     Friend WithEvents Pop3Server1 As CleverComponents.InetSuite.Pop3Server
     Friend WithEvents Pop3FileHandler1 As CleverComponents.InetSuite.Pop3FileHandler
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem
-        Me.memLog = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.btnStop = New System.Windows.Forms.Button
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtRootDir = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Pop3Server1 = New CleverComponents.InetSuite.Pop3Server
-        Me.Pop3FileHandler1 = New CleverComponents.InetSuite.Pop3FileHandler
+        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem()
+        Me.memLog = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.btnStop = New System.Windows.Forms.Button()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtRootDir = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Pop3Server1 = New CleverComponents.InetSuite.Pop3Server()
+        Me.Pop3FileHandler1 = New CleverComponents.InetSuite.Pop3FileHandler()
         Me.SuspendLayout()
         '
         'memLog
@@ -70,7 +70,6 @@ Public Class Form1
         Me.memLog.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memLog.Size = New System.Drawing.Size(440, 136)
         Me.memLog.TabIndex = 29
-        Me.memLog.Text = ""
         '
         'label5
         '
@@ -84,6 +83,7 @@ Public Class Form1
         '
         Me.btnStop.Location = New System.Drawing.Point(176, 144)
         Me.btnStop.Name = "btnStop"
+        Me.btnStop.Size = New System.Drawing.Size(75, 23)
         Me.btnStop.TabIndex = 27
         Me.btnStop.Text = "Stop"
         '
@@ -91,6 +91,7 @@ Public Class Form1
         '
         Me.btnStart.Location = New System.Drawing.Point(80, 144)
         Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 26
         Me.btnStart.Text = "Start"
         '
@@ -140,15 +141,12 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(416, 29)
         Me.label1.TabIndex = 20
-        Me.label1.Text = "This is a sample POP3 server. You can use any mail client with POP3 support to co" & _
-        "nnect to this server."
+        Me.label1.Text = "This is a sample POP3 server. You can use any mail client with POP3 support to co" &
+    "nnect to this server."
         '
         'Pop3Server1
         '
-        Me.Pop3Server1.CaseInsensitive = True
         Me.Pop3Server1.HelpText = New String() {"Valid commands: USER", "PASS", "APOP", "AUTH", "QUIT", "NOOP", "HELP", "STAT", "RETR", "TOP", "DELE", "RSET", "LIST", "UIDL", "STLS"}
-        Me.Pop3Server1.Port = 110
-        Me.Pop3Server1.ServerName = "Clever Internet Suite POP3 service"
         MailUserAccountItem1.DisplayName = "Clever Tester"
         MailUserAccountItem1.Password = "clevertester"
         MailUserAccountItem1.UserName = "CleverTester"
@@ -175,8 +173,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clever POP3 Server"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

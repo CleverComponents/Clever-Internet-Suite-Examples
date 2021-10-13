@@ -168,8 +168,6 @@ Public Class Form1
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2006, 5, 8, 15, 43, 5, 952)
-        Me.MailMessage1.From.Email = ""
-        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -189,6 +187,7 @@ Public Class Form1
         Me.Controls.Add(Me.lbMessages)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SMTP / POP3 client demo"
         CType(Me.Smtp1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Pop31, System.ComponentModel.ISupportInitialize).EndInit()

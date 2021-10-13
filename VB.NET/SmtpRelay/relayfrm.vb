@@ -31,7 +31,7 @@ Public Class RelayStatusForm
     'Do not modify it using the code editor.
     Public WithEvents textBox1 As System.Windows.Forms.TextBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.textBox1 = New System.Windows.Forms.TextBox
+        Me.textBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'textBox1
@@ -43,7 +43,6 @@ Public Class RelayStatusForm
         Me.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.textBox1.Size = New System.Drawing.Size(400, 320)
         Me.textBox1.TabIndex = 1
-        Me.textBox1.Text = ""
         '
         'RelayStatusForm
         '
@@ -53,8 +52,10 @@ Public Class RelayStatusForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "RelayStatusForm"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Relay Status Form"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

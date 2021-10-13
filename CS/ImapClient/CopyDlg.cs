@@ -81,6 +81,7 @@ namespace ImapClient
 			this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnOk.Location = new System.Drawing.Point(120, 64);
 			this.btnOk.Name = "btnOk";
+			this.btnOk.Size = new System.Drawing.Size(75, 23);
 			this.btnOk.TabIndex = 2;
 			this.btnOk.Text = "OK";
 			// 
@@ -89,6 +90,7 @@ namespace ImapClient
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Location = new System.Drawing.Point(224, 64);
 			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 3;
 			this.btnCancel.Text = "Cancel";
 			// 
@@ -103,6 +105,7 @@ namespace ImapClient
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "CopyDlg";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Copy";
 			this.ResumeLayout(false);
 

@@ -70,42 +70,42 @@ Public Class Form1
     Friend WithEvents label1 As System.Windows.Forms.Label
     Friend WithEvents Ftp1 As CleverComponents.InetSuite.Ftp
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.openFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.cbProxyType = New System.Windows.Forms.ComboBox
-        Me.saveFileDialog1 = New System.Windows.Forms.SaveFileDialog
-        Me.edtProxyPassword = New System.Windows.Forms.TextBox
-        Me.label11 = New System.Windows.Forms.Label
-        Me.edtProxyUser = New System.Windows.Forms.TextBox
-        Me.edtProxyPort = New System.Windows.Forms.TextBox
-        Me.label10 = New System.Windows.Forms.Label
-        Me.edtProxyServer = New System.Windows.Forms.TextBox
-        Me.label9 = New System.Windows.Forms.Label
-        Me.label8 = New System.Windows.Forms.Label
-        Me.label7 = New System.Windows.Forms.Label
-        Me.panel1 = New System.Windows.Forms.Panel
-        Me.progressBar1 = New System.Windows.Forms.ProgressBar
-        Me.btnAbort = New System.Windows.Forms.Button
-        Me.btnUpload = New System.Windows.Forms.Button
-        Me.btnDownload = New System.Windows.Forms.Button
-        Me.btnGoUp = New System.Windows.Forms.Button
-        Me.btnOpenDir = New System.Windows.Forms.Button
-        Me.btnLogout = New System.Windows.Forms.Button
-        Me.btnLogin = New System.Windows.Forms.Button
-        Me.lbList = New System.Windows.Forms.ListBox
-        Me.cbAsciiMode = New System.Windows.Forms.CheckBox
-        Me.cbPassiveMode = New System.Windows.Forms.CheckBox
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.edtStartDir = New System.Windows.Forms.TextBox
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.edtUser = New System.Windows.Forms.TextBox
-        Me.edtServer = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.label5 = New System.Windows.Forms.Label
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Ftp1 = New CleverComponents.InetSuite.Ftp
+        Me.openFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.cbProxyType = New System.Windows.Forms.ComboBox()
+        Me.saveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.edtProxyPassword = New System.Windows.Forms.TextBox()
+        Me.label11 = New System.Windows.Forms.Label()
+        Me.edtProxyUser = New System.Windows.Forms.TextBox()
+        Me.edtProxyPort = New System.Windows.Forms.TextBox()
+        Me.label10 = New System.Windows.Forms.Label()
+        Me.edtProxyServer = New System.Windows.Forms.TextBox()
+        Me.label9 = New System.Windows.Forms.Label()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.panel1 = New System.Windows.Forms.Panel()
+        Me.progressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.btnAbort = New System.Windows.Forms.Button()
+        Me.btnUpload = New System.Windows.Forms.Button()
+        Me.btnDownload = New System.Windows.Forms.Button()
+        Me.btnGoUp = New System.Windows.Forms.Button()
+        Me.btnOpenDir = New System.Windows.Forms.Button()
+        Me.btnLogout = New System.Windows.Forms.Button()
+        Me.btnLogin = New System.Windows.Forms.Button()
+        Me.lbList = New System.Windows.Forms.ListBox()
+        Me.cbAsciiMode = New System.Windows.Forms.CheckBox()
+        Me.cbPassiveMode = New System.Windows.Forms.CheckBox()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.edtStartDir = New System.Windows.Forms.TextBox()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.edtUser = New System.Windows.Forms.TextBox()
+        Me.edtServer = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Ftp1 = New CleverComponents.InetSuite.Ftp()
         CType(Me.Ftp1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -206,7 +206,7 @@ Public Class Form1
         'progressBar1
         '
         Me.progressBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.progressBar1.Location = New System.Drawing.Point(0, 420)
         Me.progressBar1.Name = "progressBar1"
         Me.progressBar1.Size = New System.Drawing.Size(640, 16)
@@ -382,7 +382,6 @@ Public Class Form1
         '
         'Ftp1
         '
-        Me.Ftp1.Port = 21
         '
         'Form1
         '
@@ -423,7 +422,8 @@ Public Class Form1
         Me.Controls.Add(Me.edtProxyPassword)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "FTP Client Proxy"
         CType(Me.Ftp1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -459,7 +459,12 @@ Public Class Form1
 
             Ftp1.Open()
 
-            DoOpenDir(edtStartDir.Text)
+            If StringUtils.IsEmpty(edtStartDir.Text) Then
+                edtStartDir.Text = Ftp1.CurrentDir
+            End If
+            If Not StringUtils.IsEmpty(edtStartDir.Text) And edtStartDir.Text.StartsWith("/") Then
+                DoOpenDir(edtStartDir.Text)
+            End If
             UpdateStatus()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -467,10 +472,12 @@ Public Class Form1
     End Sub
 
     Private Sub DoOpenDir(ByVal ADir As String)
-        Dim dir As String = ADir.TrimStart("/")
-        If Not StringUtils.IsEmpty(dir) Then
-            Ftp1.ChangeCurrentDir(dir)
+        Dim dir As String = ADir
+        If ADir.StartsWith("//") Then
+            dir = ADir.Substring(1)
         End If
+        Ftp1.ChangeCurrentDir("/")
+        Ftp1.ChangeCurrentDir(dir)
         FillDirList()
     End Sub 'DoOpenDir
 
@@ -499,7 +506,7 @@ Public Class Form1
             Return
         End If
         If lbList.SelectedIndex > -1 And lbList.Items(lbList.SelectedIndex).ToString() <> "" And Mid(lbList.Items(lbList.SelectedIndex).ToString(), 1, 1) = "/" Then
-            DoOpenDir(lbList.Items(lbList.SelectedIndex).ToString())
+            DoOpenDir(Ftp1.CurrentDir + lbList.Items(lbList.SelectedIndex).ToString())
         End If
     End Sub
 

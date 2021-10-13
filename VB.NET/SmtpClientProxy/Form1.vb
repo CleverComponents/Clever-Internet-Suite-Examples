@@ -82,8 +82,6 @@ Public Class Form1
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2007, 1, 13, 17, 21, 46, 952)
-        Me.MailMessage1.From.Email = ""
-        Me.MailMessage1.From.Name = ""
         '
         'edtProxyPort
         '
@@ -274,6 +272,7 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SMTP Client over HTTP Connect Proxy"
         CType(Me.Smtp1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()

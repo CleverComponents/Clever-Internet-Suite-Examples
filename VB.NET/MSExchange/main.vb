@@ -56,27 +56,27 @@ Public Class MainForm
     Friend WithEvents label1 As System.Windows.Forms.Label
     Friend WithEvents MailMessage1 As CleverComponents.InetSuite.MailMessage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnSend = New System.Windows.Forms.Button
-        Me.btnNew = New System.Windows.Forms.Button
-        Me.btnClear = New System.Windows.Forms.Button
-        Me.btnAdd = New System.Windows.Forms.Button
-        Me.lbAttachments = New System.Windows.Forms.ListBox
-        Me.memHtml = New System.Windows.Forms.RichTextBox
-        Me.memText = New System.Windows.Forms.RichTextBox
-        Me.edtPickup = New System.Windows.Forms.TextBox
-        Me.openFileDialog = New System.Windows.Forms.OpenFileDialog
-        Me.edtSubject = New System.Windows.Forms.TextBox
-        Me.edtTo = New System.Windows.Forms.TextBox
-        Me.edtFrom = New System.Windows.Forms.TextBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.label7 = New System.Windows.Forms.Label
-        Me.label6 = New System.Windows.Forms.Label
-        Me.label5 = New System.Windows.Forms.Label
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage
+        Me.btnSend = New System.Windows.Forms.Button()
+        Me.btnNew = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.lbAttachments = New System.Windows.Forms.ListBox()
+        Me.memHtml = New System.Windows.Forms.RichTextBox()
+        Me.memText = New System.Windows.Forms.RichTextBox()
+        Me.edtPickup = New System.Windows.Forms.TextBox()
+        Me.openFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.edtSubject = New System.Windows.Forms.TextBox()
+        Me.edtTo = New System.Windows.Forms.TextBox()
+        Me.edtFrom = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -100,6 +100,7 @@ Public Class MainForm
         '
         Me.btnClear.Location = New System.Drawing.Point(344, 296)
         Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 23)
         Me.btnClear.TabIndex = 25
         Me.btnClear.Text = "Clear"
         '
@@ -107,6 +108,7 @@ Public Class MainForm
         '
         Me.btnAdd.Location = New System.Drawing.Point(344, 264)
         Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 24
         Me.btnAdd.Text = "Add..."
         '
@@ -179,6 +181,7 @@ Public Class MainForm
         '
         Me.label7.Location = New System.Drawing.Point(16, 248)
         Me.label7.Name = "label7"
+        Me.label7.Size = New System.Drawing.Size(100, 23)
         Me.label7.TabIndex = 23
         Me.label7.Text = "Attachments"
         '
@@ -186,6 +189,7 @@ Public Class MainForm
         '
         Me.label6.Location = New System.Drawing.Point(272, 104)
         Me.label6.Name = "label6"
+        Me.label6.Size = New System.Drawing.Size(100, 23)
         Me.label6.TabIndex = 21
         Me.label6.Text = "Plain Html"
         '
@@ -193,6 +197,7 @@ Public Class MainForm
         '
         Me.label5.Location = New System.Drawing.Point(16, 112)
         Me.label5.Name = "label5"
+        Me.label5.Size = New System.Drawing.Size(100, 23)
         Me.label5.TabIndex = 19
         Me.label5.Text = "Plain Text"
         '
@@ -200,6 +205,7 @@ Public Class MainForm
         '
         Me.label4.Location = New System.Drawing.Point(16, 80)
         Me.label4.Name = "label4"
+        Me.label4.Size = New System.Drawing.Size(100, 23)
         Me.label4.TabIndex = 18
         Me.label4.Text = "Subject"
         '
@@ -207,6 +213,7 @@ Public Class MainForm
         '
         Me.label3.Location = New System.Drawing.Point(16, 56)
         Me.label3.Name = "label3"
+        Me.label3.Size = New System.Drawing.Size(100, 23)
         Me.label3.TabIndex = 15
         Me.label3.Text = "To"
         '
@@ -214,6 +221,7 @@ Public Class MainForm
         '
         Me.label2.Location = New System.Drawing.Point(16, 32)
         Me.label2.Name = "label2"
+        Me.label2.Size = New System.Drawing.Size(100, 23)
         Me.label2.TabIndex = 14
         Me.label2.Text = "From"
         '
@@ -224,8 +232,8 @@ Public Class MainForm
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(496, 24)
         Me.label1.TabIndex = 12
-        Me.label1.Text = "This demo demonstrates how to send MIME mail message using Microsoft Exchange ser" & _
-        "ver"
+        Me.label1.Text = "This demo demonstrates how to send MIME mail message using Microsoft Exchange ser" &
+    "ver"
         '
         'MailMessage1
         '
@@ -257,9 +265,11 @@ Public Class MainForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "MainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MS SMTP Mail Sender"
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

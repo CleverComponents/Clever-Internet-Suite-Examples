@@ -65,7 +65,7 @@ void __fastcall TMainForm::btnStartClick(TObject *Sender)
 
   LoadHostKey();
 
-  if (clSFtpServer1->HostKey->FingerPrint == "")
+  if (!clSFtpServer1->HostKey->HasKey)
   {
     GenerateHostKey();
   }
@@ -93,6 +93,12 @@ void __fastcall TMainForm::btnStopClick(TObject *Sender)
 
 void __fastcall TMainForm::btnLoadHostKeyClick(TObject *Sender)
 {
+  if (clSFtpServer1->Active) return;
+
+  if (!OpenDialog1->Execute()) return;
+
+  edtHostKeyFile->Text = OpenDialog1->FileName;
+
   LoadHostKey();
 }
 //---------------------------------------------------------------------------
@@ -201,9 +207,12 @@ void __fastcall TMainForm::LoadHostKey()
   if ((edtHostKeyFile->Text != "") && FileExists(edtHostKeyFile->Text))
   {
     clSFtpServer1->HostKey->Load();
+	edtFingerPrint->Text = clSFtpServer1->HostKey->FingerPrint;
   }
-
-  edtFingerPrint->Text = clSFtpServer1->HostKey->FingerPrint;
+  else
+  {
+	edtFingerPrint->Text = "";
+  }
 }
 //---------------------------------------------------------------------------
 

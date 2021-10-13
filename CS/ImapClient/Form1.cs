@@ -476,8 +476,6 @@ namespace ImapClient
 			// mailMessage1
 			// 
 			this.mailMessage1.Date = new System.DateTime(2006, 5, 4, 21, 9, 17, 733);
-			this.mailMessage1.From.Email = "";
-			this.mailMessage1.From.Name = "";
 			// 
 			// Form1
 			// 
@@ -511,6 +509,7 @@ namespace ImapClient
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "IMAP Client";
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();

@@ -36,12 +36,12 @@ Public Class SearchDlg
     Friend WithEvents cbSearchIn As System.Windows.Forms.ComboBox
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnSearch = New System.Windows.Forms.Button
-        Me.edtSearchFor = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.cbSearchIn = New System.Windows.Forms.ComboBox
-        Me.label1 = New System.Windows.Forms.Label
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.edtSearchFor = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.cbSearchIn = New System.Windows.Forms.ComboBox()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnCancel
@@ -49,6 +49,7 @@ Public Class SearchDlg
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(190, 113)
         Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 11
         Me.btnCancel.Text = "Cancel"
         '
@@ -57,6 +58,7 @@ Public Class SearchDlg
         Me.btnSearch.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnSearch.Location = New System.Drawing.Point(94, 113)
         Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnSearch.TabIndex = 10
         Me.btnSearch.Text = "Search"
         '
@@ -66,7 +68,6 @@ Public Class SearchDlg
         Me.edtSearchFor.Name = "edtSearchFor"
         Me.edtSearchFor.Size = New System.Drawing.Size(248, 20)
         Me.edtSearchFor.TabIndex = 9
-        Me.edtSearchFor.Text = ""
         '
         'label2
         '
@@ -106,8 +107,10 @@ Public Class SearchDlg
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "SearchDlg"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Find Message"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

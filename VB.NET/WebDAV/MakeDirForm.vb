@@ -34,10 +34,10 @@ Public Class MakeDirForm
     Public WithEvents edtValue As System.Windows.Forms.TextBox
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.button2 = New System.Windows.Forms.Button
-        Me.button1 = New System.Windows.Forms.Button
-        Me.edtValue = New System.Windows.Forms.TextBox
-        Me.label1 = New System.Windows.Forms.Label
+        Me.button2 = New System.Windows.Forms.Button()
+        Me.button1 = New System.Windows.Forms.Button()
+        Me.edtValue = New System.Windows.Forms.TextBox()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'button2
@@ -45,6 +45,7 @@ Public Class MakeDirForm
         Me.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.button2.Location = New System.Drawing.Point(201, 76)
         Me.button2.Name = "button2"
+        Me.button2.Size = New System.Drawing.Size(75, 23)
         Me.button2.TabIndex = 7
         Me.button2.Text = "Cancel"
         '
@@ -53,6 +54,7 @@ Public Class MakeDirForm
         Me.button1.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.button1.Location = New System.Drawing.Point(105, 76)
         Me.button1.Name = "button1"
+        Me.button1.Size = New System.Drawing.Size(75, 23)
         Me.button1.TabIndex = 6
         Me.button1.Text = "OK"
         '
@@ -62,7 +64,6 @@ Public Class MakeDirForm
         Me.edtValue.Name = "edtValue"
         Me.edtValue.Size = New System.Drawing.Size(256, 20)
         Me.edtValue.TabIndex = 5
-        Me.edtValue.Text = ""
         '
         'label1
         '
@@ -82,8 +83,10 @@ Public Class MakeDirForm
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "MakeDirForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Make new directory"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

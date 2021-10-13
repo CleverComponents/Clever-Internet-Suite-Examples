@@ -50,7 +50,7 @@ inherited MainForm: TMainForm
       Width = 515
       Height = 21
       TabOrder = 2
-      Text = 'SubmitFileHTTP.dpr'
+      Text = '..\SubmitFileHTTP.cpp'
     end
     object btnBrowse: TButton
       Left = 540

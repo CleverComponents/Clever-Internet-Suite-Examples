@@ -112,7 +112,7 @@ namespace SubmitFile
 			this.edtName.Name = "edtName";
 			this.edtName.Size = new System.Drawing.Size(355, 20);
 			this.edtName.TabIndex = 5;
-			this.edtName.Text = "c:\\uploads\\file.txt";
+			this.edtName.Text = "..\\..\\SubmitFile.csproj";
 			// 
 			// label5
 			// 
@@ -159,6 +159,7 @@ namespace SubmitFile
 			// http1
 			// 
 			this.http1.CharSet = null;
+			this.http1.ConnectTimeOut = 0;
 			this.http1.SendProgress += new CleverComponents.InetSuite.ProgressEventHandler(this.http1_SendProgress);
 			// 
 			// progressBar1
@@ -183,6 +184,7 @@ namespace SubmitFile
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.label1);
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Simulate Web Submit File request";
 			((System.ComponentModel.ISupportInitialize)(this.httpRequest1)).EndInit();
 			this.ResumeLayout(false);

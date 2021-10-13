@@ -50,24 +50,25 @@ Public Class Form1
     Friend WithEvents SmtpRelay1 As CleverComponents.InetSuite.SmtpRelay
     Friend WithEvents MailMessage1 As CleverComponents.InetSuite.MailMessage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnSend = New System.Windows.Forms.Button
-        Me.memText = New System.Windows.Forms.TextBox
-        Me.edtSubject = New System.Windows.Forms.TextBox
-        Me.edtRecipient = New System.Windows.Forms.TextBox
-        Me.edtSender = New System.Windows.Forms.TextBox
-        Me.edtDNSTimeOut = New System.Windows.Forms.TextBox
-        Me.edtDNS = New System.Windows.Forms.TextBox
-        Me.label9 = New System.Windows.Forms.Label
-        Me.label8 = New System.Windows.Forms.Label
-        Me.label7 = New System.Windows.Forms.Label
-        Me.label6 = New System.Windows.Forms.Label
-        Me.label5 = New System.Windows.Forms.Label
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.SmtpRelay1 = New CleverComponents.InetSuite.SmtpRelay
-        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage
+        Me.btnSend = New System.Windows.Forms.Button()
+        Me.memText = New System.Windows.Forms.TextBox()
+        Me.edtSubject = New System.Windows.Forms.TextBox()
+        Me.edtRecipient = New System.Windows.Forms.TextBox()
+        Me.edtSender = New System.Windows.Forms.TextBox()
+        Me.edtDNSTimeOut = New System.Windows.Forms.TextBox()
+        Me.edtDNS = New System.Windows.Forms.TextBox()
+        Me.label9 = New System.Windows.Forms.Label()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.SmtpRelay1 = New CleverComponents.InetSuite.SmtpRelay()
+        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage()
+        CType(Me.SmtpRelay1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -125,6 +126,7 @@ Public Class Form1
         '
         Me.edtDNS.Location = New System.Drawing.Point(120, 128)
         Me.edtDNS.Name = "edtDNS"
+        Me.edtDNS.Size = New System.Drawing.Size(100, 20)
         Me.edtDNS.TabIndex = 25
         Me.edtDNS.Text = "192.168.0.1"
         '
@@ -182,8 +184,8 @@ Public Class Form1
         Me.label3.Name = "label3"
         Me.label3.Size = New System.Drawing.Size(392, 32)
         Me.label3.TabIndex = 18
-        Me.label3.Text = "Please note ! Most SMTP servers require that the sender PC must be registered in " & _
-        "DNS. Otherwise, relaying will be denied to such SMTP servers."
+        Me.label3.Text = "Please note ! Most SMTP servers require that the sender PC must be registered in " &
+    "DNS. Otherwise, relaying will be denied to such SMTP servers."
         '
         'label2
         '
@@ -191,8 +193,8 @@ Public Class Form1
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(400, 32)
         Me.label2.TabIndex = 17
-        Me.label2.Text = "Please specify the DNS server IP which will be used for resolving the SMTP server" & _
-        " address of the recipient"
+        Me.label2.Text = "Please specify the DNS server IP which will be used for resolving the SMTP server" &
+    " address of the recipient"
         '
         'label1
         '
@@ -201,10 +203,6 @@ Public Class Form1
         Me.label1.Size = New System.Drawing.Size(384, 16)
         Me.label1.TabIndex = 16
         Me.label1.Text = "This demo creates e-mail and sends it directly to the recipient's server."
-        '
-        'SmtpRelay1
-        '
-        Me.SmtpRelay1.Port = 25
         '
         'MailMessage1
         '
@@ -232,9 +230,12 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SMTP Relay demo"
+        CType(Me.SmtpRelay1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

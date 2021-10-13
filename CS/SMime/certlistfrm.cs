@@ -81,6 +81,7 @@ namespace SMime
 			// lbList
 			// 
 			this.lbList.Dock = System.Windows.Forms.DockStyle.Top;
+			this.lbList.Location = new System.Drawing.Point(0, 0);
 			this.lbList.Name = "lbList";
 			this.lbList.Size = new System.Drawing.Size(384, 160);
 			this.lbList.TabIndex = 0;
@@ -89,6 +90,7 @@ namespace SMime
 			// 
 			this.btnInstall.Location = new System.Drawing.Point(16, 176);
 			this.btnInstall.Name = "btnInstall";
+			this.btnInstall.Size = new System.Drawing.Size(75, 23);
 			this.btnInstall.TabIndex = 1;
 			this.btnInstall.Text = "Install";
 			this.btnInstall.Click += new System.EventHandler(this.btnInstall_Click);
@@ -98,6 +100,7 @@ namespace SMime
 			this.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnClose.Location = new System.Drawing.Point(296, 176);
 			this.btnClose.Name = "btnClose";
+			this.btnClose.Size = new System.Drawing.Size(75, 23);
 			this.btnClose.TabIndex = 2;
 			this.btnClose.Text = "Close";
 			// 
@@ -106,14 +109,14 @@ namespace SMime
 			this.AcceptButton = this.btnClose;
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.ClientSize = new System.Drawing.Size(384, 208);
-			this.Controls.AddRange(new System.Windows.Forms.Control[] {
-																		  this.btnClose,
-																		  this.btnInstall,
-																		  this.lbList});
+			this.Controls.Add(this.btnClose);
+			this.Controls.Add(this.btnInstall);
+			this.Controls.Add(this.lbList);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "CertListForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "certlistfrm";
 			this.ResumeLayout(false);
 

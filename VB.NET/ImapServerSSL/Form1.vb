@@ -52,23 +52,23 @@ Public Class Form1
     Friend WithEvents Imap4FileHandler1 As CleverComponents.InetSuite.Imap4FileHandler
     Friend WithEvents CertificateStore1 As CleverComponents.InetSuite.CertificateStore
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem
-        Me.cbUseTls = New System.Windows.Forms.ComboBox
-        Me.label7 = New System.Windows.Forms.Label
-        Me.label6 = New System.Windows.Forms.Label
-        Me.memLog = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.btnStop = New System.Windows.Forms.Button
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtRootDir = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore
-        Me.Imap4Server1 = New CleverComponents.InetSuite.Imap4Server
-        Me.Imap4FileHandler1 = New CleverComponents.InetSuite.Imap4FileHandler
+        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem()
+        Me.cbUseTls = New System.Windows.Forms.ComboBox()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.memLog = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.btnStop = New System.Windows.Forms.Button()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtRootDir = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore()
+        Me.Imap4Server1 = New CleverComponents.InetSuite.Imap4Server()
+        Me.Imap4FileHandler1 = New CleverComponents.InetSuite.Imap4FileHandler()
         Me.SuspendLayout()
         '
         'cbUseTls
@@ -94,9 +94,9 @@ Public Class Form1
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(400, 48)
         Me.label6.TabIndex = 33
-        Me.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " & _
-            "In real application you will need to request a certificate from trusted issuer o" & _
-            "r use your own self-signed certificate."
+        Me.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " &
+    "In real application you will need to request a certificate from trusted issuer o" &
+    "r use your own self-signed certificate."
         '
         'memLog
         '
@@ -178,8 +178,8 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(416, 37)
         Me.label1.TabIndex = 23
-        Me.label1.Text = "This is a sample IMAP4 SSL / TLS server. You can use any SSL-enabled IMAP client " & _
-            "(such as TclIMAP4 or MS Outlook client to connect to this server."
+        Me.label1.Text = "This is a sample IMAP4 SSL / TLS server. You can use any SSL-enabled IMAP client " &
+    "(such as TclIMAP4 or MS Outlook client to connect to this server."
         '
         'CertificateStore1
         '
@@ -188,9 +188,6 @@ Public Class Form1
         '
         'Imap4Server1
         '
-        Me.Imap4Server1.Port = 143
-        Me.Imap4Server1.ServerName = "Clever Internet Suite IMAP4 service"
-        MailUserAccountItem1.DisplayName = ""
         MailUserAccountItem1.Password = "clevertester"
         MailUserAccountItem1.UserName = "CleverTester"
         Me.Imap4Server1.UserAccounts.AddRange(New CleverComponents.InetSuite.UserAccountItem() {MailUserAccountItem1})
@@ -218,6 +215,7 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clever IMAP4 Server SSL / TLS"
         Me.ResumeLayout(False)
         Me.PerformLayout()

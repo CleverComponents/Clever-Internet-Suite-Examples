@@ -25,6 +25,8 @@ int main(int argc, char* argv[])
   {
 	printf("This console app encodes / decodes files in Base64, Quoted-Printable, and UUEncode formats.\n");
 	printf("Usage: Encoder.exe srcfile destfile operation[E][D] method[QP][BASE64][UUE]\n");
+	printf("Press Enter to continue...");
+	getchar();
     return 0;
   }
   TclEncoder *Encoder = NULL;

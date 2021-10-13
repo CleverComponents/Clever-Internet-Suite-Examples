@@ -88,7 +88,7 @@ inherited Form1: TForm1
   object DownLoader: TclDownLoader
     InternetAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
     URL = 'https://www.clevercomponents.com/images/testimage.jpg'
-    LocalFile = 'C:\testimage.jpg'
+    LocalFile = 'C:\downloads\testimage.jpg'
     OnStatusChanged = DownLoaderStatusChanged
     OnChanged = DownLoaderChanged
     LocalFolder = 'C:\'

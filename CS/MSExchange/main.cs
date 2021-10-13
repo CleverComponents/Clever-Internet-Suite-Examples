@@ -95,18 +95,19 @@ namespace MSExchange
 			// 
 			// label1
 			// 
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((System.Byte)(204)));
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label1.Location = new System.Drawing.Point(16, 8);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(496, 24);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "This demo demonstrates how to send MIME mail message using Microsoft Exchange ser" +
-				"ver";
+    "ver";
 			// 
 			// label2
 			// 
 			this.label2.Location = new System.Drawing.Point(16, 32);
 			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(100, 23);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "From";
 			// 
@@ -114,6 +115,7 @@ namespace MSExchange
 			// 
 			this.label3.Location = new System.Drawing.Point(16, 56);
 			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(100, 23);
 			this.label3.TabIndex = 2;
 			this.label3.Text = "To";
 			// 
@@ -121,6 +123,7 @@ namespace MSExchange
 			// 
 			this.label4.Location = new System.Drawing.Point(16, 80);
 			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(100, 23);
 			this.label4.TabIndex = 3;
 			this.label4.Text = "Subject";
 			// 
@@ -128,6 +131,7 @@ namespace MSExchange
 			// 
 			this.label5.Location = new System.Drawing.Point(16, 112);
 			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(100, 23);
 			this.label5.TabIndex = 4;
 			this.label5.Text = "Plain Text";
 			// 
@@ -135,6 +139,7 @@ namespace MSExchange
 			// 
 			this.label6.Location = new System.Drawing.Point(272, 104);
 			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(100, 23);
 			this.label6.TabIndex = 5;
 			this.label6.Text = "Plain Html";
 			// 
@@ -142,6 +147,7 @@ namespace MSExchange
 			// 
 			this.label7.Location = new System.Drawing.Point(16, 248);
 			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(100, 23);
 			this.label7.TabIndex = 6;
 			this.label7.Text = "Attachments";
 			// 
@@ -214,6 +220,7 @@ namespace MSExchange
 			// 
 			this.btnAdd.Location = new System.Drawing.Point(344, 264);
 			this.btnAdd.Name = "btnAdd";
+			this.btnAdd.Size = new System.Drawing.Size(75, 23);
 			this.btnAdd.TabIndex = 6;
 			this.btnAdd.Text = "Add...";
 			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -222,6 +229,7 @@ namespace MSExchange
 			// 
 			this.btnClear.Location = new System.Drawing.Point(344, 296);
 			this.btnClear.Name = "btnClear";
+			this.btnClear.Size = new System.Drawing.Size(75, 23);
 			this.btnClear.TabIndex = 7;
 			this.btnClear.Text = "Clear";
 			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -274,9 +282,11 @@ namespace MSExchange
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "MS SMTP Mail Sender";
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

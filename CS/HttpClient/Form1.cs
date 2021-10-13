@@ -77,7 +77,7 @@ namespace HttpClient
 			this.label1.Size = new System.Drawing.Size(424, 24);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Type in the URL and click the \'GET\' button to retreive the page specified by URL." +
-				"";
+    "";
 			// 
 			// label2
 			// 
@@ -108,6 +108,7 @@ namespace HttpClient
 			// 
 			this.cbShowText.Location = new System.Drawing.Point(56, 72);
 			this.cbShowText.Name = "cbShowText";
+			this.cbShowText.Size = new System.Drawing.Size(104, 24);
 			this.cbShowText.TabIndex = 4;
 			this.cbShowText.Text = "Show text only";
 			// 
@@ -121,11 +122,6 @@ namespace HttpClient
 			this.memResult.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.memResult.Size = new System.Drawing.Size(448, 264);
 			this.memResult.TabIndex = 5;
-			this.memResult.Text = "";
-			// 
-			// http1
-			// 
-			this.http1.Port = 80;
 			// 
 			// htmlParser1
 			// 
@@ -143,8 +139,10 @@ namespace HttpClient
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "HTTP GET demo";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

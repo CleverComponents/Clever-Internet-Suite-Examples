@@ -46,19 +46,19 @@ Public Class Form1
     Friend WithEvents Imap4FileHandler1 As CleverComponents.InetSuite.Imap4FileHandler
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem
-        Me.memLog = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.btnStop = New System.Windows.Forms.Button
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtRootDir = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Imap4Server1 = New CleverComponents.InetSuite.Imap4Server
-        Me.Imap4FileHandler1 = New CleverComponents.InetSuite.Imap4FileHandler
+        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem()
+        Me.memLog = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.btnStop = New System.Windows.Forms.Button()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtRootDir = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Imap4Server1 = New CleverComponents.InetSuite.Imap4Server()
+        Me.Imap4FileHandler1 = New CleverComponents.InetSuite.Imap4FileHandler()
         Me.SuspendLayout()
         '
         'memLog
@@ -141,14 +141,11 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(416, 29)
         Me.label1.TabIndex = 20
-        Me.label1.Text = "This is a sample IMAP server. You can use any mail client with IMAP support to co" & _
-            "nnect to this server."
+        Me.label1.Text = "This is a sample IMAP server. You can use any mail client with IMAP support to co" &
+    "nnect to this server."
         '
         'Imap4Server1
         '
-        Me.Imap4Server1.Port = 143
-        Me.Imap4Server1.ServerName = "Clever Internet Suite IMAP4 service"
-        MailUserAccountItem1.DisplayName = ""
         MailUserAccountItem1.Password = "clevertester"
         MailUserAccountItem1.UserName = "CleverTester"
         Me.Imap4Server1.UserAccounts.AddRange(New CleverComponents.InetSuite.UserAccountItem() {MailUserAccountItem1})
@@ -173,6 +170,7 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clever IMAP4 Server"
         Me.ResumeLayout(False)
         Me.PerformLayout()

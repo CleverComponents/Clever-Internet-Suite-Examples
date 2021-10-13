@@ -173,6 +173,7 @@ namespace MailSendReceive
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "MessageFrm";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Message Details";
 			this.ResumeLayout(false);
 			this.PerformLayout();

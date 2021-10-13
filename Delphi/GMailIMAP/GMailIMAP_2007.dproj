@@ -70,6 +70,9 @@
     <DCCReference Include="main.pas">
       <Form>Form1</Form>
     </DCCReference>
+    <DCCReference Include="login.pas">
+      <Form>LoginConfirmation</Form>
+    </DCCReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
 </Project>

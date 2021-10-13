@@ -114,6 +114,7 @@ namespace WebDAV
 			this.button1.DialogResult = System.Windows.Forms.DialogResult.Yes;
 			this.button1.Location = new System.Drawing.Point(32, 96);
 			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 5;
 			this.button1.Text = "Set";
 			// 
@@ -122,6 +123,7 @@ namespace WebDAV
 			this.button2.DialogResult = System.Windows.Forms.DialogResult.No;
 			this.button2.Location = new System.Drawing.Point(128, 96);
 			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 6;
 			this.button2.Text = "Remove";
 			// 
@@ -130,6 +132,7 @@ namespace WebDAV
 			this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.button3.Location = new System.Drawing.Point(224, 96);
 			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(75, 23);
 			this.button3.TabIndex = 7;
 			this.button3.Text = "Cancel";
 			// 
@@ -147,8 +150,10 @@ namespace WebDAV
 			this.Controls.Add(this.lblResource);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "ModifyPropForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Change / Remove Property";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

@@ -36,9 +36,9 @@ Public Class CertListForm
     Friend WithEvents btnInstall As System.Windows.Forms.Button
     Friend WithEvents lbList As System.Windows.Forms.ListBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnClose = New System.Windows.Forms.Button
-        Me.btnInstall = New System.Windows.Forms.Button
-        Me.lbList = New System.Windows.Forms.ListBox
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnInstall = New System.Windows.Forms.Button()
+        Me.lbList = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'btnClose
@@ -46,6 +46,7 @@ Public Class CertListForm
         Me.btnClose.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnClose.Location = New System.Drawing.Point(296, 181)
         Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 5
         Me.btnClose.Text = "Close"
         '
@@ -53,6 +54,7 @@ Public Class CertListForm
         '
         Me.btnInstall.Location = New System.Drawing.Point(16, 181)
         Me.btnInstall.Name = "btnInstall"
+        Me.btnInstall.Size = New System.Drawing.Size(75, 23)
         Me.btnInstall.TabIndex = 4
         Me.btnInstall.Text = "Install"
         '
@@ -75,6 +77,7 @@ Public Class CertListForm
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "CertListForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "certlistfrm"
         Me.ResumeLayout(False)
 

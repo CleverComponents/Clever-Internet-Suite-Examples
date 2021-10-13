@@ -177,6 +177,7 @@ namespace FormPost
 			// 
 			this.btnStart.Location = new System.Drawing.Point(16, 176);
 			this.btnStart.Name = "btnStart";
+			this.btnStart.Size = new System.Drawing.Size(75, 23);
 			this.btnStart.TabIndex = 10;
 			this.btnStart.Text = "&Submit";
 			this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -197,11 +198,6 @@ namespace FormPost
 			this.memResult.ReadOnly = true;
 			this.memResult.Size = new System.Drawing.Size(392, 88);
 			this.memResult.TabIndex = 12;
-			this.memResult.Text = "";
-			// 
-			// http1
-			// 
-			this.http1.Port = 80;
 			// 
 			// Form1
 			// 
@@ -221,9 +217,11 @@ namespace FormPost
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.label1);
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Simulate Web Form POST request";
 			((System.ComponentModel.ISupportInitialize)(this.httpRequest1)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

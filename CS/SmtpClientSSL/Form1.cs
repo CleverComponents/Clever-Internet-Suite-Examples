@@ -239,6 +239,7 @@ namespace SmtpClientSSL
 			// 
 			// smtp1
 			// 
+			this.smtp1.ConnectTimeOut = 0;
 			this.smtp1.VerifyServer += new CleverComponents.InetSuite.VerifyPeerEventHandler(this.smtp1_VerifyServer);
 			// 
 			// mailMessage1
@@ -270,6 +271,7 @@ namespace SmtpClientSSL
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SMTP Client with SSL / TLS support";
 			((System.ComponentModel.ISupportInitialize)(this.smtp1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).EndInit();

@@ -99,7 +99,6 @@ namespace CertMgr
 			this.edtStoreName.ReadOnly = true;
 			this.edtStoreName.Size = new System.Drawing.Size(304, 20);
 			this.edtStoreName.TabIndex = 3;
-			this.edtStoreName.Text = "";
 			// 
 			// edtPassword
 			// 
@@ -116,13 +115,14 @@ namespace CertMgr
 			this.label3.Size = new System.Drawing.Size(304, 32);
 			this.label3.TabIndex = 5;
 			this.label3.Text = "The certificate will be imported and installed in to the currently loaded System " +
-				"Store:";
+    "Store:";
 			// 
 			// btnCancel
 			// 
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Location = new System.Drawing.Point(200, 144);
 			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 10;
 			this.btnCancel.Text = "Cancel";
 			// 
@@ -131,6 +131,7 @@ namespace CertMgr
 			this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnOk.Location = new System.Drawing.Point(80, 144);
 			this.btnOk.Name = "btnOk";
+			this.btnOk.Size = new System.Drawing.Size(75, 23);
 			this.btnOk.TabIndex = 9;
 			this.btnOk.Text = "OK";
 			// 
@@ -149,8 +150,10 @@ namespace CertMgr
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "ImportForm";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Certificate Import Dialog";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

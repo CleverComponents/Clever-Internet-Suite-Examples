@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, clTcpClient, clTcpClientTls, clMC, clImap4, ImgList, clCertificate,
-  clMailMessage, clTcpCommandClient, clOAuth, DemoBaseFormUnit, ExtCtrls, clSocketUtils;
+  clMailMessage, clTcpCommandClient, clOAuth, DemoBaseFormUnit, ExtCtrls, clSocketUtils, login;
 
 type
   TForm1 = class(TclDemoBaseForm)
@@ -33,6 +33,7 @@ type
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     FChanging: Boolean;
+    FLogout: Boolean;
     procedure FillFolderList;
     procedure AddFolderToList(AName: string);
     function GetFolderName(Node: TTreeNode): string;
@@ -53,6 +54,7 @@ procedure TForm1.btnLoginClick(Sender: TObject);
 begin
   if clImap.Active or clOAuth1.Active then Exit;
 
+  FLogout := False;
   EnableControls(False);
   try
     clOAuth1.AuthUrl := 'https://accounts.google.com/o/oauth2/auth';
@@ -71,11 +73,20 @@ begin
 
     clImap.UserName := edtUser.Text;
 
-    clImap.Authorization := clOAuth1.GetAuthorization();
+    if not TLoginConfirmation.ShowConfirmation(clOAuth1.ClientID, clOAuth1.Scope) then Exit;
 
-    clImap.Open();
+    try
+      clImap.Authorization := clOAuth1.GetAuthorization();
 
-    FillFolderList();
+      clImap.Open();
+
+      FillFolderList();
+    except
+      on EclSocketError do
+      begin
+        if not FLogout then raise;
+      end;
+    end;
   finally
     EnableControls(True);
   end;
@@ -147,6 +158,8 @@ end;
 
 procedure TForm1.btnLogoutClick(Sender: TObject);
 begin
+  FLogout := True;
+
   try
     clOAuth1.Close();
   except

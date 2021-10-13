@@ -19,6 +19,7 @@
 #include <clSFtpUtils.hpp>
 #include <clUtils.hpp>
 #include <Vcl.ComCtrls.hpp>
+#include <Vcl.Dialogs.hpp>
 
 //---------------------------------------------------------------------------
 class TMainForm : public TclDemoBaseForm
@@ -110,6 +111,7 @@ __published:	// IDE-managed Components
   TEdit *edtMaxWindowSize;
   TLabel *Label32;
   TLabel *lblStatus;
+	TOpenDialog *OpenDialog1;
   void __fastcall FormCreate(TObject *Sender);
   void __fastcall FormDestroy(TObject *Sender);
   void __fastcall btnStartClick(TObject *Sender);

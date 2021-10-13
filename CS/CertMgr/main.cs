@@ -72,11 +72,11 @@ namespace CertMgr {
 			this.label3 = new System.Windows.Forms.Label();
 			this.cbName = new System.Windows.Forms.ComboBox();
 			this.lvCertificates = new System.Windows.Forms.ListView();
-			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-			this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.btnLoad = new System.Windows.Forms.Button();
 			this.btnClose = new System.Windows.Forms.Button();
 			this.btnExport = new System.Windows.Forms.Button();
@@ -266,6 +266,7 @@ namespace CertMgr {
 			this.Controls.Add(this.label2);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
 			this.ResumeLayout(false);
 

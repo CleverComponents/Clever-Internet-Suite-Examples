@@ -75,13 +75,13 @@ namespace WebDAV
 			this.edtValue.Name = "edtValue";
 			this.edtValue.Size = new System.Drawing.Size(256, 20);
 			this.edtValue.TabIndex = 1;
-			this.edtValue.Text = "";
 			// 
 			// button1
 			// 
 			this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.button1.Location = new System.Drawing.Point(104, 72);
 			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 2;
 			this.button1.Text = "OK";
 			// 
@@ -90,6 +90,7 @@ namespace WebDAV
 			this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.button2.Location = new System.Drawing.Point(200, 72);
 			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 3;
 			this.button2.Text = "Cancel";
 			// 
@@ -103,8 +104,10 @@ namespace WebDAV
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "MakeDirForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Make new directory";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

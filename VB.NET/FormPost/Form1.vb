@@ -52,21 +52,21 @@ Public Class Form1
     Friend WithEvents Http1 As CleverComponents.InetSuite.Http
     Friend WithEvents HttpRequest1 As CleverComponents.InetSuite.HttpRequest
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.memResult = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtHost = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.edtAccount = New System.Windows.Forms.TextBox
-        Me.edtBirthdate = New System.Windows.Forms.TextBox
-        Me.edtName = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.linkLabel1 = New System.Windows.Forms.LinkLabel
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Http1 = New CleverComponents.InetSuite.Http
-        Me.HttpRequest1 = New CleverComponents.InetSuite.HttpRequest
+        Me.memResult = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtHost = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.edtAccount = New System.Windows.Forms.TextBox()
+        Me.edtBirthdate = New System.Windows.Forms.TextBox()
+        Me.edtName = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.linkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Http1 = New CleverComponents.InetSuite.Http()
+        Me.HttpRequest1 = New CleverComponents.InetSuite.HttpRequest()
         CType(Me.HttpRequest1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,7 +78,6 @@ Public Class Form1
         Me.memResult.ReadOnly = True
         Me.memResult.Size = New System.Drawing.Size(392, 88)
         Me.memResult.TabIndex = 25
-        Me.memResult.Text = ""
         '
         'label6
         '
@@ -92,6 +91,7 @@ Public Class Form1
         '
         Me.btnStart.Location = New System.Drawing.Point(16, 179)
         Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 23
         Me.btnStart.Text = "&Submit"
         '
@@ -176,10 +176,6 @@ Public Class Form1
         Me.label1.TabIndex = 13
         Me.label1.Text = "Try the original web page at:"
         '
-        'Http1
-        '
-        Me.Http1.Port = 80
-        '
         'Form1
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
@@ -199,9 +195,11 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Simulate Web Form POST request"
         CType(Me.HttpRequest1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

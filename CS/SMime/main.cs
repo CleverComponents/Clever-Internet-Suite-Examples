@@ -60,16 +60,16 @@ namespace SMime
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		protected override void Dispose( bool disposing )
+		protected override void Dispose(bool disposing)
 		{
-			if( disposing )
+			if (disposing)
 			{
-				if (components != null) 
+				if (components != null)
 				{
 					components.Dispose();
 				}
 			}
-			base.Dispose( disposing );
+			base.Dispose(disposing);
 		}
 
 		#region Windows Form Designer generated code
@@ -281,7 +281,7 @@ namespace SMime
 			this.label7.Size = new System.Drawing.Size(472, 16);
 			this.label7.TabIndex = 26;
 			this.label7.Text = "This demo creates and signs / encodes the mail message and stores it to file on t" +
-				"he disk.";
+	"he disk.";
 			// 
 			// label8
 			// 
@@ -290,8 +290,8 @@ namespace SMime
 			this.label8.Size = new System.Drawing.Size(464, 32);
 			this.label8.TabIndex = 27;
 			this.label8.Text = "If you have a mail message, already stored on the  disk, you can load it and decr" +
-				"ypt / verify  the message  digital signature.  Please see Readme.txt for more de" +
-				"tails.";
+	"ypt / verify  the message  digital signature.  Please see Readme.txt for more de" +
+	"tails.";
 			// 
 			// sMimeMessage1
 			// 
@@ -333,6 +333,7 @@ namespace SMime
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SMIME Message";
 			((System.ComponentModel.ISupportInitialize)(this.sMimeMessage1)).EndInit();
 			this.ResumeLayout(false);
@@ -345,52 +346,61 @@ namespace SMime
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static void Main() 
+		static void Main()
 		{
 			Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(new ExceptionHandler().OnThreadException);
 			Application.Run(new MainForm());
 		}
 
-		private void NewMessage() {
+		private void NewMessage()
+		{
 			edtFrom.Text = GetCertDialog.DefaultEmail;
 			edtToList.Text = "";
 			edtSubject.Text = "";
 			memText.Text = "";
 		}
 
-		private void BuildMessage() {
+		private void BuildMessage()
+		{
 			sMimeMessage1.BuildMessage(memText.Text, "");
 			sMimeMessage1.From.FullAddress = edtFrom.Text;
 			sMimeMessage1.ToList.EmailAddresses = edtToList.Text;
 			sMimeMessage1.Subject = edtSubject.Text;
 		}
 
-		private void FillControls() {
+		private void FillControls()
+		{
 			edtFrom.Text = sMimeMessage1.From.FullAddress;
 			edtToList.Text = sMimeMessage1.ToList.EmailAddresses;
 			edtSubject.Text = sMimeMessage1.Subject;
-		    memText.Lines = sMimeMessage1.MessageText;
+			memText.Lines = sMimeMessage1.MessageText;
 		}
 
-		private void cbDetachedSignature_CheckedChanged(object sender, System.EventArgs e) {
+		private void cbDetachedSignature_CheckedChanged(object sender, System.EventArgs e)
+		{
 			sMimeMessage1.IsDetachedSignature = cbDetachedSignature.Checked;
 			sMimeMessage1.IncludeCertificateOption = cbIncludeCertificate.Checked ? X509IncludeOption.WholeChain : X509IncludeOption.None;
 		}
 
-		private void btnNewMessage_Click(object sender, System.EventArgs e) {
+		private void btnNewMessage_Click(object sender, System.EventArgs e)
+		{
 			NewMessage();
 		}
 
-		private void btnViewCertificates_Click(object sender, System.EventArgs e) {
+		private void btnViewCertificates_Click(object sender, System.EventArgs e)
+		{
 			CertListForm.ShowCertificates(sMimeMessage1.Certificates);
 		}
 
-		private void btnSign_Click(object sender, System.EventArgs e) {
-			if(saveFileDialog.ShowDialog() == DialogResult.OK) {
+		private void btnSign_Click(object sender, System.EventArgs e)
+		{
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
 				BuildMessage();
 				sMimeMessage1.Sign();
 
-				using(StreamWriter w = new StreamWriter(saveFileDialog.FileName)) {
+				using (StreamWriter w = new StreamWriter(saveFileDialog.FileName))
+				{
 					w.Write(StringUtils.GetStringsAsString(sMimeMessage1.MessageSource));
 				}
 
@@ -398,10 +408,13 @@ namespace SMime
 			}
 		}
 
-		private void btnVerify_Click(object sender, System.EventArgs e) {
-			if(openFileDialog.ShowDialog() == DialogResult.OK) {
+		private void btnVerify_Click(object sender, System.EventArgs e)
+		{
+			if (openFileDialog.ShowDialog() == DialogResult.OK)
+			{
 				NewMessage();
-				using(StreamReader sr = File.OpenText(openFileDialog.FileName)) {
+				using (StreamReader sr = File.OpenText(openFileDialog.FileName))
+				{
 					sMimeMessage1.MessageSource = StringUtils.GetStringArray(sr.ReadToEnd());
 				}
 
@@ -411,22 +424,28 @@ namespace SMime
 			}
 		}
 
-		private void btnEncrypt_Click(object sender, System.EventArgs e) {
-			if(saveFileDialog.ShowDialog() == DialogResult.OK) {
+		private void btnEncrypt_Click(object sender, System.EventArgs e)
+		{
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
 				BuildMessage();
 				sMimeMessage1.Encrypt();
 
-				using(StreamWriter w = new StreamWriter(saveFileDialog.FileName)) {
+				using (StreamWriter w = new StreamWriter(saveFileDialog.FileName))
+				{
 					w.Write(StringUtils.GetStringsAsString(sMimeMessage1.MessageSource));
 				}
 				MessageBox.Show("The encrypted message is saved to " + saveFileDialog.FileName);
 			}
 		}
 
-		private void btnDecrypt_Click(object sender, System.EventArgs e) {
-			if(openFileDialog.ShowDialog() == DialogResult.OK) {
+		private void btnDecrypt_Click(object sender, System.EventArgs e)
+		{
+			if (openFileDialog.ShowDialog() == DialogResult.OK)
+			{
 				NewMessage();
-				using(StreamReader sr = File.OpenText(openFileDialog.FileName)) {
+				using (StreamReader sr = File.OpenText(openFileDialog.FileName))
+				{
 					sMimeMessage1.MessageSource = StringUtils.GetStringArray(sr.ReadToEnd());
 				}
 
@@ -436,23 +455,29 @@ namespace SMime
 			}
 		}
 
-		private void btnSignEncrypt_Click(object sender, System.EventArgs e) {
-			if(saveFileDialog.ShowDialog() == DialogResult.OK) {
+		private void btnSignEncrypt_Click(object sender, System.EventArgs e)
+		{
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
 				BuildMessage();
 				sMimeMessage1.Sign();
 				sMimeMessage1.Encrypt();
 
-				using(StreamWriter w = new StreamWriter(saveFileDialog.FileName)) {
+				using (StreamWriter w = new StreamWriter(saveFileDialog.FileName))
+				{
 					w.Write(StringUtils.GetStringsAsString(sMimeMessage1.MessageSource));
 				}
 				MessageBox.Show("The encrypted and signed message is saved to " + saveFileDialog.FileName);
 			}
 		}
 
-		private void btnVerifyDecrypt_Click(object sender, System.EventArgs e) {
-			if(openFileDialog.ShowDialog() == DialogResult.OK) {
+		private void btnVerifyDecrypt_Click(object sender, System.EventArgs e)
+		{
+			if (openFileDialog.ShowDialog() == DialogResult.OK)
+			{
 				NewMessage();
-				using(StreamReader sr = File.OpenText(openFileDialog.FileName)) {
+				using (StreamReader sr = File.OpenText(openFileDialog.FileName))
+				{
 					sMimeMessage1.MessageSource = StringUtils.GetStringArray(sr.ReadToEnd());
 				}
 				sMimeMessage1.DecryptAndVerify();
@@ -461,24 +486,30 @@ namespace SMime
 			}
 		}
 
-		private void sMimeMessage1_GetEncryptionCertificate(object sender, GetCertificateEventArgs e) {
+		private void sMimeMessage1_GetEncryptionCertificate(object sender, GetCertificateEventArgs e)
+		{
 			GetCertDialog dlg = new GetCertDialog();
 
 			dlg.Text = "Get encryption certificate";
+			dlg.edtEmail.Text = edtToList.Text;
 
-			if (dlg.ShowDialog() == DialogResult.OK) {
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
 				certificateStore1.Open(dlg.edtStore.Text);
 				e.Certificate = certificateStore1.CertificateByEmail(dlg.edtEmail.Text);
 				e.Handled = true;
 			}
 		}
 
-		private void sMimeMessage1_GetSigningCertificate(object sender, GetCertificateEventArgs e) {
+		private void sMimeMessage1_GetSigningCertificate(object sender, GetCertificateEventArgs e)
+		{
 			GetCertDialog dlg = new GetCertDialog();
 
 			dlg.Text = "Get signing certificate";
+			dlg.edtEmail.Text = edtFrom.Text;
 
-			if (dlg.ShowDialog() == DialogResult.OK) {
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
 				certificateStore1.Open(dlg.edtStore.Text);
 				e.Certificate = certificateStore1.CertificateByEmail(dlg.edtEmail.Text);
 				e.Handled = true;
@@ -487,8 +518,10 @@ namespace SMime
 
 	}
 
-	public class ExceptionHandler {
-		public void OnThreadException(object sender, System.Threading.ThreadExceptionEventArgs t) {
+	public class ExceptionHandler
+	{
+		public void OnThreadException(object sender, System.Threading.ThreadExceptionEventArgs t)
+		{
 			MessageBox.Show(t.Exception.Message);
 		}
 	}

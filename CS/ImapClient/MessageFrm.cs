@@ -137,13 +137,13 @@ namespace ImapClient
 			this.memBody.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.memBody.Size = new System.Drawing.Size(464, 160);
 			this.memBody.TabIndex = 7;
-			this.memBody.Text = "";
 			// 
 			// btnAppend
 			// 
 			this.btnAppend.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnAppend.Location = new System.Drawing.Point(304, 272);
 			this.btnAppend.Name = "btnAppend";
+			this.btnAppend.Size = new System.Drawing.Size(75, 23);
 			this.btnAppend.TabIndex = 8;
 			this.btnAppend.Text = "Append";
 			// 
@@ -152,6 +152,7 @@ namespace ImapClient
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Location = new System.Drawing.Point(400, 272);
 			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 9;
 			this.btnCancel.Text = "Cancel";
 			// 
@@ -172,8 +173,10 @@ namespace ImapClient
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "MessageFrm";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Message Details";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

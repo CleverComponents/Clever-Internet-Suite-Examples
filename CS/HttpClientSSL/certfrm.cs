@@ -93,7 +93,6 @@ namespace HttpClientSSL
 			this.edtName.ReadOnly = true;
 			this.edtName.Size = new System.Drawing.Size(256, 20);
 			this.edtName.TabIndex = 1;
-			this.edtName.Text = "";
 			// 
 			// edtIssuedTo
 			// 
@@ -102,7 +101,6 @@ namespace HttpClientSSL
 			this.edtIssuedTo.ReadOnly = true;
 			this.edtIssuedTo.Size = new System.Drawing.Size(256, 20);
 			this.edtIssuedTo.TabIndex = 3;
-			this.edtIssuedTo.Text = "";
 			// 
 			// label2
 			// 
@@ -119,7 +117,6 @@ namespace HttpClientSSL
 			this.edtIssuedBy.ReadOnly = true;
 			this.edtIssuedBy.Size = new System.Drawing.Size(256, 20);
 			this.edtIssuedBy.TabIndex = 5;
-			this.edtIssuedBy.Text = "";
 			// 
 			// label3
 			// 
@@ -136,7 +133,6 @@ namespace HttpClientSSL
 			this.edtValidFrom.ReadOnly = true;
 			this.edtValidFrom.Size = new System.Drawing.Size(256, 20);
 			this.edtValidFrom.TabIndex = 7;
-			this.edtValidFrom.Text = "";
 			// 
 			// label4
 			// 
@@ -153,7 +149,6 @@ namespace HttpClientSSL
 			this.edtValidTo.ReadOnly = true;
 			this.edtValidTo.Size = new System.Drawing.Size(256, 20);
 			this.edtValidTo.TabIndex = 9;
-			this.edtValidTo.Text = "";
 			// 
 			// label5
 			// 
@@ -177,6 +172,7 @@ namespace HttpClientSSL
 			this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.button2.Location = new System.Drawing.Point(176, 184);
 			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 11;
 			this.button2.Text = "Continue";
 			// 
@@ -185,10 +181,11 @@ namespace HttpClientSSL
 			this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.button3.Location = new System.Drawing.Point(272, 184);
 			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(75, 23);
 			this.button3.TabIndex = 12;
 			this.button3.Text = "Cancel";
 			// 
-			// certfrm
+			// CertForm
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.ClientSize = new System.Drawing.Size(376, 230);
@@ -206,9 +203,11 @@ namespace HttpClientSSL
 			this.Controls.Add(this.edtName);
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.Name = "certfrm";
+			this.Name = "CertForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "View / Install certificate";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

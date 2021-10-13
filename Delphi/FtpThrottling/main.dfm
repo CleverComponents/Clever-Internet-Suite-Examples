@@ -2,7 +2,6 @@ inherited MainForm: TMainForm
   Left = 247
   Top = 62
   Caption = 'Ftp Client Throttling - Sample'
-  Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
@@ -11,7 +10,7 @@ inherited MainForm: TMainForm
     object Label1: TLabel
       Left = 12
       Top = 77
-      Width = 37
+      Width = 36
       Height = 13
       Caption = 'IP/Host'
     end
@@ -32,14 +31,14 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 11
       Top = 132
-      Width = 38
+      Width = 40
       Height = 13
       Caption = 'Start Dir'
     end
     object Label6: TLabel
       Left = 431
       Top = 76
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -53,15 +52,15 @@ inherited MainForm: TMainForm
     object Label8: TLabel
       Left = 11
       Top = 162
-      Width = 89
+      Width = 90
       Height = 13
       Caption = 'Throttling, Bits/sec'
     end
     object Label3: TLabel
       Left = 16
       Top = 8
-      Width = 337
-      Height = 13
+      Width = 390
+      Height = 26
       Caption = 
         'This demo provides you with the ability to control the connectio' +
         'n speed.'

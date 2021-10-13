@@ -91,9 +91,9 @@ Public Class MainForm
         Me.label8.Name = "label8"
         Me.label8.Size = New System.Drawing.Size(464, 32)
         Me.label8.TabIndex = 47
-        Me.label8.Text = "If you have a mail message, already stored on the  disk, you can load it and decr" & _
-            "ypt / verify  the message  digital signature.  Please see Readme.txt for more de" & _
-            "tails."
+        Me.label8.Text = "If you have a mail message, already stored on the  disk, you can load it and decr" &
+    "ypt / verify  the message  digital signature.  Please see Readme.txt for more de" &
+    "tails."
         '
         'saveFileDialog
         '
@@ -105,8 +105,8 @@ Public Class MainForm
         Me.label7.Name = "label7"
         Me.label7.Size = New System.Drawing.Size(472, 16)
         Me.label7.TabIndex = 46
-        Me.label7.Text = "This demo creates and signs / encodes the mail message and stores it to file on t" & _
-            "he disk."
+        Me.label7.Text = "This demo creates and signs / encodes the mail message and stores it to file on t" &
+    "he disk."
         '
         'memText
         '
@@ -265,8 +265,6 @@ Public Class MainForm
         'SMimeMessage1
         '
         Me.SMimeMessage1.Date = New Date(2006, 5, 8, 16, 3, 26, 30)
-        Me.SMimeMessage1.From.Email = ""
-        Me.SMimeMessage1.From.Name = ""
         '
         'CertificateStore1
         '
@@ -300,6 +298,7 @@ Public Class MainForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "MainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SMIME Message"
         CType(Me.SMimeMessage1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

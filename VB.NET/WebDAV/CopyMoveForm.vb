@@ -37,13 +37,13 @@ Public Class CopyMoveForm
     Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.button2 = New System.Windows.Forms.Button
-        Me.button1 = New System.Windows.Forms.Button
-        Me.cbIsMove = New System.Windows.Forms.CheckBox
-        Me.edtDestination = New System.Windows.Forms.TextBox
-        Me.edtSource = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Me.button2 = New System.Windows.Forms.Button()
+        Me.button1 = New System.Windows.Forms.Button()
+        Me.cbIsMove = New System.Windows.Forms.CheckBox()
+        Me.edtDestination = New System.Windows.Forms.TextBox()
+        Me.edtSource = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'button2
@@ -51,6 +51,7 @@ Public Class CopyMoveForm
         Me.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.button2.Location = New System.Drawing.Point(296, 97)
         Me.button2.Name = "button2"
+        Me.button2.Size = New System.Drawing.Size(75, 23)
         Me.button2.TabIndex = 13
         Me.button2.Text = "Cancel"
         '
@@ -59,6 +60,7 @@ Public Class CopyMoveForm
         Me.button1.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.button1.Location = New System.Drawing.Point(208, 97)
         Me.button1.Name = "button1"
+        Me.button1.Size = New System.Drawing.Size(75, 23)
         Me.button1.TabIndex = 12
         Me.button1.Text = "OK"
         '
@@ -76,7 +78,6 @@ Public Class CopyMoveForm
         Me.edtDestination.Name = "edtDestination"
         Me.edtDestination.Size = New System.Drawing.Size(312, 20)
         Me.edtDestination.TabIndex = 10
-        Me.edtDestination.Text = ""
         '
         'edtSource
         '
@@ -85,7 +86,6 @@ Public Class CopyMoveForm
         Me.edtSource.ReadOnly = True
         Me.edtSource.Size = New System.Drawing.Size(312, 20)
         Me.edtSource.TabIndex = 9
-        Me.edtSource.Text = ""
         '
         'label2
         '
@@ -116,8 +116,10 @@ Public Class CopyMoveForm
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "CopyMoveForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Copy / Move Resource"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

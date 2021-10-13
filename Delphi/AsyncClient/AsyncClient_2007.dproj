@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{15909d45-1e83-4468-9d98-3183df42e0dc}</ProjectGuid>
     <MainSource>AsyncClient.dpr</MainSource>
@@ -23,7 +22,7 @@
     <Borland.Personality>Delphi.Personality</Borland.Personality>
     <Borland.ProjectType>VCLApplication</Borland.ProjectType>
     <BorlandProject>
-<BorlandProject> <Delphi.Personality>   <Parameters>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
       <Parameters Name="UseLauncher">False</Parameters>
       <Parameters Name="LoadAllSymbols">True</Parameters>
       <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>

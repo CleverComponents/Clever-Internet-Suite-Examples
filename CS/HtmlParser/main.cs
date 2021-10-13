@@ -150,7 +150,6 @@ namespace HtmlParser {
 			this.edtUrlName.ReadOnly = true;
 			this.edtUrlName.Size = new System.Drawing.Size(88, 20);
 			this.edtUrlName.TabIndex = 3;
-			this.edtUrlName.Text = "";
 			// 
 			// edtUrlTarget
 			// 
@@ -159,7 +158,6 @@ namespace HtmlParser {
 			this.edtUrlTarget.ReadOnly = true;
 			this.edtUrlTarget.Size = new System.Drawing.Size(88, 20);
 			this.edtUrlTarget.TabIndex = 2;
-			this.edtUrlTarget.Text = "";
 			// 
 			// edtUrlHref
 			// 
@@ -168,12 +166,12 @@ namespace HtmlParser {
 			this.edtUrlHref.ReadOnly = true;
 			this.edtUrlHref.Size = new System.Drawing.Size(248, 20);
 			this.edtUrlHref.TabIndex = 1;
-			this.edtUrlHref.Text = "";
 			// 
 			// label4
 			// 
 			this.label4.Location = new System.Drawing.Point(368, 200);
 			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(100, 23);
 			this.label4.TabIndex = 4;
 			this.label4.Text = "Name";
 			// 
@@ -181,6 +179,7 @@ namespace HtmlParser {
 			// 
 			this.label3.Location = new System.Drawing.Point(272, 200);
 			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(100, 23);
 			this.label3.TabIndex = 3;
 			this.label3.Text = "Target";
 			// 
@@ -188,6 +187,7 @@ namespace HtmlParser {
 			// 
 			this.label2.Location = new System.Drawing.Point(16, 200);
 			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(100, 23);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "URL";
 			// 
@@ -232,7 +232,6 @@ namespace HtmlParser {
 			this.edtImageHeight.ReadOnly = true;
 			this.edtImageHeight.Size = new System.Drawing.Size(128, 20);
 			this.edtImageHeight.TabIndex = 4;
-			this.edtImageHeight.Text = "";
 			// 
 			// edtImageWidth
 			// 
@@ -241,7 +240,6 @@ namespace HtmlParser {
 			this.edtImageWidth.ReadOnly = true;
 			this.edtImageWidth.Size = new System.Drawing.Size(128, 20);
 			this.edtImageWidth.TabIndex = 2;
-			this.edtImageWidth.Text = "";
 			// 
 			// edtImageAlt
 			// 
@@ -250,7 +248,6 @@ namespace HtmlParser {
 			this.edtImageAlt.ReadOnly = true;
 			this.edtImageAlt.Size = new System.Drawing.Size(304, 20);
 			this.edtImageAlt.TabIndex = 3;
-			this.edtImageAlt.Text = "";
 			// 
 			// edtImageSrc
 			// 
@@ -259,12 +256,12 @@ namespace HtmlParser {
 			this.edtImageSrc.ReadOnly = true;
 			this.edtImageSrc.Size = new System.Drawing.Size(304, 20);
 			this.edtImageSrc.TabIndex = 1;
-			this.edtImageSrc.Text = "";
 			// 
 			// label9
 			// 
 			this.label9.Location = new System.Drawing.Point(328, 200);
 			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(100, 23);
 			this.label9.TabIndex = 5;
 			this.label9.Text = "Height";
 			// 
@@ -272,6 +269,7 @@ namespace HtmlParser {
 			// 
 			this.label8.Location = new System.Drawing.Point(328, 152);
 			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(100, 23);
 			this.label8.TabIndex = 4;
 			this.label8.Text = "Width";
 			// 
@@ -279,6 +277,7 @@ namespace HtmlParser {
 			// 
 			this.label7.Location = new System.Drawing.Point(16, 200);
 			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(100, 23);
 			this.label7.TabIndex = 3;
 			this.label7.Text = "Alt";
 			// 
@@ -286,6 +285,7 @@ namespace HtmlParser {
 			// 
 			this.label6.Location = new System.Drawing.Point(16, 152);
 			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(100, 23);
 			this.label6.TabIndex = 2;
 			this.label6.Text = "Src";
 			// 
@@ -293,6 +293,7 @@ namespace HtmlParser {
 			// 
 			this.label5.Location = new System.Drawing.Point(16, 8);
 			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(100, 23);
 			this.label5.TabIndex = 1;
 			this.label5.Text = "Image Tags";
 			// 
@@ -331,7 +332,6 @@ namespace HtmlParser {
 			this.edtFormMethod.ReadOnly = true;
 			this.edtFormMethod.Size = new System.Drawing.Size(144, 20);
 			this.edtFormMethod.TabIndex = 5;
-			this.edtFormMethod.Text = "";
 			// 
 			// edtFormName
 			// 
@@ -340,7 +340,6 @@ namespace HtmlParser {
 			this.edtFormName.ReadOnly = true;
 			this.edtFormName.Size = new System.Drawing.Size(144, 20);
 			this.edtFormName.TabIndex = 3;
-			this.edtFormName.Text = "";
 			// 
 			// edtFormEncType
 			// 
@@ -349,7 +348,6 @@ namespace HtmlParser {
 			this.edtFormEncType.ReadOnly = true;
 			this.edtFormEncType.Size = new System.Drawing.Size(280, 20);
 			this.edtFormEncType.TabIndex = 4;
-			this.edtFormEncType.Text = "";
 			// 
 			// edtFormAction
 			// 
@@ -358,12 +356,12 @@ namespace HtmlParser {
 			this.edtFormAction.ReadOnly = true;
 			this.edtFormAction.Size = new System.Drawing.Size(280, 20);
 			this.edtFormAction.TabIndex = 2;
-			this.edtFormAction.Text = "";
 			// 
 			// label15
 			// 
 			this.label15.Location = new System.Drawing.Point(312, 200);
 			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(100, 23);
 			this.label15.TabIndex = 7;
 			this.label15.Text = "Method";
 			// 
@@ -371,6 +369,7 @@ namespace HtmlParser {
 			// 
 			this.label14.Location = new System.Drawing.Point(312, 152);
 			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(100, 23);
 			this.label14.TabIndex = 6;
 			this.label14.Text = "Form Name";
 			// 
@@ -378,6 +377,7 @@ namespace HtmlParser {
 			// 
 			this.label13.Location = new System.Drawing.Point(16, 200);
 			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(100, 23);
 			this.label13.TabIndex = 5;
 			this.label13.Text = "Enc Type";
 			// 
@@ -385,6 +385,7 @@ namespace HtmlParser {
 			// 
 			this.label12.Location = new System.Drawing.Point(16, 152);
 			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(100, 23);
 			this.label12.TabIndex = 4;
 			this.label12.Text = "Action";
 			// 
@@ -392,6 +393,7 @@ namespace HtmlParser {
 			// 
 			this.label11.Location = new System.Drawing.Point(312, 8);
 			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(100, 23);
 			this.label11.TabIndex = 3;
 			this.label11.Text = "Controls";
 			// 
@@ -399,6 +401,7 @@ namespace HtmlParser {
 			// 
 			this.label10.Location = new System.Drawing.Point(16, 8);
 			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(100, 23);
 			this.label10.TabIndex = 2;
 			this.label10.Text = "Form Tags";
 			// 
@@ -437,6 +440,7 @@ namespace HtmlParser {
 			// 
 			this.btnOpen.Location = new System.Drawing.Point(16, 296);
 			this.btnOpen.Name = "btnOpen";
+			this.btnOpen.Size = new System.Drawing.Size(75, 23);
 			this.btnOpen.TabIndex = 1;
 			this.btnOpen.Text = "Open File";
 			this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
@@ -459,11 +463,15 @@ namespace HtmlParser {
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Html Parser sample";
 			this.tabControl.ResumeLayout(false);
 			this.tabLinks.ResumeLayout(false);
+			this.tabLinks.PerformLayout();
 			this.tabImages.ResumeLayout(false);
+			this.tabImages.PerformLayout();
 			this.tabForms.ResumeLayout(false);
+			this.tabForms.PerformLayout();
 			this.tabText.ResumeLayout(false);
 			this.ResumeLayout(false);
 

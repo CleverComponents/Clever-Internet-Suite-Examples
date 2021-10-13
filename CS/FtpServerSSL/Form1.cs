@@ -97,7 +97,7 @@ namespace FtpServerSSL
 			this.label1.Size = new System.Drawing.Size(416, 32);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "This is a sample FTP SSL / TLS server. You can use any SSL-enabled FTP client (su" +
-				"ch as TclFTP or SurgeFTP client to connect to this server.";
+    "ch as TclFTP or SurgeFTP client to connect to this server.";
 			// 
 			// label2
 			// 
@@ -143,6 +143,7 @@ namespace FtpServerSSL
 			// 
 			this.btnStart.Location = new System.Drawing.Point(80, 216);
 			this.btnStart.Name = "btnStart";
+			this.btnStart.Size = new System.Drawing.Size(75, 23);
 			this.btnStart.TabIndex = 6;
 			this.btnStart.Text = "Start";
 			this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -151,6 +152,7 @@ namespace FtpServerSSL
 			// 
 			this.btnStop.Location = new System.Drawing.Point(176, 216);
 			this.btnStop.Name = "btnStop";
+			this.btnStop.Size = new System.Drawing.Size(75, 23);
 			this.btnStop.TabIndex = 7;
 			this.btnStop.Text = "Stop";
 			this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
@@ -172,26 +174,27 @@ namespace FtpServerSSL
 			this.memLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.memLog.Size = new System.Drawing.Size(440, 136);
 			this.memLog.TabIndex = 9;
-			this.memLog.Text = "";
 			// 
 			// ftpServer1
 			// 
 			this.ftpServer1.CaseInsensitive = true;
-			this.ftpServer1.Port = 21;
-			this.ftpServer1.ServerName = "Clever Internet Suite FTP service";
+			this.ftpServer1.Extensions = new string[] {
+        "SIZE",
+        "REST STREAM",
+        "MDTM"};
 			ftpUserAccountItem1.DisplayName = "Clever Tester";
 			ftpUserAccountItem1.Password = "clevertester";
 			ftpUserAccountItem1.UserName = "CleverTester";
 			this.ftpServer1.UserAccounts.AddRange(new CleverComponents.InetSuite.UserAccountItem[] {
-																									   ftpUserAccountItem1});
+            ftpUserAccountItem1});
 			this.ftpServer1.Authenticate += new CleverComponents.InetSuite.FtpAuthenticateEventHandler(this.ftpServer1_Authenticate);
 			this.ftpServer1.CommandReceived += new CleverComponents.InetSuite.TcpCommandEventHandler(this.ftpServer1_CommandReceived);
-			this.ftpServer1.GetCertificate += new CleverComponents.InetSuite.GetCertificateEventHandler(this.ftpServer1_GetCertificate);
-			this.ftpServer1.ConnectionAccepted += new CleverComponents.InetSuite.ConnectionAcceptedEventHandler(this.ftpServer1_ConnectionAccepted);
-			this.ftpServer1.Started += new System.EventHandler(this.ftpServer1_Started);
-			this.ftpServer1.ConnectionClosed += new CleverComponents.InetSuite.ConnectionEventHandler(this.ftpServer1_ConnectionClosed);
 			this.ftpServer1.ResponseSent += new CleverComponents.InetSuite.TcpResponseEventHandler(this.ftpServer1_ResponseSent);
+			this.ftpServer1.GetCertificate += new CleverComponents.InetSuite.GetCertificateEventHandler(this.ftpServer1_GetCertificate);
+			this.ftpServer1.Started += new System.EventHandler(this.ftpServer1_Started);
 			this.ftpServer1.Stopped += new System.EventHandler(this.ftpServer1_Stopped);
+			this.ftpServer1.ConnectionAccepted += new CleverComponents.InetSuite.ConnectionAcceptedEventHandler(this.ftpServer1_ConnectionAccepted);
+			this.ftpServer1.ConnectionClosed += new CleverComponents.InetSuite.ConnectionEventHandler(this.ftpServer1_ConnectionClosed);
 			// 
 			// ftpFileHandler1
 			// 
@@ -204,13 +207,14 @@ namespace FtpServerSSL
 			this.label6.Size = new System.Drawing.Size(408, 48);
 			this.label6.TabIndex = 10;
 			this.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " +
-				"In real application you will need to request a certificate from trusted issuer o" +
-				"r use your own self-signed certificate.";
+    "In real application you will need to request a certificate from trusted issuer o" +
+    "r use your own self-signed certificate.";
 			// 
 			// label7
 			// 
 			this.label7.Location = new System.Drawing.Point(184, 152);
 			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(100, 23);
 			this.label7.TabIndex = 11;
 			this.label7.Text = "SSL / TLS Mode";
 			// 
@@ -218,14 +222,19 @@ namespace FtpServerSSL
 			// 
 			this.cbUseTls.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbUseTls.Items.AddRange(new object[] {
-														  "None",
-														  "Implicit",
-														  "Allow Explicit",
-														  "Require Explicit"});
+            "None",
+            "Implicit",
+            "Allow Explicit",
+            "Require Explicit"});
 			this.cbUseTls.Location = new System.Drawing.Point(296, 152);
 			this.cbUseTls.Name = "cbUseTls";
 			this.cbUseTls.Size = new System.Drawing.Size(121, 21);
 			this.cbUseTls.TabIndex = 4;
+			// 
+			// certificateStore1
+			// 
+			this.certificateStore1.ValidFrom = new System.DateTime(2021, 10, 5, 21, 46, 16, 936);
+			this.certificateStore1.ValidTo = new System.DateTime(2022, 10, 5, 21, 46, 16, 936);
 			// 
 			// Form1
 			// 
@@ -246,8 +255,10 @@ namespace FtpServerSSL
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Clever FTP Server";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

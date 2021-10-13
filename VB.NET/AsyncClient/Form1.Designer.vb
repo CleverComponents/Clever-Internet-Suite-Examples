@@ -83,7 +83,6 @@ Partial Class Form1
         'AsyncClient1
         '
         Me.AsyncClient1.LocalBinding = Nothing
-        Me.AsyncClient1.Port = 0
         Me.AsyncClient1.Server = Nothing
         Me.AsyncClient1.TlsFlags = CleverComponents.InetSuite.Sspi.TlsFlags.None
         '
@@ -99,6 +98,7 @@ Partial Class Form1
         Me.Controls.Add(Me.edtHost)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asynchronous client sample - TELNET"
         Me.ResumeLayout(False)
         Me.PerformLayout()

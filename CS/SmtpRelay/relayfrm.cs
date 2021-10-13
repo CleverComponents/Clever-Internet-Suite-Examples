@@ -63,7 +63,6 @@ namespace SmtpRelay
 			this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
 			this.textBox1.Size = new System.Drawing.Size(400, 320);
 			this.textBox1.TabIndex = 0;
-			this.textBox1.Text = "";
 			// 
 			// RelayStatusForm
 			// 
@@ -73,8 +72,10 @@ namespace SmtpRelay
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "RelayStatusForm";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Relay Status Form";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

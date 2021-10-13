@@ -49,22 +49,22 @@ Public Class Form1
     Friend WithEvents SmtpServer1 As CleverComponents.InetSuite.SmtpServer
     Friend WithEvents SmtpFileHandler1 As CleverComponents.InetSuite.SmtpFileHandler
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem
-        Me.edtRelayDir = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.cbUseLogin = New System.Windows.Forms.CheckBox
-        Me.memLog = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.btnStop = New System.Windows.Forms.Button
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtMailboxDir = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.SmtpServer1 = New CleverComponents.InetSuite.SmtpServer
-        Me.SmtpFileHandler1 = New CleverComponents.InetSuite.SmtpFileHandler
+        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem()
+        Me.edtRelayDir = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.cbUseLogin = New System.Windows.Forms.CheckBox()
+        Me.memLog = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.btnStop = New System.Windows.Forms.Button()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtMailboxDir = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.SmtpServer1 = New CleverComponents.InetSuite.SmtpServer()
+        Me.SmtpFileHandler1 = New CleverComponents.InetSuite.SmtpFileHandler()
         Me.SuspendLayout()
         '
         'edtRelayDir
@@ -102,7 +102,6 @@ Public Class Form1
         Me.memLog.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memLog.Size = New System.Drawing.Size(440, 120)
         Me.memLog.TabIndex = 42
-        Me.memLog.Text = ""
         '
         'label5
         '
@@ -116,6 +115,7 @@ Public Class Form1
         '
         Me.btnStop.Location = New System.Drawing.Point(232, 208)
         Me.btnStop.Name = "btnStop"
+        Me.btnStop.Size = New System.Drawing.Size(75, 23)
         Me.btnStop.TabIndex = 40
         Me.btnStop.Text = "Stop"
         '
@@ -123,6 +123,7 @@ Public Class Form1
         '
         Me.btnStart.Location = New System.Drawing.Point(104, 208)
         Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 39
         Me.btnStart.Text = "Start"
         '
@@ -164,8 +165,8 @@ Public Class Form1
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(408, 32)
         Me.label2.TabIndex = 34
-        Me.label2.Text = "Please use the ""CleverTester"" user name and ""clevertester"" password to log-in. Th" & _
-        "e user e-mail: CleverTester@company.mail"
+        Me.label2.Text = "Please use the ""CleverTester"" user name and ""clevertester"" password to log-in. Th" &
+    "e user e-mail: CleverTester@company.mail"
         '
         'label1
         '
@@ -173,15 +174,12 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(416, 29)
         Me.label1.TabIndex = 33
-        Me.label1.Text = "This is a sample SMTP server. You can use any mail client with SMTP support to co" & _
-        "nnect to this server."
+        Me.label1.Text = "This is a sample SMTP server. You can use any mail client with SMTP support to co" &
+    "nnect to this server."
         '
         'SmtpServer1
         '
-        Me.SmtpServer1.CaseInsensitive = True
         Me.SmtpServer1.HelpText = New String() {"Commands Supported:", "HELO EHLO AUTH HELP QUIT MAIL NOOP RSET RCPT DATA STARTTLS"}
-        Me.SmtpServer1.Port = 25
-        Me.SmtpServer1.ServerName = "Clever Internet Suite SMTP service"
         MailUserAccountItem1.DisplayName = "Clever Tester"
         MailUserAccountItem1.Email = "CleverTester@company.mail"
         MailUserAccountItem1.Password = "clevertester"
@@ -213,8 +211,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clever SMTP Server"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

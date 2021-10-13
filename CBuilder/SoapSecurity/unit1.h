@@ -15,6 +15,7 @@
 #include <clHttpRequest.hpp>
 #include <clSoapMessage.hpp>
 #include <clXmlUtils.hpp>
+#include <clSoapUtils.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TclDemoBaseForm
 {
@@ -63,6 +64,7 @@ __published:	// IDE-managed Components
           TclXmlKeyInfo *AKeyInfo, TclCertificate *&ACertificate,
           TclCertificateList *AExtraCerts, UnicodeString &AStoreName,
           TclCertificateStoreLocation &AStoreLocation, bool &Handled);
+  void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
   bool FSecuring;
 public:		// User declarations

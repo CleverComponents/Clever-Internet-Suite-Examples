@@ -329,6 +329,7 @@ namespace RssFeed
 			this.Controls.Add(this.label5);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "RSS Feed demo";
 			this.ResumeLayout(false);
 			this.PerformLayout();

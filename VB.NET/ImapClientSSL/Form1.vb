@@ -275,11 +275,12 @@ Public Class Form1
         Me.label1.TabIndex = 34
         Me.label1.Text = "Server"
         '
+        'Imap41
+        '
+        '
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2007, 1, 13, 2, 57, 53, 124)
-        Me.MailMessage1.From.Email = ""
-        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -307,6 +308,7 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "IMAP4 Client with SSL / TLS support"
         CType(Me.Imap41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -35,11 +35,11 @@ Public Class NewFolderDlg
     Public WithEvents edtName As System.Windows.Forms.TextBox
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnOk = New System.Windows.Forms.Button
-        Me.cbIsSubfolder = New System.Windows.Forms.CheckBox
-        Me.edtName = New System.Windows.Forms.TextBox
-        Me.label1 = New System.Windows.Forms.Label
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.cbIsSubfolder = New System.Windows.Forms.CheckBox()
+        Me.edtName = New System.Windows.Forms.TextBox()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnCancel
@@ -47,6 +47,7 @@ Public Class NewFolderDlg
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(216, 88)
         Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 9
         Me.btnCancel.Text = "Cancel"
         '
@@ -55,6 +56,7 @@ Public Class NewFolderDlg
         Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnOk.Location = New System.Drawing.Point(128, 88)
         Me.btnOk.Name = "btnOk"
+        Me.btnOk.Size = New System.Drawing.Size(75, 23)
         Me.btnOk.TabIndex = 8
         Me.btnOk.Text = "OK"
         '
@@ -94,8 +96,10 @@ Public Class NewFolderDlg
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "NewFolderDlg"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "New Folder"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

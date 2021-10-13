@@ -106,7 +106,7 @@ namespace HttpClientProxy
 			this.label1.Size = new System.Drawing.Size(424, 24);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Type in the URL and click the \'GET\' button to retreive the page specified by URL." +
-				"";
+    "";
 			// 
 			// label2
 			// 
@@ -249,7 +249,6 @@ namespace HttpClientProxy
 			// 
 			// http1
 			// 
-			this.http1.Port = 80;
 			this.http1.TlsFlags = ((CleverComponents.InetSuite.Sspi.TlsFlags)((CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL2 | CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL3)));
 			// 
 			// htmlParser1
@@ -305,6 +304,7 @@ namespace HttpClientProxy
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "HTTP GET demo";
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -56,33 +56,32 @@ Public Class Form1
     Private WithEvents label1 As System.Windows.Forms.Label
     Friend WithEvents HtmlParser1 As CleverComponents.InetSuite.HtmlParser
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.Http1 = New CleverComponents.InetSuite.Http
-        Me.HtmlParser1 = New CleverComponents.InetSuite.HtmlParser
-        Me.cbProxyType = New System.Windows.Forms.ComboBox
-        Me.label9 = New System.Windows.Forms.Label
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.edtUser = New System.Windows.Forms.TextBox
-        Me.label7 = New System.Windows.Forms.Label
-        Me.edtProxyPassword = New System.Windows.Forms.TextBox
-        Me.label6 = New System.Windows.Forms.Label
-        Me.edtProxyPort = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtProxyUser = New System.Windows.Forms.TextBox
-        Me.edtProxyServer = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.memResult = New System.Windows.Forms.TextBox
-        Me.cbShowText = New System.Windows.Forms.CheckBox
-        Me.button1 = New System.Windows.Forms.Button
-        Me.edtUrl = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Me.Http1 = New CleverComponents.InetSuite.Http()
+        Me.HtmlParser1 = New CleverComponents.InetSuite.HtmlParser()
+        Me.cbProxyType = New System.Windows.Forms.ComboBox()
+        Me.label9 = New System.Windows.Forms.Label()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.edtUser = New System.Windows.Forms.TextBox()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.edtProxyPassword = New System.Windows.Forms.TextBox()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.edtProxyPort = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtProxyUser = New System.Windows.Forms.TextBox()
+        Me.edtProxyServer = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.memResult = New System.Windows.Forms.TextBox()
+        Me.cbShowText = New System.Windows.Forms.CheckBox()
+        Me.button1 = New System.Windows.Forms.Button()
+        Me.edtUrl = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Http1
         '
-        Me.Http1.Port = 80
         Me.Http1.TlsFlags = CType((CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL2 Or CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL3), CleverComponents.InetSuite.Sspi.TlsFlags)
         '
         'HtmlParser1
@@ -252,8 +251,8 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(424, 24)
         Me.label1.TabIndex = 20
-        Me.label1.Text = "Type in the URL and click the 'GET' button to retreive the page specified by URL." & _
-            ""
+        Me.label1.Text = "Type in the URL and click the 'GET' button to retreive the page specified by URL." &
+    ""
         '
         'Form1
         '
@@ -280,6 +279,7 @@ Public Class Form1
         Me.Controls.Add(Me.label2)
         Me.Controls.Add(Me.label1)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "HTTP GET demo"
         Me.ResumeLayout(False)
         Me.PerformLayout()

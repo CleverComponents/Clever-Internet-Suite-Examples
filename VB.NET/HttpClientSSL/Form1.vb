@@ -46,25 +46,24 @@ Public Class Form1
     Friend WithEvents CertificateStore1 As CleverComponents.InetSuite.CertificateStore
     Friend WithEvents ClientCertificateStore As CleverComponents.InetSuite.CertificateStore
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.Http1 = New CleverComponents.InetSuite.Http
-        Me.HtmlParser1 = New CleverComponents.InetSuite.HtmlParser
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.edtUser = New System.Windows.Forms.TextBox
-        Me.label7 = New System.Windows.Forms.Label
-        Me.memResult = New System.Windows.Forms.TextBox
-        Me.cbShowText = New System.Windows.Forms.CheckBox
-        Me.button1 = New System.Windows.Forms.Button
-        Me.edtUrl = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore
-        Me.ClientCertificateStore = New CleverComponents.InetSuite.CertificateStore
+        Me.Http1 = New CleverComponents.InetSuite.Http()
+        Me.HtmlParser1 = New CleverComponents.InetSuite.HtmlParser()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.edtUser = New System.Windows.Forms.TextBox()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.memResult = New System.Windows.Forms.TextBox()
+        Me.cbShowText = New System.Windows.Forms.CheckBox()
+        Me.button1 = New System.Windows.Forms.Button()
+        Me.edtUrl = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore()
+        Me.ClientCertificateStore = New CleverComponents.InetSuite.CertificateStore()
         Me.SuspendLayout()
         '
         'Http1
         '
-        Me.Http1.Port = 80
         Me.Http1.TlsFlags = CType((CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL2 Or CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL3), CleverComponents.InetSuite.Sspi.TlsFlags)
         '
         'HtmlParser1
@@ -75,10 +74,9 @@ Public Class Form1
         '
         Me.edtPassword.Location = New System.Drawing.Point(248, 64)
         Me.edtPassword.Name = "edtPassword"
-        Me.edtPassword.PasswordChar = Microsoft.VisualBasic.ChrW(42)
+        Me.edtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.edtPassword.Size = New System.Drawing.Size(112, 20)
         Me.edtPassword.TabIndex = 27
-        Me.edtPassword.Text = ""
         '
         'label8
         '
@@ -94,7 +92,6 @@ Public Class Form1
         Me.edtUser.Name = "edtUser"
         Me.edtUser.Size = New System.Drawing.Size(104, 20)
         Me.edtUser.TabIndex = 26
-        Me.edtUser.Text = ""
         '
         'label7
         '
@@ -114,12 +111,12 @@ Public Class Form1
         Me.memResult.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memResult.Size = New System.Drawing.Size(448, 232)
         Me.memResult.TabIndex = 29
-        Me.memResult.Text = ""
         '
         'cbShowText
         '
         Me.cbShowText.Location = New System.Drawing.Point(56, 96)
         Me.cbShowText.Name = "cbShowText"
+        Me.cbShowText.Size = New System.Drawing.Size(104, 24)
         Me.cbShowText.TabIndex = 28
         Me.cbShowText.Text = "Show text only"
         '
@@ -153,8 +150,18 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(424, 24)
         Me.label1.TabIndex = 22
-        Me.label1.Text = "Type in the URL and click the 'GET' button to retreive the page specified by URL." & _
-        ""
+        Me.label1.Text = "Type in the URL and click the 'GET' button to retreive the page specified by URL." &
+    ""
+        '
+        'CertificateStore1
+        '
+        Me.CertificateStore1.ValidFrom = New Date(2021, 10, 5, 22, 43, 59, 180)
+        Me.CertificateStore1.ValidTo = New Date(2022, 10, 5, 22, 43, 59, 180)
+        '
+        'ClientCertificateStore
+        '
+        Me.ClientCertificateStore.ValidFrom = New Date(2021, 10, 5, 22, 43, 59, 184)
+        Me.ClientCertificateStore.ValidTo = New Date(2022, 10, 5, 22, 43, 59, 184)
         '
         'Form1
         '
@@ -172,8 +179,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "HTTPS GET demo"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

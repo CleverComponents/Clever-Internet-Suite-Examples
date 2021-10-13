@@ -7,7 +7,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, clHttpRequest, clSoapMessage, StdCtrls, clCertificateStore, clXmlUtils,
-  clSoapSecurity, clCertificate, getcert, certlistfrm, DemoBaseFormUnit,
+  clSoapUtils, clSoapSecurity, clCertificate, getcert, certlistfrm, DemoBaseFormUnit,
   ExtCtrls;
 
 type
@@ -59,6 +59,7 @@ type
     procedure btnDecryptVerifyClick(Sender: TObject);
     procedure btnCertificatesClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     FSecuring: Boolean;
     { Private declarations }
@@ -219,6 +220,19 @@ begin
   finally
     dlg.Free();
   end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+  d: TDateTime;
+begin
+  d := Now();
+  edtTimestampCreated.Text := DateTimeToSoapTime(d);
+  edtTimeStampExpires.Text := DateTimeToSoapTime(d + EncodeTime(0, 30, 0, 0));
+
+  edtTimeStampID.Text := 'TimeStamp-' + Copy(GenerateUniqueID(), 1, 3);
+  edtAddressID.Text := 'Address-' + Copy(GenerateUniqueID(), 1, 3);
+  edtBodyID.Text := 'Body-' + Copy(GenerateUniqueID(), 1, 3);
 end;
 
 procedure TForm1.FormShow(Sender: TObject);

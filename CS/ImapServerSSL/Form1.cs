@@ -173,7 +173,7 @@ namespace ImapServerSSL
 			this.label1.Size = new System.Drawing.Size(416, 37);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "This is a sample IMAP4 SSL / TLS server. You can use any SSL-enabled IMAP client " +
-				"(such as TclIMAP4 or MS Outlook client to connect to this server.";
+    "(such as TclIMAP4 or MS Outlook client to connect to this server.";
 			// 
 			// label6
 			// 
@@ -182,8 +182,8 @@ namespace ImapServerSSL
 			this.label6.Size = new System.Drawing.Size(400, 48);
 			this.label6.TabIndex = 20;
 			this.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " +
-				"In real application you will need to request a certificate from trusted issuer o" +
-				"r use your own self-signed certificate.";
+    "In real application you will need to request a certificate from trusted issuer o" +
+    "r use your own self-signed certificate.";
 			// 
 			// cbUseTls
 			// 
@@ -213,8 +213,6 @@ namespace ImapServerSSL
 			// 
 			// imap4Server1
 			// 
-			this.imap4Server1.ServerName = "Clever Internet Suite IMAP4 service";
-			mailUserAccountItem1.DisplayName = "";
 			mailUserAccountItem1.Password = "clevertester";
 			mailUserAccountItem1.UserName = "CleverTester";
 			this.imap4Server1.UserAccounts.AddRange(new CleverComponents.InetSuite.UserAccountItem[] {
@@ -251,6 +249,7 @@ namespace ImapServerSSL
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Clever IMAP4 Server SSL / TLS";
 			this.ResumeLayout(false);
 			this.PerformLayout();

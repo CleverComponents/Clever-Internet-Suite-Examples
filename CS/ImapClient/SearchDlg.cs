@@ -75,9 +75,9 @@ namespace ImapClient
 			// cbSearchIn
 			// 
 			this.cbSearchIn.Items.AddRange(new object[] {
-															"FROM",
-															"SUBJECT",
-															"TEXT"});
+            "FROM",
+            "SUBJECT",
+            "TEXT"});
 			this.cbSearchIn.Location = new System.Drawing.Point(24, 32);
 			this.cbSearchIn.Name = "cbSearchIn";
 			this.cbSearchIn.Size = new System.Drawing.Size(248, 21);
@@ -98,13 +98,13 @@ namespace ImapClient
 			this.edtSearchFor.Name = "edtSearchFor";
 			this.edtSearchFor.Size = new System.Drawing.Size(248, 20);
 			this.edtSearchFor.TabIndex = 3;
-			this.edtSearchFor.Text = "";
 			// 
 			// btnSearch
 			// 
 			this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnSearch.Location = new System.Drawing.Point(96, 112);
 			this.btnSearch.Name = "btnSearch";
+			this.btnSearch.Size = new System.Drawing.Size(75, 23);
 			this.btnSearch.TabIndex = 4;
 			this.btnSearch.Text = "Search";
 			// 
@@ -113,6 +113,7 @@ namespace ImapClient
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Location = new System.Drawing.Point(192, 112);
 			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 5;
 			this.btnCancel.Text = "Cancel";
 			// 
@@ -129,9 +130,11 @@ namespace ImapClient
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "SearchDlg";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Find Message";
 			this.Closing += new System.ComponentModel.CancelEventHandler(this.SearchDlg_Closing);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

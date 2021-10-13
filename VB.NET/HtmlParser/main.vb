@@ -72,45 +72,45 @@ Public Class MainForm
     Friend WithEvents btnOpen As System.Windows.Forms.Button
     Friend WithEvents HtmlParser1 As CleverComponents.InetSuite.HtmlParser
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.openFileDialog = New System.Windows.Forms.OpenFileDialog
-        Me.tabControl = New System.Windows.Forms.TabControl
-        Me.tabLinks = New System.Windows.Forms.TabPage
-        Me.edtUrlName = New System.Windows.Forms.TextBox
-        Me.edtUrlTarget = New System.Windows.Forms.TextBox
-        Me.edtUrlHref = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.lbLinks = New System.Windows.Forms.ListBox
-        Me.tabImages = New System.Windows.Forms.TabPage
-        Me.edtImageHeight = New System.Windows.Forms.TextBox
-        Me.edtImageWidth = New System.Windows.Forms.TextBox
-        Me.edtImageAlt = New System.Windows.Forms.TextBox
-        Me.edtImageSrc = New System.Windows.Forms.TextBox
-        Me.label9 = New System.Windows.Forms.Label
-        Me.label8 = New System.Windows.Forms.Label
-        Me.label7 = New System.Windows.Forms.Label
-        Me.label6 = New System.Windows.Forms.Label
-        Me.label5 = New System.Windows.Forms.Label
-        Me.lbImages = New System.Windows.Forms.ListBox
-        Me.tabForms = New System.Windows.Forms.TabPage
-        Me.edtFormMethod = New System.Windows.Forms.TextBox
-        Me.edtFormName = New System.Windows.Forms.TextBox
-        Me.edtFormEncType = New System.Windows.Forms.TextBox
-        Me.edtFormAction = New System.Windows.Forms.TextBox
-        Me.label15 = New System.Windows.Forms.Label
-        Me.label14 = New System.Windows.Forms.Label
-        Me.label13 = New System.Windows.Forms.Label
-        Me.label12 = New System.Windows.Forms.Label
-        Me.label11 = New System.Windows.Forms.Label
-        Me.label10 = New System.Windows.Forms.Label
-        Me.lbFormControls = New System.Windows.Forms.ListBox
-        Me.lbForms = New System.Windows.Forms.ListBox
-        Me.tabText = New System.Windows.Forms.TabPage
-        Me.lbText = New System.Windows.Forms.ListBox
-        Me.btnOpen = New System.Windows.Forms.Button
-        Me.HtmlParser1 = New CleverComponents.InetSuite.HtmlParser
+        Me.openFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.tabControl = New System.Windows.Forms.TabControl()
+        Me.tabLinks = New System.Windows.Forms.TabPage()
+        Me.edtUrlName = New System.Windows.Forms.TextBox()
+        Me.edtUrlTarget = New System.Windows.Forms.TextBox()
+        Me.edtUrlHref = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.lbLinks = New System.Windows.Forms.ListBox()
+        Me.tabImages = New System.Windows.Forms.TabPage()
+        Me.edtImageHeight = New System.Windows.Forms.TextBox()
+        Me.edtImageWidth = New System.Windows.Forms.TextBox()
+        Me.edtImageAlt = New System.Windows.Forms.TextBox()
+        Me.edtImageSrc = New System.Windows.Forms.TextBox()
+        Me.label9 = New System.Windows.Forms.Label()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.lbImages = New System.Windows.Forms.ListBox()
+        Me.tabForms = New System.Windows.Forms.TabPage()
+        Me.edtFormMethod = New System.Windows.Forms.TextBox()
+        Me.edtFormName = New System.Windows.Forms.TextBox()
+        Me.edtFormEncType = New System.Windows.Forms.TextBox()
+        Me.edtFormAction = New System.Windows.Forms.TextBox()
+        Me.label15 = New System.Windows.Forms.Label()
+        Me.label14 = New System.Windows.Forms.Label()
+        Me.label13 = New System.Windows.Forms.Label()
+        Me.label12 = New System.Windows.Forms.Label()
+        Me.label11 = New System.Windows.Forms.Label()
+        Me.label10 = New System.Windows.Forms.Label()
+        Me.lbFormControls = New System.Windows.Forms.ListBox()
+        Me.lbForms = New System.Windows.Forms.ListBox()
+        Me.tabText = New System.Windows.Forms.TabPage()
+        Me.lbText = New System.Windows.Forms.ListBox()
+        Me.btnOpen = New System.Windows.Forms.Button()
+        Me.HtmlParser1 = New CleverComponents.InetSuite.HtmlParser()
         Me.tabControl.SuspendLayout()
         Me.tabLinks.SuspendLayout()
         Me.tabImages.SuspendLayout()
@@ -157,7 +157,6 @@ Public Class MainForm
         Me.edtUrlName.ReadOnly = True
         Me.edtUrlName.Size = New System.Drawing.Size(88, 20)
         Me.edtUrlName.TabIndex = 3
-        Me.edtUrlName.Text = ""
         '
         'edtUrlTarget
         '
@@ -166,7 +165,6 @@ Public Class MainForm
         Me.edtUrlTarget.ReadOnly = True
         Me.edtUrlTarget.Size = New System.Drawing.Size(88, 20)
         Me.edtUrlTarget.TabIndex = 2
-        Me.edtUrlTarget.Text = ""
         '
         'edtUrlHref
         '
@@ -175,12 +173,12 @@ Public Class MainForm
         Me.edtUrlHref.ReadOnly = True
         Me.edtUrlHref.Size = New System.Drawing.Size(248, 20)
         Me.edtUrlHref.TabIndex = 1
-        Me.edtUrlHref.Text = ""
         '
         'label4
         '
         Me.label4.Location = New System.Drawing.Point(368, 200)
         Me.label4.Name = "label4"
+        Me.label4.Size = New System.Drawing.Size(100, 23)
         Me.label4.TabIndex = 4
         Me.label4.Text = "Name"
         '
@@ -188,6 +186,7 @@ Public Class MainForm
         '
         Me.label3.Location = New System.Drawing.Point(272, 200)
         Me.label3.Name = "label3"
+        Me.label3.Size = New System.Drawing.Size(100, 23)
         Me.label3.TabIndex = 3
         Me.label3.Text = "Target"
         '
@@ -195,6 +194,7 @@ Public Class MainForm
         '
         Me.label2.Location = New System.Drawing.Point(16, 200)
         Me.label2.Name = "label2"
+        Me.label2.Size = New System.Drawing.Size(100, 23)
         Me.label2.TabIndex = 2
         Me.label2.Text = "URL"
         '
@@ -239,7 +239,6 @@ Public Class MainForm
         Me.edtImageHeight.ReadOnly = True
         Me.edtImageHeight.Size = New System.Drawing.Size(128, 20)
         Me.edtImageHeight.TabIndex = 4
-        Me.edtImageHeight.Text = ""
         '
         'edtImageWidth
         '
@@ -248,7 +247,6 @@ Public Class MainForm
         Me.edtImageWidth.ReadOnly = True
         Me.edtImageWidth.Size = New System.Drawing.Size(128, 20)
         Me.edtImageWidth.TabIndex = 2
-        Me.edtImageWidth.Text = ""
         '
         'edtImageAlt
         '
@@ -257,7 +255,6 @@ Public Class MainForm
         Me.edtImageAlt.ReadOnly = True
         Me.edtImageAlt.Size = New System.Drawing.Size(304, 20)
         Me.edtImageAlt.TabIndex = 3
-        Me.edtImageAlt.Text = ""
         '
         'edtImageSrc
         '
@@ -266,12 +263,12 @@ Public Class MainForm
         Me.edtImageSrc.ReadOnly = True
         Me.edtImageSrc.Size = New System.Drawing.Size(304, 20)
         Me.edtImageSrc.TabIndex = 1
-        Me.edtImageSrc.Text = ""
         '
         'label9
         '
         Me.label9.Location = New System.Drawing.Point(328, 200)
         Me.label9.Name = "label9"
+        Me.label9.Size = New System.Drawing.Size(100, 23)
         Me.label9.TabIndex = 5
         Me.label9.Text = "Height"
         '
@@ -279,6 +276,7 @@ Public Class MainForm
         '
         Me.label8.Location = New System.Drawing.Point(328, 152)
         Me.label8.Name = "label8"
+        Me.label8.Size = New System.Drawing.Size(100, 23)
         Me.label8.TabIndex = 4
         Me.label8.Text = "Width"
         '
@@ -286,6 +284,7 @@ Public Class MainForm
         '
         Me.label7.Location = New System.Drawing.Point(16, 200)
         Me.label7.Name = "label7"
+        Me.label7.Size = New System.Drawing.Size(100, 23)
         Me.label7.TabIndex = 3
         Me.label7.Text = "Alt"
         '
@@ -293,6 +292,7 @@ Public Class MainForm
         '
         Me.label6.Location = New System.Drawing.Point(16, 152)
         Me.label6.Name = "label6"
+        Me.label6.Size = New System.Drawing.Size(100, 23)
         Me.label6.TabIndex = 2
         Me.label6.Text = "Src"
         '
@@ -300,6 +300,7 @@ Public Class MainForm
         '
         Me.label5.Location = New System.Drawing.Point(16, 8)
         Me.label5.Name = "label5"
+        Me.label5.Size = New System.Drawing.Size(100, 23)
         Me.label5.TabIndex = 1
         Me.label5.Text = "Image Tags"
         '
@@ -338,7 +339,6 @@ Public Class MainForm
         Me.edtFormMethod.ReadOnly = True
         Me.edtFormMethod.Size = New System.Drawing.Size(144, 20)
         Me.edtFormMethod.TabIndex = 5
-        Me.edtFormMethod.Text = ""
         '
         'edtFormName
         '
@@ -347,7 +347,6 @@ Public Class MainForm
         Me.edtFormName.ReadOnly = True
         Me.edtFormName.Size = New System.Drawing.Size(144, 20)
         Me.edtFormName.TabIndex = 3
-        Me.edtFormName.Text = ""
         '
         'edtFormEncType
         '
@@ -356,7 +355,6 @@ Public Class MainForm
         Me.edtFormEncType.ReadOnly = True
         Me.edtFormEncType.Size = New System.Drawing.Size(280, 20)
         Me.edtFormEncType.TabIndex = 4
-        Me.edtFormEncType.Text = ""
         '
         'edtFormAction
         '
@@ -365,12 +363,12 @@ Public Class MainForm
         Me.edtFormAction.ReadOnly = True
         Me.edtFormAction.Size = New System.Drawing.Size(280, 20)
         Me.edtFormAction.TabIndex = 2
-        Me.edtFormAction.Text = ""
         '
         'label15
         '
         Me.label15.Location = New System.Drawing.Point(312, 200)
         Me.label15.Name = "label15"
+        Me.label15.Size = New System.Drawing.Size(100, 23)
         Me.label15.TabIndex = 7
         Me.label15.Text = "Method"
         '
@@ -378,6 +376,7 @@ Public Class MainForm
         '
         Me.label14.Location = New System.Drawing.Point(312, 152)
         Me.label14.Name = "label14"
+        Me.label14.Size = New System.Drawing.Size(100, 23)
         Me.label14.TabIndex = 6
         Me.label14.Text = "Form Name"
         '
@@ -385,6 +384,7 @@ Public Class MainForm
         '
         Me.label13.Location = New System.Drawing.Point(16, 200)
         Me.label13.Name = "label13"
+        Me.label13.Size = New System.Drawing.Size(100, 23)
         Me.label13.TabIndex = 5
         Me.label13.Text = "Enc Type"
         '
@@ -392,6 +392,7 @@ Public Class MainForm
         '
         Me.label12.Location = New System.Drawing.Point(16, 152)
         Me.label12.Name = "label12"
+        Me.label12.Size = New System.Drawing.Size(100, 23)
         Me.label12.TabIndex = 4
         Me.label12.Text = "Action"
         '
@@ -399,6 +400,7 @@ Public Class MainForm
         '
         Me.label11.Location = New System.Drawing.Point(312, 8)
         Me.label11.Name = "label11"
+        Me.label11.Size = New System.Drawing.Size(100, 23)
         Me.label11.TabIndex = 3
         Me.label11.Text = "Controls"
         '
@@ -406,6 +408,7 @@ Public Class MainForm
         '
         Me.label10.Location = New System.Drawing.Point(16, 8)
         Me.label10.Name = "label10"
+        Me.label10.Size = New System.Drawing.Size(100, 23)
         Me.label10.TabIndex = 2
         Me.label10.Text = "Form Tags"
         '
@@ -444,6 +447,7 @@ Public Class MainForm
         '
         Me.btnOpen.Location = New System.Drawing.Point(20, 296)
         Me.btnOpen.Name = "btnOpen"
+        Me.btnOpen.Size = New System.Drawing.Size(75, 23)
         Me.btnOpen.TabIndex = 3
         Me.btnOpen.Text = "Open File"
         '
@@ -460,11 +464,15 @@ Public Class MainForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.Name = "MainForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Html Parser sample"
         Me.tabControl.ResumeLayout(False)
         Me.tabLinks.ResumeLayout(False)
+        Me.tabLinks.PerformLayout()
         Me.tabImages.ResumeLayout(False)
+        Me.tabImages.PerformLayout()
         Me.tabForms.ResumeLayout(False)
+        Me.tabForms.PerformLayout()
         Me.tabText.ResumeLayout(False)
         Me.ResumeLayout(False)
 

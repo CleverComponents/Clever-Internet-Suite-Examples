@@ -1,21 +1,18 @@
 inherited MainForm: TMainForm
   Left = 305
   Top = 153
-  Height = 455
   ActiveControl = pgMain
   Caption = 'Clever SFTP Server'
-  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 339
     object pgMain: TPageControl
       Left = 0
       Top = 0
       Width = 623
-      Height = 339
+      Height = 363
       ActivePage = tabServer
       Align = alClient
       TabOrder = 0
@@ -115,7 +112,7 @@ inherited MainForm: TMainForm
         end
         object memLog: TMemo
           Left = 0
-          Top = 168
+          Top = 192
           Width = 615
           Height = 143
           Align = alBottom
@@ -279,6 +276,7 @@ inherited MainForm: TMainForm
           Top = 184
           Width = 448
           Height = 21
+          ReadOnly = True
           TabOrder = 6
         end
         object btnGenerateHostKey: TButton
@@ -713,7 +711,6 @@ inherited MainForm: TMainForm
     OnAcceptConnection = clSFtpServer1AcceptConnection
     OnCloseConnection = clSFtpServer1CloseConnection
     CharSet = 'utf-8'
-    EnableBanner = False
     UserAccounts = <>
     OnReceiveRequest = clSFtpServer1ReceiveRequest
     OnSendResponse = clSFtpServer1SendResponse
@@ -723,6 +720,12 @@ inherited MainForm: TMainForm
   object clSFtpFileHandler1: TclSFtpFileHandler
     Server = clSFtpServer1
     Left = 336
+    Top = 360
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Key files (*.pem)|*.pem|Key files (*.key)|*.key|All (*.*)|*.*'
+    Options = [ofFileMustExist, ofEnableSizing]
+    Left = 528
     Top = 360
   end
 end

@@ -31,14 +31,14 @@ Public Class ViewPropsForm
     'Do not modify it using the code editor.
     Public WithEvents textBox1 As System.Windows.Forms.TextBox
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.textBox1 = New System.Windows.Forms.TextBox
+        Me.textBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'textBox1
         '
         Me.textBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.textBox1.Location = New System.Drawing.Point(0, -1)
         Me.textBox1.Multiline = True
         Me.textBox1.Name = "textBox1"
@@ -53,8 +53,10 @@ Public Class ViewPropsForm
         Me.ClientSize = New System.Drawing.Size(424, 318)
         Me.Controls.Add(Me.textBox1)
         Me.Name = "ViewPropsForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "ViewPropsForm"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

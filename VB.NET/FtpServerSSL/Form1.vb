@@ -74,7 +74,6 @@ Public Class Form1
         '
         Me.FtpServer1.CaseInsensitive = True
         Me.FtpServer1.Extensions = New String() {"SIZE", "REST STREAM", "MDTM"}
-        Me.FtpServer1.ServerName = "Clever Internet Suite FTP service"
         FtpUserAccountItem1.DisplayName = "Clever Tester"
         FtpUserAccountItem1.Password = "clevertester"
         FtpUserAccountItem1.UserName = "CleverTester"
@@ -107,9 +106,9 @@ Public Class Form1
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(408, 48)
         Me.label6.TabIndex = 23
-        Me.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " & _
-            "In real application you will need to request a certificate from trusted issuer o" & _
-            "r use your own self-signed certificate."
+        Me.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " &
+    "In real application you will need to request a certificate from trusted issuer o" &
+    "r use your own self-signed certificate."
         '
         'memLog
         '
@@ -191,8 +190,8 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(416, 32)
         Me.label1.TabIndex = 12
-        Me.label1.Text = "This is a sample FTP SSL / TLS server. You can use any SSL-enabled FTP client (su" & _
-            "ch as TclFTP or SurgeFTP client to connect to this server."
+        Me.label1.Text = "This is a sample FTP SSL / TLS server. You can use any SSL-enabled FTP client (su" &
+    "ch as TclFTP or SurgeFTP client to connect to this server."
         '
         'CertificateStore1
         '
@@ -218,6 +217,7 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clever FTP Server"
         Me.ResumeLayout(False)
         Me.PerformLayout()

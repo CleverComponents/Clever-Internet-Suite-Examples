@@ -162,6 +162,7 @@ namespace RssFeed {
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "EditItemForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "RSS News Item";
 			this.ResumeLayout(false);
 			this.PerformLayout();

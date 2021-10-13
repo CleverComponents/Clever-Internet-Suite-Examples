@@ -81,6 +81,7 @@ namespace FtpClientSSL
 			this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.btnOk.Location = new System.Drawing.Point(80, 64);
 			this.btnOk.Name = "btnOk";
+			this.btnOk.Size = new System.Drawing.Size(75, 23);
 			this.btnOk.TabIndex = 2;
 			this.btnOk.Text = "OK";
 			// 
@@ -89,6 +90,7 @@ namespace FtpClientSSL
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Location = new System.Drawing.Point(176, 64);
 			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 3;
 			this.btnCancel.Text = "Cancel";
 			// 
@@ -103,9 +105,11 @@ namespace FtpClientSSL
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "NewDialog";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "newDlg";
 			this.Closing += new System.ComponentModel.CancelEventHandler(this.NewDialog_Closing);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 		#endregion

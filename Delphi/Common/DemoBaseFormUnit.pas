@@ -27,6 +27,7 @@ uses
   ShellAPI;
 
 {$R *.dfm}
+{$R 'DemoBase.res'}
 
 procedure TclDemoBaseForm.imLogoLeftClick(Sender: TObject);
 begin

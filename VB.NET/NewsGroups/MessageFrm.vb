@@ -40,14 +40,14 @@ Public Class MessageFrm
     Friend WithEvents label3 As System.Windows.Forms.Label
     Friend WithEvents label2 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnPost = New System.Windows.Forms.Button
-        Me.memText = New System.Windows.Forms.TextBox
-        Me.edtSubject = New System.Windows.Forms.TextBox
-        Me.edtFrom = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnPost = New System.Windows.Forms.Button()
+        Me.memText = New System.Windows.Forms.TextBox()
+        Me.edtSubject = New System.Windows.Forms.TextBox()
+        Me.edtFrom = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnCancel
@@ -55,6 +55,7 @@ Public Class MessageFrm
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(400, 272)
         Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 17
         Me.btnCancel.Text = "Cancel"
         '
@@ -63,6 +64,7 @@ Public Class MessageFrm
         Me.btnPost.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnPost.Location = New System.Drawing.Point(304, 272)
         Me.btnPost.Name = "btnPost"
+        Me.btnPost.Size = New System.Drawing.Size(75, 23)
         Me.btnPost.TabIndex = 16
         Me.btnPost.Text = "Post"
         '
@@ -131,8 +133,10 @@ Public Class MessageFrm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "MessageFrm"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Message Details"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

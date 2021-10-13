@@ -56,25 +56,25 @@ Public Class Form1
     'Do not modify it using the code editor.
     Friend WithEvents CertificateStore1 As CleverComponents.InetSuite.CertificateStore
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore
-        Me.cbLocation = New System.Windows.Forms.ComboBox
-        Me.label1 = New System.Windows.Forms.Label
-        Me.btnCreateSigned = New System.Windows.Forms.Button
-        Me.btnCreateSelfSigned = New System.Windows.Forms.Button
-        Me.btnDelete = New System.Windows.Forms.Button
-        Me.btnImport = New System.Windows.Forms.Button
-        Me.btnExport = New System.Windows.Forms.Button
-        Me.btnClose = New System.Windows.Forms.Button
-        Me.btnLoad = New System.Windows.Forms.Button
-        Me.lvCertificates = New System.Windows.Forms.ListView
-        Me.columnHeader1 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader2 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader3 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader4 = New System.Windows.Forms.ColumnHeader
-        Me.columnHeader5 = New System.Windows.Forms.ColumnHeader
-        Me.cbName = New System.Windows.Forms.ComboBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
+        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore()
+        Me.cbLocation = New System.Windows.Forms.ComboBox()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.btnCreateSigned = New System.Windows.Forms.Button()
+        Me.btnCreateSelfSigned = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnImport = New System.Windows.Forms.Button()
+        Me.btnExport = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnLoad = New System.Windows.Forms.Button()
+        Me.lvCertificates = New System.Windows.Forms.ListView()
+        Me.columnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.columnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.cbName = New System.Windows.Forms.ComboBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'CertificateStore1
@@ -236,6 +236,7 @@ Public Class Form1
         Me.Controls.Add(Me.label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 

@@ -65,41 +65,41 @@ Public Class CreateCertForm
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.edtKeyName = New System.Windows.Forms.TextBox
-        Me.label12 = New System.Windows.Forms.Label
-        Me.edtL = New System.Windows.Forms.TextBox
-        Me.label11 = New System.Windows.Forms.Label
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnOk = New System.Windows.Forms.Button
-        Me.edtStoreName = New System.Windows.Forms.TextBox
-        Me.edtValidTo = New System.Windows.Forms.TextBox
-        Me.edtValidFrom = New System.Windows.Forms.TextBox
-        Me.edtSerial = New System.Windows.Forms.TextBox
-        Me.edtE = New System.Windows.Forms.TextBox
-        Me.edtC = New System.Windows.Forms.TextBox
-        Me.edtS = New System.Windows.Forms.TextBox
-        Me.edtOU = New System.Windows.Forms.TextBox
-        Me.edtO = New System.Windows.Forms.TextBox
-        Me.edtCN = New System.Windows.Forms.TextBox
-        Me.label10 = New System.Windows.Forms.Label
-        Me.label9 = New System.Windows.Forms.Label
-        Me.label8 = New System.Windows.Forms.Label
-        Me.label7 = New System.Windows.Forms.Label
-        Me.label6 = New System.Windows.Forms.Label
-        Me.label5 = New System.Windows.Forms.Label
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.cbEmailProtection = New System.Windows.Forms.CheckBox
-        Me.cbCodeSigning = New System.Windows.Forms.CheckBox
-        Me.cbClientAuth = New System.Windows.Forms.CheckBox
-        Me.cbServerAuth = New System.Windows.Forms.CheckBox
-        Me.label14 = New System.Windows.Forms.Label
-        Me.edtKeyLength = New System.Windows.Forms.TextBox
-        Me.label13 = New System.Windows.Forms.Label
-        Me.edtFriendlyName = New System.Windows.Forms.TextBox
-        Me.label15 = New System.Windows.Forms.Label
+        Me.edtKeyName = New System.Windows.Forms.TextBox()
+        Me.label12 = New System.Windows.Forms.Label()
+        Me.edtL = New System.Windows.Forms.TextBox()
+        Me.label11 = New System.Windows.Forms.Label()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.edtStoreName = New System.Windows.Forms.TextBox()
+        Me.edtValidTo = New System.Windows.Forms.TextBox()
+        Me.edtValidFrom = New System.Windows.Forms.TextBox()
+        Me.edtSerial = New System.Windows.Forms.TextBox()
+        Me.edtE = New System.Windows.Forms.TextBox()
+        Me.edtC = New System.Windows.Forms.TextBox()
+        Me.edtS = New System.Windows.Forms.TextBox()
+        Me.edtOU = New System.Windows.Forms.TextBox()
+        Me.edtO = New System.Windows.Forms.TextBox()
+        Me.edtCN = New System.Windows.Forms.TextBox()
+        Me.label10 = New System.Windows.Forms.Label()
+        Me.label9 = New System.Windows.Forms.Label()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.cbEmailProtection = New System.Windows.Forms.CheckBox()
+        Me.cbCodeSigning = New System.Windows.Forms.CheckBox()
+        Me.cbClientAuth = New System.Windows.Forms.CheckBox()
+        Me.cbServerAuth = New System.Windows.Forms.CheckBox()
+        Me.label14 = New System.Windows.Forms.Label()
+        Me.edtKeyLength = New System.Windows.Forms.TextBox()
+        Me.label13 = New System.Windows.Forms.Label()
+        Me.edtFriendlyName = New System.Windows.Forms.TextBox()
+        Me.label15 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'edtKeyName
@@ -236,8 +236,8 @@ Public Class CreateCertForm
         Me.label10.Name = "label10"
         Me.label10.Size = New System.Drawing.Size(448, 23)
         Me.label10.TabIndex = 33
-        Me.label10.Text = "The new certificate will be created and installed in to the currently loaded Syst" & _
-            "em Store:"
+        Me.label10.Text = "The new certificate will be created and installed in to the currently loaded Syst" &
+    "em Store:"
         '
         'label9
         '
@@ -441,6 +441,7 @@ Public Class CreateCertForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "CreateCertForm"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Create Self-Signed Certificate Dialog"
         Me.ResumeLayout(False)
         Me.PerformLayout()

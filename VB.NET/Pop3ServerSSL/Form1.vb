@@ -52,31 +52,28 @@ Public Class Form1
     Friend WithEvents label1 As System.Windows.Forms.Label
     Friend WithEvents CertificateStore1 As CleverComponents.InetSuite.CertificateStore
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem
-        Me.Pop3Server1 = New CleverComponents.InetSuite.Pop3Server
-        Me.Pop3FileHandler1 = New CleverComponents.InetSuite.Pop3FileHandler
-        Me.cbUseTls = New System.Windows.Forms.ComboBox
-        Me.label7 = New System.Windows.Forms.Label
-        Me.label6 = New System.Windows.Forms.Label
-        Me.memLog = New System.Windows.Forms.TextBox
-        Me.label5 = New System.Windows.Forms.Label
-        Me.btnStop = New System.Windows.Forms.Button
-        Me.btnStart = New System.Windows.Forms.Button
-        Me.edtRootDir = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.edtPort = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore
+        Dim MailUserAccountItem1 As CleverComponents.InetSuite.MailUserAccountItem = New CleverComponents.InetSuite.MailUserAccountItem()
+        Me.Pop3Server1 = New CleverComponents.InetSuite.Pop3Server()
+        Me.Pop3FileHandler1 = New CleverComponents.InetSuite.Pop3FileHandler()
+        Me.cbUseTls = New System.Windows.Forms.ComboBox()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.memLog = New System.Windows.Forms.TextBox()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.btnStop = New System.Windows.Forms.Button()
+        Me.btnStart = New System.Windows.Forms.Button()
+        Me.edtRootDir = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.edtPort = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.CertificateStore1 = New CleverComponents.InetSuite.CertificateStore()
         Me.SuspendLayout()
         '
         'Pop3Server1
         '
-        Me.Pop3Server1.CaseInsensitive = True
         Me.Pop3Server1.HelpText = New String() {"Valid commands: USER", "PASS", "APOP", "AUTH", "QUIT", "NOOP", "HELP", "STAT", "RETR", "TOP", "DELE", "RSET", "LIST", "UIDL", "STLS"}
-        Me.Pop3Server1.Port = 110
-        Me.Pop3Server1.ServerName = "Clever Internet Suite POP3 service"
         MailUserAccountItem1.DisplayName = "Clever Tester"
         MailUserAccountItem1.Password = "clevertester"
         MailUserAccountItem1.UserName = "CleverTester"
@@ -100,6 +97,7 @@ Public Class Form1
         '
         Me.label7.Location = New System.Drawing.Point(184, 144)
         Me.label7.Name = "label7"
+        Me.label7.Size = New System.Drawing.Size(100, 23)
         Me.label7.TabIndex = 35
         Me.label7.Text = "SSL / TLS Mode"
         '
@@ -109,9 +107,9 @@ Public Class Form1
         Me.label6.Name = "label6"
         Me.label6.Size = New System.Drawing.Size(400, 48)
         Me.label6.TabIndex = 33
-        Me.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " & _
-        "In real application you will need to request a certificate from trusted issuer o" & _
-        "r use your own self-signed certificate."
+        Me.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " &
+    "In real application you will need to request a certificate from trusted issuer o" &
+    "r use your own self-signed certificate."
         '
         'memLog
         '
@@ -122,7 +120,6 @@ Public Class Form1
         Me.memLog.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memLog.Size = New System.Drawing.Size(440, 136)
         Me.memLog.TabIndex = 32
-        Me.memLog.Text = ""
         '
         'label5
         '
@@ -136,6 +133,7 @@ Public Class Form1
         '
         Me.btnStop.Location = New System.Drawing.Point(176, 208)
         Me.btnStop.Name = "btnStop"
+        Me.btnStop.Size = New System.Drawing.Size(75, 23)
         Me.btnStop.TabIndex = 30
         Me.btnStop.Text = "Stop"
         '
@@ -143,6 +141,7 @@ Public Class Form1
         '
         Me.btnStart.Location = New System.Drawing.Point(80, 208)
         Me.btnStart.Name = "btnStart"
+        Me.btnStart.Size = New System.Drawing.Size(75, 23)
         Me.btnStart.TabIndex = 29
         Me.btnStart.Text = "Start"
         '
@@ -192,8 +191,13 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(416, 37)
         Me.label1.TabIndex = 23
-        Me.label1.Text = "This is a sample POP3 SSL / TLS server. You can use any SSL-enabled POP3 client (" & _
-        "such as TclPop3 or MS Outlook client to connect to this server."
+        Me.label1.Text = "This is a sample POP3 SSL / TLS server. You can use any SSL-enabled POP3 client (" &
+    "such as TclPop3 or MS Outlook client to connect to this server."
+        '
+        'CertificateStore1
+        '
+        Me.CertificateStore1.ValidFrom = New Date(2021, 10, 6, 1, 18, 49, 50)
+        Me.CertificateStore1.ValidTo = New Date(2022, 10, 6, 1, 18, 49, 50)
         '
         'Form1
         '
@@ -214,8 +218,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clever POP3 Server"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

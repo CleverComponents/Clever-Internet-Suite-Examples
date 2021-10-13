@@ -40,16 +40,16 @@ Public Class MessageFrm
     Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnClose = New System.Windows.Forms.Button
-        Me.btnSend = New System.Windows.Forms.Button
-        Me.memBody = New System.Windows.Forms.TextBox
-        Me.edtSubject = New System.Windows.Forms.TextBox
-        Me.edtTo = New System.Windows.Forms.TextBox
-        Me.edtFrom = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Me.btnClose = New System.Windows.Forms.Button()
+        Me.btnSend = New System.Windows.Forms.Button()
+        Me.memBody = New System.Windows.Forms.TextBox()
+        Me.edtSubject = New System.Windows.Forms.TextBox()
+        Me.edtTo = New System.Windows.Forms.TextBox()
+        Me.edtFrom = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnClose
@@ -153,6 +153,7 @@ Public Class MessageFrm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "MessageFrm"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Message Details"
         Me.ResumeLayout(False)
         Me.PerformLayout()

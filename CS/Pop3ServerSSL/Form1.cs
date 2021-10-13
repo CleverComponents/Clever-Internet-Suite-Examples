@@ -71,7 +71,7 @@ namespace Pop3Server
 		/// </summary>
 		private void InitializeComponent()
 		{
-			CleverComponents.InetSuite.MailUserAccountItem mailUserAccountItem2 = new CleverComponents.InetSuite.MailUserAccountItem();
+			CleverComponents.InetSuite.MailUserAccountItem mailUserAccountItem1 = new CleverComponents.InetSuite.MailUserAccountItem();
 			this.memLog = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnStop = new System.Windows.Forms.Button();
@@ -173,7 +173,7 @@ namespace Pop3Server
 			this.label1.Size = new System.Drawing.Size(416, 37);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "This is a sample POP3 SSL / TLS server. You can use any SSL-enabled POP3 client (" +
-				"such as TclPop3 or MS Outlook client to connect to this server.";
+    "such as TclPop3 or MS Outlook client to connect to this server.";
 			// 
 			// pop3Server1
 			// 
@@ -193,13 +193,12 @@ namespace Pop3Server
         "LIST",
         "UIDL",
         "STLS"};
-			this.pop3Server1.ServerName = "Clever Internet Suite POP3 service";
 			this.pop3Server1.SessionTimeOut = -1;
-			mailUserAccountItem2.DisplayName = "Clever Tester";
-			mailUserAccountItem2.Password = "clevertester";
-			mailUserAccountItem2.UserName = "CleverTester";
+			mailUserAccountItem1.DisplayName = "Clever Tester";
+			mailUserAccountItem1.Password = "clevertester";
+			mailUserAccountItem1.UserName = "CleverTester";
 			this.pop3Server1.UserAccounts.AddRange(new CleverComponents.InetSuite.UserAccountItem[] {
-            mailUserAccountItem2});
+            mailUserAccountItem1});
 			this.pop3Server1.Authenticate += new CleverComponents.InetSuite.Pop3AuthenticateEventHandler(this.pop3Server1_Authenticate);
 			this.pop3Server1.CommandReceived += new CleverComponents.InetSuite.TcpCommandEventHandler(this.pop3Server1_CommandReceived);
 			this.pop3Server1.ResponseSent += new CleverComponents.InetSuite.TcpResponseEventHandler(this.pop3Server1_ResponseSent);
@@ -221,8 +220,8 @@ namespace Pop3Server
 			this.label6.Size = new System.Drawing.Size(400, 48);
 			this.label6.TabIndex = 20;
 			this.label6.Text = "This server uses self-signed server certificate to establish the SSL connection. " +
-				"In real application you will need to request a certificate from trusted issuer o" +
-				"r use your own self-signed certificate.";
+    "In real application you will need to request a certificate from trusted issuer o" +
+    "r use your own self-signed certificate.";
 			// 
 			// cbUseTls
 			// 
@@ -269,6 +268,7 @@ namespace Pop3Server
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Clever POP3 Server";
 			this.ResumeLayout(false);
 			this.PerformLayout();

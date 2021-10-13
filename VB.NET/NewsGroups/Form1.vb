@@ -43,18 +43,18 @@ Public Class Form1
     Friend WithEvents Nntp1 As CleverComponents.InetSuite.Nntp
     Friend WithEvents MailMessage1 As CleverComponents.InetSuite.MailMessage
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.memBody = New System.Windows.Forms.TextBox
-        Me.tvArticles = New System.Windows.Forms.TreeView
-        Me.btnReply = New System.Windows.Forms.Button
-        Me.btnPostNew = New System.Windows.Forms.Button
-        Me.btnGetArticles = New System.Windows.Forms.Button
-        Me.btnConnect = New System.Windows.Forms.Button
-        Me.cbNewsGroup = New System.Windows.Forms.ComboBox
-        Me.edtNewsServer = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Nntp1 = New CleverComponents.InetSuite.Nntp
-        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage
+        Me.memBody = New System.Windows.Forms.TextBox()
+        Me.tvArticles = New System.Windows.Forms.TreeView()
+        Me.btnReply = New System.Windows.Forms.Button()
+        Me.btnPostNew = New System.Windows.Forms.Button()
+        Me.btnGetArticles = New System.Windows.Forms.Button()
+        Me.btnConnect = New System.Windows.Forms.Button()
+        Me.cbNewsGroup = New System.Windows.Forms.ComboBox()
+        Me.edtNewsServer = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Nntp1 = New CleverComponents.InetSuite.Nntp()
+        Me.MailMessage1 = New CleverComponents.InetSuite.MailMessage()
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -143,13 +143,10 @@ Public Class Form1
         '
         'Nntp1
         '
-        Me.Nntp1.Port = 119
         '
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2006, 5, 8, 15, 53, 23, 374)
-        Me.MailMessage1.From.Email = ""
-        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -167,6 +164,7 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "News Group Reader"
         CType(Me.MailMessage1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

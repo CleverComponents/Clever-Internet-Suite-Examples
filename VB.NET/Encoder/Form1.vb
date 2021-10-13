@@ -55,32 +55,33 @@ Public Class Form1
     Friend WithEvents label1 As System.Windows.Forms.Label
     Friend WithEvents Encoder1 As CleverComponents.InetSuite.Encoder
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnDecodeFile = New System.Windows.Forms.Button
-        Me.btnEncodeFile = New System.Windows.Forms.Button
-        Me.cbEncodingFile = New System.Windows.Forms.ComboBox
-        Me.edtDestinationFile = New System.Windows.Forms.TextBox
-        Me.edtSourceFile = New System.Windows.Forms.TextBox
-        Me.btnDecode = New System.Windows.Forms.Button
-        Me.btnEncode = New System.Windows.Forms.Button
-        Me.cbEncoding = New System.Windows.Forms.ComboBox
-        Me.edtDestination = New System.Windows.Forms.TextBox
-        Me.edtSource = New System.Windows.Forms.TextBox
-        Me.label8 = New System.Windows.Forms.Label
-        Me.label7 = New System.Windows.Forms.Label
-        Me.label6 = New System.Windows.Forms.Label
-        Me.panel1 = New System.Windows.Forms.Panel
-        Me.label5 = New System.Windows.Forms.Label
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Encoder1 = New CleverComponents.InetSuite.Encoder
+        Me.btnDecodeFile = New System.Windows.Forms.Button()
+        Me.btnEncodeFile = New System.Windows.Forms.Button()
+        Me.cbEncodingFile = New System.Windows.Forms.ComboBox()
+        Me.edtDestinationFile = New System.Windows.Forms.TextBox()
+        Me.edtSourceFile = New System.Windows.Forms.TextBox()
+        Me.btnDecode = New System.Windows.Forms.Button()
+        Me.btnEncode = New System.Windows.Forms.Button()
+        Me.cbEncoding = New System.Windows.Forms.ComboBox()
+        Me.edtDestination = New System.Windows.Forms.TextBox()
+        Me.edtSource = New System.Windows.Forms.TextBox()
+        Me.label8 = New System.Windows.Forms.Label()
+        Me.label7 = New System.Windows.Forms.Label()
+        Me.label6 = New System.Windows.Forms.Label()
+        Me.panel1 = New System.Windows.Forms.Panel()
+        Me.label5 = New System.Windows.Forms.Label()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Encoder1 = New CleverComponents.InetSuite.Encoder()
         Me.SuspendLayout()
         '
         'btnDecodeFile
         '
         Me.btnDecodeFile.Location = New System.Drawing.Point(224, 328)
         Me.btnDecodeFile.Name = "btnDecodeFile"
+        Me.btnDecodeFile.Size = New System.Drawing.Size(75, 23)
         Me.btnDecodeFile.TabIndex = 37
         Me.btnDecodeFile.Text = "Decode"
         '
@@ -88,6 +89,7 @@ Public Class Form1
         '
         Me.btnEncodeFile.Location = New System.Drawing.Point(120, 328)
         Me.btnEncodeFile.Name = "btnEncodeFile"
+        Me.btnEncodeFile.Size = New System.Drawing.Size(75, 23)
         Me.btnEncodeFile.TabIndex = 36
         Me.btnEncodeFile.Text = "Encode"
         '
@@ -120,6 +122,7 @@ Public Class Form1
         '
         Me.btnDecode.Location = New System.Drawing.Point(224, 192)
         Me.btnDecode.Name = "btnDecode"
+        Me.btnDecode.Size = New System.Drawing.Size(75, 23)
         Me.btnDecode.TabIndex = 32
         Me.btnDecode.Text = "Decode"
         '
@@ -127,6 +130,7 @@ Public Class Form1
         '
         Me.btnEncode.Location = New System.Drawing.Point(120, 192)
         Me.btnEncode.Name = "btnEncode"
+        Me.btnEncode.Size = New System.Drawing.Size(75, 23)
         Me.btnEncode.TabIndex = 31
         Me.btnEncode.Text = "Encode"
         '
@@ -146,7 +150,6 @@ Public Class Form1
         Me.edtDestination.ReadOnly = True
         Me.edtDestination.Size = New System.Drawing.Size(296, 20)
         Me.edtDestination.TabIndex = 29
-        Me.edtDestination.Text = ""
         '
         'edtSource
         '
@@ -218,8 +221,8 @@ Public Class Form1
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(408, 32)
         Me.label2.TabIndex = 20
-        Me.label2.Text = "Please select the source and destination files, the required encoding format and " & _
-        "press the Encode or Decode buttons."
+        Me.label2.Text = "Please select the source and destination files, the required encoding format and " &
+    "press the Encode or Decode buttons."
         '
         'label1
         '
@@ -227,8 +230,8 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(408, 32)
         Me.label1.TabIndex = 19
-        Me.label1.Text = "This demo demonstrates how to decode / encode a file using the base64, UUE or Quo" & _
-        "tedPrintable encoding formats."
+        Me.label1.Text = "This demo demonstrates how to decode / encode a file using the base64, UUE or Quo" &
+    "tedPrintable encoding formats."
         '
         'Form1
         '
@@ -255,8 +258,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

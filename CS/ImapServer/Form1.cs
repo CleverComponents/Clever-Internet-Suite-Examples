@@ -163,24 +163,21 @@ namespace ImapServer
 			this.label1.Size = new System.Drawing.Size(416, 29);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "This is a sample IMAP server. You can use any mail client with IMAP support to co" +
-				"nnect to this server.";
+    "nnect to this server.";
 			// 
 			// imap4Server1
 			// 
-			this.imap4Server1.Port = 143;
-			this.imap4Server1.ServerName = "Clever Internet Suite IMAP4 service";
-			mailUserAccountItem1.DisplayName = "";
 			mailUserAccountItem1.Password = "clevertester";
 			mailUserAccountItem1.UserName = "CleverTester";
 			this.imap4Server1.UserAccounts.AddRange(new CleverComponents.InetSuite.UserAccountItem[] {
             mailUserAccountItem1});
-			this.imap4Server1.Started += new System.EventHandler(this.imap4Server1_Started);
-			this.imap4Server1.ConnectionClosed += new CleverComponents.InetSuite.ConnectionEventHandler(this.imap4Server1_ConnectionClosed);
+			this.imap4Server1.Authenticate += new CleverComponents.InetSuite.Imap4AuthenticateEventHandler(this.imap4Server1_Authenticate);
 			this.imap4Server1.CommandReceived += new CleverComponents.InetSuite.TcpCommandEventHandler(this.imap4Server1_CommandReceived);
 			this.imap4Server1.ResponseSent += new CleverComponents.InetSuite.TcpResponseEventHandler(this.imap4Server1_ResponseSent);
-			this.imap4Server1.ConnectionAccepted += new CleverComponents.InetSuite.ConnectionAcceptedEventHandler(this.imap4Server1_ConnectionAccepted);
+			this.imap4Server1.Started += new System.EventHandler(this.imap4Server1_Started);
 			this.imap4Server1.Stopped += new System.EventHandler(this.imap4Server1_Stopped);
-			this.imap4Server1.Authenticate += new CleverComponents.InetSuite.Imap4AuthenticateEventHandler(this.imap4Server1_Authenticate);
+			this.imap4Server1.ConnectionAccepted += new CleverComponents.InetSuite.ConnectionAcceptedEventHandler(this.imap4Server1_ConnectionAccepted);
+			this.imap4Server1.ConnectionClosed += new CleverComponents.InetSuite.ConnectionEventHandler(this.imap4Server1_ConnectionClosed);
 			// 
 			// imap4FileHandler1
 			// 
@@ -202,6 +199,7 @@ namespace ImapServer
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Clever IMAP4 Server";
 			this.ResumeLayout(false);
 			this.PerformLayout();

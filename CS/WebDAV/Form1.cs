@@ -39,8 +39,9 @@ namespace WebDAV
 		private System.Windows.Forms.Button btnUpload;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-		private CleverComponents.InetSuite.WebDav webDav1;
 		private System.Windows.Forms.ListView lvResources;
+		private WebDav webDav1;
+
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -65,16 +66,16 @@ namespace WebDAV
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		protected override void Dispose( bool disposing )
+		protected override void Dispose(bool disposing)
 		{
-			if( disposing )
+			if (disposing)
 			{
-				if (components != null) 
+				if (components != null)
 				{
 					components.Dispose();
 				}
 			}
-			base.Dispose( disposing );
+			base.Dispose(disposing);
 		}
 
 		#region Windows Form Designer generated code
@@ -84,7 +85,6 @@ namespace WebDAV
 		/// </summary>
 		private void InitializeComponent()
 		{
-			CleverComponents.InetSuite.WebDavNameSpace webDavNameSpace1 = new CleverComponents.InetSuite.WebDavNameSpace();
 			this.label1 = new System.Windows.Forms.Label();
 			this.edtHost = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
@@ -172,10 +172,10 @@ namespace WebDAV
 			// 
 			this.cbDepth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cbDepth.Items.AddRange(new object[] {
-            "Default",
-            "Resource Only",
-            "Resource and Children",
-            "Infinity"});
+			"Default",
+			"Resource Only",
+			"Resource and Children",
+			"Infinity"});
 			this.cbDepth.Location = new System.Drawing.Point(64, 80);
 			this.cbDepth.Name = "cbDepth";
 			this.cbDepth.Size = new System.Drawing.Size(112, 21);
@@ -192,7 +192,7 @@ namespace WebDAV
 			// lvResources
 			// 
 			this.lvResources.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+			this.columnHeader1});
 			this.lvResources.FullRowSelect = true;
 			this.lvResources.HideSelection = false;
 			this.lvResources.Location = new System.Drawing.Point(16, 136);
@@ -316,16 +316,6 @@ namespace WebDAV
 			this.btnUpload.Text = "Upload";
 			this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
 			// 
-			// webDav1
-			// 
-			this.webDav1.CharSet = null;
-			this.webDav1.LockOwner = null;
-			this.webDav1.LockTimeOut = "Infinite, Second-86400";
-			webDavNameSpace1.NameSpace = "DAV:";
-			webDavNameSpace1.Prefix = "D";
-			this.webDav1.NameSpaces.Add(webDavNameSpace1);
-			this.webDav1.TlsFlags = ((CleverComponents.InetSuite.Sspi.TlsFlags)((CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL2 | CleverComponents.InetSuite.Sspi.TlsFlags.UseSSL3)));
-			// 
 			// Form1
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -354,6 +344,7 @@ namespace WebDAV
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Web DAV client";
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -365,7 +356,7 @@ namespace WebDAV
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static void Main() 
+		static void Main()
 		{
 			Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(new ExceptionHandler().OnThreadException);
 			Application.Run(new Form1());
@@ -375,7 +366,8 @@ namespace WebDAV
 		StringCollection resources;
 		StringCollection locks;
 
-		private void btnOpen_Click(object sender, System.EventArgs e) {
+		private void btnOpen_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 
@@ -385,20 +377,24 @@ namespace WebDAV
 
 			lvResources.Items.Clear();
 
-			foreach(WebDavProperty prop in webDav1.ResourceProperties) {
+			foreach (WebDavProperty prop in webDav1.ResourceProperties)
+			{
 				ListViewItem item = lvResources.Items.Add(prop.Uri);
 			}
 		}
 
-		private void btnGoUp_Click(object sender, System.EventArgs e) {
+		private void btnGoUp_Click(object sender, System.EventArgs e)
+		{
 			string s = edtHost.Text;
-			if(StringUtils.IsEmpty(s)) return;
+			if (StringUtils.IsEmpty(s)) return;
 
-			if(s[s.Length - 1] == '/') {
+			if (s[s.Length - 1] == '/')
+			{
 				s = s.Substring(0, s.Length - 1);
 			}
 			int ind = s.LastIndexOf('/');
-			if(ind > -1) {
+			if (ind > -1)
+			{
 				s = s.Substring(0, ind + 1);
 			}
 			edtHost.Text = s;
@@ -406,12 +402,14 @@ namespace WebDAV
 			btnOpen_Click(null, null);
 		}
 
-		private void btnCapabilities_Click(object sender, System.EventArgs e) {
+		private void btnCapabilities_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 
 			string url = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				url = lvResources.SelectedItems[0].Text;
 			}
 
@@ -438,19 +436,23 @@ namespace WebDAV
 			dlg.ShowDialog();
 		}
 
-		private void btnGetAllProps_Click(object sender, System.EventArgs e) {
+		private void btnGetAllProps_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 
-			if(cbDepth.SelectedIndex == 0) {
+			if (cbDepth.SelectedIndex == 0)
+			{
 				webDav1.Depth = WebDavDepth.ResourceOnly;
 			}
-			else {
+			else
+			{
 				webDav1.Depth = (WebDavDepth)cbDepth.SelectedIndex;
 			}
 
 			string url = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				url = lvResources.SelectedItems[0].Text;
 			}
 
@@ -462,14 +464,16 @@ namespace WebDAV
 			list.Add("");
 			list.Add("Properties:");
 
-			foreach(WebDavProperty prop in webDav1.ResourceProperties) {
+			foreach (WebDavProperty prop in webDav1.ResourceProperties)
+			{
 				list.Add(prop.Name + " = " + prop.Value);
 			}
 
 			list.Add("");
 			list.Add("Active Locks:");
 
-			foreach(WebDavLock item in webDav1.ActiveLocks) {
+			foreach (WebDavLock item in webDav1.ActiveLocks)
+			{
 				list.Add("Owner: " + item.Owner);
 				list.Add("Lock Token: " + item.LockToken);
 				list.Add("Lock Type: " + item.LockType);
@@ -484,20 +488,23 @@ namespace WebDAV
 			dlg.ShowDialog();
 		}
 
-		private void btnModifyProp_Click(object sender, System.EventArgs e) {
+		private void btnModifyProp_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 			webDav1.Depth = (WebDavDepth)cbDepth.SelectedIndex;
 
 			string url = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				url = lvResources.SelectedItems[0].Text;
 			}
 
 			ModifyPropForm dlg = new ModifyPropForm();
 
 			dlg.lblResource.Text = url;
-			switch(dlg.ShowDialog()) {
+			switch (dlg.ShowDialog())
+			{
 				case DialogResult.Yes:
 					webDav1.SetProperties(url, new string[] { dlg.edtName.Text }, new string[] { dlg.edtValue.Text });
 					MessageBox.Show("Property '" + dlg.edtName.Text + "' added / modified.");
@@ -509,43 +516,50 @@ namespace WebDAV
 			}
 		}
 
-		private void btnMakeDir_Click(object sender, System.EventArgs e) {
+		private void btnMakeDir_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 			webDav1.Depth = (WebDavDepth)cbDepth.SelectedIndex;
 
 			string newDir = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				newDir = lvResources.SelectedItems[0].Text;
 			}
 
 			MakeDirForm dlg = new MakeDirForm();
 			dlg.edtValue.Text = newDir;
-			if(dlg.ShowDialog() == DialogResult.OK) {
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
 				webDav1.MakeDir(dlg.edtValue.Text);
 				btnOpen_Click(null, null);
 			}
 		}
 
-		private void btnDelete_Click(object sender, System.EventArgs e) {
+		private void btnDelete_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 			webDav1.Depth = (WebDavDepth)cbDepth.SelectedIndex;
 
-			if(lvResources.SelectedItems.Count == 0) {
+			if (lvResources.SelectedItems.Count == 0)
+			{
 				throw new Exception("Please select a resource");
 			}
 
 			string url = lvResources.SelectedItems[0].Text;
 
-			if(MessageBox.Show("Do you want to delete " + url + " ?",
-				"Delete Resource", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+			if (MessageBox.Show("Do you want to delete " + url + " ?",
+				"Delete Resource", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
 				webDav1.Delete(url);
 				btnOpen_Click(null, null);
 			}
 		}
 
-		private void btnLock_Click(object sender, System.EventArgs e) {
+		private void btnLock_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 
@@ -554,7 +568,8 @@ namespace WebDAV
 			webDav1.LockScope = WebDavLockScope.Exclusive;
 
 			string url = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				url = lvResources.SelectedItems[0].Text;
 			}
 
@@ -565,7 +580,8 @@ namespace WebDAV
 			MessageBox.Show("The " + url + " resource has been locked successfully.\r\n\r\n Lock Token = " + lockToken);
 		}
 
-		private void btnUnlock_Click(object sender, System.EventArgs e) {
+		private void btnUnlock_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 
@@ -574,12 +590,15 @@ namespace WebDAV
 			webDav1.LockScope = WebDavLockScope.Exclusive;
 
 			string url = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				url = lvResources.SelectedItems[0].Text;
 			}
 
-			for (int i = 0; i < resources.Count; i++) {
-				if (String.Compare(resources[i], url, true) == 0) {
+			for (int i = 0; i < resources.Count; i++)
+			{
+				if (String.Compare(resources[i], url, true) == 0)
+				{
 					webDav1.Unlock(url, locks[i]);
 				}
 			}
@@ -587,23 +606,28 @@ namespace WebDAV
 			MessageBox.Show("The " + url + " resource has been unlocked.");
 		}
 
-		private void btnCopyMove_Click(object sender, System.EventArgs e) {
+		private void btnCopyMove_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 			webDav1.Depth = (WebDavDepth)cbDepth.SelectedIndex;
 
 			string url = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				url = lvResources.SelectedItems[0].Text;
 			}
 
 			CopyMoveForm dlg = new CopyMoveForm();
 			dlg.edtSource.Text = url;
-			if(dlg.ShowDialog() == DialogResult.OK) {
-				if(dlg.cbIsMove.Checked) {
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
+				if (dlg.cbIsMove.Checked)
+				{
 					webDav1.Move(dlg.edtSource.Text, dlg.edtDestination.Text);
 				}
-				else {
+				else
+				{
 					webDav1.Copy(dlg.edtSource.Text, dlg.edtDestination.Text);
 				}
 
@@ -611,36 +635,44 @@ namespace WebDAV
 			}
 		}
 
-		private void btnDownload_Click(object sender, System.EventArgs e) {
+		private void btnDownload_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 			webDav1.Depth = (WebDavDepth)cbDepth.SelectedIndex;
 
 			string url = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				url = lvResources.SelectedItems[0].Text;
 			}
 
-			if(saveFileDialog1.ShowDialog() == DialogResult.OK) {
-				using(Stream stream = new FileStream(saveFileDialog1.FileName, FileMode.CreateNew)) {
+			if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				using (Stream stream = new FileStream(saveFileDialog1.FileName, FileMode.CreateNew))
+				{
 					webDav1.Get(url, stream);
 				}
 				MessageBox.Show("The resource has been downloaded and stored in to " + saveFileDialog1.FileName);
 			}
 		}
 
-		private void btnUpload_Click(object sender, System.EventArgs e) {
+		private void btnUpload_Click(object sender, System.EventArgs e)
+		{
 			webDav1.UserName = edtUser.Text;
 			webDav1.Password = edtPassword.Text;
 			webDav1.Depth = (WebDavDepth)cbDepth.SelectedIndex;
 
 			string url = edtHost.Text;
-			if(lvResources.SelectedItems.Count > 0) {
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				url = lvResources.SelectedItems[0].Text;
 			}
 
-			if(openFileDialog1.ShowDialog() == DialogResult.OK) {
-				using(Stream stream = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read)) {
+			if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				using (Stream stream = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read))
+				{
 					webDav1.Put(url + "/" + Path.GetFileName(openFileDialog1.FileName), stream);
 				}
 
@@ -649,16 +681,20 @@ namespace WebDAV
 			}
 		}
 
-		private void lvResources_DoubleClick(object sender, System.EventArgs e) {
-			if(lvResources.SelectedItems.Count > 0) {
+		private void lvResources_DoubleClick(object sender, System.EventArgs e)
+		{
+			if (lvResources.SelectedItems.Count > 0)
+			{
 				edtHost.Text = lvResources.SelectedItems[0].Text;
 			}
 			btnOpen_Click(null, null);
 		}
 	}
 
-	public class ExceptionHandler {
-		public void OnThreadException(object sender, System.Threading.ThreadExceptionEventArgs t) {
+	public class ExceptionHandler
+	{
+		public void OnThreadException(object sender, System.Threading.ThreadExceptionEventArgs t)
+		{
 			MessageBox.Show(t.Exception.Message);
 		}
 	}

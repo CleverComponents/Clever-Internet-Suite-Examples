@@ -73,6 +73,7 @@ namespace SFTPClient
 			this.btnReplace.DialogResult = System.Windows.Forms.DialogResult.Yes;
 			this.btnReplace.Location = new System.Drawing.Point(16, 72);
 			this.btnReplace.Name = "btnReplace";
+			this.btnReplace.Size = new System.Drawing.Size(75, 23);
 			this.btnReplace.TabIndex = 1;
 			this.btnReplace.Text = "Replace";
 			// 
@@ -81,6 +82,7 @@ namespace SFTPClient
 			this.btnResume.DialogResult = System.Windows.Forms.DialogResult.No;
 			this.btnResume.Location = new System.Drawing.Point(104, 72);
 			this.btnResume.Name = "btnResume";
+			this.btnResume.Size = new System.Drawing.Size(75, 23);
 			this.btnResume.TabIndex = 2;
 			this.btnResume.Text = "Resume";
 			// 
@@ -89,6 +91,7 @@ namespace SFTPClient
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnCancel.Location = new System.Drawing.Point(264, 72);
 			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
 			this.btnCancel.TabIndex = 3;
 			this.btnCancel.Text = "Cancel";
 			// 
@@ -103,6 +106,7 @@ namespace SFTPClient
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "FileExistsDialog";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "File Exists Dialog";
 			this.ResumeLayout(false);
 

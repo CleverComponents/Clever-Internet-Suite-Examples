@@ -3,7 +3,8 @@ program GMailIMAP;
 uses
   Forms,
   main in 'main.pas' {Form1},
-  DemoBaseFormUnit in '..\Common\DemoBaseFormUnit.pas' {clDemoBaseForm};
+  DemoBaseFormUnit in '..\Common\DemoBaseFormUnit.pas' {clDemoBaseForm},
+  login in 'login.pas' {LoginConfirmation};
 
 {$R *.res}
 

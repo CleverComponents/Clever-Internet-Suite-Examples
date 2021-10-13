@@ -3,7 +3,7 @@ inherited Form1: TForm1
   Top = 71
   Height = 608
   Caption = 'SOAP Security - Encrypt / Decrypt, Sign / Verify  - Sample'
-  Font.Name = 'Tahoma'
+  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
@@ -12,14 +12,14 @@ inherited Form1: TForm1
     object Label4: TLabel
       Left = 16
       Top = 214
-      Width = 53
+      Width = 55
       Height = 13
       Caption = 'Parameters'
     end
     object Label5: TLabel
       Left = 291
       Top = 214
-      Width = 32
+      Width = 31
       Height = 13
       Caption = 'Values'
     end
@@ -32,7 +32,7 @@ inherited Form1: TForm1
     object Label15: TLabel
       Left = 16
       Top = 305
-      Width = 102
+      Width = 103
       Height = 13
       Caption = 'Decrypted SOAP xml:'
     end
@@ -104,14 +104,14 @@ inherited Form1: TForm1
       object Label8: TLabel
         Left = 8
         Top = 24
-        Width = 37
+        Width = 39
         Height = 13
         Caption = 'Created'
       end
       object Label9: TLabel
         Left = 8
         Top = 48
-        Width = 34
+        Width = 35
         Height = 13
         Caption = 'Expires'
       end
@@ -127,7 +127,7 @@ inherited Form1: TForm1
         Top = 72
         Width = 201
         Height = 21
-        TabOrder = 0
+        TabOrder = 2
         Text = 'TimeStamp-123'
       end
       object edtTimeStampExpires: TEdit
@@ -143,7 +143,7 @@ inherited Form1: TForm1
         Top = 24
         Width = 201
         Height = 21
-        TabOrder = 2
+        TabOrder = 0
         Text = '2015-02-01T11:51:03.314Z'
       end
     end
@@ -157,14 +157,14 @@ inherited Form1: TForm1
       object Label12: TLabel
         Left = 8
         Top = 24
-        Width = 28
+        Width = 27
         Height = 13
         Caption = 'Name'
       end
       object Label13: TLabel
         Left = 8
         Top = 48
-        Width = 27
+        Width = 26
         Height = 13
         Caption = 'Value'
       end
@@ -180,7 +180,7 @@ inherited Form1: TForm1
         Top = 72
         Width = 152
         Height = 21
-        TabOrder = 0
+        TabOrder = 2
         Text = 'Address-124'
       end
       object edtAddressValue: TEdit
@@ -196,7 +196,7 @@ inherited Form1: TForm1
         Top = 24
         Width = 152
         Height = 21
-        TabOrder = 2
+        TabOrder = 0
         Text = 'To'
       end
     end
@@ -210,7 +210,7 @@ inherited Form1: TForm1
       object Label2: TLabel
         Left = 8
         Top = 24
-        Width = 58
+        Width = 57
         Height = 13
         Caption = 'Method URI'
       end
@@ -233,7 +233,7 @@ inherited Form1: TForm1
         Top = 48
         Width = 193
         Height = 21
-        TabOrder = 0
+        TabOrder = 1
         Text = 'sampleMethod'
       end
       object edtMethodURI: TEdit
@@ -241,7 +241,7 @@ inherited Form1: TForm1
         Top = 21
         Width = 425
         Height = 21
-        TabOrder = 1
+        TabOrder = 0
         Text = 'http://www.domain.com/sampleServices'
       end
       object edtBodyID: TEdit
@@ -259,9 +259,11 @@ inherited Form1: TForm1
     Header.Accept = '*/*'
     Addressing = <>
     Signatures = <>
+    EncryptedKey.ID = ''
     EncryptedKey.KeyClassName = 'TclXmlSKIKeyInfo'
     EncryptedKey.EncryptionMethod = 'http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p'
     EncryptedKey.References = <>
+    Namespaces.ExtractNamespacePattern = 'xmlns\:\w*\s*=\s*\"[^\"]*\"'
     Namespaces = <>
     EncodingStyle = 'http://schemas.xmlsoap.org/soap/encoding/'
     SecurityConfig.IdName = 'Id'
@@ -294,6 +296,7 @@ inherited Form1: TForm1
         Identifier = 26126
         KeySize = 16
       end>
+    SecurityConfig.Namespaces.ExtractNamespacePattern = 'xmlns\:\w*\s*=\s*\"[^\"]*\"'
     SecurityConfig.Namespaces = <
       item
         Prefix = 'env'

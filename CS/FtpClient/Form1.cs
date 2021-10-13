@@ -65,16 +65,16 @@ namespace FtpClient
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		protected override void Dispose( bool disposing )
+		protected override void Dispose(bool disposing)
 		{
-			if( disposing )
+			if (disposing)
 			{
-				if (components != null) 
+				if (components != null)
 				{
 					components.Dispose();
 				}
 			}
-			base.Dispose( disposing );
+			base.Dispose(disposing);
 		}
 
 		#region Windows Form Designer generated code
@@ -350,8 +350,8 @@ namespace FtpClient
 			// 
 			// progressBar1
 			// 
-			this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.progressBar1.Location = new System.Drawing.Point(0, 420);
 			this.progressBar1.Name = "progressBar1";
 			this.progressBar1.Size = new System.Drawing.Size(640, 16);
@@ -363,11 +363,10 @@ namespace FtpClient
 			// 
 			// ftp1
 			// 
-			this.ftp1.Port = 21;
-			this.ftp1.CommandSent += new CleverComponents.InetSuite.TcpTextEventHandler(this.ftp1_CommandSent);
-			this.ftp1.Progress += new CleverComponents.InetSuite.ProgressEventHandler(this.ftp1_Progress);
-			this.ftp1.ResponseReceived += new CleverComponents.InetSuite.TcpListEventHandler(this.ftp1_ResponseReceived);
 			this.ftp1.DirectoryListing += new CleverComponents.InetSuite.DirectoryListingEventHandler(this.ftp1_DirectoryListing);
+			this.ftp1.CommandSent += new CleverComponents.InetSuite.TcpTextEventHandler(this.ftp1_CommandSent);
+			this.ftp1.ResponseReceived += new CleverComponents.InetSuite.TcpListEventHandler(this.ftp1_ResponseReceived);
+			this.ftp1.Progress += new CleverComponents.InetSuite.ProgressEventHandler(this.ftp1_Progress);
 			// 
 			// Form1
 			// 
@@ -403,7 +402,8 @@ namespace FtpClient
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "FTP Client";
 			((System.ComponentModel.ISupportInitialize)(this.ftp1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -415,18 +415,21 @@ namespace FtpClient
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static void Main() 
+		static void Main()
 		{
 			Application.Run(new Form1());
 		}
 
-		private void btnLogin_Click(object sender, System.EventArgs e) {
-			if (ftp1.Active) {
+		private void btnLogin_Click(object sender, System.EventArgs e)
+		{
+			if (ftp1.Active)
+			{
 				MessageBox.Show("You are already connected. Please click Logout to disconnect.");
 				return;
 			}
 
-			try {
+			try
+			{
 				ftp1.Port = Convert.ToInt32(edtPort.Text);
 				ftp1.Server = edtServer.Text;
 				ftp1.UserName = edtUser.Text;
@@ -435,97 +438,121 @@ namespace FtpClient
 				ftp1.TransferType = cbAsciiMode.Checked ? FtpTransferType.Ascii : FtpTransferType.Binary;
 				ftp1.Open();
 
-				DoOpenDir(edtStartDir.Text);
+				if (StringUtils.IsEmpty(edtStartDir.Text))
+				{
+					edtStartDir.Text = ftp1.CurrentDir;
+				}
+				if (!StringUtils.IsEmpty(edtStartDir.Text) && edtStartDir.Text.StartsWith(@"/"))
+				{
+					DoOpenDir(edtStartDir.Text);
+				}
 				UpdateStatus();
 			}
-			catch (Exception ex) {
+			catch (Exception ex)
+			{
 				MessageBox.Show(ex.Message);
 			}
 		}
 
-		private void DoOpenDir(string ADir) {
-			string dir = ADir.TrimStart('/');
-			if (!StringUtils.IsEmpty(dir)) {
-				ftp1.ChangeCurrentDir(dir);
-			}
+		private void DoOpenDir(string ADir)
+		{
+			string dir = ADir.StartsWith(@"//") ? ADir.Substring(1) : ADir;
+			ftp1.ChangeCurrentDir(@"/");
+			ftp1.ChangeCurrentDir(dir);
 			FillDirList();
 		}
 
-		private void FillDirList() {
+		private void FillDirList()
+		{
 			lbList.Items.Clear();
 			ftp1.GetDirectoryListing("");
 			edtStartDir.Text = ftp1.CurrentDir;
 		}
 
-		private void UpdateStatus() {
+		private void UpdateStatus()
+		{
 			Text = ftp1.Active ? "Ftp Clinet - Connected" : "Ftp Clinet";
 		}
 
-		private void btnLogout_Click(object sender, System.EventArgs e) {
+		private void btnLogout_Click(object sender, System.EventArgs e)
+		{
 			ftp1.Close();
 			lbList.Items.Clear();
 			UpdateStatus();
 		}
 
-		private void btnOpenDir_Click(object sender, System.EventArgs e) {
+		private void btnOpenDir_Click(object sender, System.EventArgs e)
+		{
 			if (!ftp1.Active) return;
 
 			if ((lbList.SelectedIndex > -1) &&
 				(lbList.Items[lbList.SelectedIndex].ToString() != "") &&
-				(lbList.Items[lbList.SelectedIndex].ToString()[0] == '/')) {
-				DoOpenDir(lbList.Items[lbList.SelectedIndex].ToString());
+				(lbList.Items[lbList.SelectedIndex].ToString()[0] == '/'))
+			{
+				DoOpenDir(ftp1.CurrentDir + lbList.Items[lbList.SelectedIndex].ToString());
 			}
 		}
 
-		private void btnGoUp_Click(object sender, System.EventArgs e) {
+		private void btnGoUp_Click(object sender, System.EventArgs e)
+		{
 			if (!ftp1.Active) return;
 
 			ftp1.ChangeToParentDir();
 			FillDirList();
 		}
 
-		private void btnMakeDir_Click(object sender, System.EventArgs e) {
+		private void btnMakeDir_Click(object sender, System.EventArgs e)
+		{
 			if (!ftp1.Active) return;
 
 			string s = NewDialog.ShowNewDialog("New Dir Name", "NewName");
-			if (s != "") {
+			if (s != "")
+			{
 				ftp1.MakeDir(s);
 				FillDirList();
 			}
 		}
 
-		private void btnRemoveDir_Click(object sender, System.EventArgs e) {
+		private void btnRemoveDir_Click(object sender, System.EventArgs e)
+		{
 			if (!ftp1.Active) return;
 
 			if ((lbList.SelectedIndex > -1) &&
 				(lbList.Items[lbList.SelectedIndex].ToString() != "") &&
-				(lbList.Items[lbList.SelectedIndex].ToString()[0] == '/')) {
+				(lbList.Items[lbList.SelectedIndex].ToString()[0] == '/'))
+			{
 
 				if (MessageBox.Show("Do you wish to delete the "
 					+ lbList.Items[lbList.SelectedIndex].ToString() + " directory ?", "Remove Directory",
-					MessageBoxButtons.YesNo) == DialogResult.Yes) {
+					MessageBoxButtons.YesNo) == DialogResult.Yes)
+				{
 					ftp1.RemoveDir(ftp1.CurrentDir + lbList.Items[lbList.SelectedIndex].ToString());
 					FillDirList();
 				}
 			}
 		}
 
-		private void btnDownload_Click(object sender, System.EventArgs e) {
+		private void btnDownload_Click(object sender, System.EventArgs e)
+		{
 			if ((lbList.SelectedIndex > -1) &&
 				(lbList.Items[lbList.SelectedIndex].ToString() != "") &&
-				(lbList.Items[lbList.SelectedIndex].ToString()[0] != '/')) {
+				(lbList.Items[lbList.SelectedIndex].ToString()[0] != '/'))
+			{
 
 				saveFileDialog1.FileName = lbList.Items[lbList.SelectedIndex].ToString();
-				if (saveFileDialog1.ShowDialog() == DialogResult.OK) {
+				if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+				{
 					int size = (int)ftp1.GetFileSize(lbList.Items[lbList.SelectedIndex].ToString());
 					int position = 0;
 
-					if (File.Exists(saveFileDialog1.FileName)) {
+					if (File.Exists(saveFileDialog1.FileName))
+					{
 						DialogResult fileExistsResult = FileExistsDialog.ShowFileDialog(saveFileDialog1.FileName);
 						if (fileExistsResult == DialogResult.Cancel) return;
 
 						FileInfo fileInf = new FileInfo(saveFileDialog1.FileName);
-						if ((fileExistsResult == DialogResult.No) && (size > fileInf.Length)) {
+						if ((fileExistsResult == DialogResult.No) && (size > fileInf.Length))
+						{
 							position = (int)fileInf.Length;
 						}
 					}
@@ -533,8 +560,9 @@ namespace FtpClient
 					progressBar1.Minimum = 0;
 					progressBar1.Maximum = size;
 					progressBar1.Value = position;
-        
-					using(FileStream dest = new FileStream(saveFileDialog1.FileName, FileMode.Create)) {
+
+					using (FileStream dest = new FileStream(saveFileDialog1.FileName, FileMode.Create))
+					{
 						ftp1.GetFile(lbList.Items[lbList.SelectedIndex].ToString(), dest, position, -1);
 					}
 					MessageBox.Show("Done");
@@ -542,24 +570,29 @@ namespace FtpClient
 			}
 		}
 
-		private void btnUpload_Click(object sender, System.EventArgs e) {
+		private void btnUpload_Click(object sender, System.EventArgs e)
+		{
 			if (!ftp1.Active) return;
 
-			if(openFileDialog1.ShowDialog() == DialogResult.OK) {
+			if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			{
 				int position = 0;
 				string fileName = Path.GetFileName(openFileDialog1.FileName);
 
 				FileInfo fileInf = new FileInfo(openFileDialog1.FileName);
 
-				if (ftp1.FileExists(fileName)) {
+				if (ftp1.FileExists(fileName))
+				{
 					DialogResult fileExistsResult = FileExistsDialog.ShowFileDialog(fileName);
-					
+
 					if (fileExistsResult == DialogResult.Cancel) return;
 
-					if (fileExistsResult == DialogResult.No) {
+					if (fileExistsResult == DialogResult.No)
+					{
 						position = (int)ftp1.GetFileSize(fileName);
 
-						if ((int)fileInf.Length <= position) {
+						if ((int)fileInf.Length <= position)
+						{
 							position = 0;
 						}
 					}
@@ -569,7 +602,8 @@ namespace FtpClient
 				progressBar1.Maximum = (int)fileInf.Length;
 				progressBar1.Value = position;
 
-				using(FileStream source = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read)) {
+				using (FileStream source = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read))
+				{
 					ftp1.PutFile(source, fileName, position, -1);
 				}
 				MessageBox.Show("Done");
@@ -578,62 +612,74 @@ namespace FtpClient
 			}
 		}
 
-		private void btnDeleteFile_Click(object sender, System.EventArgs e) {
+		private void btnDeleteFile_Click(object sender, System.EventArgs e)
+		{
 			if (!ftp1.Active) return;
 
 			if ((lbList.SelectedIndex > -1) &&
 				(lbList.Items[lbList.SelectedIndex].ToString() != "") &&
-				(lbList.Items[lbList.SelectedIndex].ToString()[0] != '/')) {
+				(lbList.Items[lbList.SelectedIndex].ToString()[0] != '/'))
+			{
 
 				if (MessageBox.Show("Do you wish to delete the "
 					+ lbList.Items[lbList.SelectedIndex].ToString() + " file ?", "Delete file",
-					MessageBoxButtons.YesNo) == DialogResult.Yes) {
+					MessageBoxButtons.YesNo) == DialogResult.Yes)
+				{
 					ftp1.Delete(lbList.Items[lbList.SelectedIndex].ToString());
 					FillDirList();
 				}
 			}
 		}
 
-		private void btnRename_Click(object sender, System.EventArgs e) {
+		private void btnRename_Click(object sender, System.EventArgs e)
+		{
 			if (!ftp1.Active) return;
 
 			if ((lbList.SelectedIndex > -1) &&
 				(lbList.Items[lbList.SelectedIndex].ToString() != "") &&
-				(lbList.Items[lbList.SelectedIndex].ToString()[0] != '/')) {
+				(lbList.Items[lbList.SelectedIndex].ToString()[0] != '/'))
+			{
 
 				string s = NewDialog.ShowNewDialog("New File Name", lbList.Items[lbList.SelectedIndex].ToString());
 
-				if ((s != "") && (s != lbList.Items[lbList.SelectedIndex].ToString())) {
+				if ((s != "") && (s != lbList.Items[lbList.SelectedIndex].ToString()))
+				{
 					ftp1.Rename(lbList.Items[lbList.SelectedIndex].ToString(), s);
 					FillDirList();
 				}
 			}
 		}
 
-		private void btnAbort_Click(object sender, System.EventArgs e) {
+		private void btnAbort_Click(object sender, System.EventArgs e)
+		{
 			if (ftp1.Active)
 				ftp1.Abort();
 		}
 
-		private void ftp1_Progress(object sender, CleverComponents.InetSuite.ProgressEventArgs e) {
-			if (e.TotalBytes > 0) {
+		private void ftp1_Progress(object sender, CleverComponents.InetSuite.ProgressEventArgs e)
+		{
+			if (e.TotalBytes > 0)
+			{
 				progressBar1.Maximum = (int)e.TotalBytes;
 				progressBar1.Value = (int)e.BytesProceed;
 			}
 		}
 
-		private void ftp1_DirectoryListing(object sender, CleverComponents.InetSuite.DirectoryListingEventArgs e) {
+		private void ftp1_DirectoryListing(object sender, CleverComponents.InetSuite.DirectoryListingEventArgs e)
+		{
 			string item = ((e.FileInfo.IsDirectory || e.FileInfo.IsLink) ? "/" : "") + e.FileInfo.FileName;
 			lbList.Items.Add(item);
 		}
 
-		private void ftp1_CommandSent(object sender, CleverComponents.InetSuite.TcpTextEventArgs e) {
+		private void ftp1_CommandSent(object sender, CleverComponents.InetSuite.TcpTextEventArgs e)
+		{
 			memLog.Text += e.Text.Trim() + "\r\n";
 			memLog.Select(memLog.Text.Length, 0);
 			memLog.ScrollToCaret();
 		}
 
-		private void ftp1_ResponseReceived(object sender, CleverComponents.InetSuite.TcpListEventArgs e) {
+		private void ftp1_ResponseReceived(object sender, CleverComponents.InetSuite.TcpListEventArgs e)
+		{
 			memLog.Text += e.List.ToString().Trim() + "\r\n";
 			memLog.Select(memLog.Text.Length, 0);
 			memLog.ScrollToCaret();

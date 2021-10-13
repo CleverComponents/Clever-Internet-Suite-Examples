@@ -38,14 +38,14 @@ Public Class Form1
     Friend WithEvents Http1 As CleverComponents.InetSuite.Http
     Friend WithEvents HtmlParser1 As CleverComponents.InetSuite.HtmlParser
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.memResult = New System.Windows.Forms.TextBox
-        Me.cbShowText = New System.Windows.Forms.CheckBox
-        Me.button1 = New System.Windows.Forms.Button
-        Me.edtUrl = New System.Windows.Forms.TextBox
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.Http1 = New CleverComponents.InetSuite.Http
-        Me.HtmlParser1 = New CleverComponents.InetSuite.HtmlParser
+        Me.memResult = New System.Windows.Forms.TextBox()
+        Me.cbShowText = New System.Windows.Forms.CheckBox()
+        Me.button1 = New System.Windows.Forms.Button()
+        Me.edtUrl = New System.Windows.Forms.TextBox()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.Http1 = New CleverComponents.InetSuite.Http()
+        Me.HtmlParser1 = New CleverComponents.InetSuite.HtmlParser()
         Me.SuspendLayout()
         '
         'memResult
@@ -58,12 +58,12 @@ Public Class Form1
         Me.memResult.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memResult.Size = New System.Drawing.Size(448, 264)
         Me.memResult.TabIndex = 11
-        Me.memResult.Text = ""
         '
         'cbShowText
         '
         Me.cbShowText.Location = New System.Drawing.Point(56, 72)
         Me.cbShowText.Name = "cbShowText"
+        Me.cbShowText.Size = New System.Drawing.Size(104, 24)
         Me.cbShowText.TabIndex = 10
         Me.cbShowText.Text = "Show text only"
         '
@@ -97,12 +97,8 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(424, 24)
         Me.label1.TabIndex = 6
-        Me.label1.Text = "Type in the URL and click the 'GET' button to retreive the page specified by URL." & _
-        ""
-        '
-        'Http1
-        '
-        Me.Http1.Port = 80
+        Me.label1.Text = "Type in the URL and click the 'GET' button to retreive the page specified by URL." &
+    ""
         '
         'HtmlParser1
         '
@@ -120,8 +116,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "HTTP GET demo"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

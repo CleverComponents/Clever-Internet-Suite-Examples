@@ -44,20 +44,20 @@ Public Class Form1
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.progressBar1 = New System.Windows.Forms.ProgressBar
-        Me.btnUncompress = New System.Windows.Forms.Button
-        Me.btnCompress = New System.Windows.Forms.Button
-        Me.btnDestination = New System.Windows.Forms.Button
-        Me.edtDestination = New System.Windows.Forms.TextBox
-        Me.btnSource = New System.Windows.Forms.Button
-        Me.edtSource = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
-        Me.GZip1 = New CleverComponents.InetSuite.GZip
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
+        Me.progressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.btnUncompress = New System.Windows.Forms.Button()
+        Me.btnCompress = New System.Windows.Forms.Button()
+        Me.btnDestination = New System.Windows.Forms.Button()
+        Me.edtDestination = New System.Windows.Forms.TextBox()
+        Me.btnSource = New System.Windows.Forms.Button()
+        Me.edtSource = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
+        Me.GZip1 = New CleverComponents.InetSuite.GZip()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.SuspendLayout()
         '
         'progressBar1
@@ -98,7 +98,6 @@ Public Class Form1
         Me.edtDestination.Name = "edtDestination"
         Me.edtDestination.Size = New System.Drawing.Size(240, 20)
         Me.edtDestination.TabIndex = 17
-        Me.edtDestination.Text = ""
         '
         'btnSource
         '
@@ -114,7 +113,6 @@ Public Class Form1
         Me.edtSource.Name = "edtSource"
         Me.edtSource.Size = New System.Drawing.Size(240, 20)
         Me.edtSource.TabIndex = 15
-        Me.edtSource.Text = ""
         '
         'label4
         '
@@ -138,8 +136,8 @@ Public Class Form1
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(360, 40)
         Me.label2.TabIndex = 12
-        Me.label2.Text = "The deflated file is not compatible with WinZip file format since it does not con" & _
-        "tain the description header."
+        Me.label2.Text = "The deflated file is not compatible with WinZip file format since it does not con" &
+    "tain the description header."
         '
         'label1
         '
@@ -147,8 +145,11 @@ Public Class Form1
         Me.label1.Name = "label1"
         Me.label1.Size = New System.Drawing.Size(360, 40)
         Me.label1.TabIndex = 11
-        Me.label1.Text = "This sample demonstrates using the TclGZip component for deflating / inflating da" & _
-        "ta stream."
+        Me.label1.Text = "This sample demonstrates using the TclGZip component for deflating / inflating da" &
+    "ta stream."
+        '
+        'GZip1
+        '
         '
         'Form1
         '
@@ -167,8 +168,10 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GZip / Deflate"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

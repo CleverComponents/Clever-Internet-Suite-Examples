@@ -20,7 +20,6 @@ namespace MailSendReceive
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox edtUser;
 		private System.Windows.Forms.TextBox edtPassword;
-		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.TextBox edtPop3Server;
 		private System.Windows.Forms.TextBox edtSmtpServer;
 		private System.Windows.Forms.Button btnCheckMail;
@@ -79,7 +78,6 @@ namespace MailSendReceive
 			this.edtSmtpServer = new System.Windows.Forms.TextBox();
 			this.btnComposeMail = new System.Windows.Forms.Button();
 			this.btnCheckMail = new System.Windows.Forms.Button();
-			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.lbMessages = new System.Windows.Forms.ListBox();
 			this.pop31 = new CleverComponents.InetSuite.Pop3();
 			this.smtp1 = new CleverComponents.InetSuite.Smtp();
@@ -191,8 +189,6 @@ namespace MailSendReceive
 			// mailMessage1
 			// 
 			this.mailMessage1.Date = new System.DateTime(2006, 5, 4, 23, 33, 9, 265);
-			this.mailMessage1.From.Email = "";
-			this.mailMessage1.From.Name = "";
 			// 
 			// Form1
 			// 
@@ -212,6 +208,7 @@ namespace MailSendReceive
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SMTP / POP3 client demo";
 			((System.ComponentModel.ISupportInitialize)(this.pop31)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.smtp1)).EndInit();

@@ -13,6 +13,7 @@
 #pragma link "clHttpRequest"
 #pragma link "clSoapMessage"
 #pragma link "clXmlUtils"
+#pragma link "clSoapUtils"
 #pragma resource "*.dfm"
 TForm1 *Form1;
 //---------------------------------------------------------------------------
@@ -162,6 +163,19 @@ void __fastcall TForm1::clSoapMessage1GetSigningCertificate(TObject *Sender,
 	delete dlg;
   }
   //
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+  TDateTime d = Now();
+
+  edtTimestampCreated->Text = DateTimeToSoapTime(d);
+  edtTimeStampExpires->Text = DateTimeToSoapTime(d + EncodeTime(0, 30, 0, 0));
+
+  edtTimeStampID->Text = "TimeStamp-" + GenerateUniqueID().SubString(1, 3);
+  edtAddressID->Text = "Address-" + GenerateUniqueID().SubString(1, 3);
+  edtBodyID->Text = "Body-" + GenerateUniqueID().SubString(1, 3);
 }
 //---------------------------------------------------------------------------
 

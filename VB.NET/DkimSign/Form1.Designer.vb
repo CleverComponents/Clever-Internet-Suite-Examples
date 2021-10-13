@@ -323,8 +323,6 @@ Partial Class Form1
         '
         Me.mailMessage1.Date = New Date(2017, 9, 3, 21, 13, 40, 837)
         Me.mailMessage1.Dkim = Me.dkim1
-        Me.mailMessage1.From.Email = ""
-        Me.mailMessage1.From.Name = ""
         '
         'dkim1
         '
@@ -368,6 +366,7 @@ Partial Class Form1
         Me.Controls.Add(Me.edtServer)
         Me.Controls.Add(Me.label1)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Send E-mail with DKIM signature - Sample"
         CType(Me.smtp1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mailMessage1, System.ComponentModel.ISupportInitialize).EndInit()

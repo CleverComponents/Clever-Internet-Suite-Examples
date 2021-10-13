@@ -90,6 +90,9 @@
 			<DCCReference Include="..\Common\DemoBaseFormUnit.pas">
 				<Form>clDemoBaseForm</Form>
 			</DCCReference>
+			<DCCReference Include="login.pas">
+				<Form>LoginConfirmation</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

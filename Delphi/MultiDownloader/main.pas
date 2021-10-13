@@ -483,8 +483,6 @@ begin
 end;
 
 procedure TDownLoaderTest.FormCreate(Sender: TObject);
-var
-  i: TclProcessPriority;
 begin
   clMultiDownLoader.OnError := MultiDownLoaderErrorHandler;
   LoadRegistry();

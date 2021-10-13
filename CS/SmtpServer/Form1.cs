@@ -68,7 +68,7 @@ namespace SmtpServer
 		/// </summary>
 		private void InitializeComponent()
 		{
-			CleverComponents.InetSuite.MailUserAccountItem mailUserAccountItem2 = new CleverComponents.InetSuite.MailUserAccountItem();
+			CleverComponents.InetSuite.MailUserAccountItem mailUserAccountItem1 = new CleverComponents.InetSuite.MailUserAccountItem();
 			this.memLog = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.btnStop = new System.Windows.Forms.Button();
@@ -161,7 +161,7 @@ namespace SmtpServer
 			this.label2.Size = new System.Drawing.Size(408, 32);
 			this.label2.TabIndex = 21;
 			this.label2.Text = "Please use the \"CleverTester\" user name and \"clevertester\" password to log-in. Th" +
-				"e user e-mail: CleverTester@company.mail";
+    "e user e-mail: CleverTester@company.mail";
 			// 
 			// label1
 			// 
@@ -170,7 +170,7 @@ namespace SmtpServer
 			this.label1.Size = new System.Drawing.Size(416, 29);
 			this.label1.TabIndex = 20;
 			this.label1.Text = "This is a sample SMTP server. You can use any mail client with SMTP support to co" +
-				"nnect to this server.";
+    "nnect to this server.";
 			// 
 			// cbUseLogin
 			// 
@@ -188,12 +188,12 @@ namespace SmtpServer
         "Commands Supported:",
         "HELO EHLO AUTH HELP QUIT MAIL NOOP RSET RCPT DATA STARTTLS"};
 			this.smtpServer1.ServerName = "Clever Internet Suite SMTP service";
-			mailUserAccountItem2.DisplayName = "Clever Tester";
-			mailUserAccountItem2.Email = "CleverTester@company.mail";
-			mailUserAccountItem2.Password = "clevertester";
-			mailUserAccountItem2.UserName = "CleverTester";
+			mailUserAccountItem1.DisplayName = "Clever Tester";
+			mailUserAccountItem1.Email = "CleverTester@company.mail";
+			mailUserAccountItem1.Password = "clevertester";
+			mailUserAccountItem1.UserName = "CleverTester";
 			this.smtpServer1.UserAccounts.AddRange(new CleverComponents.InetSuite.UserAccountItem[] {
-            mailUserAccountItem2});
+            mailUserAccountItem1});
 			this.smtpServer1.Authenticate += new CleverComponents.InetSuite.SmtpAuthenticateEventHandler(this.smtpServer1_Authenticate);
 			this.smtpServer1.CommandReceived += new CleverComponents.InetSuite.TcpCommandEventHandler(this.smtpServer1_CommandReceived);
 			this.smtpServer1.ResponseSent += new CleverComponents.InetSuite.TcpResponseEventHandler(this.smtpServer1_ResponseSent);
@@ -244,6 +244,7 @@ namespace SmtpServer
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Clever SMTP Server";
 			this.Closed += new System.EventHandler(this.Form1_Closed);
 			this.Load += new System.EventHandler(this.Form1_Load);

@@ -175,8 +175,6 @@ namespace NewsGroups
 			// mailMessage1
 			// 
 			this.mailMessage1.Date = new System.DateTime(2006, 5, 5, 16, 32, 5, 968);
-			this.mailMessage1.From.Email = "";
-			this.mailMessage1.From.Name = "";
 			// 
 			// Form1
 			// 
@@ -194,6 +192,7 @@ namespace NewsGroups
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "News Group Reader";
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).EndInit();
 			this.ResumeLayout(false);

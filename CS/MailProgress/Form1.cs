@@ -281,8 +281,6 @@ namespace MailProgress
 			// mailMessage1
 			// 
 			this.mailMessage1.Date = new System.DateTime(2006, 5, 4, 22, 40, 1, 608);
-			this.mailMessage1.From.Email = "";
-			this.mailMessage1.From.Name = "";
 			this.mailMessage1.SaveAttachment += new CleverComponents.InetSuite.GetBodyStreamEventHandler(this.mailMessage1_SaveAttachment);
 			// 
 			// Form1
@@ -311,7 +309,8 @@ namespace MailProgress
 			this.Controls.Add(this.label1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "Mail Send / Receive Progress";
 			((System.ComponentModel.ISupportInitialize)(this.pop31)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.smtp1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.mailMessage1)).EndInit();

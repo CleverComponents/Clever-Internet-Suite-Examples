@@ -34,10 +34,10 @@ Public Class CopyDlg
     Friend WithEvents cbFolder As System.Windows.Forms.ComboBox
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnOk = New System.Windows.Forms.Button
-        Me.cbFolder = New System.Windows.Forms.ComboBox
-        Me.label1 = New System.Windows.Forms.Label
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.cbFolder = New System.Windows.Forms.ComboBox()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnCancel
@@ -45,6 +45,7 @@ Public Class CopyDlg
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(224, 64)
         Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 7
         Me.btnCancel.Text = "Cancel"
         '
@@ -53,6 +54,7 @@ Public Class CopyDlg
         Me.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnOk.Location = New System.Drawing.Point(120, 64)
         Me.btnOk.Name = "btnOk"
+        Me.btnOk.Size = New System.Drawing.Size(75, 23)
         Me.btnOk.TabIndex = 6
         Me.btnOk.Text = "OK"
         '
@@ -83,6 +85,7 @@ Public Class CopyDlg
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "CopyDlg"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Copy"
         Me.ResumeLayout(False)
 

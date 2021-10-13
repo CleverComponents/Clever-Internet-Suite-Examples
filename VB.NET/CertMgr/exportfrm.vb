@@ -39,15 +39,15 @@ Public Class ExportForm
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.cbIncludeAll = New System.Windows.Forms.CheckBox
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnOk = New System.Windows.Forms.Button
-        Me.edtPassword = New System.Windows.Forms.TextBox
-        Me.edtFileName = New System.Windows.Forms.TextBox
-        Me.edtName = New System.Windows.Forms.TextBox
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Me.cbIncludeAll = New System.Windows.Forms.CheckBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnOk = New System.Windows.Forms.Button()
+        Me.edtPassword = New System.Windows.Forms.TextBox()
+        Me.edtFileName = New System.Windows.Forms.TextBox()
+        Me.edtName = New System.Windows.Forms.TextBox()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'cbIncludeAll
@@ -142,6 +142,7 @@ Public Class ExportForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "ExportForm"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Certificate Export Dialog"
         Me.ResumeLayout(False)
         Me.PerformLayout()

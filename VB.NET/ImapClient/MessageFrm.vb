@@ -42,16 +42,16 @@ Public Class MessageFrm
     Friend WithEvents label2 As System.Windows.Forms.Label
     Friend WithEvents label1 As System.Windows.Forms.Label
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.btnCancel = New System.Windows.Forms.Button
-        Me.btnAppend = New System.Windows.Forms.Button
-        Me.memBody = New System.Windows.Forms.TextBox
-        Me.edtSubject = New System.Windows.Forms.TextBox
-        Me.edtTo = New System.Windows.Forms.TextBox
-        Me.edtFrom = New System.Windows.Forms.TextBox
-        Me.label4 = New System.Windows.Forms.Label
-        Me.label3 = New System.Windows.Forms.Label
-        Me.label2 = New System.Windows.Forms.Label
-        Me.label1 = New System.Windows.Forms.Label
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnAppend = New System.Windows.Forms.Button()
+        Me.memBody = New System.Windows.Forms.TextBox()
+        Me.edtSubject = New System.Windows.Forms.TextBox()
+        Me.edtTo = New System.Windows.Forms.TextBox()
+        Me.edtFrom = New System.Windows.Forms.TextBox()
+        Me.label4 = New System.Windows.Forms.Label()
+        Me.label3 = New System.Windows.Forms.Label()
+        Me.label2 = New System.Windows.Forms.Label()
+        Me.label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnCancel
@@ -59,6 +59,7 @@ Public Class MessageFrm
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancel.Location = New System.Drawing.Point(401, 273)
         Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 19
         Me.btnCancel.Text = "Cancel"
         '
@@ -67,6 +68,7 @@ Public Class MessageFrm
         Me.btnAppend.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.btnAppend.Location = New System.Drawing.Point(305, 273)
         Me.btnAppend.Name = "btnAppend"
+        Me.btnAppend.Size = New System.Drawing.Size(75, 23)
         Me.btnAppend.TabIndex = 18
         Me.btnAppend.Text = "Append"
         '
@@ -78,7 +80,6 @@ Public Class MessageFrm
         Me.memBody.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.memBody.Size = New System.Drawing.Size(464, 160)
         Me.memBody.TabIndex = 17
-        Me.memBody.Text = ""
         '
         'edtSubject
         '
@@ -153,8 +154,10 @@ Public Class MessageFrm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "MessageFrm"
         Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Message Details"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 

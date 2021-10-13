@@ -162,6 +162,7 @@ namespace CertMgr
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "ExportForm";
 			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Certificate Export Dialog";
 			this.ResumeLayout(false);
 			this.PerformLayout();

@@ -431,11 +431,12 @@ Public Class Form1
         Me.label1.TabIndex = 28
         Me.label1.Text = "Server"
         '
+        'Imap41
+        '
+        '
         'MailMessage1
         '
         Me.MailMessage1.Date = New Date(2006, 5, 8, 14, 47, 52, 62)
-        Me.MailMessage1.From.Email = ""
-        Me.MailMessage1.From.Name = ""
         '
         'Form1
         '
@@ -470,6 +471,7 @@ Public Class Form1
         Me.Controls.Add(Me.label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "IMAP Client"
         Me.groupBox1.ResumeLayout(False)
         Me.groupBox1.PerformLayout()

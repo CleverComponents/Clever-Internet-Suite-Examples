@@ -1,7 +1,9 @@
 inherited Form1: TForm1
   Left = 260
   Top = 114
-  Caption = 'GMAIL IMAP client with OAuth - Sample'
+  Caption = 'Clever Internet Suite Demos - GMAIL IMAP client with OAuth'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
@@ -72,6 +74,7 @@ inherited Form1: TForm1
       Top = 73
       Width = 161
       Height = 280
+      Anchors = [akLeft, akTop, akBottom]
       Font.Charset = OEM_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -89,6 +92,7 @@ inherited Form1: TForm1
       Top = 73
       Width = 421
       Height = 96
+      Anchors = [akLeft, akTop, akRight]
       Columns = <
         item
           Caption = 'Subject'
@@ -117,6 +121,7 @@ inherited Form1: TForm1
       Top = 179
       Width = 373
       Height = 21
+      Anchors = [akLeft, akTop, akRight]
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 5
@@ -126,6 +131,7 @@ inherited Form1: TForm1
       Top = 205
       Width = 373
       Height = 21
+      Anchors = [akLeft, akTop, akRight]
       Color = clBtnFace
       ReadOnly = True
       TabOrder = 6
@@ -135,6 +141,7 @@ inherited Form1: TForm1
       Top = 232
       Width = 421
       Height = 121
+      Anchors = [akLeft, akTop, akRight, akBottom]
       ReadOnly = True
       ScrollBars = ssBoth
       TabOrder = 7
@@ -148,7 +155,7 @@ inherited Form1: TForm1
     Left = 64
     Top = 208
     Bitmap = {
-      494C010101000400240010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101010004002C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

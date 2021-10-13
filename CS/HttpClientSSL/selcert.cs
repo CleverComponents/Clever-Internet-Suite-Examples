@@ -70,6 +70,7 @@ namespace HttpClientSSL
 			this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.button1.Location = new System.Drawing.Point(96, 176);
 			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 1;
 			this.button1.Text = "OK";
 			// 
@@ -78,6 +79,7 @@ namespace HttpClientSSL
 			this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.button2.Location = new System.Drawing.Point(200, 176);
 			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 2;
 			this.button2.Text = "Cancel";
 			// 
@@ -90,6 +92,7 @@ namespace HttpClientSSL
 			this.Controls.Add(this.listBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Name = "SelectCertificateForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Select Certificate";
 			this.ResumeLayout(false);
 
