@@ -36,6 +36,7 @@
 |[POP3 Server (SSL)](./VB.NET/Pop3ServerSSL)|Represents a fully functional POP3 server with SSL / TLS data encryption.|
 |[RSS Feed client](./VB.NET/RssFeed)|Allows editing of RSS feed XML, load and save it to the disk.|
 |[SFTP client (FTP+SSH)](./VB.NET/SFTPClient)|Uploads and downloads files, as well as manages files and directories via the SSH File Transfer Protocol.|
+|[SFTP server (FTP+SSH)](./VB.NET/SFtpServer)|Implements a fully functional SFTP server with multi-session support, which works via the SSH File Transfer Protocol.|
 |[SMIME](./VB.NET/SMime)|Builds, signs and encrypts email messages.|
 |[SMTP Client (Proxy)](./VB.NET/SmtpClientProxy)|Demonstrates how to send e-mail via an HTTP Connect proxy.|
 |[SMTP Client (SSL)](./VB.NET/SmtpClientSSL)|Represents SMTP client with full SSL / TLS data encryption support.|
