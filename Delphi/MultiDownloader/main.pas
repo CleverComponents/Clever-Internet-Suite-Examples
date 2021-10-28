@@ -70,7 +70,6 @@ type
     btnStop1: TButton;
     btnAdd1: TButton;
     btnDownload1: TButton;
-    btnCancel: TButton;
     Label16: TLabel;
     edtReconnectAfter: TEdit;
     updReconnectAfter: TUpDown;
@@ -113,7 +112,6 @@ type
     procedure edtHttpProxyChange(Sender: TObject);
     procedure edtProxyBypassChange(Sender: TObject);
     procedure edtBatchSizeChange(Sender: TObject);
-    procedure clProgressBarChanged(Sender: TObject);
     procedure clMultiDownLoaderChanged(Sender: TObject;
       Item: TclInternetItem);
     procedure clMultiDownLoaderIsBusyChanged(Sender: TObject);
@@ -127,7 +125,6 @@ type
       Item: TListItem; SubItem: Integer; State: TCustomDrawState;
       Stage: TCustomDrawStage; var DefaultDraw: Boolean);
     procedure btnExitClick(Sender: TObject);
-    procedure btnCancelClick(Sender: TObject);
     procedure edtReconnectAfterChange(Sender: TObject);
     procedure edtTryCountChange(Sender: TObject);
     procedure clMultiDownLoaderDataTextProceed(Sender: TObject;
@@ -142,9 +139,10 @@ type
       AStateItem: TclResourceStateItem; CurrentData: PAnsiChar;
       CurrentDataSize: Integer);
     procedure cmbPriorityChange(Sender: TObject);
+    procedure clMultiDownLoaderError(Sender: TObject; Item: TclInternetItem;
+      const Error: string; ErrorCode: Integer);
   private
     FIsLoading: Boolean;
-    FIsNewItem: Boolean;
     function NormalizeName(AName: String): String;
     procedure UpdateControls;
     procedure FillListView;
@@ -191,7 +189,6 @@ begin
   ListItem.SubItems.Add('');
   ListItem.SubItems.Add(cDownLoadStatuses[psUnknown]);
   ListView.Selected := ListItem;
-  FIsNewItem := True;
   ListViewDblClick(nil);
 end;
 
@@ -299,7 +296,6 @@ begin
     btnGetInfo.Enabled := b and (not Item.IsBusy);
     btnStop1.Enabled := b and Item.IsBusy;
     btnDownLoad1.Enabled := b and (not Item.IsBusy);
-    btnCancel.Enabled := b and (not Item.IsBusy) and FIsNewItem;
     b := (Item <> nil) and (not Item.IsBusy);
     edtURL.Enabled := b;
     edtFile.Enabled := b;
@@ -593,7 +589,6 @@ end;
 procedure TDownLoaderTest.clMultiDownLoaderChanged(Sender: TObject;
   Item: TclInternetItem);
 begin
-  FIsNewItem := False;
   FillDetails(Item);
   if FIsLoading then Exit;
   FIsLoading := True;
@@ -704,18 +699,6 @@ begin
   end;
 end;
 
-procedure TDownLoaderTest.clProgressBarChanged(Sender: TObject);
-var
-  R: TRect;
-  i: Integer;
-begin
-  for i := 0 to ListView.Items.Count - 1 do
-  begin
-    ListView_GetSubItemRect(ListView.Handle, i, 4, LVIR_BOUNDS, @R);
-    InvalidateRect(ListView.Handle, @R, False);
-  end;
-end;
-
 procedure TDownLoaderTest.edtBatchSizeChange(Sender: TObject);
 begin
   if FIsLoading then Exit;
@@ -750,16 +733,6 @@ end;
 procedure TDownLoaderTest.btnExitClick(Sender: TObject);
 begin
   Close();
-end;
-
-procedure TDownLoaderTest.btnCancelClick(Sender: TObject);
-begin
-  if FIsNewItem then
-  begin
-    GetSelectedItem().Free();
-    ListView.Selected.Free();
-    PageControl.ActivePage := tabTasks;
-  end;
 end;
 
 procedure TDownLoaderTest.edtReconnectAfterChange(Sender: TObject);
@@ -802,6 +775,12 @@ end;
 
 procedure TDownLoaderTest.clMultiDownLoaderDataTextProceed(Sender: TObject;
   Item: TclDownLoadItem; Text: TStrings);
+begin
+  FillDetails(Item);
+end;
+
+procedure TDownLoaderTest.clMultiDownLoaderError(Sender: TObject;
+  Item: TclInternetItem; const Error: string; ErrorCode: Integer);
 begin
   FillDetails(Item);
 end;

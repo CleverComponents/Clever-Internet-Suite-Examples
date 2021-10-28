@@ -216,7 +216,6 @@ void __fastcall TDownLoaderTest::btnAddClick(TObject *Sender)
   ListItem->SubItems->Add("");
   ListItem->SubItems->Add(cDownLoadStatuses[psUnknown]);
   ListView->Selected = ListItem;
-  FIsNewItem = true;
   ListViewDblClick(NULL);
 }
 //---------------------------------------------------------------------------
@@ -290,7 +289,6 @@ void TDownLoaderTest::UpdateControls()
     btnGetInfo->Enabled = b && (!Item->IsBusy);
     btnStop1->Enabled = b && Item->IsBusy;
     btnDownLoad1->Enabled = b && (!Item->IsBusy);
-    btnCancel->Enabled = b && (!Item->IsBusy) && FIsNewItem;
     b = (Item != NULL) && (!Item->IsBusy);
     edtURL->Enabled = b;
     edtFile->Enabled = b;
@@ -492,16 +490,6 @@ void __fastcall TDownLoaderTest::edtBatchSizeChange(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TDownLoaderTest::clProgressBarChanged(TObject *Sender)
-{
-  TRect R;
-  for (int i = 0; i < ListView->Items->Count; i++)
-  {
-    ListView_GetSubItemRect(ListView->Handle, i, 4, LVIR_BOUNDS, &R);
-    InvalidateRect(ListView->Handle, &R, false);
-  }
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TDownLoaderTest::clNewsCheckerNewsExist(TObject *Sender)
 {
@@ -518,7 +506,6 @@ void __fastcall TDownLoaderTest::clNewsCheckerChanged(TObject *Sender)
 void __fastcall TDownLoaderTest::clMultiDownLoaderChanged(TObject *Sender,
       TclInternetItem *Item)
 {
-  FIsNewItem = false;
   FillDetails(Item);
   if (FIsLoading) return;
   FIsLoading = true;
@@ -662,16 +649,6 @@ void __fastcall TDownLoaderTest::btnExitClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TDownLoaderTest::btnCancelClick(TObject *Sender)
-{
-  if (FIsNewItem)
-  {
-    delete GetSelectedItem();
-    delete ListView->Selected;
-    PageControl->ActivePage = tabTasks;
-  }
-}
-//---------------------------------------------------------------------------
 void __fastcall TDownLoaderTest::edtReconnectAfterChange(TObject *Sender)
 {
   if (FIsLoading) return;

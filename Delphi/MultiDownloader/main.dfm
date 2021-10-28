@@ -307,7 +307,7 @@ inherited DownLoaderTest: TDownLoaderTest
           OnClick = btnGetInfoClick
         end
         object btnStop1: TButton
-          Left = 85
+          Left = 673
           Top = 332
           Width = 72
           Height = 22
@@ -332,15 +332,6 @@ inherited DownLoaderTest: TDownLoaderTest
           Caption = 'DownLoad'
           TabOrder = 13
           OnClick = btnDownLoadClick
-        end
-        object btnCancel: TButton
-          Left = 672
-          Top = 332
-          Width = 72
-          Height = 22
-          Caption = 'Cancel'
-          TabOrder = 14
-          OnClick = btnCancelClick
         end
       end
       object tabOptions: TTabSheet
@@ -664,7 +655,6 @@ inherited DownLoaderTest: TDownLoaderTest
         Width = 178
         Height = 16
         Visible = False
-        OnChanged = clProgressBarChanged
         InternetControl = clMultiDownLoader
       end
       object btnExit: TButton
@@ -684,6 +674,7 @@ inherited DownLoaderTest: TDownLoaderTest
     OnStatusChanged = clMultiDownLoaderStatusChanged
     OnGetResourceInfo = clMultiDownLoaderGetResourceInfo
     OnDataItemProceed = clMultiDownLoaderDataItemProceed
+    OnError = clMultiDownLoaderError
     OnChanged = clMultiDownLoaderChanged
     DownLoadList = <
       item

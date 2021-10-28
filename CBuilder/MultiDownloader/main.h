@@ -84,7 +84,6 @@ __published:	// IDE-managed Components
     TButton *btnStop1;
     TButton *btnAdd1;
     TButton *btnDownLoad1;
-    TButton *btnCancel;
     TLabel *Label16;
     TEdit *edtReconnectAfter;
     TUpDown *updReconnectAfter;
@@ -128,7 +127,6 @@ __published:	// IDE-managed Components
   void __fastcall edtHttpProxyChange(TObject *Sender);
   void __fastcall edtProxyBypassChange(TObject *Sender);
   void __fastcall edtBatchSizeChange(TObject *Sender);
-  void __fastcall clProgressBarChanged(TObject *Sender);
   void __fastcall clMultiDownLoaderChanged(TObject *Sender,
 	TclInternetItem *Item);
   void __fastcall clMultiDownLoaderIsBusyChanged(TObject *Sender);
@@ -143,7 +141,6 @@ __published:	// IDE-managed Components
 		  TCustomDrawState State, TCustomDrawStage Stage,
 		  bool &DefaultDraw);
   void __fastcall btnExitClick(TObject *Sender);
-  void __fastcall btnCancelClick(TObject *Sender);
   void __fastcall edtReconnectAfterChange(TObject *Sender);
   void __fastcall edtTryCountChange(TObject *Sender);
   void __fastcall clMultiDownLoaderDataTextProceed(TObject *Sender,
@@ -162,7 +159,6 @@ __published:	// IDE-managed Components
 	  int ErrorCode);
 private:	// User declarations
   bool FIsLoading;
-  bool FIsNewItem;
   UnicodeString NormalizeName(const UnicodeString &AName);
   void UpdateControls();
   void FillListView();
