@@ -8,7 +8,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, clTcpClient, clMC, clImap4, clImapUtils, ImgList, clMailMessage,
   MessageFrm, NewFolderDlg, SearchDlg, CopyDlg, clTcpClientTls,
-  clTcpCommandClient, DemoBaseFormUnit, ExtCtrls;
+  clTcpCommandClient, DemoBaseFormUnit, ExtCtrls, System.ImageList;
 
 type
   TForm1 = class(TclDemoBaseForm)
@@ -188,6 +188,7 @@ begin
   clImap.Password := edtPassword.Text;
   clImap.UseSasl := cbUseSPA.Checked;
   clImap.TimeOut := StrToInt(edtTimeOut.Text) * 1000;
+
   clImap.Open();
 
   GetFolderList();
@@ -431,25 +432,37 @@ begin
 
   for i := 1 to clImap.CurrentMailBox.ExistsMessages do
   begin
-    clImap.RetrieveHeader(i, clMailMessage);
+    try
+      clImap.RetrieveHeader(i, clMailMessage);
 
-    Item := lvMessages.Items.Add();
-    Item.Caption := IntToStr(i);
+      Item := lvMessages.Items.Add();
+      Item.Caption := IntToStr(i);
 
-    Item.SubItems.Add(clMailMessage.Subject);
-    Item.SubItems.Add(clMailMessage.From.FullAddress);
+      Item.SubItems.Add(clMailMessage.Subject);
+      Item.SubItems.Add(clMailMessage.From.FullAddress);
 
-    flags := clImap.GetMessageFlags(i);
-    s := '';
+      flags := clImap.GetMessageFlags(i);
+      s := '';
 
-    if (mfAnswered in flags) then s := s + 'Answered,';
-    if (mfFlagged in flags) then s := s + 'Flagged,';
-    if (mfDeleted in flags) then s := s + 'Deleted,';
-    if (mfSeen in flags) then s := s + 'Seen,';
-    if (mfDraft in flags) then s := s + 'Draft,';
-    if (mfRecent in flags) then s := s + 'Recent,';
+      if (mfAnswered in flags) then s := s + 'Answered,';
+      if (mfFlagged in flags) then s := s + 'Flagged,';
+      if (mfDeleted in flags) then s := s + 'Deleted,';
+      if (mfSeen in flags) then s := s + 'Seen,';
+      if (mfDraft in flags) then s := s + 'Draft,';
+      if (mfRecent in flags) then s := s + 'Recent,';
 
-    Item.SubItems.Add(s);
+      Item.SubItems.Add(s);
+    except
+      on EclTcpClientError do
+      begin
+        Item := lvMessages.Items.Add();
+        Item.Caption := IntToStr(i);
+
+        Item.SubItems.Add('(bad message)');
+        Item.SubItems.Add('');
+        Item.SubItems.Add('');
+      end;
+    end;
   end;
 end;
 

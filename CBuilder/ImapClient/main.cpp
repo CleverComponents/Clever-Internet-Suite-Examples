@@ -363,32 +363,45 @@ void __fastcall TForm1::GetMessageList(void)
 
   if (!clImap->Active) return;
 
-  for (int i = 1; i <= clImap->CurrentMailBox->ExistsMessages; i++) {
-    clImap->RetrieveHeader(i, clMailMessage);
+  for (int i = 1; i <= clImap->CurrentMailBox->ExistsMessages; i++)
+  {
+    try
+    {
+      clImap->RetrieveHeader(i, clMailMessage);
 
-    TListItem *Item = lvMessages->Items->Add();
-    Item->Caption = IntToStr(i);
+      TListItem *Item = lvMessages->Items->Add();
+      Item->Caption = IntToStr(i);
 
-    Item->SubItems->Add(clMailMessage->Subject);
-    Item->SubItems->Add(clMailMessage->From->FullAddress);
+      Item->SubItems->Add(clMailMessage->Subject);
+      Item->SubItems->Add(clMailMessage->From->FullAddress);
 
-    TclMailMessageFlags flags = clImap->GetMessageFlags(i);
-    UnicodeString s = "";
+      TclMailMessageFlags flags = clImap->GetMessageFlags(i);
+      UnicodeString s = "";
 
-    if (flags.Contains(mfAnswered))
-      s += "Answered,";
-    if (flags.Contains(mfFlagged))
-      s += "Flagged,";
-    if (flags.Contains(mfDeleted))
-      s += "Deleted,";
-    if (flags.Contains(mfSeen))
-      s += "Seen,";
-    if (flags.Contains(mfDraft))
-      s += "Draft,";
-    if (flags.Contains(mfRecent))
-      s += "Recent,";
+      if (flags.Contains(mfAnswered))
+        s += "Answered,";
+      if (flags.Contains(mfFlagged))
+        s += "Flagged,";
+      if (flags.Contains(mfDeleted))
+        s += "Deleted,";
+      if (flags.Contains(mfSeen))
+        s += "Seen,";
+      if (flags.Contains(mfDraft))
+        s += "Draft,";
+      if (flags.Contains(mfRecent))
+        s += "Recent,";
 
-    Item->SubItems->Add(s);
+      Item->SubItems->Add(s);
+    }
+    catch (EclTcpClientError &)
+    {
+      TListItem *Item = lvMessages->Items->Add();
+      Item->Caption = IntToStr(i);
+
+      Item->SubItems->Add("(bad message)");
+      Item->SubItems->Add("");
+      Item->SubItems->Add("");
+    }
   }
 }
 //---------------------------------------------------------------------------
