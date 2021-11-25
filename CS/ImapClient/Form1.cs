@@ -75,16 +75,16 @@ namespace ImapClient
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		protected override void Dispose( bool disposing )
+		protected override void Dispose(bool disposing)
 		{
-			if( disposing )
+			if (disposing)
 			{
-				if (components != null) 
+				if (components != null)
 				{
 					components.Dispose();
 				}
 			}
-			base.Dispose( disposing );
+			base.Dispose(disposing);
 		}
 
 		#region Windows Form Designer generated code
@@ -309,10 +309,10 @@ namespace ImapClient
 			// lvMessages
 			// 
 			this.lvMessages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+			this.columnHeader1,
+			this.columnHeader2,
+			this.columnHeader3,
+			this.columnHeader4});
 			this.lvMessages.FullRowSelect = true;
 			this.lvMessages.HideSelection = false;
 			this.lvMessages.Location = new System.Drawing.Point(184, 184);
@@ -525,18 +525,22 @@ namespace ImapClient
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static void Main() 
+		static void Main()
 		{
+			Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(new ExceptionHandler().OnThreadException);
 			Application.Run(new Form1());
 		}
 
-		private void btnLogin_Click(object sender, System.EventArgs e) {
-			if (imap41.Active) {
+		private void btnLogin_Click(object sender, System.EventArgs e)
+		{
+			if (imap41.Active)
+			{
 				MessageBox.Show("You are already connected. Please click Logout to disconnect.");
 				return;
 			}
 
-			try {
+			try
+			{
 				imap41.Server = edtServer.Text;
 				imap41.Port = Convert.ToInt32(edtPort.Text);
 				imap41.UserName = edtUser.Text;
@@ -549,12 +553,14 @@ namespace ImapClient
 
 				UpdateStatus();
 			}
-			catch (Exception ex) {
+			catch (Exception ex)
+			{
 				MessageBox.Show(ex.Message);
 			}
 		}
 
-		private void GetFolderList() {
+		private void GetFolderList()
+		{
 			subscribeStatus.Clear();
 			tvFolders.Items.Clear();
 			lvMessages.Items.Clear();
@@ -568,18 +574,21 @@ namespace ImapClient
 
 			string[] subscribed = imap41.GetSubscribedMailBoxes();
 
-			for (int i = 0; i < mailboxes.Length; i++) {
+			for (int i = 0; i < mailboxes.Length; i++)
+			{
 				string item = mailboxes[i].ToString();
 				tvFolders.Items.Add(item);
 				subscribeStatus.Add(item, (Array.IndexOf(subscribed, item) > -1));
 			}
 		}
 
-		private void UpdateStatus() {
+		private void UpdateStatus()
+		{
 			Text = imap41.Active ? "IMAP Clinet - Connected" : "IMAP Clinet";
 		}
 
-		private void btnLogout_Click(object sender, System.EventArgs e) {
+		private void btnLogout_Click(object sender, System.EventArgs e)
+		{
 			imap41.Close();
 
 			subscribeStatus.Clear();
@@ -594,16 +603,20 @@ namespace ImapClient
 			UpdateStatus();
 		}
 
-		private void btnNewFolder_Click(object sender, System.EventArgs e) {
+		private void btnNewFolder_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
 
 			NewFolderDlg dlg = new NewFolderDlg();
-			if (dlg.ShowDialog() == DialogResult.OK) {
-				if (dlg.cbIsSubfolder.Checked && (tvFolders.SelectedIndex > -1)) {
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
+				if (dlg.cbIsSubfolder.Checked && (tvFolders.SelectedIndex > -1))
+				{
 					imap41.CreateMailBox(tvFolders.SelectedItem.ToString()
 						+ imap41.MailBoxSeparator + dlg.edtName.Text);
 				}
-				else {
+				else
+				{
 					imap41.CreateMailBox(dlg.edtName.Text);
 				}
 
@@ -611,43 +624,52 @@ namespace ImapClient
 			}
 		}
 
-		private void btnDeleteFolder_Click(object sender, System.EventArgs e) {
+		private void btnDeleteFolder_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
 
-			if (tvFolders.SelectedIndex > -1) {
+			if (tvFolders.SelectedIndex > -1)
+			{
 				if (MessageBox.Show(string.Format("Do you wish to delete the {0} folder ?",
 					tvFolders.SelectedItem.ToString()), "Delete folder",
-					MessageBoxButtons.YesNo) == DialogResult.Yes) {
+					MessageBoxButtons.YesNo) == DialogResult.Yes)
+				{
 					imap41.DeleteMailBox(tvFolders.SelectedItem.ToString());
 					GetFolderList();
 				}
 			}
 		}
 
-		private void btnFind_Click(object sender, System.EventArgs e) {
+		private void btnFind_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
-    
+
 			if (tvFolders.SelectedIndex < 0) return;
 
 			SearchDlg dlg = new SearchDlg();
 
-			if (dlg.ShowDialog() == DialogResult.OK) {
+			if (dlg.ShowDialog() == DialogResult.OK)
+			{
 				IList result = imap41.SearchMessages(dlg.GetSearchCriteria());
 
-				if (result == null || result.Count == 0) {
+				if (result == null || result.Count == 0)
+				{
 					MessageBox.Show("No messages found.");
 				}
-				else {
+				else
+				{
 					MessageBox.Show(string.Format("Found {0} message(s).\r\n"
 						+ " Message numbers: \r\n{1}", result.Count, StringUtils.GetStringsAsString(result)));
 				}
 			}
 		}
 
-		private void btnSubscribe_Click(object sender, System.EventArgs e) {
+		private void btnSubscribe_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
-    
-			if ((tvFolders.SelectedIndex > -1) && !(bool)subscribeStatus[tvFolders.SelectedItem]) {
+
+			if ((tvFolders.SelectedIndex > -1) && !(bool)subscribeStatus[tvFolders.SelectedItem])
+			{
 				imap41.SubscribeMailBox(tvFolders.SelectedItem.ToString());
 				subscribeStatus[tvFolders.SelectedItem] = true;
 				tvFolders_SelectedIndexChanged(null, null);
@@ -655,10 +677,12 @@ namespace ImapClient
 			}
 		}
 
-		private void btnUnsubscribe_Click(object sender, System.EventArgs e) {
+		private void btnUnsubscribe_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
-    
-			if ((tvFolders.SelectedIndex > -1) && (bool)subscribeStatus[tvFolders.SelectedItem]) {
+
+			if ((tvFolders.SelectedIndex > -1) && (bool)subscribeStatus[tvFolders.SelectedItem])
+			{
 				imap41.UnsubscribeMailBox(tvFolders.SelectedItem.ToString());
 				subscribeStatus[tvFolders.SelectedItem] = false;
 				tvFolders_SelectedIndexChanged(null, null);
@@ -666,52 +690,64 @@ namespace ImapClient
 			}
 		}
 
-		private void btnAppend_Click(object sender, System.EventArgs e) {
+		private void btnAppend_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
 
-			if (tvFolders.SelectedIndex > -1) {
-				if (MessageFrm.ComposeMessage(mailMessage1)) {
+			if (tvFolders.SelectedIndex > -1)
+			{
+				if (MessageFrm.ComposeMessage(mailMessage1))
+				{
 					imap41.AppendMessage(tvFolders.SelectedItem.ToString(), mailMessage1, MailMessageFlags.None);
 					tvFolders_SelectedIndexChanged(null, null);
 				}
 			}
 		}
 
-		private void btnCopy_Click(object sender, System.EventArgs e) {
+		private void btnCopy_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
-    
-			if (lvMessages.SelectedItems.Count == 1) {
-				
+
+			if (lvMessages.SelectedItems.Count == 1)
+			{
+
 				string dest = CopyDlg.ShowCopyDialog(imap41.GetMailBoxes());
-				if (dest != "") {
+				if (dest != "")
+				{
 					imap41.CopyMessage(Convert.ToInt32(lvMessages.SelectedItems[0].Text), dest);
 					GetFolderList();
 				}
 			}
 		}
 
-		private void btnDelete_Click(object sender, System.EventArgs e) {
+		private void btnDelete_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
 
-			if ((tvFolders.SelectedIndex > -1) && (lvMessages.SelectedItems.Count == 1)) {
+			if ((tvFolders.SelectedIndex > -1) && (lvMessages.SelectedItems.Count == 1))
+			{
 				imap41.DeleteMessage(Convert.ToInt32(lvMessages.SelectedItems[0].Text));
 				tvFolders_SelectedIndexChanged(null, null);
 			}
 		}
 
-		private void btnPurge_Click(object sender, System.EventArgs e) {
+		private void btnPurge_Click(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
 
-			if (tvFolders.SelectedIndex > -1) {
+			if (tvFolders.SelectedIndex > -1)
+			{
 				if (MessageBox.Show("Purge all marked as deleted messages in selected folder ?", "Purge",
-					MessageBoxButtons.YesNo) == DialogResult.Yes) {
+					MessageBoxButtons.YesNo) == DialogResult.Yes)
+				{
 					imap41.PurgeMessages();
 					tvFolders_SelectedIndexChanged(null, null);
 				}
 			}
 		}
 
-		private void tvFolders_SelectedIndexChanged(object sender, System.EventArgs e) {
+		private void tvFolders_SelectedIndexChanged(object sender, System.EventArgs e)
+		{
 			if (tvFolders.SelectedIndex < 0) return;
 
 			imap41.SelectMailBox(tvFolders.Items[tvFolders.SelectedIndex].ToString());
@@ -724,40 +760,54 @@ namespace ImapClient
 			GetMessageList();
 		}
 
-		private void GetMessageList() {
+		private void GetMessageList()
+		{
 			lvMessages.Items.Clear();
 
-			for (int i = 1; i <= imap41.CurrentMailBox.ExistsMessages; i++) {
-				imap41.RetrieveHeader(i, mailMessage1);
+			for (int i = 1; i <= imap41.CurrentMailBox.ExistsMessages; i++)
+			{
+				try
+				{
+					imap41.RetrieveHeader(i, mailMessage1);
 
-				ListViewItem item = lvMessages.Items.Add(i.ToString());
-				item.SubItems.Add(mailMessage1.Subject);
-				item.SubItems.Add(mailMessage1.From.FullAddress);
+					ListViewItem item = lvMessages.Items.Add(i.ToString());
+					item.SubItems.Add(mailMessage1.Subject);
+					item.SubItems.Add(mailMessage1.From.FullAddress);
 
-				MailMessageFlags flags = imap41.GetMessageFlags(i);
-				string s = "";
+					MailMessageFlags flags = imap41.GetMessageFlags(i);
+					string s = "";
 
-				if ((flags & MailMessageFlags.Answered) == MailMessageFlags.Answered)
-					s += "Answered,";
-				if ((flags & MailMessageFlags.Flagged) == MailMessageFlags.Flagged)
-					s += "Flagged,";
-				if ((flags & MailMessageFlags.Deleted) == MailMessageFlags.Deleted)
-					s += "Deleted,";
-				if ((flags & MailMessageFlags.Seen) == MailMessageFlags.Seen)
-					s += "Seen,";
-				if ((flags & MailMessageFlags.Draft) == MailMessageFlags.Draft)
-					s += "Draft,";
-				if ((flags & MailMessageFlags.Recent) == MailMessageFlags.Recent)
-					s += "Recent,";
+					if ((flags & MailMessageFlags.Answered) == MailMessageFlags.Answered)
+						s += "Answered,";
+					if ((flags & MailMessageFlags.Flagged) == MailMessageFlags.Flagged)
+						s += "Flagged,";
+					if ((flags & MailMessageFlags.Deleted) == MailMessageFlags.Deleted)
+						s += "Deleted,";
+					if ((flags & MailMessageFlags.Seen) == MailMessageFlags.Seen)
+						s += "Seen,";
+					if ((flags & MailMessageFlags.Draft) == MailMessageFlags.Draft)
+						s += "Draft,";
+					if ((flags & MailMessageFlags.Recent) == MailMessageFlags.Recent)
+						s += "Recent,";
 
-				item.SubItems.Add(s);
+					item.SubItems.Add(s);
+				}
+				catch (TcpClientError)
+				{
+					ListViewItem item = lvMessages.Items.Add(i.ToString());
+					item.SubItems.Add("(bad message)");
+					item.SubItems.Add("");
+					item.SubItems.Add("");
+				}
 			}
 		}
 
-		private void lvMessages_DoubleClick(object sender, System.EventArgs e) {
+		private void lvMessages_DoubleClick(object sender, System.EventArgs e)
+		{
 			if (!imap41.Active) return;
-    
-			if (lvMessages.SelectedItems.Count >0 ) {
+
+			if (lvMessages.SelectedItems.Count > 0)
+			{
 				imap41.RetrieveMessage(Convert.ToInt32(lvMessages.SelectedItems[0].Text), mailMessage1);
 				imap41.SetMessageFlags(Convert.ToInt32(lvMessages.SelectedItems[0].Text),
 					SetFlagsMethod.Add, MailMessageFlags.Seen);
@@ -767,18 +817,28 @@ namespace ImapClient
 			}
 		}
 
-		private void imap41_CommandSent(object sender, CleverComponents.InetSuite.TcpTextEventArgs e) {
+		private void imap41_CommandSent(object sender, CleverComponents.InetSuite.TcpTextEventArgs e)
+		{
 			memLog.Text += e.Text.Trim() + "\r\n";
 			memLog.Select(memLog.Text.Length, 0);
 			memLog.ScrollToCaret();
 		}
 
-		private void imap41_ResponseReceived(object sender, CleverComponents.InetSuite.TcpListEventArgs e) {
-			if (e.List.Count > 0) {
+		private void imap41_ResponseReceived(object sender, CleverComponents.InetSuite.TcpListEventArgs e)
+		{
+			if (e.List.Count > 0)
+			{
 				memLog.Text += e.List[0] + "\r\n";
 				memLog.Select(memLog.Text.Length, 0);
 				memLog.ScrollToCaret();
 			}
+		}
+	}
+	public class ExceptionHandler
+	{
+		public void OnThreadException(object sender, System.Threading.ThreadExceptionEventArgs t)
+		{
+			MessageBox.Show(t.Exception.Message);
 		}
 	}
 }

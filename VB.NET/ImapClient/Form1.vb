@@ -1,3 +1,4 @@
+Imports System.Threading
 Imports CleverComponents.InetSuite
 
 Public Class Form1
@@ -10,9 +11,6 @@ Public Class Form1
 
         'This call is required by the Windows Form Designer.
         InitializeComponent()
-
-        'Add any initialization after the InitializeComponent() call
-
     End Sub
 
     'Form overrides dispose to clean up the component list.
@@ -706,34 +704,41 @@ Public Class Form1
 
         Dim i As Integer
         For i = 1 To Imap41.CurrentMailBox.ExistsMessages
-            Imap41.RetrieveHeader(i, MailMessage1)
+            Try
+                Imap41.RetrieveHeader(i, MailMessage1)
 
-            Dim item As ListViewItem = lvMessages.Items.Add(i.ToString())
-            item.SubItems.Add(MailMessage1.Subject)
-            item.SubItems.Add(MailMessage1.From.FullAddress)
+                Dim item As ListViewItem = lvMessages.Items.Add(i.ToString())
+                item.SubItems.Add(MailMessage1.Subject)
+                item.SubItems.Add(MailMessage1.From.FullAddress)
 
-            Dim flags As Integer = Imap41.GetMessageFlags(i)
-            Dim s As String = ""
+                Dim flags As Integer = Imap41.GetMessageFlags(i)
+                Dim s As String = ""
 
-            If (flags And CInt(MailMessageFlags.Answered)) > 0 Then
-                s += "Answered,"
-            End If
-            If (flags And CInt(MailMessageFlags.Flagged)) > 0 Then
-                s += "Flagged,"
-            End If
-            If (flags And CInt(MailMessageFlags.Deleted)) > 0 Then
-                s += "Deleted,"
-            End If
-            If (flags And CInt(MailMessageFlags.Seen)) > 0 Then
-                s += "Seen,"
-            End If
-            If (flags And CInt(MailMessageFlags.Draft)) > 0 Then
-                s += "Draft,"
-            End If
-            If (flags And CInt(MailMessageFlags.Recent)) > 0 Then
-                s += "Recent,"
-            End If
-            item.SubItems.Add(s)
+                If (flags And CInt(MailMessageFlags.Answered)) > 0 Then
+                    s += "Answered,"
+                End If
+                If (flags And CInt(MailMessageFlags.Flagged)) > 0 Then
+                    s += "Flagged,"
+                End If
+                If (flags And CInt(MailMessageFlags.Deleted)) > 0 Then
+                    s += "Deleted,"
+                End If
+                If (flags And CInt(MailMessageFlags.Seen)) > 0 Then
+                    s += "Seen,"
+                End If
+                If (flags And CInt(MailMessageFlags.Draft)) > 0 Then
+                    s += "Draft,"
+                End If
+                If (flags And CInt(MailMessageFlags.Recent)) > 0 Then
+                    s += "Recent,"
+                End If
+                item.SubItems.Add(s)
+            Catch ex As TcpClientError
+                Dim item As ListViewItem = lvMessages.Items.Add(i.ToString())
+                item.SubItems.Add("(bad message)")
+                item.SubItems.Add("")
+                item.SubItems.Add("")
+            End Try
         Next i
     End Sub 'GetMessageList
 
