@@ -1,6 +1,6 @@
 # Clever IMAP Client
 
-The program implements a mail IMAP client, which connects to the specified mailbox over the IMAP4 protocol, browses/modifies IMAP folders, and displays emails within the selected folder.   
+The program implements a mail IMAP client, which connects to the specified mailbox over the IMAP4 protocol, browses/modifies IMAP folders, and displays emails within the selected folder with an ability to skip invalid/broken messages.   
 
 This Delphi project represents a mostly simple demos and by no means, a complete application. It's intended to demonstrate how to use the [IMAP4](https://www.clevercomponents.com/products/inetsuite/imap.asp) component in your Delphi application. Additionally, the program uses the [MailMessage](https://www.clevercomponents.com/products/inetsuite/messageparser.asp) component, which allows you to create and parse emails in the MIME format, including message headers, text- and HTML bodies, file attachments, and embedded images.   
 
