@@ -8,7 +8,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, clTcpClient, clMC, clImap4, clImapUtils, ImgList, clMailMessage,
   MessageFrm, NewFolderDlg, SearchDlg, CopyDlg, clTcpClientTls,
-  clTcpCommandClient, DemoBaseFormUnit, ExtCtrls, System.ImageList;
+  clTcpCommandClient, DemoBaseFormUnit, ExtCtrls;
 
 type
   TForm1 = class(TclDemoBaseForm)
