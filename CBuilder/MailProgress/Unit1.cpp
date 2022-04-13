@@ -115,7 +115,7 @@ void __fastcall TForm1::clMailProgress(TObject *Sender,
 {
   ProgressBar1->Max = ATotalBytes;
   ProgressBar1->Position = ABytesProceed;
-  lblProgress->Caption = IntToStr(ProgressBar1->Position / ProgressBar1->Max * 100) + " %";
+  lblProgress->Caption = IntToStr((int)floor((double)ProgressBar1->Position / ProgressBar1->Max * 100)) + " %";
 }
 //---------------------------------------------------------------------------
 

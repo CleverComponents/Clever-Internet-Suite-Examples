@@ -389,7 +389,7 @@ Public Class Form1
         End If
         progressBar1.Maximum = e.TotalBytes
         progressBar1.Value = e.BytesProceed
-        Dim d As Decimal = System.Math.Round(CDec(progressBar1.Value * 100 / progressBar1.Maximum))
+        Dim d As Decimal = System.Math.Round(CDec(progressBar1.Value) / progressBar1.Maximum * 100)
         lblProgress.Text = String.Format("{0} %", d.ToString())
         Application.DoEvents()
     End Sub
@@ -400,7 +400,7 @@ Public Class Form1
         End If
         progressBar1.Maximum = e.TotalBytes
         progressBar1.Value = e.BytesProceed
-        Dim d As Decimal = System.Math.Round(CDec(progressBar1.Value * 100 / progressBar1.Maximum))
+        Dim d As Decimal = System.Math.Round(CDec(progressBar1.Value) / progressBar1.Maximum * 100)
         lblProgress.Text = String.Format("{0} %", d.ToString())
         Application.DoEvents()
     End Sub

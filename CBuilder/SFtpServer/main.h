@@ -134,7 +134,6 @@ private:	// User declarations
   TCriticalSection *FSynchronizer;
   bool FIsStop;
   void __fastcall PutLogMessage(const UnicodeString ALogMessage);
-  UnicodeString __fastcall GetCommandName(int AFxp);
   void __fastcall LoadHostKey();
   void __fastcall GenerateHostKey();
   void __fastcall AssignSettings();

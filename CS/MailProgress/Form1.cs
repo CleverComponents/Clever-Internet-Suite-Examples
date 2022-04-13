@@ -422,7 +422,7 @@ namespace MailProgress
 
 			progressBar1.Maximum = (int)e.TotalBytes;
 			progressBar1.Value = (int)e.BytesProceed;
-			decimal d = System.Math.Round((decimal)(progressBar1.Value * 100 / progressBar1.Maximum));
+			decimal d = System.Math.Round((decimal)progressBar1.Value / progressBar1.Maximum * 100);
 			lblProgress.Text = string.Format("{0} %", d.ToString());
 			Application.DoEvents();
 		}
@@ -432,7 +432,7 @@ namespace MailProgress
 
 			progressBar1.Maximum = (int)e.TotalBytes;
 			progressBar1.Value = (int)e.BytesProceed;
-			decimal d = System.Math.Round((decimal)(progressBar1.Value * 100 / progressBar1.Maximum));
+			decimal d = System.Math.Round((decimal)progressBar1.Value / progressBar1.Maximum * 100);
 			lblProgress.Text = string.Format("{0} %", d.ToString());
 			Application.DoEvents();
 		}

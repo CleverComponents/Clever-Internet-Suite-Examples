@@ -389,6 +389,13 @@ Public Class Form1
         btnUpload.Enabled = Active
     End Sub 'UpdateStatus
 
+    Private Function GetProgressBarPos(ByVal APosition As Long, ByVal ASize As Long) As Integer
+        If APosition = 0 Or ASize = 0 Then
+            Return 0
+        End If
+        Return System.Math.Round(CDec(APosition) / ASize * 100)
+    End Function
+
     Private Sub btnLogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLogin.Click
         If SFtp1.Active Then
             MessageBox.Show("You are already connected. Please click Logout to disconnect.")
@@ -409,6 +416,7 @@ Public Class Form1
                 DoOpenDir(edtStartDir.Text)
             End If
             UpdateStatus()
+            progressBar1.Value = 0
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -418,6 +426,7 @@ Public Class Form1
         SFtp1.Close()
         lbList.Items.Clear()
         UpdateStatus()
+        progressBar1.Value = 0
     End Sub
 
     Private Sub btnOpenDir_Click(sender As Object, e As EventArgs) Handles btnOpenDir.Click
@@ -444,7 +453,7 @@ Public Class Form1
             Return
         End If
 
-        memLog.Text += String.Format("C: {0} ({1} bytes)" + ControlChars.Cr + ControlChars.Lf, GetCommandName(e.FxpCommand), e.Buffer.Length)
+        memLog.Text += String.Format("C: {0} ({1} bytes)" + ControlChars.Cr + ControlChars.Lf, SFtpCommand.GetCommandName(e.FxpCommand), e.Buffer.Length)
         memLog.Select(memLog.Text.Length, 0)
         memLog.ScrollToCaret()
     End Sub
@@ -456,7 +465,7 @@ Public Class Form1
             Return
         End If
 
-        memLog.Text += String.Format("S: {0} ({1} bytes)" + ControlChars.Cr + ControlChars.Lf, GetCommandName(e.FxpCommand), e.Buffer.Length)
+        memLog.Text += String.Format("S: {0} ({1} bytes)" + ControlChars.Cr + ControlChars.Lf, SFtpCommand.GetCommandName(e.FxpCommand), e.Buffer.Length)
         memLog.Select(memLog.Text.Length, 0)
         memLog.ScrollToCaret()
     End Sub
@@ -505,8 +514,8 @@ Public Class Form1
 
             saveFileDialog1.FileName = lbList.Items(lbList.SelectedIndex).ToString()
             If saveFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Dim size As Integer = SFtp1.GetFileSize(lbList.Items(lbList.SelectedIndex).ToString())
-                Dim position As Integer = 0
+                Dim size As Long = SFtp1.GetFileSize(lbList.Items(lbList.SelectedIndex).ToString())
+                Dim position As Long = 0
 
                 If File.Exists(saveFileDialog1.FileName) Then
                     Dim dlg As New FileExistsDialog
@@ -516,15 +525,13 @@ Public Class Form1
                     End If
                     Dim fileInf As New FileInfo(saveFileDialog1.FileName)
                     If fileExistsResult = Windows.Forms.DialogResult.No And size > fileInf.Length Then
-                        position = CInt(fileInf.Length)
+                        position = fileInf.Length
                     End If
                 End If
 
-                progressBar1.Minimum = 0
-                progressBar1.Maximum = size
-                progressBar1.Value = position
+                progressBar1.Value = GetProgressBarPos(position, size)
 
-                Using dest As New FileStream(saveFileDialog1.FileName, FileMode.Create)
+                Using dest As New FileStream(saveFileDialog1.FileName, FileMode.OpenOrCreate)
                     SFtp1.GetFile(lbList.Items(lbList.SelectedIndex).ToString(), dest, position, size)
                 End Using
                 MessageBox.Show("Done")
@@ -533,10 +540,8 @@ Public Class Form1
     End Sub
 
     Private Sub SFtp1_Progress(ByVal sender As System.Object, ByVal e As CleverComponents.InetSuite.ProgressEventArgs) Handles SFtp1.Progress
-        If e.TotalBytes > 0 Then
-            progressBar1.Maximum = e.TotalBytes
-            progressBar1.Value = e.BytesProceed
-        End If
+        progressBar1.Value = GetProgressBarPos(e.BytesProceed, e.TotalBytes)
+        Application.DoEvents()
     End Sub
 
     Private Sub btnUpload_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpload.Click
@@ -544,7 +549,7 @@ Public Class Form1
             Return
         End If
         If openFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            Dim position As Integer = 0
+            Dim position As Long = 0
             Dim fileName As String = Path.GetFileName(openFileDialog1.FileName)
 
             Dim fileInf As New FileInfo(openFileDialog1.FileName)
@@ -559,15 +564,13 @@ Public Class Form1
                 If fileExistsResult = Windows.Forms.DialogResult.No Then
                     position = SFtp1.GetFileSize(fileName)
 
-                    If CInt(fileInf.Length) <= position Then
+                    If fileInf.Length <= position Then
                         position = 0
                     End If
                 End If
             End If
 
-            progressBar1.Minimum = 0
-            progressBar1.Maximum = CInt(fileInf.Length)
-            progressBar1.Value = position
+            progressBar1.Value = GetProgressBarPos(position, fileInf.Length)
 
             Using source As New FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read)
                 SFtp1.PutFile(source, fileName, position, -1)
@@ -634,65 +637,4 @@ Public Class Form1
             DoOpenDir(SFtp1.CurrentDir + lbList.Items(lbList.SelectedIndex).ToString())
         End If
     End Sub
-
-    Private Function GetCommandName(Fxp As Integer) As String
-        Select Case Fxp
-            Case SFtpCommand.SSH_FXP_INIT
-                Return "SSH_FXP_INIT"
-            Case SFtpCommand.SSH_FXP_VERSION
-                Return "SSH_FXP_VERSION"
-            Case SFtpCommand.SSH_FXP_OPEN
-                Return "SSH_FXP_OPEN"
-            Case SFtpCommand.SSH_FXP_CLOSE
-                Return "SSH_FXP_CLOSE"
-            Case SFtpCommand.SSH_FXP_READ
-                Return "SSH_FXP_READ"
-            Case SFtpCommand.SSH_FXP_WRITE
-                Return "SSH_FXP_WRITE"
-            Case SFtpCommand.SSH_FXP_LSTAT
-                Return "SSH_FXP_LSTAT"
-            Case SFtpCommand.SSH_FXP_FSTAT
-                Return "SSH_FXP_FSTAT"
-            Case SFtpCommand.SSH_FXP_SETSTAT
-                Return "SSH_FXP_SETSTAT"
-            Case SFtpCommand.SSH_FXP_FSETSTAT
-                Return "SSH_FXP_FSETSTAT"
-            Case SFtpCommand.SSH_FXP_OPENDIR
-                Return "SSH_FXP_OPENDIR"
-            Case SFtpCommand.SSH_FXP_READDIR
-                Return "SSH_FXP_READDIR"
-            Case SFtpCommand.SSH_FXP_REMOVE
-                Return "SSH_FXP_REMOVE"
-            Case SFtpCommand.SSH_FXP_MKDIR
-                Return "SSH_FXP_MKDIR"
-            Case SFtpCommand.SSH_FXP_RMDIR
-                Return "SSH_FXP_RMDIR"
-            Case SFtpCommand.SSH_FXP_REALPATH
-                Return "SSH_FXP_REALPATH"
-            Case SFtpCommand.SSH_FXP_STAT
-                Return "SSH_FXP_STAT"
-            Case SFtpCommand.SSH_FXP_RENAME
-                Return "SSH_FXP_RENAME"
-            Case SFtpCommand.SSH_FXP_READLINK
-                Return "SSH_FXP_READLINK"
-            Case SFtpCommand.SSH_FXP_SYMLINK
-                Return "SSH_FXP_SYMLINK"
-            Case SFtpCommand.SSH_FXP_STATUS
-                Return "SSH_FXP_STATUS"
-            Case SFtpCommand.SSH_FXP_HANDLE
-                Return "SSH_FXP_HANDLE"
-            Case SFtpCommand.SSH_FXP_DATA
-                Return "SSH_FXP_DATA"
-            Case SFtpCommand.SSH_FXP_NAME
-                Return "SSH_FXP_NAME"
-            Case SFtpCommand.SSH_FXP_ATTRS
-                Return "SSH_FXP_ATTRS"
-            Case SFtpCommand.SSH_FXP_EXTENDED
-                Return "SSH_FXP_EXTENDED"
-            Case SFtpCommand.SSH_FXP_EXTENDED_REPLY
-                Return "SSH_FXP_EXTENDED_REPLY"
-        End Select
-
-        Return "UNKNOWN"
-    End Function
 End Class

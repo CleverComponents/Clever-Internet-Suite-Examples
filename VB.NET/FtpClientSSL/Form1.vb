@@ -530,7 +530,7 @@ Public Class Form1
                 progressBar1.Maximum = size
                 progressBar1.Value = position
 
-                Dim dest As New FileStream(saveFileDialog1.FileName, FileMode.Create)
+                Dim dest As New FileStream(saveFileDialog1.FileName, FileMode.OpenOrCreate)
                 Ftp1.GetFile(lbList.Items(lbList.SelectedIndex).ToString(), dest, position, -1)
                 dest.Close()
                 MessageBox.Show("Done")

@@ -132,7 +132,7 @@ void __fastcall TMainForm::clSFtpServer1ReceiveRequest(TObject *Sender, TclSFtpU
 {
   if ((ACommand != SSH_FXP_READ) && (ACommand != SSH_FXP_WRITE) && (ACommand != SSH_FXP_READDIR))
   {
-    memLog->Lines->Add(Format("Command[%d]: %s (%d bytes)", ARRAYOFCONST((ARequestId, GetCommandName(ACommand), APacket->GetLength()))));
+    memLog->Lines->Add(Format("Command[%d]: %s (%d bytes)", ARRAYOFCONST((ARequestId, GetSFtpCommandName(ACommand), APacket->GetLength()))));
   }
 }
 //---------------------------------------------------------------------------
@@ -143,7 +143,7 @@ void __fastcall TMainForm::clSFtpServer1SendResponse(TObject *Sender, TclSFtpUse
 {
   if ((ACommand != SSH_FXP_READ) && (ACommand != SSH_FXP_WRITE) && (ACommand != SSH_FXP_READDIR))
   {
-    memLog->Lines->Add(Format("Reply[%d]: %s (%d bytes)", ARRAYOFCONST((ARequestId, GetCommandName(ACommand), APacket->GetLength()))));
+    memLog->Lines->Add(Format("Reply[%d]: %s (%d bytes)", ARRAYOFCONST((ARequestId, GetSFtpCommandName(ACommand), APacket->GetLength()))));
   }
 }
 //---------------------------------------------------------------------------
@@ -157,41 +157,6 @@ void __fastcall TMainForm::clSFtpServer1Start(TObject *Sender)
 void __fastcall TMainForm::clSFtpServer1Stop(TObject *Sender)
 {
   PutLogMessage("Stop Server");
-}
-//---------------------------------------------------------------------------
-
-UnicodeString __fastcall TMainForm::GetCommandName(int AFxp)
-{
-  switch (AFxp) {
-    case SSH_FXP_INIT: return "SSH_FXP_INIT";
-    case SSH_FXP_VERSION: return "SSH_FXP_VERSION";
-    case SSH_FXP_OPEN: return "SSH_FXP_OPEN";
-    case SSH_FXP_CLOSE: return "SSH_FXP_CLOSE";
-    case SSH_FXP_READ: return "SSH_FXP_READ";
-    case SSH_FXP_WRITE: return "SSH_FXP_WRITE";
-    case SSH_FXP_LSTAT: return "SSH_FXP_LSTAT";
-    case SSH_FXP_FSTAT: return "SSH_FXP_FSTAT";
-    case SSH_FXP_SETSTAT: return "SSH_FXP_SETSTAT";
-    case SSH_FXP_FSETSTAT: return "SSH_FXP_FSETSTAT";
-    case SSH_FXP_OPENDIR: return "SSH_FXP_OPENDIR";
-    case SSH_FXP_READDIR: return "SSH_FXP_READDIR";
-    case SSH_FXP_REMOVE: return "SSH_FXP_REMOVE";
-    case SSH_FXP_MKDIR: return "SSH_FXP_MKDIR";
-    case SSH_FXP_RMDIR: return "SSH_FXP_RMDIR";
-    case SSH_FXP_REALPATH: return "SSH_FXP_REALPATH";
-    case SSH_FXP_STAT: return "SSH_FXP_STAT";
-    case SSH_FXP_RENAME: return "SSH_FXP_RENAME";
-    case SSH_FXP_READLINK: return "SSH_FXP_READLINK";
-    case SSH_FXP_SYMLINK: return "SSH_FXP_SYMLINK";
-    case SSH_FXP_STATUS: return "SSH_FXP_STATUS";
-    case SSH_FXP_HANDLE: return "SSH_FXP_HANDLE";
-    case SSH_FXP_DATA: return "SSH_FXP_DATA";
-    case SSH_FXP_NAME: return "SSH_FXP_NAME";
-    case SSH_FXP_ATTRS: return "SSH_FXP_ATTRS";
-    case SSH_FXP_EXTENDED: return "SSH_FXP_EXTENDED";
-    case SSH_FXP_EXTENDED_REPLY: return "SSH_FXP_EXTENDED_REPLY";
-    default: return "UNKNOWN";
-  }
 }
 //---------------------------------------------------------------------------
 

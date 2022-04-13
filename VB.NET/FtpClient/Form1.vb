@@ -404,6 +404,7 @@ Public Class Form1
                 DoOpenDir(edtStartDir.Text)
             End If
             UpdateStatus()
+            progressBar1.Value = 0
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -433,10 +434,18 @@ Public Class Form1
         End If
     End Sub 'UpdateStatus
 
+    Private Function GetProgressBarPos(ByVal APosition As Long, ByVal ASize As Long) As Integer
+        If APosition = 0 Or ASize = 0 Then
+            Return 0
+        End If
+        Return System.Math.Round(CDec(APosition) / ASize * 100)
+    End Function
+
     Private Sub btnLogout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLogout.Click
         Ftp1.Close()
         lbList.Items.Clear()
         UpdateStatus()
+        progressBar1.Value = 0
     End Sub
 
     Private Sub btnOpenDir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOpenDir.Click
@@ -486,8 +495,8 @@ Public Class Form1
 
             saveFileDialog1.FileName = lbList.Items(lbList.SelectedIndex).ToString()
             If saveFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Dim size As Integer = Ftp1.GetFileSize(lbList.Items(lbList.SelectedIndex).ToString())
-                Dim position As Integer = 0
+                Dim size As Long = Ftp1.GetFileSize(lbList.Items(lbList.SelectedIndex).ToString())
+                Dim position As Long = 0
 
                 If File.Exists(saveFileDialog1.FileName) Then
                     Dim dlg As New FileExistsDialog
@@ -497,15 +506,13 @@ Public Class Form1
                     End If
                     Dim fileInf As New FileInfo(saveFileDialog1.FileName)
                     If fileExistsResult = Windows.Forms.DialogResult.No And size > fileInf.Length Then
-                        position = CInt(fileInf.Length)
+                        position = fileInf.Length
                     End If
                 End If
 
-                progressBar1.Minimum = 0
-                progressBar1.Maximum = size
-                progressBar1.Value = position
+                progressBar1.Value = GetProgressBarPos(position, size)
 
-                Dim dest As New FileStream(saveFileDialog1.FileName, FileMode.Create)
+                Dim dest As New FileStream(saveFileDialog1.FileName, FileMode.OpenOrCreate)
                 Ftp1.GetFile(lbList.Items(lbList.SelectedIndex).ToString(), dest, position, -1)
                 dest.Close()
                 MessageBox.Show("Done")
@@ -518,7 +525,7 @@ Public Class Form1
             Return
         End If
         If openFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            Dim position As Integer = 0
+            Dim position As Long = 0
             Dim fileName As String = Path.GetFileName(openFileDialog1.FileName)
 
             Dim fileInf As New FileInfo(openFileDialog1.FileName)
@@ -533,15 +540,13 @@ Public Class Form1
                 If fileExistsResult = Windows.Forms.DialogResult.No Then
                     position = Ftp1.GetFileSize(fileName)
 
-                    If CInt(fileInf.Length) <= position Then
+                    If fileInf.Length <= position Then
                         position = 0
                     End If
                 End If
             End If
 
-            progressBar1.Minimum = 0
-            progressBar1.Maximum = CInt(fileInf.Length)
-            progressBar1.Value = position
+            progressBar1.Value = GetProgressBarPos(position, fileInf.Length)
 
             Dim source As New FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read)
             Ftp1.PutFile(source, fileName, position, -1)
@@ -603,10 +608,8 @@ Public Class Form1
     End Sub
 
     Private Sub Ftp1_Progress(ByVal sender As Object, ByVal e As CleverComponents.InetSuite.ProgressEventArgs) Handles Ftp1.Progress
-        If e.TotalBytes > 0 Then
-            progressBar1.Maximum = e.TotalBytes
-            progressBar1.Value = e.BytesProceed
-        End If
+        progressBar1.Value = GetProgressBarPos(e.BytesProceed, e.TotalBytes)
+        Application.DoEvents()
     End Sub
 
     Private Sub Ftp1_ResponseReceived(ByVal sender As Object, ByVal e As CleverComponents.InetSuite.TcpListEventArgs) Handles Ftp1.ResponseReceived

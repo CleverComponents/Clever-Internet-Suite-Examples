@@ -447,6 +447,7 @@ namespace FtpClient
 					DoOpenDir(edtStartDir.Text);
 				}
 				UpdateStatus();
+				progressBar1.Value = 0;
 			}
 			catch (Exception ex)
 			{
@@ -474,11 +475,18 @@ namespace FtpClient
 			Text = ftp1.Active ? "Ftp Clinet - Connected" : "Ftp Clinet";
 		}
 
+		private int GetProgressBarPos(long position, long size)
+		{
+			if (position == 0 || size == 0) return 0;
+			return (int)System.Math.Round((decimal)position / size * 100);
+		}
+
 		private void btnLogout_Click(object sender, System.EventArgs e)
 		{
 			ftp1.Close();
 			lbList.Items.Clear();
 			UpdateStatus();
+			progressBar1.Value = 0;
 		}
 
 		private void btnOpenDir_Click(object sender, System.EventArgs e)
@@ -542,8 +550,8 @@ namespace FtpClient
 				saveFileDialog1.FileName = lbList.Items[lbList.SelectedIndex].ToString();
 				if (saveFileDialog1.ShowDialog() == DialogResult.OK)
 				{
-					int size = (int)ftp1.GetFileSize(lbList.Items[lbList.SelectedIndex].ToString());
-					int position = 0;
+					long size = ftp1.GetFileSize(lbList.Items[lbList.SelectedIndex].ToString());
+					long position = 0;
 
 					if (File.Exists(saveFileDialog1.FileName))
 					{
@@ -553,15 +561,13 @@ namespace FtpClient
 						FileInfo fileInf = new FileInfo(saveFileDialog1.FileName);
 						if ((fileExistsResult == DialogResult.No) && (size > fileInf.Length))
 						{
-							position = (int)fileInf.Length;
+							position = fileInf.Length;
 						}
 					}
 
-					progressBar1.Minimum = 0;
-					progressBar1.Maximum = size;
-					progressBar1.Value = position;
+					progressBar1.Value = GetProgressBarPos(position, size);
 
-					using (FileStream dest = new FileStream(saveFileDialog1.FileName, FileMode.Create))
+					using (FileStream dest = new FileStream(saveFileDialog1.FileName, FileMode.OpenOrCreate))
 					{
 						ftp1.GetFile(lbList.Items[lbList.SelectedIndex].ToString(), dest, position, -1);
 					}
@@ -576,7 +582,7 @@ namespace FtpClient
 
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
-				int position = 0;
+				long position = 0;
 				string fileName = Path.GetFileName(openFileDialog1.FileName);
 
 				FileInfo fileInf = new FileInfo(openFileDialog1.FileName);
@@ -589,18 +595,16 @@ namespace FtpClient
 
 					if (fileExistsResult == DialogResult.No)
 					{
-						position = (int)ftp1.GetFileSize(fileName);
+						position = ftp1.GetFileSize(fileName);
 
-						if ((int)fileInf.Length <= position)
+						if (fileInf.Length <= position)
 						{
 							position = 0;
 						}
 					}
 				}
 
-				progressBar1.Minimum = 0;
-				progressBar1.Maximum = (int)fileInf.Length;
-				progressBar1.Value = position;
+				progressBar1.Value = GetProgressBarPos(position, fileInf.Length);
 
 				using (FileStream source = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read))
 				{
@@ -658,11 +662,8 @@ namespace FtpClient
 
 		private void ftp1_Progress(object sender, CleverComponents.InetSuite.ProgressEventArgs e)
 		{
-			if (e.TotalBytes > 0)
-			{
-				progressBar1.Maximum = (int)e.TotalBytes;
-				progressBar1.Value = (int)e.BytesProceed;
-			}
+			progressBar1.Value = GetProgressBarPos(e.BytesProceed, e.TotalBytes);
+			Application.DoEvents();
 		}
 
 		private void ftp1_DirectoryListing(object sender, CleverComponents.InetSuite.DirectoryListingEventArgs e)

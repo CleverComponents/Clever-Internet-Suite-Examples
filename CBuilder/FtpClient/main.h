@@ -72,6 +72,7 @@ __published:	// IDE-managed Components
           __int64 ABytesProceed, __int64 ATotalBytes);
 	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
+  int __fastcall GetProgressBarPos(__int64 APosition, __int64 ASize);
   void __fastcall UpdateStatuses();
   void __fastcall DoOpenDir(const UnicodeString ADir);
   void __fastcall FillDirList();

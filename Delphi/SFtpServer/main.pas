@@ -119,7 +119,6 @@ type
     FSynchronizer: TCriticalSection;
     FIsStop: Boolean;
     procedure PutLogMessage(const ALogMessage: string);
-    function GetCommandName(AFxp: Integer): string;
     procedure LoadHostKey;
     procedure GenerateHostKey;
     procedure AssignSettings;
@@ -153,7 +152,7 @@ procedure TMainForm.clSFtpServer1ReceiveRequest(Sender: TObject; AConnection: Tc
 begin
   if not (ACommand in [SSH_FXP_READ, SSH_FXP_WRITE, SSH_FXP_READDIR]) then
   begin
-    PutLogMessage(Format('Command[%d]: %s (%d bytes)', [ARequestId, GetCommandName(ACommand), APacket.GetLength()]));
+    PutLogMessage(Format('Command[%d]: %s (%d bytes)', [ARequestId, GetSFtpCommandName(ACommand), APacket.GetLength()]));
   end;
 end;
 
@@ -162,7 +161,7 @@ procedure TMainForm.clSFtpServer1SendResponse(Sender: TObject; AConnection: TclS
 begin
   if not (ACommand in [SSH_FXP_READ, SSH_FXP_WRITE, SSH_FXP_READDIR]) then
   begin
-    PutLogMessage(Format('Reply[%d]: %s (%d bytes)', [ARequestId, GetCommandName(ACommand), APacket.GetLength()]));
+    PutLogMessage(Format('Reply[%d]: %s (%d bytes)', [ARequestId, GetSFtpCommandName(ACommand), APacket.GetLength()]));
   end;
 end;
 
@@ -254,41 +253,6 @@ begin
  {$IFDEF DELPHIX101}
   Height := 513;
  {$ENDIF}
-end;
-
-function TMainForm.GetCommandName(AFxp: Integer): string;
-begin
-  case AFxp of
-    SSH_FXP_INIT: Result := 'SSH_FXP_INIT';
-    SSH_FXP_VERSION: Result := 'SSH_FXP_VERSION';
-    SSH_FXP_OPEN: Result := 'SSH_FXP_OPEN';
-    SSH_FXP_CLOSE: Result := 'SSH_FXP_CLOSE';
-    SSH_FXP_READ: Result := 'SSH_FXP_READ';
-    SSH_FXP_WRITE: Result := 'SSH_FXP_WRITE';
-    SSH_FXP_LSTAT: Result := 'SSH_FXP_LSTAT';
-    SSH_FXP_FSTAT: Result := 'SSH_FXP_FSTAT';
-    SSH_FXP_SETSTAT: Result := 'SSH_FXP_SETSTAT';
-    SSH_FXP_FSETSTAT: Result := 'SSH_FXP_FSETSTAT';
-    SSH_FXP_OPENDIR: Result := 'SSH_FXP_OPENDIR';
-    SSH_FXP_READDIR: Result := 'SSH_FXP_READDIR';
-    SSH_FXP_REMOVE: Result := 'SSH_FXP_REMOVE';
-    SSH_FXP_MKDIR: Result := 'SSH_FXP_MKDIR';
-    SSH_FXP_RMDIR: Result := 'SSH_FXP_RMDIR';
-    SSH_FXP_REALPATH: Result := 'SSH_FXP_REALPATH';
-    SSH_FXP_STAT: Result := 'SSH_FXP_STAT';
-    SSH_FXP_RENAME: Result := 'SSH_FXP_RENAME';
-    SSH_FXP_READLINK: Result := 'SSH_FXP_READLINK';
-    SSH_FXP_SYMLINK: Result := 'SSH_FXP_SYMLINK';
-    SSH_FXP_STATUS: Result := 'SSH_FXP_STATUS';
-    SSH_FXP_HANDLE: Result := 'SSH_FXP_HANDLE';
-    SSH_FXP_DATA: Result := 'SSH_FXP_DATA';
-    SSH_FXP_NAME: Result := 'SSH_FXP_NAME';
-    SSH_FXP_ATTRS: Result := 'SSH_FXP_ATTRS';
-    SSH_FXP_EXTENDED: Result := 'SSH_FXP_EXTENDED';
-    SSH_FXP_EXTENDED_REPLY: Result := 'SSH_FXP_EXTENDED_REPLY'
-  else
-    Result := 'UNKNOWN';
-  end;
 end;
 
 procedure TMainForm.LoadHostKey;

@@ -584,7 +584,7 @@ namespace FtpClientSSL
 					progressBar1.Maximum = size;
 					progressBar1.Value = position;
 
-					using (FileStream dest = new FileStream(saveFileDialog1.FileName, FileMode.Create))
+					using (FileStream dest = new FileStream(saveFileDialog1.FileName, FileMode.OpenOrCreate))
 					{
 						ftp1.GetFile(lbList.Items[lbList.SelectedIndex].ToString(), dest, position, -1);
 					}

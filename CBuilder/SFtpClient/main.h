@@ -74,10 +74,10 @@ __published:	// IDE-managed Components
           const UnicodeString AHostKey, bool &AVerified);
 
 private:	// User declarations
+  int __fastcall GetProgressBarPos(__int64 APosition, __int64 ASize);
   void __fastcall UpdateStatuses();
   void __fastcall DoOpenDir(const UnicodeString ADir);
   void __fastcall FillDirList();
-  UnicodeString __fastcall GetCommandName(int AFxp);
 public:		// User declarations
   __fastcall TMainForm(TComponent* Owner);
 };

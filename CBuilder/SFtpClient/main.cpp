@@ -43,6 +43,7 @@ void __fastcall TMainForm::btnLoginClick(TObject *Sender)
     DoOpenDir(edtStartDir->Text);
   }
   UpdateStatuses();
+  ProgressBar->Position = 0;
 }
 //---------------------------------------------------------------------------
 
@@ -51,6 +52,7 @@ void __fastcall TMainForm::btnLogoutClick(TObject *Sender)
   clSFtp1->Close();
   lbList->Items->Clear();
   UpdateStatuses();
+  ProgressBar->Position = 0;
 }
 //---------------------------------------------------------------------------
 
@@ -155,8 +157,8 @@ void __fastcall TMainForm::btnDownloadClick(TObject *Sender)
     SaveDialog->FileName = lbList->Items->Strings[lbList->ItemIndex];
     if(SaveDialog->Execute())
     {
-      int size = clSFtp1->GetFileSize(lbList->Items->Strings[lbList->ItemIndex]);
-      int position = 0;
+      __int64 size = clSFtp1->GetFileSize(lbList->Items->Strings[lbList->ItemIndex]);
+      __int64 position = 0;
       TStream *stream = NULL;
       __try
       {
@@ -185,9 +187,8 @@ void __fastcall TMainForm::btnDownloadClick(TObject *Sender)
         {
           stream = new TFileStream(SaveDialog->FileName, fmCreate);
         }
-        ProgressBar->Min = 0;
-        ProgressBar->Max = size;
-        ProgressBar->Position = position;
+        ProgressBar->Position = GetProgressBarPos(position, size);
+
         clSFtp1->GetFile(lbList->Items->Strings[lbList->ItemIndex], stream, position, size);
 	  }
 	  __finally
@@ -207,7 +208,7 @@ void __fastcall TMainForm::btnUploadClick(TObject *Sender)
 
   if(OpenDialog->Execute())
   {
-    int position = 0;
+    __int64 position = 0;
 	TStream *stream = new TFileStream(OpenDialog->FileName, fmOpenRead);
     __try
     {
@@ -224,9 +225,8 @@ void __fastcall TMainForm::btnUploadClick(TObject *Sender)
             position = 0;
         }
       }
-      ProgressBar->Min = 0;
-      ProgressBar->Max = stream->Size;
-      ProgressBar->Position = position;
+      ProgressBar->Position = GetProgressBarPos(position, stream->Size);
+
       clSFtp1->PutFile(stream, fileName, position, stream->Size - position);
 	}
 	__finally
@@ -310,8 +310,7 @@ void __fastcall TMainForm::clSFtp1DirectoryListing(TObject *Sender,
 void __fastcall TMainForm::clSFtp1Progress(TObject *Sender,
       __int64 ABytesProceed, __int64 ATotalBytes)
 {
-  ProgressBar->Position = ABytesProceed;
-  ProgressBar->Max = ATotalBytes;
+  ProgressBar->Position = GetProgressBarPos(ABytesProceed, ATotalBytes);
 }
 //---------------------------------------------------------------------------
 
@@ -320,7 +319,7 @@ void __fastcall TMainForm::clSFtp1ReceiveResponse(TObject *Sender,
 {
   if ((AFxpCommand != SSH_FXP_READ) && (AFxpCommand != SSH_FXP_WRITE) && (AFxpCommand != SSH_FXP_READDIR))
   {
-	memLog->Lines->Add(Format("S: %s (%d bytes)", ARRAYOFCONST((GetCommandName(AFxpCommand), (int)ABuffer->Size))));
+	memLog->Lines->Add(Format("S: %s (%d bytes)", ARRAYOFCONST((GetSFtpCommandName(AFxpCommand), (int)ABuffer->Size))));
   }
 }
 //---------------------------------------------------------------------------
@@ -330,7 +329,7 @@ void __fastcall TMainForm::clSFtp1SendCommand(TObject *Sender, int AFxpCommand,
 {
   if ((AFxpCommand != SSH_FXP_READ) && (AFxpCommand != SSH_FXP_WRITE) && (AFxpCommand != SSH_FXP_READDIR))
   {
-	memLog->Lines->Add(Format("C: %s (%d bytes)", ARRAYOFCONST((GetCommandName(AFxpCommand), (int)ABuffer->Size))));
+	memLog->Lines->Add(Format("C: %s (%d bytes)", ARRAYOFCONST((GetSFtpCommandName(AFxpCommand), (int)ABuffer->Size))));
   }
 }
 //---------------------------------------------------------------------------
@@ -352,38 +351,9 @@ void __fastcall TMainForm::clSFtp1VerifyServer(TObject *Sender, const UnicodeStr
 }
 //---------------------------------------------------------------------------
 
-UnicodeString __fastcall TMainForm::GetCommandName(int AFxp)
+int __fastcall TMainForm::GetProgressBarPos(__int64 APosition, __int64 ASize)
 {
-  switch (AFxp) {
-    case SSH_FXP_INIT: return "SSH_FXP_INIT";
-    case SSH_FXP_VERSION: return "SSH_FXP_VERSION";
-    case SSH_FXP_OPEN: return "SSH_FXP_OPEN";
-    case SSH_FXP_CLOSE: return "SSH_FXP_CLOSE";
-    case SSH_FXP_READ: return "SSH_FXP_READ";
-    case SSH_FXP_WRITE: return "SSH_FXP_WRITE";
-    case SSH_FXP_LSTAT: return "SSH_FXP_LSTAT";
-    case SSH_FXP_FSTAT: return "SSH_FXP_FSTAT";
-    case SSH_FXP_SETSTAT: return "SSH_FXP_SETSTAT";
-    case SSH_FXP_FSETSTAT: return "SSH_FXP_FSETSTAT";
-    case SSH_FXP_OPENDIR: return "SSH_FXP_OPENDIR";
-    case SSH_FXP_READDIR: return "SSH_FXP_READDIR";
-    case SSH_FXP_REMOVE: return "SSH_FXP_REMOVE";
-    case SSH_FXP_MKDIR: return "SSH_FXP_MKDIR";
-    case SSH_FXP_RMDIR: return "SSH_FXP_RMDIR";
-    case SSH_FXP_REALPATH: return "SSH_FXP_REALPATH";
-    case SSH_FXP_STAT: return "SSH_FXP_STAT";
-    case SSH_FXP_RENAME: return "SSH_FXP_RENAME";
-    case SSH_FXP_READLINK: return "SSH_FXP_READLINK";
-    case SSH_FXP_SYMLINK: return "SSH_FXP_SYMLINK";
-    case SSH_FXP_STATUS: return "SSH_FXP_STATUS";
-    case SSH_FXP_HANDLE: return "SSH_FXP_HANDLE";
-    case SSH_FXP_DATA: return "SSH_FXP_DATA";
-    case SSH_FXP_NAME: return "SSH_FXP_NAME";
-    case SSH_FXP_ATTRS: return "SSH_FXP_ATTRS";
-    case SSH_FXP_EXTENDED: return "SSH_FXP_EXTENDED";
-    case SSH_FXP_EXTENDED_REPLY: return "SSH_FXP_EXTENDED_REPLY";
-    default: return "UNKNOWN";
-  }
+  if (APosition == 0 || ASize == 0) return 0;
+  return floor((double)APosition / ASize * 100);
 }
-//---------------------------------------------------------------------------
 

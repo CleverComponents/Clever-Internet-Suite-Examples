@@ -63,6 +63,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
+    function GetProgressBarPos(APosition, ASize: Int64): Integer;
     procedure UpdateStatuses;
     procedure DoOpenDir(const ADir: string);
     procedure FillDirList;
@@ -134,6 +135,7 @@ begin
     DoOpenDir(edtStartDir.Text);
   end;
   UpdateStatuses();
+  ProgressBar.Position := 0;
 end;
 
 procedure TMainForm.btnLogoutClick(Sender: TObject);
@@ -141,6 +143,7 @@ begin
   clFTP.Close();
   lbList.Items.Clear();
   UpdateStatuses();
+  ProgressBar.Position := 0;
 end;
 
 procedure TMainForm.DoOpenDir(const ADir: string);
@@ -251,7 +254,8 @@ end;
 
 procedure TMainForm.btnDownloadClick(Sender: TObject);
 var
-  size, position, fileExistsResult: Integer;
+  size, position: Int64;
+  fileExistsResult: Integer;
   stream: TStream;
 begin
   if (lbList.ItemIndex > -1) and
@@ -289,9 +293,8 @@ begin
         begin
           stream := TFileStream.Create(SaveDialog.FileName, fmCreate);
         end;
-        ProgressBar.Min := 0;
-        ProgressBar.Max := size;
-        ProgressBar.Position := position;
+        ProgressBar.Position := GetProgressBarPos(position, size);
+
         clFTP.GetFile(lbList.Items[lbList.ItemIndex], stream, position, -1);
         ShowMessage('Done');
       finally
@@ -303,7 +306,8 @@ end;
 
 procedure TMainForm.btnUploadClick(Sender: TObject);
 var
-  position, fileExistsResult: Integer;
+  position: Int64;
+  fileExistsResult: Integer;
   stream: TStream;
   fileName: string;
 begin
@@ -326,9 +330,8 @@ begin
           end;
         end;
       end;
-      ProgressBar.Min := 0;
-      ProgressBar.Max := stream.Size;
-      ProgressBar.Position := position;
+      ProgressBar.Position := GetProgressBarPos(position, stream.Size);
+
       clFTP.PutFile(stream, fileName, position, -1);
       ShowMessage('Done');
     finally
@@ -359,8 +362,19 @@ end;
 procedure TMainForm.clFTPProgress(Sender: TObject; ABytesProceed,
   ATotalBytes: Int64);
 begin
-  ProgressBar.Position := ABytesProceed;
-  ProgressBar.Max := ATotalBytes;
+  ProgressBar.Position := GetProgressBarPos(ABytesProceed, ATotalBytes);
+  Application.ProcessMessages();
+end;
+
+function TMainForm.GetProgressBarPos(APosition, ASize: Int64): Integer;
+begin
+  if (APosition = 0) or (ASize = 0) then
+  begin
+    Result := 0;
+  end else
+  begin
+    Result := Round(APosition / ASize * 100);
+  end;
 end;
 
 end.

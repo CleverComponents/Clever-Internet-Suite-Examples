@@ -48,6 +48,7 @@ void __fastcall TMainForm::btnLoginClick(TObject *Sender)
     DoOpenDir(edtStartDir->Text);
   }
   UpdateStatuses();
+  ProgressBar->Position = 0;
 }
 //---------------------------------------------------------------------------
 
@@ -56,6 +57,7 @@ void __fastcall TMainForm::btnLogoutClick(TObject *Sender)
   clFTP->Close();
   lbList->Items->Clear();
   UpdateStatuses();
+  ProgressBar->Position = 0;
 }
 //---------------------------------------------------------------------------
 
@@ -168,8 +170,8 @@ void __fastcall TMainForm::btnDownloadClick(TObject *Sender)
     SaveDialog->FileName = lbList->Items->Strings[lbList->ItemIndex];
     if(SaveDialog->Execute())
     {
-      int size = clFTP->GetFileSize(lbList->Items->Strings[lbList->ItemIndex]);
-      int position = 0;
+      __int64 size = clFTP->GetFileSize(lbList->Items->Strings[lbList->ItemIndex]);
+      __int64 position = 0;
       TStream *stream = NULL;
 	  __try
       {
@@ -198,9 +200,8 @@ void __fastcall TMainForm::btnDownloadClick(TObject *Sender)
         {
           stream = new TFileStream(SaveDialog->FileName, fmCreate);
         }
-        ProgressBar->Min = 0;
-        ProgressBar->Max = size;
-        ProgressBar->Position = position;
+        ProgressBar->Position = GetProgressBarPos(position, size);
+
         clFTP->GetFile(lbList->Items->Strings[lbList->ItemIndex], stream, position, -1);
         ShowMessage("Done");
       }
@@ -219,7 +220,7 @@ void __fastcall TMainForm::btnUploadClick(TObject *Sender)
 
   if(OpenDialog->Execute())
   {
-    int position = 0;
+    __int64 position = 0;
     TStream *stream = new TFileStream(OpenDialog->FileName, fmOpenRead);
     __try
     {
@@ -236,9 +237,8 @@ void __fastcall TMainForm::btnUploadClick(TObject *Sender)
             position = 0;
         }
       }
-      ProgressBar->Min = 0;
-      ProgressBar->Max = stream->Size;
-      ProgressBar->Position = position;
+      ProgressBar->Position = GetProgressBarPos(position, stream->Size);
+
       clFTP->PutFile(stream, fileName, position, -1);
       ShowMessage("Done");
     }
@@ -336,8 +336,14 @@ void __fastcall TMainForm::FormDestroy(TObject *Sender)
 void __fastcall TMainForm::clFTPProgress(TObject *Sender,
 	  __int64 ABytesProceed, __int64 ATotalBytes)
 {
-  ProgressBar->Position = ABytesProceed;
-  ProgressBar->Max = ATotalBytes;
+  ProgressBar->Position = GetProgressBarPos(ABytesProceed, ATotalBytes);
+  Application->ProcessMessages();
 }
 //---------------------------------------------------------------------------
+
+int __fastcall TMainForm::GetProgressBarPos(__int64 APosition, __int64 ASize)
+{
+  if (APosition == 0 || ASize == 0) return 0;
+  return floor((double)APosition / ASize * 100);
+}
 

@@ -62,10 +62,10 @@ type
     procedure clSFtp1VerifyServer(Sender: TObject; const AHost, AKeyType,
       AFingerPrint, AHostKey: String; var AVerified: Boolean);
   private
+    function GetProgressBarPos(APosition, ASize: Int64): Integer;
     procedure UpdateStatuses;
     procedure DoOpenDir(const ADir: string);
     procedure FillDirList;
-    function GetCommandName(AFxp: Integer): string;
   end;
 
 var
@@ -117,6 +117,8 @@ begin
     DoOpenDir(edtStartDir.Text);
   end;
   UpdateStatuses();
+
+  ProgressBar.Position := 0;
 end;
 
 procedure TMainForm.btnLogoutClick(Sender: TObject);
@@ -124,6 +126,7 @@ begin
   clSFtp1.Close();
   lbList.Items.Clear();
   UpdateStatuses();
+  ProgressBar.Position := 0;
 end;
 
 procedure TMainForm.DoOpenDir(const ADir: string);
@@ -230,7 +233,8 @@ end;
 
 procedure TMainForm.btnDownloadClick(Sender: TObject);
 var
-  size, position, fileExistsResult: Integer;
+  size, position: Int64;
+  fileExistsResult: Integer;
   stream: TStream;
 begin
   if (lbList.ItemIndex > -1) and
@@ -268,9 +272,7 @@ begin
         begin
           stream := TFileStream.Create(SaveDialog.FileName, fmCreate);
         end;
-        ProgressBar.Min := 0;
-        ProgressBar.Max := size;
-        ProgressBar.Position := position;
+        ProgressBar.Position := GetProgressBarPos(position, size);
 
         clSFtp1.GetFile(lbList.Items[lbList.ItemIndex], stream, position, size);
       finally
@@ -284,7 +286,8 @@ end;
 
 procedure TMainForm.btnUploadClick(Sender: TObject);
 var
-  position, fileExistsResult: Integer;
+  position: Int64;
+  fileExistsResult: Integer;
   stream: TStream;
   fileName: string;
 begin
@@ -308,9 +311,7 @@ begin
           end;
         end;
       end;
-      ProgressBar.Min := 0;
-      ProgressBar.Max := stream.Size;
-      ProgressBar.Position := position;
+      ProgressBar.Position := GetProgressBarPos(position, stream.Size);
 
       clSFtp1.PutFile(stream, fileName, position, stream.Size - position);
     finally
@@ -333,15 +334,14 @@ end;
 
 procedure TMainForm.clSFtp1Progress(Sender: TObject; ABytesProceed, ATotalBytes: Int64);
 begin
-  ProgressBar.Position := ABytesProceed;
-  ProgressBar.Max := ATotalBytes;
+  ProgressBar.Position := GetProgressBarPos(ABytesProceed, ATotalBytes);
 end;
 
 procedure TMainForm.clSFtp1ReceiveResponse(Sender: TObject; AFxpCommand: Integer; ABuffer: TStream);
 begin
   if not (AFxpCommand in [SSH_FXP_READ, SSH_FXP_WRITE, SSH_FXP_READDIR]) then
   begin
-    memLog.Lines.Add(Format('S: %s (%d bytes)', [GetCommandName(AFxpCommand), ABuffer.Size]));
+    memLog.Lines.Add(Format('S: %s (%d bytes)', [GetSFtpCommandName(AFxpCommand), ABuffer.Size]));
   end;
 end;
 
@@ -349,7 +349,7 @@ procedure TMainForm.clSFtp1SendCommand(Sender: TObject; AFxpCommand: Integer; AB
 begin
   if not (AFxpCommand in [SSH_FXP_READ, SSH_FXP_WRITE, SSH_FXP_READDIR]) then
   begin
-    memLog.Lines.Add(Format('C: %s (%d bytes)', [GetCommandName(AFxpCommand), ABuffer.Size]));
+    memLog.Lines.Add(Format('C: %s (%d bytes)', [GetSFtpCommandName(AFxpCommand), ABuffer.Size]));
   end;
 end;
 
@@ -378,38 +378,14 @@ begin
   clSFtp1.Close();
 end;
 
-function TMainForm.GetCommandName(AFxp: Integer): string;
+function TMainForm.GetProgressBarPos(APosition, ASize: Int64): Integer;
 begin
-  case AFxp of
-    SSH_FXP_INIT: Result := 'SSH_FXP_INIT';
-    SSH_FXP_VERSION: Result := 'SSH_FXP_VERSION';
-    SSH_FXP_OPEN: Result := 'SSH_FXP_OPEN';
-    SSH_FXP_CLOSE: Result := 'SSH_FXP_CLOSE';
-    SSH_FXP_READ: Result := 'SSH_FXP_READ';
-    SSH_FXP_WRITE: Result := 'SSH_FXP_WRITE';
-    SSH_FXP_LSTAT: Result := 'SSH_FXP_LSTAT';
-    SSH_FXP_FSTAT: Result := 'SSH_FXP_FSTAT';
-    SSH_FXP_SETSTAT: Result := 'SSH_FXP_SETSTAT';
-    SSH_FXP_FSETSTAT: Result := 'SSH_FXP_FSETSTAT';
-    SSH_FXP_OPENDIR: Result := 'SSH_FXP_OPENDIR';
-    SSH_FXP_READDIR: Result := 'SSH_FXP_READDIR';
-    SSH_FXP_REMOVE: Result := 'SSH_FXP_REMOVE';
-    SSH_FXP_MKDIR: Result := 'SSH_FXP_MKDIR';
-    SSH_FXP_RMDIR: Result := 'SSH_FXP_RMDIR';
-    SSH_FXP_REALPATH: Result := 'SSH_FXP_REALPATH';
-    SSH_FXP_STAT: Result := 'SSH_FXP_STAT';
-    SSH_FXP_RENAME: Result := 'SSH_FXP_RENAME';
-    SSH_FXP_READLINK: Result := 'SSH_FXP_READLINK';
-    SSH_FXP_SYMLINK: Result := 'SSH_FXP_SYMLINK';
-    SSH_FXP_STATUS: Result := 'SSH_FXP_STATUS';
-    SSH_FXP_HANDLE: Result := 'SSH_FXP_HANDLE';
-    SSH_FXP_DATA: Result := 'SSH_FXP_DATA';
-    SSH_FXP_NAME: Result := 'SSH_FXP_NAME';
-    SSH_FXP_ATTRS: Result := 'SSH_FXP_ATTRS';
-    SSH_FXP_EXTENDED: Result := 'SSH_FXP_EXTENDED';
-    SSH_FXP_EXTENDED_REPLY: Result := 'SSH_FXP_EXTENDED_REPLY'
-  else
-    Result := 'UNKNOWN';
+  if (APosition = 0) or (ASize = 0) then
+  begin
+    Result := 0;
+  end else
+  begin
+    Result := Round(APosition / ASize * 100);
   end;
 end;
 

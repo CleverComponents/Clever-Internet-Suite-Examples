@@ -49,6 +49,12 @@ namespace SFTPClient
 			btnUpload.Enabled = enabled;
 		}
 
+		private int GetProgressBarPos(long position, long size)
+		{
+			if (position == 0 || size == 0) return 0;
+			return (int)System.Math.Round((decimal)position / size * 100);
+		}
+
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
 			if (sFtp1.Active)
@@ -71,6 +77,7 @@ namespace SFTPClient
 				DoOpenDir(edtStartDir.Text);
 			}
 			UpdateStatus();
+			progressBar1.Value = 0;
 		}
 
 		private void btnLogout_Click(object sender, EventArgs e)
@@ -78,6 +85,7 @@ namespace SFTPClient
 			sFtp1.Close();
 			lbList.Items.Clear();
 			UpdateStatus();
+			progressBar1.Value = 0;
 		}
 
 		private void btnOpenDir_Click(object sender, EventArgs e)
@@ -104,7 +112,7 @@ namespace SFTPClient
 				e.FxpCommand == SFtpCommand.SSH_FXP_WRITE ||
 				e.FxpCommand == SFtpCommand.SSH_FXP_READDIR) return;
 
-			memLog.Text += String.Format("C: {0} ({1} bytes)\r\n", GetCommandName(e.FxpCommand), e.Buffer.Length);
+			memLog.Text += String.Format("C: {0} ({1} bytes)\r\n", SFtpCommand.GetCommandName(e.FxpCommand), e.Buffer.Length);
 			memLog.Select(memLog.Text.Length, 0);
 			memLog.ScrollToCaret();
 		}
@@ -115,7 +123,7 @@ namespace SFTPClient
 				e.FxpCommand == SFtpCommand.SSH_FXP_WRITE ||
 				e.FxpCommand == SFtpCommand.SSH_FXP_READDIR) return;
 
-			memLog.Text += String.Format("S: {0} ({1} bytes)\r\n", GetCommandName(e.FxpCommand), e.Buffer.Length);
+			memLog.Text += String.Format("S: {0} ({1} bytes)\r\n", SFtpCommand.GetCommandName(e.FxpCommand), e.Buffer.Length);
 			memLog.Select(memLog.Text.Length, 0);
 			memLog.ScrollToCaret();
 		}
@@ -167,8 +175,8 @@ namespace SFTPClient
 				saveFileDialog1.FileName = lbList.Items[lbList.SelectedIndex].ToString();
 				if (saveFileDialog1.ShowDialog() == DialogResult.OK)
 				{
-					int size = (int)sFtp1.GetFileSize(lbList.Items[lbList.SelectedIndex].ToString());
-					int position = 0;
+					long size = sFtp1.GetFileSize(lbList.Items[lbList.SelectedIndex].ToString());
+					long position = 0;
 					if (File.Exists(saveFileDialog1.FileName))
 					{
 						DialogResult fileExistsResult = FileExistsDialog.ShowFileDialog(saveFileDialog1.FileName);
@@ -177,14 +185,13 @@ namespace SFTPClient
 						FileInfo fileInf = new FileInfo(saveFileDialog1.FileName);
 						if ((fileExistsResult == DialogResult.No) && (size > fileInf.Length))
 						{
-							position = (int)fileInf.Length;
+							position = fileInf.Length;
 						}
 					}
-					progressBar1.Minimum = 0;
-					progressBar1.Maximum = size;
-					progressBar1.Value = position;
 
-					using (FileStream dest = new FileStream(saveFileDialog1.FileName, FileMode.Create))
+					progressBar1.Value = GetProgressBarPos(position, size);
+
+					using (FileStream dest = new FileStream(saveFileDialog1.FileName, FileMode.OpenOrCreate))
 					{
 						sFtp1.GetFile(lbList.Items[lbList.SelectedIndex].ToString(), dest, position, size);
 					}
@@ -195,11 +202,8 @@ namespace SFTPClient
 
 		private void sFtp1_Progress(object sender, ProgressEventArgs e)
 		{
-			if (e.TotalBytes > 0)
-			{
-				progressBar1.Maximum = (int)e.TotalBytes;
-				progressBar1.Value = (int)e.BytesProceed;
-			}
+			progressBar1.Value = GetProgressBarPos(e.BytesProceed, e.TotalBytes);
+			Application.DoEvents();
 		}
 
 		private void btnUpload_Click(object sender, EventArgs e)
@@ -208,7 +212,7 @@ namespace SFTPClient
 
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
-				int position = 0;
+				long position = 0;
 				string fileName = Path.GetFileName(openFileDialog1.FileName);
 
 				FileInfo fileInf = new FileInfo(openFileDialog1.FileName);
@@ -221,18 +225,16 @@ namespace SFTPClient
 
 					if (fileExistsResult == DialogResult.No)
 					{
-						position = (int)sFtp1.GetFileSize(fileName);
+						position = sFtp1.GetFileSize(fileName);
 
-						if ((int)fileInf.Length <= position)
+						if (fileInf.Length <= position)
 						{
 							position = 0;
 						}
 					}
 				}
 
-				progressBar1.Minimum = 0;
-				progressBar1.Maximum = (int)fileInf.Length;
-				progressBar1.Value = position;
+				progressBar1.Value = GetProgressBarPos(position, fileInf.Length);
 
 				using (FileStream source = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read))
 				{
@@ -292,41 +294,6 @@ namespace SFTPClient
 			e.Verified = (MessageBox.Show("You are trying to connect to " +
 				e.Host + " host,\r\n Key Type: " + e.KeyType + "\r\n" + "Finger Print: " + e.FingerPrint
 				+ "\r\n\r\n" + "Do you wish to proceed ?", "Verify server", MessageBoxButtons.YesNo) == DialogResult.Yes);
-		}
-
-		private string GetCommandName(int fxp)
-		{
-			switch (fxp)
-			{
-				case SFtpCommand.SSH_FXP_INIT: return "SSH_FXP_INIT";
-				case SFtpCommand.SSH_FXP_VERSION: return "SSH_FXP_VERSION";
-				case SFtpCommand.SSH_FXP_OPEN: return "SSH_FXP_OPEN";
-				case SFtpCommand.SSH_FXP_CLOSE: return "SSH_FXP_CLOSE";
-				case SFtpCommand.SSH_FXP_READ: return "SSH_FXP_READ";
-				case SFtpCommand.SSH_FXP_WRITE: return "SSH_FXP_WRITE";
-				case SFtpCommand.SSH_FXP_LSTAT: return "SSH_FXP_LSTAT";
-				case SFtpCommand.SSH_FXP_FSTAT: return "SSH_FXP_FSTAT";
-				case SFtpCommand.SSH_FXP_SETSTAT: return "SSH_FXP_SETSTAT";
-				case SFtpCommand.SSH_FXP_FSETSTAT: return "SSH_FXP_FSETSTAT";
-				case SFtpCommand.SSH_FXP_OPENDIR: return "SSH_FXP_OPENDIR";
-				case SFtpCommand.SSH_FXP_READDIR: return "SSH_FXP_READDIR";
-				case SFtpCommand.SSH_FXP_REMOVE: return "SSH_FXP_REMOVE";
-				case SFtpCommand.SSH_FXP_MKDIR: return "SSH_FXP_MKDIR";
-				case SFtpCommand.SSH_FXP_RMDIR: return "SSH_FXP_RMDIR";
-				case SFtpCommand.SSH_FXP_REALPATH: return "SSH_FXP_REALPATH";
-				case SFtpCommand.SSH_FXP_STAT: return "SSH_FXP_STAT";
-				case SFtpCommand.SSH_FXP_RENAME: return "SSH_FXP_RENAME";
-				case SFtpCommand.SSH_FXP_READLINK: return "SSH_FXP_READLINK";
-				case SFtpCommand.SSH_FXP_SYMLINK: return "SSH_FXP_SYMLINK";
-				case SFtpCommand.SSH_FXP_STATUS: return "SSH_FXP_STATUS";
-				case SFtpCommand.SSH_FXP_HANDLE: return "SSH_FXP_HANDLE";
-				case SFtpCommand.SSH_FXP_DATA: return "SSH_FXP_DATA";
-				case SFtpCommand.SSH_FXP_NAME: return "SSH_FXP_NAME";
-				case SFtpCommand.SSH_FXP_ATTRS: return "SSH_FXP_ATTRS";
-				case SFtpCommand.SSH_FXP_EXTENDED: return "SSH_FXP_EXTENDED";
-				case SFtpCommand.SSH_FXP_EXTENDED_REPLY: return "SSH_FXP_EXTENDED_REPLY";
-			}
-			return "UNKNOWN";
 		}
 	}
 }

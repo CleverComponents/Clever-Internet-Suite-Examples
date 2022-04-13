@@ -169,67 +169,6 @@ Public Class MainForm
         SFtpServer1.MaxWindowSize = Convert.ToInt32(edtMaxWindowSize.Text)
     End Sub
 
-    Private Function GetCommandName(Fxp As Integer) As String
-        Select Case Fxp
-            Case SFtpCommand.SSH_FXP_INIT
-                Return "SSH_FXP_INIT"
-            Case SFtpCommand.SSH_FXP_VERSION
-                Return "SSH_FXP_VERSION"
-            Case SFtpCommand.SSH_FXP_OPEN
-                Return "SSH_FXP_OPEN"
-            Case SFtpCommand.SSH_FXP_CLOSE
-                Return "SSH_FXP_CLOSE"
-            Case SFtpCommand.SSH_FXP_READ
-                Return "SSH_FXP_READ"
-            Case SFtpCommand.SSH_FXP_WRITE
-                Return "SSH_FXP_WRITE"
-            Case SFtpCommand.SSH_FXP_LSTAT
-                Return "SSH_FXP_LSTAT"
-            Case SFtpCommand.SSH_FXP_FSTAT
-                Return "SSH_FXP_FSTAT"
-            Case SFtpCommand.SSH_FXP_SETSTAT
-                Return "SSH_FXP_SETSTAT"
-            Case SFtpCommand.SSH_FXP_FSETSTAT
-                Return "SSH_FXP_FSETSTAT"
-            Case SFtpCommand.SSH_FXP_OPENDIR
-                Return "SSH_FXP_OPENDIR"
-            Case SFtpCommand.SSH_FXP_READDIR
-                Return "SSH_FXP_READDIR"
-            Case SFtpCommand.SSH_FXP_REMOVE
-                Return "SSH_FXP_REMOVE"
-            Case SFtpCommand.SSH_FXP_MKDIR
-                Return "SSH_FXP_MKDIR"
-            Case SFtpCommand.SSH_FXP_RMDIR
-                Return "SSH_FXP_RMDIR"
-            Case SFtpCommand.SSH_FXP_REALPATH
-                Return "SSH_FXP_REALPATH"
-            Case SFtpCommand.SSH_FXP_STAT
-                Return "SSH_FXP_STAT"
-            Case SFtpCommand.SSH_FXP_RENAME
-                Return "SSH_FXP_RENAME"
-            Case SFtpCommand.SSH_FXP_READLINK
-                Return "SSH_FXP_READLINK"
-            Case SFtpCommand.SSH_FXP_SYMLINK
-                Return "SSH_FXP_SYMLINK"
-            Case SFtpCommand.SSH_FXP_STATUS
-                Return "SSH_FXP_STATUS"
-            Case SFtpCommand.SSH_FXP_HANDLE
-                Return "SSH_FXP_HANDLE"
-            Case SFtpCommand.SSH_FXP_DATA
-                Return "SSH_FXP_DATA"
-            Case SFtpCommand.SSH_FXP_NAME
-                Return "SSH_FXP_NAME"
-            Case SFtpCommand.SSH_FXP_ATTRS
-                Return "SSH_FXP_ATTRS"
-            Case SFtpCommand.SSH_FXP_EXTENDED
-                Return "SSH_FXP_EXTENDED"
-            Case SFtpCommand.SSH_FXP_EXTENDED_REPLY
-                Return "SSH_FXP_EXTENDED_REPLY"
-        End Select
-
-        Return "UNKNOWN"
-    End Function
-
     Private Delegate Sub PutLogMessageDelegate(ByVal logMessage As String)
 
     Private Sub PutLogMessage(ByVal logMessage As String)
@@ -263,7 +202,7 @@ Public Class MainForm
             Return
         End If
 
-        PutLogMessage(String.Format("Command[{0}]: {1} ({2} bytes)", e.RequestId, GetCommandName(e.Command), e.Packet.GetLength()))
+        PutLogMessage(String.Format("Command[{0}]: {1} ({2} bytes)", e.RequestId, SFtpCommand.GetCommandName(e.Command), e.Packet.GetLength()))
     End Sub
 
     Private Sub SFtpServer1_ResponseSent(sender As Object, e As SFtpServerEventArgs) Handles SFtpServer1.ResponseSent
@@ -273,7 +212,7 @@ Public Class MainForm
             Return
         End If
 
-        PutLogMessage(String.Format("Reply[{0}]: {1} ({2} bytes)", e.RequestId, GetCommandName(e.Command), e.Packet.GetLength()))
+        PutLogMessage(String.Format("Reply[{0}]: {1} ({2} bytes)", e.RequestId, SFtpCommand.GetCommandName(e.Command), e.Packet.GetLength()))
     End Sub
 
     Private Sub SFtpServer1_Started(sender As Object, e As EventArgs) Handles SFtpServer1.Started

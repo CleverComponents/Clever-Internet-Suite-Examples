@@ -11,7 +11,7 @@ copy "$(update)\data.xml" "$(app)\data.xml"
 	</update>
 	<update url="webupdate3.zip" size="295 Kb" version="3" status="download" terminate="yes">
 		<script><![CDATA[pkzipc -ext -over=all "$(update)\webupdate3.zip"
-copy "$(update)\WebUpdateApp.exe" "$(app)\WebUpdateApp.exe"
+copy "$(update)\WebUpdApp.exe" "$(app)\WebUpdApp.exe"
 ]]></script>
 	</update>
 </updateinfo>

@@ -161,41 +161,6 @@ namespace SFtpServer
 			sFtpServer1.MaxWindowSize = Convert.ToInt32(edtMaxWindowSize.Text);
 		}
 
-		private string GetCommandName(int fxp)
-		{
-			switch (fxp)
-			{
-				case SFtpCommand.SSH_FXP_INIT: return "SSH_FXP_INIT";
-				case SFtpCommand.SSH_FXP_VERSION: return "SSH_FXP_VERSION";
-				case SFtpCommand.SSH_FXP_OPEN: return "SSH_FXP_OPEN";
-				case SFtpCommand.SSH_FXP_CLOSE: return "SSH_FXP_CLOSE";
-				case SFtpCommand.SSH_FXP_READ: return "SSH_FXP_READ";
-				case SFtpCommand.SSH_FXP_WRITE: return "SSH_FXP_WRITE";
-				case SFtpCommand.SSH_FXP_LSTAT: return "SSH_FXP_LSTAT";
-				case SFtpCommand.SSH_FXP_FSTAT: return "SSH_FXP_FSTAT";
-				case SFtpCommand.SSH_FXP_SETSTAT: return "SSH_FXP_SETSTAT";
-				case SFtpCommand.SSH_FXP_FSETSTAT: return "SSH_FXP_FSETSTAT";
-				case SFtpCommand.SSH_FXP_OPENDIR: return "SSH_FXP_OPENDIR";
-				case SFtpCommand.SSH_FXP_READDIR: return "SSH_FXP_READDIR";
-				case SFtpCommand.SSH_FXP_REMOVE: return "SSH_FXP_REMOVE";
-				case SFtpCommand.SSH_FXP_MKDIR: return "SSH_FXP_MKDIR";
-				case SFtpCommand.SSH_FXP_RMDIR: return "SSH_FXP_RMDIR";
-				case SFtpCommand.SSH_FXP_REALPATH: return "SSH_FXP_REALPATH";
-				case SFtpCommand.SSH_FXP_STAT: return "SSH_FXP_STAT";
-				case SFtpCommand.SSH_FXP_RENAME: return "SSH_FXP_RENAME";
-				case SFtpCommand.SSH_FXP_READLINK: return "SSH_FXP_READLINK";
-				case SFtpCommand.SSH_FXP_SYMLINK: return "SSH_FXP_SYMLINK";
-				case SFtpCommand.SSH_FXP_STATUS: return "SSH_FXP_STATUS";
-				case SFtpCommand.SSH_FXP_HANDLE: return "SSH_FXP_HANDLE";
-				case SFtpCommand.SSH_FXP_DATA: return "SSH_FXP_DATA";
-				case SFtpCommand.SSH_FXP_NAME: return "SSH_FXP_NAME";
-				case SFtpCommand.SSH_FXP_ATTRS: return "SSH_FXP_ATTRS";
-				case SFtpCommand.SSH_FXP_EXTENDED: return "SSH_FXP_EXTENDED";
-				case SFtpCommand.SSH_FXP_EXTENDED_REPLY: return "SSH_FXP_EXTENDED_REPLY";
-			}
-			return "UNKNOWN";
-		}
-
 		private void sFtpServer1_ConnectionAccepted(object sender, CleverComponents.InetSuite.ConnectionAcceptedEventArgs e)
 		{
 			PutLogMessage("Accept Connection. Host: " + e.Connection.PeerIP);
@@ -215,7 +180,7 @@ namespace SFtpServer
 				e.Command == SFtpCommand.SSH_FXP_WRITE ||
 				e.Command == SFtpCommand.SSH_FXP_READDIR) return;
 
-			PutLogMessage(String.Format("Command[{0}]: {1} ({2} bytes)", e.RequestId, GetCommandName(e.Command), e.Packet.GetLength()));
+			PutLogMessage(String.Format("Command[{0}]: {1} ({2} bytes)", e.RequestId, SFtpCommand.GetCommandName(e.Command), e.Packet.GetLength()));
 		}
 
 		private void sFtpServer1_ResponseSent(object sender, CleverComponents.InetSuite.SFtpServerEventArgs e)
@@ -224,7 +189,7 @@ namespace SFtpServer
 				e.Command == SFtpCommand.SSH_FXP_WRITE ||
 				e.Command == SFtpCommand.SSH_FXP_READDIR) return;
 
-			PutLogMessage(String.Format("Reply[{0}]: {1} ({2} bytes)", e.RequestId, GetCommandName(e.Command), e.Packet.GetLength()));
+			PutLogMessage(String.Format("Reply[{0}]: {1} ({2} bytes)", e.RequestId, SFtpCommand.GetCommandName(e.Command), e.Packet.GetLength()));
 		}
 
 		private void sFtpServer1_Started(object sender, EventArgs e)
