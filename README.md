@@ -8,7 +8,8 @@ They are intended to demonstrate the usage of the [Clever Internet Suite](https:
 
 ## What's new
 
-[SFTP server (FTP+SSH)](./Delphi/SFtpServer) - The example implements a fully functional SFTP server with multi-session support, which works via the SSH File Transfer Protocol.
+[SFTP server (FTP+SSH)](./Delphi/SFtpServer) - The example implements a fully functional SFTP server with multi-session support, which works via the SSH File Transfer Protocol.   
+FTP and SFTP client demos were fixed to display the progress information correctly for large files.
 
 ## Clever Internet Suite Demos for Delphi
 
