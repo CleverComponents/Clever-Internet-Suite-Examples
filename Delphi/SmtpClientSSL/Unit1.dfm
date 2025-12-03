@@ -2,6 +2,9 @@ inherited Form1: TForm1
   Left = 569
   Top = 200
   Caption = 'SMTP Client with SSL / TLS support - Sample'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -116,6 +119,7 @@ inherited Form1: TForm1
       Top = 160
       Width = 598
       Height = 162
+      Anchors = [akLeft, akTop, akRight, akBottom]
       Lines.Strings = (
         'Dear Sir/Madam,'
         ''
@@ -152,6 +156,7 @@ inherited Form1: TForm1
       Top = 329
       Width = 122
       Height = 25
+      Anchors = [akRight, akBottom]
       Caption = 'Send'
       TabOrder = 9
       OnClick = btnSendClick

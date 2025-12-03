@@ -1,6 +1,8 @@
 inherited MainForm: TMainForm
   Left = 286
   Top = 55
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Simulate Web Form POST request - Sample'
   Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery

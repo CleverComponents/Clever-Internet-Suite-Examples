@@ -3,10 +3,9 @@ inherited Form1: TForm1
   Top = 255
   BorderStyle = bsDialog
   Caption = 'SOAP Temperature Converter Service'
-  ClientHeight = 265
+  ClientHeight = 256
   ClientWidth = 619
   OldCreateOrder = True
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlLogo: TPanel

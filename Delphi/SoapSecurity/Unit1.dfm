@@ -1,14 +1,16 @@
 inherited Form1: TForm1
   Left = 305
   Top = 71
-  Height = 608
+  ClientHeight = 570
   Caption = 'SOAP Security - Encrypt / Decrypt, Sign / Verify  - Sample'
+  Constraints.MinHeight = 608
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   OnCreate = FormCreate
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 491
+    Height = 492
     object Label4: TLabel
       Left = 16
       Top = 214
@@ -63,6 +65,7 @@ inherited Form1: TForm1
       Top = 323
       Width = 505
       Height = 158
+      Anchors = [akLeft, akTop, akRight, akBottom]
       ReadOnly = True
       ScrollBars = ssBoth
       TabOrder = 7
@@ -90,6 +93,7 @@ inherited Form1: TForm1
       Top = 323
       Width = 89
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = 'Certificates'
       TabOrder = 8
       OnClick = btnCertificatesClick
@@ -259,7 +263,6 @@ inherited Form1: TForm1
     Header.Accept = '*/*'
     Addressing = <>
     Signatures = <>
-    EncryptedKey.ID = ''
     EncryptedKey.KeyClassName = 'TclXmlSKIKeyInfo'
     EncryptedKey.EncryptionMethod = 'http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p'
     EncryptedKey.References = <>

@@ -2,8 +2,6 @@ unit Unit1;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, clGZip, ComCtrls, DemoBaseFormUnit, ExtCtrls;
@@ -29,7 +27,6 @@ type
     procedure btnCompressClick(Sender: TObject);
     procedure btnUncompressClick(Sender: TObject);
     procedure clGZip1Progress(Sender: TObject; ABytesProceed, ATotalBytes: Int64);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,13 +81,6 @@ procedure TForm1.clGZip1Progress(Sender: TObject; ABytesProceed, ATotalBytes: In
 begin
   ProgressBar1.Max := ATotalBytes;
   ProgressBar1.Position := ABytesProceed;
-end;
-
-procedure TForm1.FormShow(Sender: TObject);
-begin
- {$IFDEF DELPHIX101}
-  Height := 293;
- {$ENDIF}
 end;
 
 end.

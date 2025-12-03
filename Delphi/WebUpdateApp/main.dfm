@@ -2,7 +2,10 @@ inherited MainForm: TMainForm
   Left = 457
   Top = 181
   Caption = 'Clever Web Update Application - Sample'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
   ParentFont = True
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -10,7 +13,7 @@ inherited MainForm: TMainForm
   inherited pnlMain: TPanel
     object StatusBar: TStatusBar
       Left = 0
-      Top = 344
+      Top = 345
       Width = 623
       Height = 19
       Panels = <
@@ -31,7 +34,7 @@ inherited MainForm: TMainForm
       Left = 0
       Top = 0
       Width = 623
-      Height = 303
+      Height = 304
       Align = alClient
       Lines.Strings = (
         ''
@@ -56,8 +59,8 @@ inherited MainForm: TMainForm
           'You can learn more about the Web Updater functionality from the ' +
           'article available at '
         
-          'https://www.clevercomponents.com/articles/article023/webupdater2.' +
-          'asp'
+          'https://www.clevercomponents.com/articles/article023/webupdater2' +
+          '.asp'
         ''
         ''
         ''
@@ -69,7 +72,7 @@ inherited MainForm: TMainForm
     end
     object pnlBottom: TPanel
       Left = 0
-      Top = 303
+      Top = 304
       Width = 623
       Height = 41
       Align = alBottom
@@ -150,8 +153,8 @@ inherited MainForm: TMainForm
     ProductName = 'Updater Sample'
     Author = 'Clever Components'
     UpdateURL = 
-      'https://www.clevercomponents.com/demo/inetsuite/samples/webupdate' +
-      '6/webupdate.xml'
+      'https://www.clevercomponents.com/demo/inetsuite/samples/webupdat' +
+      'e6/webupdate.xml'
     UpdateDir = '.\webupdate'
     ActualUpdateInfoFile = '.\webupdate\lastupdate.xml'
     VersionFormat = vfNumber

@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, clTcpClient, clMC, clImap4, clImapUtils, ImgList, clMailMessage,
@@ -468,10 +466,6 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
- {$IFDEF DELPHIX101}
-  Height := 547;
-  Width := 694;
- {$ENDIF}
   FSubscribeStatus := TStringList.Create();
   UpdateStatuses();
 end;

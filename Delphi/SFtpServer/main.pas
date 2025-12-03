@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, SyncObjs, ExtCtrls, ComCtrls, clServerGuard, DemoBaseFormUnit,
@@ -102,7 +100,6 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure btnStartClick(Sender: TObject);
     procedure btnStopClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure clSFtpServer1ReceiveRequest(Sender: TObject; AConnection: TclSFtpUserConnection;
       ACommand: Byte; ARequestId: Cardinal; APacket: TclSshPacket);
     procedure clSFtpServer1SendResponse(Sender: TObject; AConnection: TclSFtpUserConnection;
@@ -246,13 +243,6 @@ begin
   finally
     FIsStop := False;
   end;
-end;
-
-procedure TMainForm.FormShow(Sender: TObject);
-begin
- {$IFDEF DELPHIX101}
-  Height := 513;
- {$ENDIF}
 end;
 
 procedure TMainForm.LoadHostKey;

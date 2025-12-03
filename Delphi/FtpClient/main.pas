@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ComCtrls, StdCtrls, clFTP, clFTPUtils, clUtils, newDlg, fileDlg,
@@ -80,9 +78,6 @@ implementation
 
 procedure TMainForm.FormShow(Sender: TObject);
 begin
- {$IFDEF DELPHIX101}
-  Height := 550;
- {$ENDIF}
   UpdateStatuses();
 end;
 

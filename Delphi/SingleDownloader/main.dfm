@@ -1,8 +1,10 @@
 inherited DownLoaderTest: TDownLoaderTest
   Left = 258
   Top = 189
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Single DownLoader - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
@@ -10,7 +12,7 @@ inherited DownLoaderTest: TDownLoaderTest
     object Label1: TLabel
       Left = 7
       Top = 52
-      Width = 22
+      Width = 19
       Height = 13
       Caption = 'URL'
     end
@@ -24,7 +26,7 @@ inherited DownLoaderTest: TDownLoaderTest
     object Label3: TLabel
       Left = 7
       Top = 281
-      Width = 37
+      Width = 38
       Height = 13
       Caption = 'Statistic'
     end
@@ -38,7 +40,7 @@ inherited DownLoaderTest: TDownLoaderTest
     object Label4: TLabel
       Left = 9
       Top = 221
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
@@ -52,7 +54,7 @@ inherited DownLoaderTest: TDownLoaderTest
     object Label7: TLabel
       Left = 7
       Top = 132
-      Width = 43
+      Width = 42
       Height = 13
       Caption = 'URL Info'
     end
@@ -107,14 +109,14 @@ inherited DownLoaderTest: TDownLoaderTest
     object Label11: TLabel
       Left = 477
       Top = 105
-      Width = 28
+      Width = 30
       Height = 13
       Caption = 'Buffer'
     end
     object Label12: TLabel
       Left = 16
       Top = 6
-      Width = 471
+      Width = 470
       Height = 13
       Caption = 
         'This demo downloads files from server via the following Network ' +
@@ -129,7 +131,7 @@ inherited DownLoaderTest: TDownLoaderTest
     object Label13: TLabel
       Left = 16
       Top = 24
-      Width = 459
+      Width = 452
       Height = 13
       Caption = 
         'Please set the "http://" URL value for HTTP protocol, "https://"' +
@@ -285,14 +287,14 @@ inherited DownLoaderTest: TDownLoaderTest
     InternetAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
     ThreadCount = 2
     URL = 'https://www.clevercomponents.com/images/testimage.jpg'
-    LocalFile = 'c:\testimage.jpg'
+    LocalFile = 'c:\downloads\testimage.jpg'
     OnStatusChanged = clDownLoader1StatusChanged
     OnGetResourceInfo = clDownLoader1GetResourceInfo
     OnDataItemProceed = clDownLoader1DataItemProceed
     OnError = clDownLoader1Error
     OnUrlParsing = clDownLoader1URLParsing
     OnChanged = clDownLoader1Changed
-    LocalFolder = 'c:\'
+    LocalFolder = 'c:\downloads\'
     OnDataTextProceed = clDownLoader1DataTextProceed
     Left = 154
     Top = 57

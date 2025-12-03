@@ -1,8 +1,10 @@
 inherited UploaderTest: TUploaderTest
   Left = 258
   Top = 189
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Single Uploader - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
@@ -10,7 +12,7 @@ inherited UploaderTest: TUploaderTest
     object Label1: TLabel
       Left = 8
       Top = 92
-      Width = 22
+      Width = 19
       Height = 13
       Caption = 'URL'
     end
@@ -24,14 +26,14 @@ inherited UploaderTest: TUploaderTest
     object Label3: TLabel
       Left = 8
       Top = 278
-      Width = 34
+      Width = 37
       Height = 13
       Caption = 'Current'
     end
     object Label4: TLabel
       Left = 8
       Top = 212
-      Width = 27
+      Width = 29
       Height = 13
       Caption = 'Errors'
     end
@@ -45,7 +47,7 @@ inherited UploaderTest: TUploaderTest
     object Label7: TLabel
       Left = 8
       Top = 143
-      Width = 43
+      Width = 42
       Height = 13
       Caption = 'URL Info'
     end
@@ -102,7 +104,7 @@ inherited UploaderTest: TUploaderTest
     object Label13: TLabel
       Left = 16
       Top = 24
-      Width = 459
+      Width = 452
       Height = 13
       Caption = 
         'Please set the "http://" URL value for HTTP protocol, "https://"' +
@@ -117,7 +119,7 @@ inherited UploaderTest: TUploaderTest
     object Label8: TLabel
       Left = 16
       Top = 48
-      Width = 559
+      Width = 546
       Height = 26
       Caption = 
         'Please note ! For uploading files via HTTP / HTTPS protocol, the' +
@@ -227,7 +229,7 @@ inherited UploaderTest: TUploaderTest
     OnGetResourceInfo = clUploader1GetResourceInfo
     OnDataItemProceed = clUploader1DataItemProceed
     OnError = clUploader1Error
-    OnUrlParsing = clUploader1URLParsing
+    OnUrlParsing = clUploader1UrlParsing
     OnChanged = clUploader1Changed
     RequestMethod = 'PUT'
     Left = 184

@@ -1,8 +1,10 @@
 inherited Form1: TForm1
   Left = 249
   Top = 133
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'News Reader (by groups) - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -16,7 +18,7 @@ inherited Form1: TForm1
     object Label2: TLabel
       Left = 14
       Top = 44
-      Width = 59
+      Width = 58
       Height = 13
       Caption = 'News Group'
     end
@@ -26,7 +28,7 @@ inherited Form1: TForm1
       Width = 527
       Height = 21
       TabOrder = 0
-      Text = 'forums.embarcadero.com'
+      Text = 'news.usenetserver.com'
     end
     object btnConnect: TButton
       Left = 12

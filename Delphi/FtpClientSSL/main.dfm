@@ -1,8 +1,10 @@
 inherited MainForm: TMainForm
   Left = 390
   Top = 112
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Ftp Client SSL / TLS - Sample'
-  ClientHeight = 511
+  ClientHeight = 512
   Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow

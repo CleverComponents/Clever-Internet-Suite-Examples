@@ -1,14 +1,16 @@
 inherited Form1: TForm1
   Left = 286
   Top = 95
-  Height = 596
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'TclProgressBar - Sample'
-  Font.Name = 'Tahoma'
+  ClientHeight = 558
+  OldCreateOrder = True
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 479
+    Height = 480
     object clProgressBar1: TclProgressBar
       Left = 30
       Top = 134
@@ -172,49 +174,49 @@ inherited Form1: TForm1
     object Label2: TLabel
       Left = 16
       Top = 90
-      Width = 61
+      Width = 62
       Height = 13
       Caption = 'Vertical Style'
     end
     object Label3: TLabel
       Left = 96
       Top = 91
-      Width = 73
+      Width = 75
       Height = 13
       Caption = 'Horizontal Style'
     end
     object Label4: TLabel
       Left = 30
       Top = 110
-      Width = 89
+      Width = 87
       Height = 13
       Caption = 'Windows Theme 1'
     end
     object Label5: TLabel
       Left = 94
       Top = 169
-      Width = 89
+      Width = 87
       Height = 13
       Caption = 'Windows Theme 2'
     end
     object Label6: TLabel
       Left = 94
       Top = 218
-      Width = 213
+      Width = 210
       Height = 13
       Caption = '3D look style with Windows XP color scheme'
     end
     object Label7: TLabel
       Left = 94
       Top = 271
-      Width = 216
+      Width = 215
       Height = 13
       Caption = 'Flat look style with Windows XP color scheme'
     end
     object Label8: TLabel
       Left = 16
       Top = 336
-      Width = 267
+      Width = 276
       Height = 13
       Caption = 'The sample of painting a progress on an arbitrary surface'
     end

@@ -1,6 +1,8 @@
 inherited MainForm: TMainForm
   Left = 192
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Clever FTP Server SSL / TLS'
   Font.Name = 'Tahoma'
   OnCreate = FormCreate

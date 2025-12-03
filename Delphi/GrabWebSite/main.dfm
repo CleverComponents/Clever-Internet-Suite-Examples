@@ -2,7 +2,8 @@ inherited Form1: TForm1
   Left = 248
   Top = 114
   Caption = 'Grab Website - Sample'
-  Font.Name = 'Tahoma'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
@@ -10,7 +11,7 @@ inherited Form1: TForm1
     object Label1: TLabel
       Left = 136
       Top = 16
-      Width = 358
+      Width = 362
       Height = 13
       Caption = 
         'This demo downloads all website pages and available resources re' +
@@ -25,7 +26,7 @@ inherited Form1: TForm1
     object Label2: TLabel
       Left = 112
       Top = 40
-      Width = 395
+      Width = 404
       Height = 13
       Caption = 
         'Please select the root website URL at which you want to start th' +
@@ -40,28 +41,28 @@ inherited Form1: TForm1
     object Label3: TLabel
       Left = 16
       Top = 72
-      Width = 48
+      Width = 45
       Height = 13
       Caption = 'Root URL'
     end
     object Label4: TLabel
       Left = 16
       Top = 104
-      Width = 47
+      Width = 48
       Height = 13
       Caption = 'Target Dir'
     end
     object Label5: TLabel
       Left = 16
       Top = 232
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
     object Label6: TLabel
       Left = 352
       Top = 142
-      Width = 74
+      Width = 73
       Height = 13
       Caption = 'Max Nest Level'
     end
@@ -135,17 +136,17 @@ inherited Form1: TForm1
     end
     object memLog: TMemo
       Left = 0
-      Top = 249
+      Top = 250
       Width = 623
       Height = 95
-      Align = alBottom
+      Anchors = [akLeft, akTop, akRight, akBottom]
       ReadOnly = True
       ScrollBars = ssVertical
       TabOrder = 5
     end
     object StatusBar1: TStatusBar
       Left = 0
-      Top = 344
+      Top = 345
       Width = 623
       Height = 19
       Panels = <

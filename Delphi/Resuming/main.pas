@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, clDC, clMultiDC, clSingleDC, clDownLoader, StdCtrls, clProgressBar, clProgressBarDC,
@@ -162,9 +160,6 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
- {$IFDEF DELPHIX101}
-  Height := 298;
- {$ENDIF}
   FResourceInfoFile := ExtractFilePath(ParamStr(0));
   if (FResourceInfoFile <> '') and (FResourceInfoFile[Length(FResourceInfoFile)] <> '\') then
   begin

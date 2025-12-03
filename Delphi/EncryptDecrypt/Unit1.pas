@@ -2,8 +2,6 @@ unit Unit1;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, clEncryptor, getcert, DemoBaseFormUnit, ExtCtrls;
@@ -29,7 +27,6 @@ type
     procedure btnDecryptClick(Sender: TObject);
     procedure clEncryptor1Progress(Sender: TObject; ABytesProceed,
       ATotalBytes: Int64);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -105,13 +102,6 @@ procedure TForm1.clEncryptor1Progress(Sender: TObject; ABytesProceed, ATotalByte
 begin
   ProgressBar1.Max := ATotalBytes;
   ProgressBar1.Position := ABytesProceed;
-end;
-
-procedure TForm1.FormShow(Sender: TObject);
-begin
- {$IFDEF DELPHIX101}
-  Height := 278;
- {$ENDIF}
 end;
 
 end.

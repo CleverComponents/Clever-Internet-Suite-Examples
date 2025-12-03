@@ -2,7 +2,9 @@ inherited MainForm: TMainForm
   Left = 408
   Top = 110
   Caption = 'Clever SMTP Server - Sample'
-  Font.Name = 'Tahoma'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -11,14 +13,14 @@ inherited MainForm: TMainForm
     object Label1: TLabel
       Left = 8
       Top = 238
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
     object Label2: TLabel
       Left = 8
       Top = 112
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -32,7 +34,7 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 23
       Top = 77
-      Width = 456
+      Width = 429
       Height = 26
       Caption = 
         'Please use the "CleverTester" user name and "clevertester" passw' +
@@ -55,7 +57,7 @@ inherited MainForm: TMainForm
     object Label7: TLabel
       Left = 194
       Top = 113
-      Width = 81
+      Width = 73
       Height = 13
       Caption = 'SSL / TLS Mode'
     end
@@ -80,7 +82,7 @@ inherited MainForm: TMainForm
     object Label8: TLabel
       Left = 23
       Top = 42
-      Width = 579
+      Width = 543
       Height = 26
       Caption = 
         'This server uses self-signed server certificate to establish the' +
@@ -115,10 +117,10 @@ inherited MainForm: TMainForm
     end
     object memLog: TMemo
       Left = 0
-      Top = 254
+      Top = 255
       Width = 623
       Height = 109
-      Align = alBottom
+      Anchors = [akLeft, akTop, akRight, akBottom]
       ReadOnly = True
       ScrollBars = ssVertical
       TabOrder = 6

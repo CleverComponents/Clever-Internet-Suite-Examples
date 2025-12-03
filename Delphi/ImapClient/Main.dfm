@@ -1,10 +1,12 @@
 inherited Form1: TForm1
   Left = 200
   Top = 137
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'IMAP4 Client - Sample'
   ClientHeight = 508
   ClientWidth = 678
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -24,14 +26,14 @@ inherited Form1: TForm1
     object Label1: TLabel
       Left = 24
       Top = 23
-      Width = 31
+      Width = 32
       Height = 13
       Caption = 'Server'
     end
     object Label2: TLabel
       Left = 338
       Top = 43
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -52,14 +54,14 @@ inherited Form1: TForm1
     object Label3: TLabel
       Left = 338
       Top = 70
-      Width = 51
+      Width = 52
       Height = 13
       Caption = 'TimeOut, s'
     end
     object Label11: TLabel
       Left = 16
       Top = 318
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
@@ -179,28 +181,28 @@ inherited Form1: TForm1
       object Label7: TLabel
         Left = 16
         Top = 24
-        Width = 53
+        Width = 52
         Height = 13
         Caption = 'Subscribed'
       end
       object Label8: TLabel
         Left = 16
         Top = 51
-        Width = 62
+        Width = 61
         Height = 13
         Caption = 'All Messages'
       end
       object Label9: TLabel
         Left = 176
         Top = 21
-        Width = 86
+        Width = 84
         Height = 13
         Caption = 'Recent Messages'
       end
       object Label10: TLabel
         Left = 176
         Top = 48
-        Width = 59
+        Width = 60
         Height = 13
         Caption = 'First Unseen'
       end

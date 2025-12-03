@@ -5,12 +5,12 @@
 ]]></script>
 	</update>
 	<update url="webupdate2.zip" size="392 bytes" version="2" status="download" terminate="no">
-		<script><![CDATA[pkzipc -ext -over=all "$(update)\webupdate2.zip"
+		<script><![CDATA[7z x -y "$(update)\webupdate2.zip"
 copy "$(update)\data.xml" "$(app)\data.xml"
 ]]></script>
 	</update>
 	<update url="webupdate3.zip" size="295 Kb" version="3" status="download" terminate="yes">
-		<script><![CDATA[pkzipc -ext -over=all "$(update)\webupdate3.zip"
+		<script><![CDATA[7z x -y "$(update)\webupdate3.zip"
 copy "$(update)\WebUpdApp.exe" "$(app)\WebUpdApp.exe"
 ]]></script>
 	</update>

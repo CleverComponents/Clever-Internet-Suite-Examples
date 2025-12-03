@@ -3,6 +3,7 @@ object NewDialog: TNewDialog
   Top = 62
   Width = 279
   Height = 139
+  BorderStyle = bsDialog
   Caption = 'NewDialog'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

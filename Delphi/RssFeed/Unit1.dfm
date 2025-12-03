@@ -1,7 +1,10 @@
 inherited Form1: TForm1
   Left = 412
   Top = 154
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'RSS Feed - Sample'
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -91,7 +94,7 @@ inherited Form1: TForm1
       Width = 237
       Height = 21
       TabOrder = 3
-      Text = 'Copyright 2009 Company Inc.'
+      Text = 'Copyright (C) Company Inc.'
     end
     object edtLanguage: TEdit
       Left = 80
@@ -115,7 +118,7 @@ inherited Form1: TForm1
       Width = 533
       Height = 21
       TabOrder = 6
-      Text = 'Clever Internet Suite 7.0 RSS Component'
+      Text = 'Clever Internet Suite RSS Component'
     end
     object edtImageUrl: TEdit
       Left = 80

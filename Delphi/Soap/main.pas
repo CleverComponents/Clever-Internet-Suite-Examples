@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics,
   Controls, Forms, Dialogs, StdCtrls, clHttpRequest,
@@ -25,7 +23,6 @@ type
     rbUseSoapXml: TRadioButton;
     procedure btnC2FClick(Sender: TObject);
     procedure btnF2CClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -119,13 +116,6 @@ begin
   begin
     edtCelsius.Text := string(node.text);
   end;
-end;
-
-procedure TForm1.FormShow(Sender: TObject);
-begin
- {$IFDEF DELPHIX101}
-  Height := 294;
- {$ENDIF}
 end;
 
 end.

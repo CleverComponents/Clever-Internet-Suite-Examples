@@ -1,14 +1,15 @@
 inherited Form1: TForm1
   Left = 192
   Top = 114
-  Height = 293
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'GZip / Deflate - Sample'
-  Font.Name = 'Tahoma'
-  OnShow = FormShow
+  ClientHeight = 255
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 176
+    Height = 177
     object Label1: TLabel
       Left = 8
       Top = 8
@@ -29,14 +30,14 @@ inherited Form1: TForm1
     object Label2: TLabel
       Left = 13
       Top = 63
-      Width = 53
+      Width = 52
       Height = 13
       Caption = 'Source File'
     end
     object Label3: TLabel
       Left = 13
       Top = 96
-      Width = 72
+      Width = 73
       Height = 13
       Caption = 'Destination File'
     end
@@ -109,7 +110,7 @@ inherited Form1: TForm1
     end
     object ProgressBar1: TProgressBar
       Left = 0
-      Top = 159
+      Top = 160
       Width = 623
       Height = 17
       Align = alBottom

@@ -1,8 +1,11 @@
 inherited Form1: TForm1
   Left = 319
   Top = 74
-  Caption = 'Send E-mail with DKIM signature - Sample'
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Send E-mail with DKIM signature'
   ClientHeight = 619
+  OldCreateOrder = True
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13

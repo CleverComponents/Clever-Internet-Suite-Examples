@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, ComCtrls, CommCtrl, clProgressBar, Buttons, clResourceState, DemoBaseFormUnit;
@@ -55,9 +53,6 @@ implementation
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
- {$IFDEF DELPHIX101}
-  Height := 596;
- {$ENDIF}
   btnInitClick(nil);
 end;
 

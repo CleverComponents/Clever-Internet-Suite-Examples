@@ -2,7 +2,9 @@ inherited Form1: TForm1
   Left = 269
   Top = 167
   Caption = 'HTTP GET with Proxy - Sample'
-  Font.Name = 'Tahoma'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -17,14 +19,14 @@ inherited Form1: TForm1
       object Label1: TLabel
         Left = 16
         Top = 34
-        Width = 22
+        Width = 19
         Height = 13
         Caption = 'URL'
       end
       object Label2: TLabel
         Left = 16
         Top = 8
-        Width = 386
+        Width = 385
         Height = 13
         Caption = 
           'Type in the URL and click the '#39'GET'#39' button to retreive the page ' +
@@ -53,14 +55,14 @@ inherited Form1: TForm1
       object Label5: TLabel
         Left = 232
         Top = 101
-        Width = 31
+        Width = 32
         Height = 13
         Caption = 'Server'
       end
       object Label6: TLabel
         Left = 538
         Top = 101
-        Width = 19
+        Width = 20
         Height = 13
         Caption = 'Port'
       end
@@ -162,6 +164,7 @@ inherited Form1: TForm1
         Width = 145
         Height = 21
         Style = csDropDownList
+        ItemHeight = 13
         ItemIndex = 0
         TabOrder = 4
         Text = 'HTTP Proxy'
@@ -176,7 +179,7 @@ inherited Form1: TForm1
       Left = 0
       Top = 185
       Width = 623
-      Height = 178
+      Height = 179
       Align = alClient
       ReadOnly = True
       ScrollBars = ssBoth

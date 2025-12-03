@@ -1,10 +1,11 @@
 inherited Form1: TForm1
   Left = 192
   Top = 114
-  Height = 278
+  ClientHeight = 240
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'File encrypt/decrypt - Sample'
   Font.Name = 'Tahoma'
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel

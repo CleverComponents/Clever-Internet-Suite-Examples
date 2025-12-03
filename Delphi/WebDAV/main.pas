@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, clTcpClient, clHttp, clWebDav, ComCtrls, ViewProps,
@@ -380,9 +378,6 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
- {$IFDEF DELPHIX101}
-  Height := 530;
- {$ENDIF}
   FResources := TStringList.Create();
   FLocks := TStringList.Create();
   cbDepth.ItemIndex := 0;

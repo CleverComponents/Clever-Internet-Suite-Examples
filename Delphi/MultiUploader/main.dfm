@@ -1,7 +1,6 @@
 inherited UploaderTest: TUploaderTest
   Left = 314
   Top = 55
-  VertScrollBar.Range = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'MultiUpLoader - Sample'

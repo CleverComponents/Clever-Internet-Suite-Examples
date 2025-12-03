@@ -2,7 +2,9 @@ inherited Form1: TForm1
   Left = 192
   Top = 114
   Caption = 'SMTP / POP3 client - Sample'
-  Font.Name = 'Tahoma'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -30,14 +32,14 @@ inherited Form1: TForm1
     object Label4: TLabel
       Left = 13
       Top = 152
-      Width = 150
+      Width = 147
       Height = 13
       Caption = 'Messages. Double click to view'
     end
     object Label5: TLabel
       Left = 12
       Top = 42
-      Width = 62
+      Width = 60
       Height = 13
       Caption = 'SMTP server'
     end
@@ -89,6 +91,7 @@ inherited Form1: TForm1
       Top = 168
       Width = 599
       Height = 183
+      Anchors = [akLeft, akTop, akRight, akBottom]
       ItemHeight = 13
       TabOrder = 6
       OnDblClick = lbMessagesDblClick

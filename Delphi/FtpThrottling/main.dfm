@@ -1,6 +1,8 @@
 inherited MainForm: TMainForm
   Left = 247
   Top = 62
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Ftp Client Throttling - Sample'
   OnDestroy = FormDestroy
   OnShow = FormShow

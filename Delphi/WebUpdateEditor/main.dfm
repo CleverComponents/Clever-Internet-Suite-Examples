@@ -1,12 +1,11 @@
 inherited MainForm: TMainForm
   Left = 270
   Top = 265
-  VertScrollBar.Range = 0
-  BorderStyle = bsDialog
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Update Manager - Sample'
   ClientHeight = 181
-  Font.Name = 'Tahoma'
-  OnShow = FormShow
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel

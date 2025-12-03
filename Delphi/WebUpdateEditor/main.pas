@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, clWebUpdate, clUpdateMgrForm, DemoBaseFormUnit,
@@ -18,7 +16,6 @@ type
     btnClose: TButton;
     procedure btnEditClick(Sender: TObject);
     procedure btnCloseClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,13 +46,6 @@ end;
 procedure TMainForm.btnCloseClick(Sender: TObject);
 begin
   Close();
-end;
-
-procedure TMainForm.FormShow(Sender: TObject);
-begin
- {$IFDEF DELPHIX101}
-  Height := 220;
- {$ENDIF}
 end;
 
 end.

@@ -1,7 +1,9 @@
 inherited MainForm: TMainForm
   Top = 122
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Ftp Client - Sample'
-  ClientHeight = 511
+  ClientHeight = 512
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96

@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, SyncObjs, ExtCtrls, clTcpServer, clFtpServer, clUserMgr,
@@ -44,7 +42,6 @@ type
     procedure clFtpServer1ReceiveCommand(Sender: TObject; AConnection: TclCommandConnection; ACommandParams: TclTcpCommandParams);
     procedure clFtpServer1SendResponse(Sender: TObject; AConnection: TclCommandConnection; const ACommand, AResponse: string);
     procedure clFtpServer1Start(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     FSynchronizer: TCriticalSection;
     FIsStop: Boolean;
@@ -149,13 +146,6 @@ procedure TMainForm.clFtpServer1ReceiveCommand(Sender: TObject; AConnection: Tcl
   ACommandParams: TclTcpCommandParams);
 begin
   PutLogMessage('Command: ' + ACommandParams.Command + ' ' + ACommandParams.Parameters);
-end;
-
-procedure TMainForm.FormShow(Sender: TObject);
-begin
- {$IFDEF DELPHIX101}
-  Height := 513;
- {$ENDIF}
 end;
 
 end.

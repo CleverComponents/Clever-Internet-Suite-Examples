@@ -1,6 +1,8 @@
 inherited Form1: TForm1
   Left = 284
   Top = 202
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Certificates Manager - Sample'
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -33,6 +35,7 @@ inherited Form1: TForm1
       Width = 145
       Height = 21
       Style = csDropDownList
+      ItemHeight = 13
       ItemIndex = 0
       TabOrder = 0
       Text = 'Current User'
@@ -45,6 +48,7 @@ inherited Form1: TForm1
       Top = 40
       Width = 145
       Height = 21
+      ItemHeight = 13
       ItemIndex = 0
       TabOrder = 1
       Text = 'MY'

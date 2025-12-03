@@ -1,7 +1,10 @@
 inherited MainForm: TMainForm
   Left = 192
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Clever POP3 Server - Sample'
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -31,8 +34,8 @@ inherited MainForm: TMainForm
     object Label4: TLabel
       Left = 8
       Top = 8
-      Width = 537
-      Height = 26
+      Width = 489
+      Height = 13
       Caption = 
         'This is a sample POP3 server. You can use any mail client with P' +
         'OP3 support to connect to this server.'
@@ -80,7 +83,7 @@ inherited MainForm: TMainForm
     end
     object memLog: TMemo
       Left = 0
-      Top = 165
+      Top = 166
       Width = 623
       Height = 198
       Align = alBottom
@@ -116,6 +119,7 @@ inherited MainForm: TMainForm
     OnStop = clPop3Server1Stop
     OnAcceptConnection = clPop3Server1AcceptConnection
     OnCloseConnection = clPop3Server1CloseConnection
+    MaxDataSize = -1
     OnReceiveCommand = clPop3Server1ReceiveCommand
     OnSendResponse = clPop3Server1SendResponse
     UserAccounts = <
@@ -142,7 +146,7 @@ inherited MainForm: TMainForm
       'UIDL,'
       'STLS')
     OnAuthenticate = clPop3Server1Authenticate
-    Left = 256
+    Left = 248
     Top = 128
   end
 end

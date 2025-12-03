@@ -1,15 +1,17 @@
 inherited Form1: TForm1
   Left = 247
   Top = 118
-  Height = 530
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Web DAV client - Sample'
-  Font.Name = 'Tahoma'
+  ClientHeight = 492
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 413
+    Height = 414
     object Label1: TLabel
       Left = 16
       Top = 18
@@ -20,7 +22,7 @@ inherited Form1: TForm1
     object Label2: TLabel
       Left = 16
       Top = 104
-      Width = 51
+      Width = 50
       Height = 13
       Caption = 'Resources'
     end
@@ -58,7 +60,6 @@ inherited Form1: TForm1
       Top = 14
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Open'
       TabOrder = 4
       OnClick = btnOpenClick
@@ -100,7 +101,6 @@ inherited Form1: TForm1
       Top = 120
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Get All Props'
       TabOrder = 8
       OnClick = btnGetAllPropsClick
@@ -110,7 +110,6 @@ inherited Form1: TForm1
       Top = 152
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Modify Prop'
       TabOrder = 9
       OnClick = btnModifyPropClick
@@ -120,7 +119,6 @@ inherited Form1: TForm1
       Top = 184
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Make Dir'
       TabOrder = 10
       OnClick = btnMakeDirClick
@@ -130,7 +128,6 @@ inherited Form1: TForm1
       Top = 216
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Delete'
       TabOrder = 11
       OnClick = btnDeleteClick
@@ -140,7 +137,6 @@ inherited Form1: TForm1
       Top = 248
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Lock Resource'
       TabOrder = 12
       OnClick = btnLockClick
@@ -150,7 +146,6 @@ inherited Form1: TForm1
       Top = 280
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Unlock'
       TabOrder = 13
       OnClick = btnUnlockClick
@@ -160,7 +155,6 @@ inherited Form1: TForm1
       Top = 312
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Copy / Move'
       TabOrder = 14
       OnClick = btnCopyMoveClick
@@ -170,7 +164,6 @@ inherited Form1: TForm1
       Top = 344
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Download'
       TabOrder = 15
       OnClick = btnDownloadClick
@@ -180,7 +173,6 @@ inherited Form1: TForm1
       Top = 376
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Upload'
       TabOrder = 16
       OnClick = btnUploadClick
@@ -204,7 +196,6 @@ inherited Form1: TForm1
       Top = 88
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Capabilities'
       TabOrder = 6
       OnClick = btnCapabilitiesClick
@@ -214,7 +205,6 @@ inherited Form1: TForm1
       Top = 46
       Width = 100
       Height = 25
-      Anchors = [akLeft, akTop, akRight]
       Caption = 'Go Up'
       TabOrder = 5
       OnClick = btnGoUpClick

@@ -1,8 +1,10 @@
 inherited MainForm: TMainForm
   Left = 286
   Top = 55
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Simulate Web Form POST requests from multiple web forms - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
@@ -10,35 +12,35 @@ inherited MainForm: TMainForm
     object Label4: TLabel
       Left = 12
       Top = 50
-      Width = 50
+      Width = 51
       Height = 13
       Caption = 'First Name'
     end
     object Label1: TLabel
       Left = 12
       Top = 217
-      Width = 48
+      Width = 47
       Height = 13
       Caption = 'Response'
     end
     object Label2: TLabel
       Left = 12
       Top = 3
-      Width = 131
+      Width = 135
       Height = 13
       Caption = 'Try the original web page at'
     end
     object Label3: TLabel
       Left = 12
       Top = 76
-      Width = 51
+      Width = 50
       Height = 13
       Caption = 'Last Name'
     end
     object Label6: TLabel
       Left = 12
       Top = 102
-      Width = 40
+      Width = 39
       Height = 13
       Caption = 'Account'
     end
@@ -52,7 +54,7 @@ inherited MainForm: TMainForm
     object Label8: TLabel
       Left = 12
       Top = 154
-      Width = 47
+      Width = 46
       Height = 13
       Caption = 'File Name'
     end
@@ -91,8 +93,8 @@ inherited MainForm: TMainForm
       ReadOnly = True
       TabOrder = 0
       Text = 
-        'https://www.clevercomponents.com/products/inetsuite/demos/submitw' +
-        'izard.asp'
+        'https://www.clevercomponents.com/products/inetsuite/demos/submit' +
+        'wizard.asp'
     end
     object btnView: TButton
       Left = 539
@@ -153,16 +155,16 @@ inherited MainForm: TMainForm
     UploadList = <
       item
         URL = 
-          'https://www.clevercomponents.com/products/inetsuite/demos/submitw' +
-          'izardtwo.asp'
+          'https://www.clevercomponents.com/products/inetsuite/demos/submit' +
+          'wizardtwo.asp'
         HttpRequest = rbStep1
         UseHttpRequest = True
         RequestMethod = 'POST'
       end
       item
         URL = 
-          'https://www.clevercomponents.com/products/inetsuite/demos/submitw' +
-          'izardthree.asp'
+          'https://www.clevercomponents.com/products/inetsuite/demos/submit' +
+          'wizardthree.asp'
         HttpRequest = rbStep2
         UseHttpRequest = True
         RequestMethod = 'POST'

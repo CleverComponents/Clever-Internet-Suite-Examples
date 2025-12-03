@@ -1,6 +1,8 @@
 inherited Form1: TForm1
   Left = 247
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'DNS Query - Sample'
   Font.Name = 'Tahoma'
   PixelsPerInch = 96

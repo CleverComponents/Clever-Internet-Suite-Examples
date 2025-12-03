@@ -1,7 +1,6 @@
 inherited DownLoaderTest: TDownLoaderTest
   Left = 187
   Top = 175
-  VertScrollBar.Range = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'MultiDownLoader - Sample'

@@ -2,14 +2,16 @@ inherited Form1: TForm1
   Left = 241
   Top = 120
   Caption = 'SOAP Digital Signature - Sample'
-  Font.Name = 'Tahoma'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     object Label1: TLabel
       Left = 13
       Top = 179
-      Width = 66
+      Width = 69
       Height = 13
       Caption = 'Certificate File'
     end
@@ -30,14 +32,14 @@ inherited Form1: TForm1
     object Label4: TLabel
       Left = 12
       Top = 6
-      Width = 111
+      Width = 108
       Height = 13
       Caption = 'Source SOAP message'
     end
     object Label5: TLabel
       Left = 14
       Top = 231
-      Width = 110
+      Width = 107
       Height = 13
       Caption = 'Signed SOAP message'
     end
@@ -73,6 +75,7 @@ inherited Form1: TForm1
       Top = 248
       Width = 598
       Height = 105
+      Anchors = [akLeft, akTop, akRight, akBottom]
       Lines.Strings = (
         'Result'
         '')
@@ -137,6 +140,7 @@ inherited Form1: TForm1
     EncryptedKey.KeyClassName = 'TclXmlSKIKeyInfo'
     EncryptedKey.EncryptionMethod = 'http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p'
     EncryptedKey.References = <>
+    Namespaces.ExtractNamespacePattern = 'xmlns\:\w*\s*=\s*\"[^\"]*\"'
     Namespaces = <>
     EncodingStyle = 'http://schemas.xmlsoap.org/soap/encoding/'
     SecurityConfig.IdName = 'Id'
@@ -169,6 +173,7 @@ inherited Form1: TForm1
         Identifier = 26126
         KeySize = 16
       end>
+    SecurityConfig.Namespaces.ExtractNamespacePattern = 'xmlns\:\w*\s*=\s*\"[^\"]*\"'
     SecurityConfig.Namespaces = <
       item
         Prefix = 'env'

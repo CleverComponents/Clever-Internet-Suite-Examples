@@ -1,6 +1,8 @@
 inherited MainForm: TMainForm
   Left = 298
   Top = 51
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Html Parser - Sample'
   Font.Name = 'Tahoma'
   PixelsPerInch = 96

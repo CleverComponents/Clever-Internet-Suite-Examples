@@ -2,8 +2,6 @@ unit main;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, clSMimeMessage, clCertificate, getcert, certlistfrm,
@@ -288,9 +286,6 @@ end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
- {$IFDEF DELPHIX101}
-  Height := 552;
- {$ENDIF}
   edtFrom.Text := DefaultEmail;
 end;
 

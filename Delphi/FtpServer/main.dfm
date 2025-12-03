@@ -1,16 +1,15 @@
 inherited MainForm: TMainForm
   Left = 305
   Top = 153
-  Height = 456
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Clever FTP Server - Sample'
   OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 340
     object Label2: TLabel
       Left = 10
       Top = 58
@@ -28,8 +27,8 @@ inherited MainForm: TMainForm
     object Label4: TLabel
       Left = 8
       Top = 8
-      Width = 545
-      Height = 17
+      Width = 389
+      Height = 13
       Caption = 
         'This is a sample FTP server. You can use any FTP client to conne' +
         'ct to this server.'
@@ -66,9 +65,9 @@ inherited MainForm: TMainForm
     end
     object memLog: TMemo
       Left = 0
-      Top = 240
+      Top = 256
       Width = 623
-      Height = 100
+      Height = 108
       Align = alBottom
       ReadOnly = True
       ScrollBars = ssVertical

@@ -1,16 +1,18 @@
 inherited Form1: TForm1
   Left = 247
   Top = 55
-  Height = 298
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Resuming of the downloading - Sample'
-  Font.Name = 'Tahoma'
+  ClientHeight = 260
+  OldCreateOrder = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 181
+    Height = 182
     object clProgressBar1: TclProgressBarDC
       Left = 12
       Top = 152
@@ -21,14 +23,14 @@ inherited Form1: TForm1
     object Label1: TLabel
       Left = 12
       Top = 59
-      Width = 22
+      Width = 19
       Height = 13
       Caption = 'URL'
     end
     object Label2: TLabel
       Left = 11
       Top = 84
-      Width = 47
+      Width = 46
       Height = 13
       Caption = 'File Name'
     end

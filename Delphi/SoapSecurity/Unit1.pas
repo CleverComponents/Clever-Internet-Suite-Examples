@@ -2,8 +2,6 @@ unit Unit1;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, clHttpRequest, clSoapMessage, StdCtrls, clCertificateStore, clXmlUtils,
@@ -58,7 +56,6 @@ type
       AExtraCerts: TclCertificateList; var Handled: Boolean);
     procedure btnDecryptVerifyClick(Sender: TObject);
     procedure btnCertificatesClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
     FSecuring: Boolean;
@@ -233,13 +230,6 @@ begin
   edtTimeStampID.Text := 'TimeStamp-' + Copy(GenerateUniqueID(), 1, 3);
   edtAddressID.Text := 'Address-' + Copy(GenerateUniqueID(), 1, 3);
   edtBodyID.Text := 'Body-' + Copy(GenerateUniqueID(), 1, 3);
-end;
-
-procedure TForm1.FormShow(Sender: TObject);
-begin
- {$IFDEF DELPHIX101}
-  Height := 608;
- {$ENDIF}
 end;
 
 end.

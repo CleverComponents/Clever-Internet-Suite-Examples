@@ -2,8 +2,6 @@ unit Unit1;
 
 interface
 
-{$I ..\Common\Defines.inc}
-
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, clMailMessage, clTcpClient, clTcpClientTls, clMC, clSmtp, clCertificate,
@@ -123,9 +121,6 @@ end;
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
- {$IFDEF DELPHIX101}
-  Height := 658;
- {$ENDIF}
   edtSignFields.Text := clDkim1.SignedHeaderFields.CommaText;
 end;
 

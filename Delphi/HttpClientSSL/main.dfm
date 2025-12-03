@@ -2,7 +2,9 @@ inherited Form1: TForm1
   Left = 269
   Top = 167
   Caption = 'HTTPS GET with SSL - Sample'
-  Font.Name = 'Tahoma'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
@@ -17,14 +19,14 @@ inherited Form1: TForm1
       object Label1: TLabel
         Left = 16
         Top = 35
-        Width = 22
+        Width = 19
         Height = 13
         Caption = 'URL'
       end
       object Label2: TLabel
         Left = 16
         Top = 8
-        Width = 386
+        Width = 385
         Height = 13
         Caption = 
           'Type in the URL and click the '#39'GET'#39' button to retreive the page ' +
@@ -56,7 +58,7 @@ inherited Form1: TForm1
         Width = 481
         Height = 21
         TabOrder = 0
-        Text = 'https://www.paypal.com'
+        Text = 'https://www.microsoft.com'
       end
       object Button1: TButton
         Left = 536
@@ -95,7 +97,7 @@ inherited Form1: TForm1
       Left = 0
       Top = 105
       Width = 623
-      Height = 258
+      Height = 259
       Align = alClient
       ReadOnly = True
       ScrollBars = ssBoth
