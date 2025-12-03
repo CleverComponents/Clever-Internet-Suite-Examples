@@ -1,17 +1,18 @@
 inherited Form1: TForm1
   Left = 247
   Top = 55
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Resuming of the downloading - Sample'
   ClientHeight = 260
+  OldCreateOrder = True
   OnClose = FormClose
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
-  ExplicitHeight = 299
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     Height = 182
-    ExplicitHeight = 182
     object clProgressBar1: TclProgressBarDC
       Left = 12
       Top = 152

@@ -6,31 +6,25 @@ inherited DownLoaderTest: TDownLoaderTest
   Caption = 'MultiDownLoader - Sample'
   ClientHeight = 509
   ClientWidth = 756
+  Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnShow = FormShow
-  ExplicitWidth = 762
-  ExplicitHeight = 538
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlLogo: TPanel
     Width = 756
-    ExplicitWidth = 756
     inherited imLogoMiggle: TImage
       Width = 141
-      ExplicitWidth = 141
     end
     inherited imLogoRight: TImage
       Left = 547
-      ExplicitLeft = 547
     end
   end
   inherited pnlMain: TPanel
     Width = 756
     Height = 431
-    ExplicitWidth = 756
-    ExplicitHeight = 431
     object PageControl: TPageControl
       Left = 0
       Top = 0
@@ -141,14 +135,14 @@ inherited DownLoaderTest: TDownLoaderTest
         object Label1: TLabel
           Left = 5
           Top = 12
-          Width = 19
+          Width = 22
           Height = 13
           Caption = 'URL'
         end
         object Label6: TLabel
           Left = 5
           Top = 61
-          Width = 52
+          Width = 53
           Height = 13
           Caption = 'User Name'
         end
@@ -162,35 +156,35 @@ inherited DownLoaderTest: TDownLoaderTest
         object Label4: TLabel
           Left = 5
           Top = 266
-          Width = 120
+          Width = 116
           Height = 13
           Caption = 'Information Retrieve Log'
         end
         object Label5: TLabel
           Left = 389
           Top = 119
-          Width = 99
+          Width = 97
           Height = 13
           Caption = 'File Content Preview'
         end
         object Label2: TLabel
           Left = 5
           Top = 34
-          Width = 58
+          Width = 60
           Height = 13
           Caption = 'Save To File'
         end
         object Label3: TLabel
           Left = 5
           Top = 119
-          Width = 56
+          Width = 52
           Height = 13
           Caption = 'Information'
         end
         object Label11: TLabel
           Left = 5
           Top = 87
-          Width = 34
+          Width = 31
           Height = 13
           Caption = 'Priority'
         end
@@ -274,6 +268,7 @@ inherited DownLoaderTest: TDownLoaderTest
           Width = 197
           Height = 21
           Style = csDropDownList
+          ItemHeight = 13
           TabOrder = 4
           OnChange = cmbPriorityChange
           Items.Strings = (
@@ -344,21 +339,21 @@ inherited DownLoaderTest: TDownLoaderTest
         object Label8: TLabel
           Left = 19
           Top = 30
-          Width = 67
+          Width = 64
           Height = 13
           Caption = 'Output Folder'
         end
         object Label7: TLabel
           Left = 19
           Top = 59
-          Width = 52
+          Width = 51
           Height = 13
           Caption = 'TimeOut, s'
         end
         object Label10: TLabel
           Left = 19
           Top = 118
-          Width = 70
+          Width = 69
           Height = 13
           Caption = 'Preview Count'
         end
@@ -379,56 +374,56 @@ inherited DownLoaderTest: TDownLoaderTest
         object Label13: TLabel
           Left = 411
           Top = 31
-          Width = 56
+          Width = 58
           Height = 13
           Caption = 'HTTP Proxy'
         end
         object Label14: TLabel
           Left = 410
           Top = 88
-          Width = 65
+          Width = 63
           Height = 13
           Caption = 'Proxy Bypass'
         end
         object Label15: TLabel
           Left = 18
           Top = 175
-          Width = 52
+          Width = 51
           Height = 13
           Caption = 'Buffer Size'
         end
         object Label16: TLabel
           Left = 19
           Top = 88
-          Width = 79
+          Width = 78
           Height = 13
           Caption = 'Reconnect After'
         end
         object Label17: TLabel
           Left = 19
           Top = 147
-          Width = 48
+          Width = 46
           Height = 13
           Caption = 'Try Count'
         end
         object Label18: TLabel
           Left = 410
           Top = 117
-          Width = 53
+          Width = 51
           Height = 13
           Caption = 'Proxy User'
         end
         object Label19: TLabel
           Left = 410
           Top = 147
-          Width = 77
+          Width = 75
           Height = 13
           Caption = 'Proxy Password'
         end
         object Label20: TLabel
           Left = 656
           Top = 32
-          Width = 20
+          Width = 19
           Height = 13
           Caption = 'Port'
         end
@@ -442,7 +437,7 @@ inherited DownLoaderTest: TDownLoaderTest
         object Label22: TLabel
           Left = 656
           Top = 61
-          Width = 20
+          Width = 19
           Height = 13
           Caption = 'Port'
         end

@@ -1,25 +1,26 @@
 inherited MainForm: TMainForm
   Left = 192
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Clever IMAP4 Server - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 8
       Top = 142
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
     object Label2: TLabel
       Left = 8
       Top = 67
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -33,8 +34,8 @@ inherited MainForm: TMainForm
     object Label4: TLabel
       Left = 8
       Top = 8
-      Width = 480
-      Height = 13
+      Width = 452
+      Height = 26
       Caption = 
         'This is a sample IMAP server. You can use any mail client with I' +
         'MAP support to connect to this server.'
@@ -49,7 +50,7 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 8
       Top = 36
-      Width = 454
+      Width = 452
       Height = 13
       Caption = 
         'Please use the "CleverTester" user name and "clevertester" passw' +

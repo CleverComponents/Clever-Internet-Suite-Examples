@@ -2,10 +2,12 @@ inherited Form1: TForm1
   Left = 403
   Top = 164
   Caption = 'Asynchronous Client Sample - TELNET'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 26
       Top = 19
@@ -50,7 +52,7 @@ inherited Form1: TForm1
       Top = 73
       Width = 623
       Height = 291
-      Align = alBottom
+      Anchors = [akLeft, akTop, akRight, akBottom]
       ScrollBars = ssBoth
       TabOrder = 3
       WordWrap = False

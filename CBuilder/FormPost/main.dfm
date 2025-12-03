@@ -1,13 +1,14 @@
 inherited MainForm: TMainForm
   Left = 286
   Top = 55
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Simulate Web Form POST request - Sample'
   Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label4: TLabel
       Left = 16
       Top = 48

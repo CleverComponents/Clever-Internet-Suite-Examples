@@ -2,13 +2,15 @@ inherited MainForm: TMainForm
   Left = 457
   Top = 181
   Caption = 'Clever Web Update Application - Sample'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
   ParentFont = True
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object StatusBar: TStatusBar
       Left = 0
       Top = 345
@@ -57,8 +59,8 @@ inherited MainForm: TMainForm
           'You can learn more about the Web Updater functionality from the ' +
           'article available at '
         
-          'https://www.clevercomponents.com/articles/article023/webupdater2.' +
-          'asp'
+          'https://www.clevercomponents.com/articles/article023/webupdater2' +
+          '.asp'
         ''
         ''
         ''
@@ -76,6 +78,9 @@ inherited MainForm: TMainForm
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 2
+      DesignSize = (
+        623
+        41)
       object btnStartUpdate: TBitBtn
         Left = 8
         Top = 5
@@ -83,7 +88,8 @@ inherited MainForm: TMainForm
         Height = 30
         Caption = 'Start Update'
         Default = True
-        DoubleBuffered = True
+        TabOrder = 0
+        OnClick = btnStartUpdateClick
         Glyph.Data = {
           DE010000424DDE01000000000000760000002800000024000000120000000100
           0400000000006801000000000000000000001000000000000000000000000000
@@ -102,17 +108,16 @@ inherited MainForm: TMainForm
           333A333333333333333338330000333333333333333333333333333333333333
           0000}
         NumGlyphs = 2
-        ParentDoubleBuffered = False
-        TabOrder = 0
-        OnClick = btnStartUpdateClick
       end
       object btnAbout: TBitBtn
         Left = 424
         Top = 5
         Width = 100
         Height = 30
+        Anchors = [akTop, akRight]
         Caption = 'About'
-        DoubleBuffered = True
+        TabOrder = 1
+        OnClick = btnAboutClick
         Glyph.Data = {
           DE010000424DDE01000000000000760000002800000024000000120000000100
           0400000000006801000000000000000000001000000000000000000000000000
@@ -131,18 +136,14 @@ inherited MainForm: TMainForm
           E333333333388FFFFF8333330000333333333333333333333333388888333333
           0000}
         NumGlyphs = 2
-        ParentDoubleBuffered = False
-        TabOrder = 1
-        OnClick = btnAboutClick
       end
       object btnClose: TBitBtn
         Left = 531
         Top = 5
         Width = 86
         Height = 30
+        Anchors = [akTop, akRight]
         Caption = 'Exit'
-        DoubleBuffered = True
-        ParentDoubleBuffered = False
         TabOrder = 2
         OnClick = btnCloseClick
       end
@@ -152,8 +153,8 @@ inherited MainForm: TMainForm
     ProductName = 'Updater Sample'
     Author = 'Clever Components'
     UpdateURL = 
-      'https://www.clevercomponents.com/demo/inetsuite/samples/webupdate' +
-      '6/webupdate.xml'
+      'https://www.clevercomponents.com/demo/inetsuite/samples/webupdat' +
+      'e6/webupdate.xml'
     UpdateDir = '.\webupdate'
     ActualUpdateInfoFile = '.\webupdate\lastupdate.xml'
     VersionFormat = vfNumber

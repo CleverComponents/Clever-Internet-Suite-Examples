@@ -1,14 +1,15 @@
 inherited Form1: TForm1
   Left = 569
   Top = 200
-  Caption = 'SMTP Client over HTTP Connect Proxy'
   ClientHeight = 510
-  ExplicitHeight = 549
+  Caption = 'SMTP Client over HTTP Connect Proxy'
+  Constraints.MinHeight = 548
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     Height = 432
-    ExplicitHeight = 432
     object Label1: TLabel
       Left = 16
       Top = 16
@@ -134,6 +135,7 @@ inherited Form1: TForm1
       Top = 218
       Width = 598
       Height = 162
+      Anchors = [akLeft, akTop, akRight, akBottom]
       Lines.Strings = (
         'Dear Sir/Madam,'
         ''
@@ -160,6 +162,7 @@ inherited Form1: TForm1
       Top = 393
       Width = 122
       Height = 25
+      Anchors = [akRight, akBottom]
       Caption = 'Send'
       TabOrder = 10
       OnClick = btnSendClick

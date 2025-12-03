@@ -1,17 +1,17 @@
 inherited MainForm: TMainForm
   Left = 390
   Top = 112
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Ftp Client SSL / TLS - Sample'
   ClientHeight = 512
   Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
-  ExplicitHeight = 551
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 434
-    ExplicitHeight = 434
+    Height = 433
     object Label3: TLabel
       Left = 15
       Top = 294
@@ -72,7 +72,7 @@ inherited MainForm: TMainForm
     end
     object ProgressBar: TProgressBar
       Left = 0
-      Top = 417
+      Top = 416
       Width = 623
       Height = 17
       Align = alBottom

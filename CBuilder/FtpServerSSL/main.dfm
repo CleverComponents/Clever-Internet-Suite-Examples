@@ -1,6 +1,8 @@
 inherited MainForm: TMainForm
   Left = 192
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Clever FTP Server SSL / TLS'
   Font.Name = 'Tahoma'
   OnCreate = FormCreate
@@ -8,7 +10,6 @@ inherited MainForm: TMainForm
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 8
       Top = 185
@@ -108,7 +109,7 @@ inherited MainForm: TMainForm
     end
     object memLog: TMemo
       Left = 0
-      Top = 201
+      Top = 200
       Width = 623
       Height = 163
       Align = alBottom

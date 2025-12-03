@@ -1,16 +1,17 @@
 inherited Form1: TForm1
   Left = 275
   Top = 145
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'SMTP Relay - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 16
       Top = 6
-      Width = 328
+      Width = 338
       Height = 13
       Caption = 
         'This demo creates e-mail and sends it directly to the recipient'#39 +
@@ -60,7 +61,7 @@ inherited Form1: TForm1
     object Label4: TLabel
       Left = 16
       Top = 84
-      Width = 68
+      Width = 67
       Height = 13
       Caption = 'DNS server IP'
     end
@@ -74,28 +75,28 @@ inherited Form1: TForm1
     object Label6: TLabel
       Left = 16
       Top = 140
-      Width = 50
+      Width = 49
       Height = 13
       Caption = 'Recipinets'
     end
     object Label7: TLabel
       Left = 16
       Top = 172
-      Width = 93
+      Width = 94
       Height = 13
       Caption = 'Subject of message'
     end
     object Label8: TLabel
       Left = 16
       Top = 194
-      Width = 63
+      Width = 65
       Height = 13
       Caption = 'Message text'
     end
     object Label9: TLabel
       Left = 248
       Top = 84
-      Width = 77
+      Width = 75
       Height = 13
       Caption = 'DNS TimeOut, s'
     end

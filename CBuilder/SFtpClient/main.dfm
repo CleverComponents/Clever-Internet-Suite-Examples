@@ -1,7 +1,10 @@
 inherited MainForm: TMainForm
   Left = 367
   Top = 127
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'SFTP Client'
+  OldCreateOrder = True
   OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
@@ -67,7 +70,7 @@ inherited MainForm: TMainForm
     end
     object ProgressBar: TProgressBar
       Left = 0
-      Top = 346
+      Top = 347
       Width = 623
       Height = 17
       Align = alBottom

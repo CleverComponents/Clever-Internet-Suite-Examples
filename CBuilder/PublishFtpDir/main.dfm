@@ -2,17 +2,18 @@ inherited Form1: TForm1
   Left = 247
   Top = 114
   Caption = 'Publish FTP directory - Sample'
-  Font.Name = 'Tahoma'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 24
       Top = 8
-      Width = 537
-      Height = 13
+      Width = 503
+      Height = 26
       Caption = 
         'This demo shows how to publish the local folder structure includ' +
         'ing sub-dirs and files into the remote FTP directory.'
@@ -27,7 +28,7 @@ inherited Form1: TForm1
     object Label2: TLabel
       Left = 24
       Top = 41
-      Width = 315
+      Width = 323
       Height = 13
       Caption = 
         'Please specify the source folder and the  destination FTP direct' +
@@ -36,7 +37,7 @@ inherited Form1: TForm1
     object Label3: TLabel
       Left = 24
       Top = 67
-      Width = 95
+      Width = 93
       Height = 13
       Caption = 'Source Local Folder'
     end
@@ -50,28 +51,28 @@ inherited Form1: TForm1
     object Label5: TLabel
       Left = 24
       Top = 119
-      Width = 45
+      Width = 43
       Height = 13
       Caption = 'FTP User'
     end
     object Label6: TLabel
       Left = 24
       Top = 144
-      Width = 69
+      Width = 67
       Height = 13
       Caption = 'FTP Password'
     end
     object Label7: TLabel
       Left = 24
       Top = 203
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
     object Label8: TLabel
       Left = 272
       Top = 120
-      Width = 82
+      Width = 79
       Height = 13
       Caption = 'Publish File Mask'
     end
@@ -150,7 +151,7 @@ inherited Form1: TForm1
       Top = 220
       Width = 623
       Height = 125
-      Align = alBottom
+      Anchors = [akLeft, akTop, akRight, akBottom]
       TabOrder = 7
     end
     object edtFileMask: TEdit

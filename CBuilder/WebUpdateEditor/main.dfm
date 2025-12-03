@@ -1,15 +1,15 @@
 inherited MainForm: TMainForm
   Left = 270
   Top = 265
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Update Manager - Sample'
-  ClientHeight = 182
-  Font.Name = 'Tahoma'
-  ExplicitHeight = 220
+  ClientHeight = 181
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 104
-    ExplicitHeight = 104
+    Height = 103
     object Label1: TLabel
       Left = 16
       Top = 14
@@ -22,6 +22,7 @@ inherited MainForm: TMainForm
       Top = 32
       Width = 593
       Height = 21
+      Anchors = [akLeft, akTop, akRight]
       TabOrder = 0
       Text = 'webupdate.xml'
     end
@@ -30,6 +31,7 @@ inherited MainForm: TMainForm
       Top = 64
       Width = 75
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = 'Edit'
       TabOrder = 1
       OnClick = btnEditClick
@@ -39,6 +41,7 @@ inherited MainForm: TMainForm
       Top = 64
       Width = 75
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = 'Close'
       TabOrder = 2
       OnClick = btnCloseClick

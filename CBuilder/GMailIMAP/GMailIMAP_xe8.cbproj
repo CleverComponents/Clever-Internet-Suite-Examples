@@ -212,6 +212,11 @@
         <ResFiles Include="GMailIMAP.res">
             <BuildOrder>0</BuildOrder>
         </ResFiles>
+        <CppCompile Include="login.cpp">
+            <Form>LoginConfirmation</Form>
+            <DependentOn>login.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
         <CppCompile Include="main.cpp">
             <Form>Form1</Form>
             <DependentOn>main.h</DependentOn>
@@ -219,6 +224,7 @@
         </CppCompile>
         <FormResources Include="main.dfm"/>
         <FormResources Include="..\Common\DemoBaseFormUnit.dfm"/>
+        <FormResources Include="login.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

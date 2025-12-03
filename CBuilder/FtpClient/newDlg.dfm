@@ -1,9 +1,10 @@
 object NewDialog: TNewDialog
   Left = 247
   Top = 62
+  Width = 279
+  Height = 139
+  BorderStyle = bsDialog
   Caption = 'NewDialog'
-  ClientHeight = 101
-  ClientWidth = 263
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

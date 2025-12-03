@@ -1,16 +1,17 @@
 inherited MainForm: TMainForm
   Left = 261
   Top = 62
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'MS SMTP Mail Sender - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 8
       Top = 8
-      Width = 515
+      Width = 513
       Height = 13
       Caption = 
         'This demo demonstrates how to send MIME mail message using Micro' +
@@ -32,35 +33,35 @@ inherited MainForm: TMainForm
     object Label4: TLabel
       Left = 316
       Top = 104
-      Width = 56
+      Width = 51
       Height = 13
       Caption = 'Plain HTML'
     end
     object Label5: TLabel
       Left = 10
       Top = 218
-      Width = 59
+      Width = 61
       Height = 13
       Caption = 'Attachments'
     end
     object Label6: TLabel
       Left = 8
       Top = 305
-      Width = 138
+      Width = 137
       Height = 13
       Caption = 'Exchange drop/pickup folder'
     end
     object Label7: TLabel
       Left = 11
       Top = 32
-      Width = 23
+      Width = 24
       Height = 13
       Caption = 'From'
     end
     object Label8: TLabel
       Left = 10
       Top = 58
-      Width = 32
+      Width = 31
       Height = 13
       Caption = 'To List'
     end

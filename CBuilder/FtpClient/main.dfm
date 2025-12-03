@@ -1,27 +1,26 @@
 inherited MainForm: TMainForm
   Top = 122
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Ftp Client - Sample'
   ClientHeight = 512
-  Font.Name = 'Tahoma'
   OnDestroy = FormDestroy
   OnShow = FormShow
-  ExplicitHeight = 551
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 434
-    ExplicitHeight = 434
+    Height = 433
     object Label3: TLabel
       Left = 15
       Top = 294
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
     object Label1: TLabel
       Left = 11
       Top = 14
-      Width = 37
+      Width = 36
       Height = 13
       Caption = 'IP/Host'
     end
@@ -42,14 +41,14 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 11
       Top = 68
-      Width = 38
+      Width = 40
       Height = 13
       Caption = 'Start Dir'
     end
     object Label6: TLabel
       Left = 430
       Top = 12
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -71,7 +70,7 @@ inherited MainForm: TMainForm
     end
     object ProgressBar: TProgressBar
       Left = 0
-      Top = 417
+      Top = 416
       Width = 623
       Height = 17
       Align = alBottom

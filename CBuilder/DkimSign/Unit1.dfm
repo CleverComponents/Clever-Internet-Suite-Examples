@@ -1,15 +1,16 @@
 inherited Form1: TForm1
   Left = 319
   Top = 74
-  Caption = 'Send E-mail with DKIM signature - Sample'
-  ClientHeight = 620
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Send E-mail with DKIM signature'
+  ClientHeight = 619
+  OldCreateOrder = True
   OnShow = FormShow
-  ExplicitHeight = 659
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 542
-    ExplicitHeight = 542
+    Height = 541
     object Label1: TLabel
       Left = 17
       Top = 16

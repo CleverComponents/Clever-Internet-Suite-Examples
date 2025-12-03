@@ -1,17 +1,17 @@
 inherited Form1: TForm1
   Left = 247
   Top = 118
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Web DAV client - Sample'
   ClientHeight = 492
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  ExplicitHeight = 530
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     Height = 414
-    ExplicitHeight = 414
     object Label1: TLabel
       Left = 16
       Top = 18
@@ -22,7 +22,7 @@ inherited Form1: TForm1
     object Label2: TLabel
       Left = 16
       Top = 104
-      Width = 51
+      Width = 50
       Height = 13
       Caption = 'Resources'
     end

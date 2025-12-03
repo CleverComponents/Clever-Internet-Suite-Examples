@@ -1,6 +1,8 @@
 inherited MainForm: TMainForm
   Left = 234
   Top = 115
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'FTP Client over Proxy'
   OnDestroy = FormDestroy
   OnShow = FormShow

@@ -1,44 +1,39 @@
 inherited Form1: TForm1
   Left = 200
   Top = 137
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'IMAP4 Client - Sample'
-  ClientHeight = 509
+  ClientHeight = 508
   ClientWidth = 678
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  ExplicitWidth = 694
-  ExplicitHeight = 548
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlLogo: TPanel
     Width = 678
-    ExplicitWidth = 678
     inherited imLogoMiggle: TImage
       Width = 63
-      ExplicitWidth = 63
     end
     inherited imLogoRight: TImage
       Left = 469
-      ExplicitLeft = 469
     end
   end
   inherited pnlMain: TPanel
     Width = 678
-    Height = 431
-    ExplicitWidth = 678
-    ExplicitHeight = 431
+    Height = 430
     object Label1: TLabel
       Left = 24
       Top = 23
-      Width = 31
+      Width = 32
       Height = 13
       Caption = 'Server'
     end
     object Label2: TLabel
       Left = 338
       Top = 43
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -59,14 +54,14 @@ inherited Form1: TForm1
     object Label3: TLabel
       Left = 338
       Top = 70
-      Width = 51
+      Width = 52
       Height = 13
       Caption = 'TimeOut, s'
     end
     object Label11: TLabel
       Left = 16
       Top = 318
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
@@ -186,28 +181,28 @@ inherited Form1: TForm1
       object Label7: TLabel
         Left = 16
         Top = 24
-        Width = 53
+        Width = 52
         Height = 13
         Caption = 'Subscribed'
       end
       object Label8: TLabel
         Left = 16
         Top = 51
-        Width = 62
+        Width = 61
         Height = 13
         Caption = 'All Messages'
       end
       object Label9: TLabel
         Left = 176
         Top = 21
-        Width = 86
+        Width = 84
         Height = 13
         Caption = 'Recent Messages'
       end
       object Label10: TLabel
         Left = 176
         Top = 48
-        Width = 59
+        Width = 60
         Height = 13
         Caption = 'First Unseen'
       end
@@ -341,7 +336,7 @@ inherited Form1: TForm1
     Left = 64
     Top = 248
     Bitmap = {
-      494C0101010004000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010101000400080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

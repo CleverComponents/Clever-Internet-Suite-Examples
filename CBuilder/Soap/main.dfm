@@ -3,30 +3,23 @@ inherited Form1: TForm1
   Top = 255
   BorderStyle = bsDialog
   Caption = 'SOAP Temperature Converter Service'
-  ClientHeight = 265
+  ClientHeight = 256
   ClientWidth = 619
   OldCreateOrder = True
-  ExplicitWidth = 625
-  ExplicitHeight = 293
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlLogo: TPanel
     Width = 619
-    ExplicitWidth = 619
     inherited imLogoMiggle: TImage
       Width = 4
-      ExplicitWidth = 4
     end
     inherited imLogoRight: TImage
       Left = 410
-      ExplicitLeft = 410
     end
   end
   inherited pnlMain: TPanel
     Width = 619
     Height = 187
-    ExplicitWidth = 619
-    ExplicitHeight = 187
     object Label1: TLabel
       Left = 20
       Top = 80

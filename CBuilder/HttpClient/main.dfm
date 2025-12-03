@@ -2,11 +2,12 @@ inherited Form1: TForm1
   Left = 269
   Top = 167
   Caption = 'HTTP GET - Sample'
-  Font.Name = 'Tahoma'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Panel1: TPanel
       Left = 0
       Top = 0
@@ -18,14 +19,14 @@ inherited Form1: TForm1
       object Label1: TLabel
         Left = 11
         Top = 39
-        Width = 22
+        Width = 19
         Height = 13
         Caption = 'URL'
       end
       object Label2: TLabel
         Left = 11
         Top = 8
-        Width = 383
+        Width = 381
         Height = 13
         Caption = 
           'Type in the URL and click the '#39'GET'#39' button to retreive the page ' +

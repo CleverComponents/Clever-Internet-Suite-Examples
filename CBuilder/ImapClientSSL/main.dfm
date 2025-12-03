@@ -1,22 +1,24 @@
 inherited Form1: TForm1
   Left = 260
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'IMAP4 Client with SSL / TLS support - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     object Label1: TLabel
       Left = 15
       Top = 11
-      Width = 31
+      Width = 32
       Height = 13
       Caption = 'Server'
     end
     object Label2: TLabel
       Left = 15
       Top = 35
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -37,21 +39,21 @@ inherited Form1: TForm1
     object Label6: TLabel
       Left = 16
       Top = 93
-      Width = 60
+      Width = 62
       Height = 13
       Caption = 'Imap Folders'
     end
     object Label7: TLabel
       Left = 192
       Top = 94
-      Width = 48
+      Width = 47
       Height = 13
       Caption = 'Messages'
     end
     object Label8: TLabel
       Left = 190
       Top = 211
-      Width = 23
+      Width = 24
       Height = 13
       Caption = 'From'
     end
@@ -199,7 +201,7 @@ inherited Form1: TForm1
     Left = 64
     Top = 248
     Bitmap = {
-      494C010101000400100010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101010004000C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

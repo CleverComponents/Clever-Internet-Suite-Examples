@@ -79,13 +79,8 @@ object EditItemForm: TEditItemForm
     Top = 94
     Width = 105
     Height = 21
-    CalAlignment = dtaLeft
-    Date = 40085.2345401042
-    Time = 40085.2345401042
-    DateFormat = dfShort
-    DateMode = dmComboBox
-    Kind = dtkDate
-    ParseInput = False
+    Date = 40085.234540104170000000
+    Time = 40085.234540104170000000
     TabOrder = 3
   end
   object edtGuid: TEdit

@@ -47,6 +47,7 @@ __published:	// IDE-managed Components
 	void __fastcall FormCloseQuery(TObject *Sender, bool &CanClose);
 private:	// User declarations
   bool FChanging;
+  bool FLogout;
   void __fastcall FillFolderList(void);
   void __fastcall AddFolderToList(UnicodeString AName);
   UnicodeString __fastcall GetFolderName(TTreeNode *Node);

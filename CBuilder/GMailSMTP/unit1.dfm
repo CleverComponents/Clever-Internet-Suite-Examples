@@ -1,9 +1,9 @@
 inherited Form1: TForm1
   Left = 372
   Top = 217
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'GMAIL SMTP client with OAuth - Sample'
-  ExplicitWidth = 320
-  ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel

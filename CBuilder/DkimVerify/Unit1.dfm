@@ -1,7 +1,9 @@
 inherited Form1: TForm1
   Left = 295
   Top = 172
-  Caption = 'Reveive E-mail and verify DKIM signature - Sample'
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Retrieve E-mail and verify DKIM signature'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel

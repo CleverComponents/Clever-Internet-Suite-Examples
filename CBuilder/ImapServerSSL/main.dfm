@@ -1,25 +1,26 @@
 inherited MainForm: TMainForm
   Left = 192
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Clever IMAP4 Server SSL / TLS - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 8
       Top = 192
-      Width = 18
+      Width = 17
       Height = 13
       Caption = 'Log'
     end
     object Label2: TLabel
       Left = 8
       Top = 115
-      Width = 19
+      Width = 20
       Height = 13
       Caption = 'Port'
     end
@@ -51,7 +52,7 @@ inherited MainForm: TMainForm
     object Label5: TLabel
       Left = 8
       Top = 80
-      Width = 454
+      Width = 452
       Height = 13
       Caption = 
         'Please use the "CleverTester" user name and "clevertester" passw' +
@@ -67,7 +68,7 @@ inherited MainForm: TMainForm
     object Label6: TLabel
       Left = 24
       Top = 40
-      Width = 579
+      Width = 543
       Height = 26
       Caption = 
         'This server uses self-signed server certificate to establish the' +
@@ -85,7 +86,7 @@ inherited MainForm: TMainForm
     object Label7: TLabel
       Left = 152
       Top = 115
-      Width = 81
+      Width = 73
       Height = 13
       Caption = 'SSL / TLS Mode'
     end

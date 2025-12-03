@@ -3,6 +3,9 @@ inherited MainForm: TMainForm
   Top = 153
   ActiveControl = pgMain
   Caption = 'Clever SFTP Server'
+  Constraints.MinHeight = 480
+  Constraints.MinWidth = 639
+  OldCreateOrder = True
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   PixelsPerInch = 96
@@ -12,12 +15,15 @@ inherited MainForm: TMainForm
       Left = 0
       Top = 0
       Width = 623
-      Height = 363
+      Height = 364
       ActivePage = tabServer
       Align = alClient
       TabOrder = 0
       object tabServer: TTabSheet
         Caption = 'Server'
+        DesignSize = (
+          615
+          336)
         object Label2: TLabel
           Left = 15
           Top = 59
@@ -112,10 +118,10 @@ inherited MainForm: TMainForm
         end
         object memLog: TMemo
           Left = 0
-          Top = 192
+          Top = 168
           Width = 615
-          Height = 143
-          Align = alBottom
+          Height = 168
+          Anchors = [akLeft, akTop, akRight, akBottom]
           ReadOnly = True
           ScrollBars = ssVertical
           TabOrder = 6
@@ -725,7 +731,7 @@ inherited MainForm: TMainForm
   object OpenDialog1: TOpenDialog
     Filter = 'Key files (*.pem)|*.pem|Key files (*.key)|*.key|All (*.*)|*.*'
     Options = [ofFileMustExist, ofEnableSizing]
-    Left = 528
+    Left = 520
     Top = 360
   end
 end

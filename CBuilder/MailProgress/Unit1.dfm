@@ -1,15 +1,17 @@
 inherited Form1: TForm1
   Left = 247
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Mail Progress - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     object Label1: TLabel
       Left = 9
       Top = 14
-      Width = 31
+      Width = 32
       Height = 13
       Caption = 'Server'
     end
@@ -30,35 +32,35 @@ inherited Form1: TForm1
     object Label4: TLabel
       Left = 9
       Top = 98
-      Width = 23
+      Width = 24
       Height = 13
       Caption = 'From'
     end
     object Label5: TLabel
       Left = 9
       Top = 124
-      Width = 13
+      Width = 12
       Height = 13
       Caption = 'To'
     end
     object lblProgress: TLabel
       Left = 9
       Top = 335
-      Width = 8
+      Width = 11
       Height = 13
       Caption = '%'
     end
     object Label6: TLabel
       Left = 9
       Top = 272
-      Width = 54
+      Width = 56
       Height = 13
       Caption = 'Attachment'
     end
     object Message: TLabel
       Left = 9
       Top = 149
-      Width = 43
+      Width = 42
       Height = 13
       Caption = 'Message'
     end

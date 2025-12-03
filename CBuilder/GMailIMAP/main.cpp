@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "main.h"
+#include "login.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "DemoBaseFormUnit"
@@ -26,6 +27,7 @@ void __fastcall TForm1::btnLoginClick(TObject *Sender)
 {
   if (clImap->Active || clOAuth1->Active) return;
 
+  FLogout = false;
   EnableControls(false);
   __try {
 	clOAuth1->AuthUrl = "https://accounts.google.com/o/oauth2/auth";
@@ -44,11 +46,18 @@ void __fastcall TForm1::btnLoginClick(TObject *Sender)
 
 	clImap->UserName = edtUser->Text;
 
-	clImap->Authorization = clOAuth1->GetAuthorization();
+        if (!TLoginConfirmation::ShowConfirmation(clOAuth1->ClientID, clOAuth1->Scope)) return;
 
-	clImap->Open();
+        try {
+            clImap->Authorization = clOAuth1->GetAuthorization();
 
-	FillFolderList();
+            clImap->Open();
+
+            FillFolderList();
+        }
+        catch (EclSocketError&) {
+            if (!FLogout) throw;
+        }
   }
   __finally {
 	EnableControls(true);
@@ -58,6 +67,8 @@ void __fastcall TForm1::btnLoginClick(TObject *Sender)
 
 void __fastcall TForm1::btnLogoutClick(TObject *Sender)
 {
+  FLogout = true;
+
   try {
 	clOAuth1->Close();
   }

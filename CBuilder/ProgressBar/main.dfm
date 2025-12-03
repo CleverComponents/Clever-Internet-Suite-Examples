@@ -1,16 +1,16 @@
 inherited Form1: TForm1
   Left = 286
   Top = 95
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'TclProgressBar - Sample'
   ClientHeight = 558
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCreate = FormCreate
-  ExplicitHeight = 596
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     Height = 480
-    ExplicitHeight = 480
     object clProgressBar1: TclProgressBar
       Left = 30
       Top = 134
@@ -174,49 +174,49 @@ inherited Form1: TForm1
     object Label2: TLabel
       Left = 16
       Top = 90
-      Width = 61
+      Width = 62
       Height = 13
       Caption = 'Vertical Style'
     end
     object Label3: TLabel
       Left = 96
       Top = 91
-      Width = 73
+      Width = 75
       Height = 13
       Caption = 'Horizontal Style'
     end
     object Label4: TLabel
       Left = 30
       Top = 110
-      Width = 89
+      Width = 87
       Height = 13
       Caption = 'Windows Theme 1'
     end
     object Label5: TLabel
       Left = 94
       Top = 169
-      Width = 89
+      Width = 87
       Height = 13
       Caption = 'Windows Theme 2'
     end
     object Label6: TLabel
       Left = 94
       Top = 218
-      Width = 213
+      Width = 210
       Height = 13
       Caption = '3D look style with Windows XP color scheme'
     end
     object Label7: TLabel
       Left = 94
       Top = 271
-      Width = 216
+      Width = 215
       Height = 13
       Caption = 'Flat look style with Windows XP color scheme'
     end
     object Label8: TLabel
       Left = 16
       Top = 336
-      Width = 267
+      Width = 276
       Height = 13
       Caption = 'The sample of painting a progress on an arbitrary surface'
     end
@@ -283,18 +283,15 @@ inherited Form1: TForm1
           Width = 350
         end>
       GridLines = True
-      Items.ItemData = {
-        03540100000500000000000000FFFFFFFFFFFFFFFF02000000FFFFFFFF000000
-        000D570069006E0064006F007700730020005400680065006D00650008700072
-        006F006700720065007300730004640061007400610000000000FFFFFFFFFFFF
-        FFFF00000000FFFFFFFF000000000000000000FFFFFFFFFFFFFFFF02000000FF
-        FFFFFF0000000018530068006F007700200074006F00740061006C0020007000
-        72006F006700720065007300730020006F006E006C00790008700072006F0067
-        00720065007300730004640061007400610000000000FFFFFFFFFFFFFFFF0000
-        0000FFFFFFFF000000000000000000FFFFFFFFFFFFFFFF02000000FFFFFFFF00
-        00000017530068006F00770020006900740065006D002000700072006F006700
-        720065007300730020006F006E006C00790008700072006F0067007200650073
-        007300046400610074006100FFFFFFFFFFFFFFFFFFFFFFFF}
+      Items.Data = {
+        E30000000500000000000000FFFFFFFFFFFFFFFF02000000000000000D57696E
+        646F7773205468656D650870726F6772657373046461746100000000FFFFFFFF
+        FFFFFFFF00000000000000000000000000FFFFFFFFFFFFFFFF02000000000000
+        001853686F7720746F74616C2070726F6772657373206F6E6C790870726F6772
+        657373046461746100000000FFFFFFFFFFFFFFFF000000000000000000000000
+        00FFFFFFFFFFFFFFFF02000000000000001753686F77206974656D2070726F67
+        72657373206F6E6C790870726F67726573730464617461FFFFFFFFFFFFFFFFFF
+        FFFFFF}
       ReadOnly = True
       RowSelect = True
       TabOrder = 4

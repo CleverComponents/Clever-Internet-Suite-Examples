@@ -3,8 +3,8 @@ object ModifyPropForm: TModifyPropForm
   Top = 118
   BorderStyle = bsDialog
   Caption = 'Change / Remove Property'
-  ClientHeight = 138
-  ClientWidth = 332
+  ClientHeight = 134
+  ClientWidth = 323
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object ModifyPropForm: TModifyPropForm
   TextHeight = 13
   object Label1: TLabel
     Left = 16
-    Top = 32
+    Top = 33
     Width = 70
     Height = 13
     Caption = 'Property Name'

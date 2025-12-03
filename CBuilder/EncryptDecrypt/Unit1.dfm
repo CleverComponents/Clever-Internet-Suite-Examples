@@ -1,15 +1,15 @@
 inherited Form1: TForm1
   Left = 192
   Top = 114
-  Caption = 'File encrypt/decrypt - Sample'
   ClientHeight = 240
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'File encrypt/decrypt - Sample'
   Font.Name = 'Tahoma'
-  ExplicitHeight = 278
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 162
-    ExplicitHeight = 162
+    Height = 161
     object Label1: TLabel
       Left = 24
       Top = 8
@@ -93,7 +93,7 @@ inherited Form1: TForm1
     end
     object ProgressBar1: TProgressBar
       Left = 0
-      Top = 145
+      Top = 144
       Width = 623
       Height = 17
       Align = alBottom

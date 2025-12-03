@@ -1,12 +1,13 @@
 inherited MainForm: TMainForm
   Left = 298
   Top = 51
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Html Parser - Sample'
   Font.Name = 'Tahoma'
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object btnOpen: TButton
       Left = 12
       Top = 327
@@ -270,7 +271,7 @@ inherited MainForm: TMainForm
           Top = 11
           Width = 577
           Height = 262
-          Font.Charset = RUSSIAN_CHARSET
+          Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
           Font.Name = 'Tahoma'

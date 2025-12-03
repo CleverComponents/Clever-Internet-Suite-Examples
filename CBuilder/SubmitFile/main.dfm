@@ -1,13 +1,14 @@
 inherited MainForm: TMainForm
   Left = 286
   Top = 55
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Upload a file using POST request - Sample'
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label4: TLabel
       Left = 16
       Top = 50
@@ -33,14 +34,14 @@ inherited MainForm: TMainForm
     object Label1: TLabel
       Left = 16
       Top = 200
-      Width = 48
+      Width = 47
       Height = 13
       Caption = 'Response'
     end
     object Label2: TLabel
       Left = 16
       Top = 5
-      Width = 131
+      Width = 135
       Height = 13
       Caption = 'Try the original web page at'
     end
@@ -77,8 +78,8 @@ inherited MainForm: TMainForm
       Height = 21
       TabOrder = 4
       Text = 
-        'https://www.clevercomponents.com/products/inetsuite/demos/servers' +
-        'ubmitfile.asp'
+        'https://www.clevercomponents.com/products/inetsuite/demos/server' +
+        'submitfile.asp'
     end
     object Memo1: TMemo
       Left = 16
@@ -106,8 +107,8 @@ inherited MainForm: TMainForm
       ReadOnly = True
       TabOrder = 0
       Text = 
-        'https://www.clevercomponents.com/products/inetsuite/demos/submitf' +
-        'ile.asp'
+        'https://www.clevercomponents.com/products/inetsuite/demos/submit' +
+        'file.asp'
     end
     object btnView: TButton
       Left = 540

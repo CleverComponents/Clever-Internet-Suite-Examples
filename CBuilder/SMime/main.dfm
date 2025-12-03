@@ -1,16 +1,16 @@
 inherited MainForm: TMainForm
   Left = 261
   Top = 62
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'SMIME Message - Sample'
   ClientHeight = 514
-  Font.Name = 'Tahoma'
+  OldCreateOrder = True
   OnCreate = FormCreate
-  ExplicitHeight = 552
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     Height = 436
-    ExplicitHeight = 436
     object Label3: TLabel
       Left = 9
       Top = 140
@@ -21,28 +21,28 @@ inherited MainForm: TMainForm
     object Label4: TLabel
       Left = 308
       Top = 140
-      Width = 56
+      Width = 51
       Height = 13
       Caption = 'Plain HTML'
     end
     object Label5: TLabel
       Left = 11
       Top = 273
-      Width = 59
+      Width = 61
       Height = 13
       Caption = 'Attachments'
     end
     object Label7: TLabel
       Left = 11
       Top = 63
-      Width = 23
+      Width = 24
       Height = 13
       Caption = 'From'
     end
     object Label8: TLabel
       Left = 10
       Top = 86
-      Width = 32
+      Width = 31
       Height = 13
       Caption = 'To List'
     end
@@ -56,7 +56,7 @@ inherited MainForm: TMainForm
     object Label1: TLabel
       Left = 16
       Top = 8
-      Width = 417
+      Width = 422
       Height = 13
       Caption = 
         'This demo creates and signs / encodes the mail message and store' +
@@ -275,6 +275,9 @@ inherited MainForm: TMainForm
     CharSet = 'iso-8859-1'
     ContentType = 'text/plain'
     OnSaveAttachment = clSMimeMessageSaveAttachment
+    Config.SignAlgorithmName = 'sha-512'
+    Config.SignAlgorithm = '2.16.840.1.101.3.4.2.3'
+    Config.EncryptAlgorithm = '2.16.840.1.101.3.4.1.2'
     OnGetSigningCertificate = clSMimeMessageGetSigningCertificate
     OnGetEncryptionCertificate = clSMimeMessageGetEncryptionCertificate
     Left = 52

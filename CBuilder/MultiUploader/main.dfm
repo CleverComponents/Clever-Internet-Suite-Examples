@@ -4,8 +4,6 @@ inherited UploaderTest: TUploaderTest
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'MultiUpLoader - Sample'
-  ClientHeight = 452
-  ClientWidth = 633
   Font.Name = 'Tahoma'
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
@@ -13,28 +11,12 @@ inherited UploaderTest: TUploaderTest
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  inherited pnlLogo: TPanel
-    Width = 633
-    ExplicitWidth = 633
-    inherited imLogoMiggle: TImage
-      Width = 18
-      ExplicitWidth = 18
-    end
-    inherited imLogoRight: TImage
-      Left = 424
-      ExplicitLeft = 424
-    end
-  end
   inherited pnlMain: TPanel
-    Width = 633
-    Height = 374
-    ExplicitWidth = 633
-    ExplicitHeight = 374
     object PageControl: TPageControl
       Left = 0
       Top = 0
-      Width = 633
-      Height = 333
+      Width = 623
+      Height = 322
       ActivePage = tabTasks
       Align = alClient
       TabOrder = 0
@@ -43,8 +25,8 @@ inherited UploaderTest: TUploaderTest
         Caption = 'Tasks'
         object Panel2: TPanel
           Left = 0
-          Top = 271
-          Width = 625
+          Top = 260
+          Width = 615
           Height = 34
           Align = alBottom
           BevelOuter = bvNone
@@ -71,8 +53,8 @@ inherited UploaderTest: TUploaderTest
         object ListView: TListView
           Left = 0
           Top = 0
-          Width = 625
-          Height = 271
+          Width = 615
+          Height = 260
           Align = alClient
           Columns = <
             item
@@ -261,8 +243,8 @@ inherited UploaderTest: TUploaderTest
     end
     object Panel1: TPanel
       Left = 0
-      Top = 333
-      Width = 633
+      Top = 322
+      Width = 623
       Height = 41
       Align = alBottom
       BevelOuter = bvNone

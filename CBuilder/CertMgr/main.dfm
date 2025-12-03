@@ -1,31 +1,31 @@
 inherited Form1: TForm1
   Left = 284
   Top = 202
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Certificates Manager - Sample'
-  Font.Name = 'Tahoma'
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    ExplicitHeight = 364
     object Label1: TLabel
       Left = 16
       Top = 8
-      Width = 106
+      Width = 107
       Height = 13
       Caption = 'System Store Location'
     end
     object Label2: TLabel
       Left = 16
       Top = 40
-      Width = 93
+      Width = 94
       Height = 13
       Caption = 'System Store Name'
     end
     object Label3: TLabel
       Left = 16
       Top = 64
-      Width = 52
+      Width = 55
       Height = 13
       Caption = 'Certificates'
     end

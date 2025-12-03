@@ -136,6 +136,11 @@
 				<DependentOn>main.h</DependentOn>
 				<BuildOrder>1</BuildOrder>
 			</CppCompile>
+			<CppCompile Include="login.cpp">
+				<Form>LoginConfirmation</Form>
+				<DependentOn>login.h</DependentOn>
+				<BuildOrder>4</BuildOrder>
+			</CppCompile>
 			<CppCompile Include="..\Common\DemoBaseFormUnit.cpp">
 				<Form>clDemoBaseForm</Form>
 				<DependentOn>..\Common\DemoBaseFormUnit.h</DependentOn>
@@ -145,6 +150,7 @@
 				<BuildOrder>0</BuildOrder>
 			</ResFiles>
 			<FormResources Include="main.dfm"/>
+			<FormResources Include="login.dfm"/>
 			<FormResources Include="..\Common\DemoBaseFormUnit.dfm"/>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
