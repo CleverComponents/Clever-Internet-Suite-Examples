@@ -6,7 +6,7 @@ These projects are simple demos rather than complete applications.
 
 They illustrate how to use components from [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) version 12 in your code.
 
-Before you compile and run these demos please download and install the Clever Internet Suite 12 for your RAD Studio IDE using the official [Download page](https://www.clevercomponents.com/downloads/inetsuite/)  
+Before you compile and run these demos please download and install the Clever Internet Suite 12 for your RAD Studio IDE using the official [Download Page](https://www.clevercomponents.com/downloads/inetsuite/)  
 
 For licensed downloads please submit the download / upgrade request to [Customer Portal](https://www.clevercomponents.com/portal/)
 
