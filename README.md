@@ -2,14 +2,23 @@
 
 <img align="left" src="suite-splash.jpg"/>
 
-These example projects are simple demos, and by no means complete applications.
+These projects are simple demos rather than complete applications.
 
-They are intended to demonstrate the usage of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) components in your code.
+They illustrate how to use components from [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) version 12 in your code.
+
+Before you compile and run these demos please download and install the Clever Internet Suite 12 for your RAD Studio IDE using the official [Download page](https://www.clevercomponents.com/downloads/inetsuite/)  
+
+For licensed downloads please submit the download / upgrade request to [Customer Portal](https://www.clevercomponents.com/portal/)
+
+Explore the samples to get started quickly with Clever Internet Suite.
 
 ## What's new
 
-[SFTP server (FTP+SSH)](./Delphi/SFtpServer) - The example implements a fully functional SFTP server with multi-session support, which works via the SSH File Transfer Protocol.   
-FTP and SFTP client demos were fixed to display the progress information correctly for large files.
+- Added support for RAD Studio 13 Florence.
+- Packages for the 64-bit version of RAD Studio IDE have been implemented.
+- Fixed TLS 1.3 issues. The previous version did not work when connecting to some internet services (GMail authentication and some other sites).
+- The Progress Bar display in the Delphi IDE has been fixed. There were issues with displaying the component on forms when using Windows themes.
+- Demo projects have been updated.
 
 ## Clever Internet Suite Demos for Delphi
 
