@@ -11,6 +11,9 @@ They are intended to demonstrate the usage of the [Clever Internet Suite](https:
 [SFTP server (FTP+SSH)](./Delphi/SFtpServer) - The example implements a fully functional SFTP server with multi-session support, which works via the SSH File Transfer Protocol.   
 FTP and SFTP client demos were fixed to display the progress information correctly for large files.
 
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
+
 ## Clever Internet Suite Demos for Delphi
 
 See also:  [Demos for C++Builder](DemosCBuilder.md), [Demos for C# .NET](DemosCS.md), [Demos for VB.NET](DemosVBNET.md), [Demos for ASP.NET](./ASP.NET)   
